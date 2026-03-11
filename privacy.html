@@ -7,42 +7,42 @@
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background-color: #fdf6e3; }
         h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #e67e22; margin-top: 2rem; }
-        .shield-box { background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin: 20px 0; font-style: italic; }
+        h2 { color: #27ae60; margin-top: 2rem; } /* Changed from Brown to Green */
+        .shield-box { background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin: 20px 0; font-style: italic; border-left: 5px solid #27ae60; }
     </style>
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p><strong>Effective Date: March 9, 2026</strong></p>
+    <p><strong>Effective Date: March 11, 2026</strong></p>
 
     <div class="shield-box">
-        <strong>Zero-Knowledge Disclosure:</strong> This application is developed by an independent solo developer in Europe. It is designed so that the developer has no technical means to access, read, or decrypt your messages.
+        <strong>Zero-Knowledge Disclosure:</strong> SecureMessenger utilizes a "Blind Server" architecture. This application is developed by an independent solo developer in Europe and is designed so that the developer has no technical means to identify users, map social graphs, or decrypt communications.
     </div>
 
     <h2>1. Data I Do NOT Collect</h2>
-    <p>To ensure maximum privacy, I do not require or collect:
+    <p>To ensure maximum privacy, I do not require, collect, or store:
     <ul>
         <li>Phone numbers or Email addresses</li>
         <li>Real names or contact lists</li>
         <li>Browser history or location data</li>
     </ul></p>
 
-    <h2>2. Data We Process (GDPR Compliance)</h2>
-    <p>Under the GDPR, I process the minimum data necessary to provide the service:
+    <h2>2. Data We Process (Anonymized Logic)</h2>
+    <p>Under the GDPR, we process only the absolute functional minimum necessary to route encrypted data:
     <ul>
-        <li><strong>UUID:</strong> A randomly generated identifier for your account.</li>
-        <li><strong>Public Keys:</strong> Necessary to establish the Signal Protocol handshake.</li>
-        <li><strong>IP Addresses:</strong> Processed ephemerally to route data; I do not store logs of your IP address.</li>
+        <li><strong>Anonymized Routing ID:</strong> We do not store your actual UUID. We process a non-reversible <strong>HMAC-SHA256 Hash</strong> which prevents the server from linking network traffic to your specific identity.</li>
+        <li><strong>Public Keys:</strong> Necessary to establish the Signal Protocol handshake; stored in our blind vault and never linked to PII.</li>
+        <li><strong>IP Addresses:</strong> Processed ephemerally in RAM to route data; we utilize IP masking and do not store logs of your IP address.</li>
     </ul></p>
 
     <h2>3. Encryption & Security</h2>
-    <p>All communication is End-to-End Encrypted (E2EE) using the Signal Protocol (X3DH and Double Ratchet). Private keys never leave your device. I cannot comply with requests to provide message content because I do not possess the keys to decrypt it.</p>
+    <p>All communication is End-to-End Encrypted (E2EE) using the <strong>Signal Protocol (X3DH and Double Ratchet)</strong>. Private keys never leave your device. Account recovery phrases are <strong>hashed locally using PBKDF2</strong> (10,000 iterations) before reaching the server, ensuring the developer has zero-knowledge of your recovery credentials.</p>
 
-    <h2>4. Data Retention</h2>
-    <p>Messages are deleted from our server immediately upon successful delivery. Undelivered messages are automatically purged after 30 days.</p>
+    <h2>4. Data Retention & Volatility</h2>
+    <p>Messages are deleted from our server immediately upon successful delivery. Any undelivered encrypted blobs are automatically purged via a <strong>30-day TTL (Time-To-Live) index</strong>, ensuring no long-term data retention.</p>
 
     <h2>5. Report Abuse (DSA Article 16)</h2>
-    <p>In compliance with the EU Digital Services Act, users may report User IDs for illegal activity via the in-app reporting tool or by emailing our Point of Contact. I will review reports and may terminate service for specific IDs, but I cannot access message content to verify claims.</p>
+    <p>In compliance with the EU Digital Services Act, users may report Routing IDs for illegal activity. We will review reports and may terminate service for specific IDs, but we cannot access message content to verify claims due to the underlying encryption architecture.</p>
 
     <h2>6. Contact (Point of Contact)</h2>
     <p>Individual Developer: dQuantumBear<br>
