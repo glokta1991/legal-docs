@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureMessenger | The Technical Manifesto</title>
+    <style>
+        body {
+            background-color: #EDE6D6; /* Your app's Creamy Sand */
+            color: #1a1a1a;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            background: #F5F1E8;
+            padding: 50px;
+            border: 1px solid #D2D2B4;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #27ae60; /* Secure Green */
+            border-left: 5px solid #27ae60;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        .warning {
+            color: #e74c3c;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            border: 2px dashed #e74c3c;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Ghost Protocol</h1>
+        <p style="text-align: center; font-style: italic;">"Power is not found in what you can see, but in what you can choose to surrender."</p>
+
+        <div class="warning">GHOST PROTOCOL ACTIVE: FORENSICALLY SILENT</div>
+
+        <h2>1. The Blind Relay (Backend)</h2>
+        <p>Our server is a stateless, zero-visibility pass-through. Plaintext usernames never leave your device; they are hashed locally via HMAC-SHA256. We collect ZERO logs, IP addresses, or metadata.</p>
+
+        <h2>2. Active Decay (Data Destruction)</h2>
+        <p>SecureMessenger doesn't just "delete" data; it destroys it. Using forensic scrubbing, messages are overwritten with random bytes before physical deletion. A mandatory 30-day TTL index ensures undelivered data is physically purged from the server hardware.</p>
+
+        <h2>3. Deniable Sovereignty (Duress)</h2>
+        <p>Digital security is useless without physical safety. Our <b>Duress Protocol</b> allows a user to provide a "Panic PIN" that triggers a silent, forensic wipe of all local Signal keys and databases, while displaying a generic network error to provide a plausible alibi.</p>
+
+        <h2>4. Zero-Knowledge Identity</h2>
+        <p>BIP39 Mnemonic seeds ensure that your identity is sovereign. We do not hold your keys. We cannot reset your password. We have no technical power over your data.</p>
+
+        <div class="footer">
+            SECUREMESSENGER 1.0 | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
+        </div>
+    </div>
+</body>
+</html>
