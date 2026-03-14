@@ -37,21 +37,32 @@
             border: 1px solid #D2D2B4;
             box-shadow: 15px 15px 0px rgba(0,0,0,0.05);
         }
-        .logo-container {
+        .header-branding {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
-        .logo-container img {
-            width: 250px;
+        .header-branding img {
+            max-width: 180px;
             height: auto;
+            filter: grayscale(100%);
+        }
+        .contact-line {
+            margin-top: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        .header-divider {
+            border-bottom: 2px solid #1a1a1a;
+            width: 60%;
+            margin: 20px auto;
         }
         h1 {
             text-align: center;
             font-size: 2.8em;
             text-transform: uppercase;
             letter-spacing: 5px;
-            border-bottom: 3px solid #1a1a1a;
-            padding-bottom: 20px;
             margin-bottom: 10px;
         }
         .subtitle {
@@ -69,16 +80,6 @@
             margin-top: 50px;
             text-transform: uppercase;
             font-size: 1.4em;
-        }
-        h3 {
-            font-size: 1.1em;
-            margin-top: 25px;
-            border-bottom: 1px solid #D2D2B4;
-            display: inline-block;
-        }
-        p, li {
-            font-size: 1.05em;
-            color: #333;
         }
         .abstract {
             background: #EDE6D6;
@@ -105,85 +106,42 @@
             border-top: 1px solid #1a1a1a;
             padding-top: 20px;
         }
-        ul {
-            list-style-type: square;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <img src="https://glokta1991.github.io/legal-docs/logo.png" alt="SecureMessenger Logo">
+        <!-- AI-FIX: Branding Header -->
+        <div class="header-branding">
+            <img src="logo.png" alt="SecureMessenger Logo">
+            <div class="contact-line">
+                OFFICIAL CONTACT: <a href="mailto:legal.securemessenger@proton.me" style="color: #1a1a1a; text-decoration: underline;">legal.securemessenger@proton.me</a>
+            </div>
+            <div class="header-divider"></div>
         </div>
-        
+
         <h1>The Ghost Protocol</h1>
         <div class="subtitle">Architecture of Technical Surrender</div>
 
         <div class="abstract">
-            <strong>Abstract:</strong> This white paper defines the formal architectural standards of SecureMessenger, a communication platform engineered for Technical Surrender. Unlike traditional "secure" messengers that retain the power to compromise users through metadata, key management, or forensic remnants, SecureMessenger is designed to be physically and technically incapable of betraying its users. By mathematically excluding the developer from the user's data lifecycle, we achieve a state of sovereign privacy. SecureMessenger satisfies the requirements of GDPR Article 11 and the Digital Services Act (DSA) by ensuring no identifiable data is processed, stored, or accessible.
+            <strong>Abstract:</strong> This white paper defines the formal architectural standards of SecureMessenger, a communication platform engineered for Technical Surrender. Unlike traditional "secure" messengers that retain the power to compromise users through metadata, key management, or forensic remnants, SecureMessenger is designed to be physically and technically incapable of betraying its users. By mathematically excluding the developer from the user's data lifecycle, we achieve a state of sovereign privacy.
         </div>
 
         <div class="warning-box">GHOST PROTOCOL STATUS: ACTIVE & FORENSICALLY SILENT</div>
 
         <h2>1. Identity Sovereignty (BIP39)</h2>
-        <p>SecureMessenger abandons the concept of "user accounts" stored on a central database.</p>
-        <ul>
-            <li><strong>Generation:</strong> Identities are generated locally using BIP39 Mnemonic Seeds (12 words).</li>
-            <li><strong>Sovereignty:</strong> The developer has zero ability to reset passwords or recover identities. If the 12-word seed is lost, the identity and all data are permanently irrecoverable.</li>
-            <li><strong>Zero-Knowledge Auth:</strong> Passwords are transformed via client-side SHA-256 and PBKDF2 (10,000 iterations). The server only stores "Scrambled Fingerprints."</li>
-        </ul>
+        <p>Identities are generated locally using BIP39 Mnemonic Seeds (12 words). The developer has zero ability to reset passwords or recover identities.</p>
 
         <h2>2. The Blind Relay (Network)</h2>
-        <p>The backend acts as a Volatile Relay, maintaining zero visibility into the social graph.</p>
-        <ul>
-            <li><strong>Quantum-Hardened Salts:</strong> To negate future Quantum attacks (Grover’s Algorithm), we use high-entropy, 512-bit salts for Routing ID hashes.</li>
-            <li><strong>Memory-First Routing:</strong> The server prioritizes RAM-to-RAM delivery. If a recipient is online, the message vanishes from memory without ever touching the server's disk.</li>
-            <li><strong>Stateless Logs:</strong> Logs are hardcoded to redact IP addresses and scrub metadata trails.</li>
-        </ul>
+        <p>The backend acts as a Volatile Relay. We use 512-bit Quantum-Hardened salts for Routing ID hashes. Messages vanish from memory upon delivery without touching the server's disk.</p>
 
         <h2>3. Cryptographic Ratcheting</h2>
-        <p>SecureMessenger utilizes the Signal Protocol for all peer-to-peer communication.</p>
-        <ul>
-            <li><strong>Double Ratchet:</strong> Every communication is protected by a continuous rotation of temporary encryption keys.</li>
-            <li><strong>Perfect Forward Secrecy (PFS):</strong> Compromising one message key does not reveal the contents of past or future messages.</li>
-            <li><strong>Break-In Recovery:</strong> The ratchet mechanism ensures that if a session key is exposed, the channel self-heals immediately.</li>
-        </ul>
+        <p>Utilizes the Signal Protocol. Double Ratchet ensures Perfect Forward Secrecy (PFS) for every individual message.</p>
 
         <h2>4. Active Decay (Forensics)</h2>
-        <p>Standard deletion is insufficient. SecureMessenger implements physical data destruction.</p>
-        <ul>
-            <li><strong>Forensic Scrubbing:</strong> Expired records are overwritten with random bytes ([PURGED]) to fill SQLite free-lists before physical purging.</li>
-            <li><strong>Database VACUUM:</strong> Every shredding cycle is followed by a physical VACUUM to erase magnetic/flash traces from the storage medium.</li>
-            <li><strong>RAM Sanitization:</strong> All keys are handled as ByteArrays and physically zeroed out immediately after use to defeat "Cold Boot" attacks.</li>
-        </ul>
+        <p>Forensic Scrubbing overwrites expired records with [PURGED] bytes followed by a physical database VACUUM to erase traces from storage.</p>
 
         <h2>5. Deniable Sovereignty (Duress)</h2>
-        <p>Physical security is the final frontier of privacy.</p>
-        <ul>
-            <li><strong>The Panic PIN:</strong> A secondary, user-defined password for high-stakes situations.</li>
-            <li><strong>Silent Incineration:</strong> Entering the Duress PIN triggers an immediate, silent forensic wipe of all Signal keys and database tables.</li>
-            <li><strong>503 Alibi:</strong> Post-wipe, the app displays a fake "Network Error (503)" to provide a plausible technical excuse for an empty app state.</li>
-        </ul>
-
-        <h2>6. Legal Framework</h2>
-        <p>Built on the doctrine of <strong>Compliance by Inability</strong>.</p>
-        <ul>
-            <li><strong>GDPR Art. 11:</strong> The system is designed such that the developer does not identify natural persons behind HMAC IDs.</li>
-            <li><strong>Subpoena Immunity:</strong> Because no identifiable records exist, the developer is legally excluded from the ability to provide data.</li>
-        </ul>
-
-        <h2>7. Threat Model</h2>
-        <h3>What we protect against:</h3>
-        <ul>
-            <li>Device Seizure (SQLCipher AES-256 + TEE/SE wrapping).</li>
-            <li>OS-Level Buffering (FLAG_SECURE blocks "Recent Apps" screenshots).</li>
-            <li>Server Compromise (Anonymous hashes + 7-day volatility).</li>
-        </ul>
-        <h3>What we do not protect against:</h3>
-        <ul>
-            <li>Compromised OS (Keyloggers on rooted devices).</li>
-            <li>Rubber-Hose Cryptanalysis (Physical coercion to reveal primary PIN).</li>
-        </ul>
+        <p>A secondary Panic PIN triggers a silent, total forensic wipe of all keys and data, displaying a fake 503 Network Error as an alibi.</p>
 
         <div class="status-footer">
             SECUREMESSENGER 1.0 | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
