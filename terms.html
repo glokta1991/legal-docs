@@ -5,67 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - SecureMessenger</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background-color: #fdf6e3; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #27ae60; margin-top: 2rem; }
-        .legal-notice { background: #fff; border-left: 5px solid #27ae60; padding: 15px; margin: 20px 0; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        body { font-family: 'Georgia', serif; line-height: 1.6; color: #1a1a1a; max-width: 850px; margin: 0 auto; padding: 2rem; background-color: #EDE6D6; }
+        .container { background: #fff; padding: 40px; border: 1px solid #D2D2B4; border-radius: 4px; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); }
+        .header-branding { text-align: center; margin-bottom: 40px; }
+        .header-branding img { max-width: 180px; height: auto; filter: grayscale(100%); }
+        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
+        .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
+        h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: #27ae60; margin-top: 2rem; border-left: 4px solid #27ae60; padding-left: 10px; }
+        .nuclear-shield { background: #1a1a1a; color: #fff; padding: 25px; border-radius: 4px; margin: 20px 0; font-weight: bold; text-align: center; text-transform: uppercase; border: 2px solid #e74c3c; }
+        .disclaimer-box { background: #fdf6e3; border: 1px dashed #e74c3c; padding: 20px; margin: 20px 0; font-style: italic; }
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <h1>Terms of Service</h1>
-    <p><strong>Last Updated: March 13, 2026</strong></p>
+    <div class="container">
+        <!-- Branding Header -->
+        <div class="header-branding">
+            <img src="logo.png" alt="SecureMessenger Logo">
+            <div class="contact-line">
+                OFFICIAL CONTACT: <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a; text-decoration: underline;">securemessenger4U@proton.me</a>
+            </div>
+            <div class="header-divider"></div>
+        </div>
 
-    <div class="legal-notice">
-        <strong>Important:</strong> SecureMessenger is a Zero-Knowledge utility. By using this application, you acknowledge that I, the Developer, have <strong>fully surrendered</strong> the technical power to retrieve your data, reset your password, or monitor your communications. My architecture is designed to make me a "Blind Relay," not a central authority.
+        <h1>Terms of Service</h1>
+        <p><strong>Effective Date: March 13, 2026</strong></p>
+
+        <div class="nuclear-shield">
+            Mandatory Disclosure: Total Technical Surrender. Zero Developer Liability Active.
+        </div>
+
+        <div class="disclaimer-box">
+            <strong>Legal Notice:</strong> SecureMessenger is a neutral, automated utility. The Developer has <strong>physically surrendered</strong> the ability to monitor, intercept, or control communications. By using this service, you agree that the Developer is <strong>exempt from all liability</strong> related to your conduct or the content of your messages.
+        </div>
+
+        <h2>1. Status as "Mere Conduit" (DSA Compliance)</h2>
+        <p>In accordance with <strong>Article 4 of the EU Digital Services Act</strong>, SecureMessenger is an intermediary service consisting of the automated transmission of encrypted data. The Developer:
+        <ul>
+            <li>Does not initiate the transmission.</li>
+            <li>Does not select the receiver (routing is handled via non-reversible <strong>HMAC-SHA256</strong> hashes).</li>
+            <li>Does not select or modify the information contained in the transmission.</li>
+            <li>Possesses <strong>ZERO technical visibility</strong> into the content or social graph of users.</li>
+        </ul></p>
+
+        <h2>2. Absolute Disclaimer of Warranties</h2>
+        <p>SecureMessenger is provided "AS IS" and "AS AVAILABLE." The Developer makes no warranties, express or implied, regarding the reliability, availability, or security of the service. You use this application at your own risk. The Developer is not responsible for any data loss, account loss, or security breaches resulting from user negligence (e.g., loss of the 12-word master key).</p>
+
+        <h2>3. Zero Liability for User Actions</h2>
+        <p>The Developer <strong>expressly disclaims all responsibility</strong> for how users utilize this tool. SecureMessenger must NOT be used for illegal activities. However, because the architecture is End-to-End Encrypted (E2EE) and "blind" by design, the Developer has no power to prevent misuse. You acknowledge that <strong>the Developer is legally shielded</strong> from any consequences arising from your use or misuse of the platform.</p>
+
+        <h2>4. Mandatory Indemnification</h2>
+        <p>You agree to <strong>indemnify, defend, and hold harmless</strong> the Developer from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney's fees) arising from:
+        <ul>
+            <li>Your violation of any term of these Terms.</li>
+            <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right.</li>
+            <li>Any claim that your communications caused damage to a third party.</li>
+        </ul>
+        <strong>This defense and indemnification obligation will survive these Terms and your use of the Service.</strong></p>
+
+        <h2>5. Compliance by Inability (Subpoena Immunity)</h2>
+        <p>Due to the <strong>Zero-Knowledge Architecture</strong>, the Developer is technically excluded from complying with requests for message content, social graphs, or user identities. We cannot provide what we do not have. This <strong>Technical Surrender</strong> serves as our primary legal framework for user protection and developer shielding.</p>
+
+        <h2>6. Report Abuse (DSA Art. 16)</h2>
+        <p>Users may report Routing ID hashes for violations of the law. The Developer’s sole recourse is the restriction of a Routing ID hash from the relay. This action is taken without knowledge of message content.</p>
+
+        <h2>7. Governing Law & Jurisdiction</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the European Union. Any legal action or proceeding related to SecureMessenger shall be brought exclusively in the courts of the Developer's home jurisdiction.</p>
+
+        <div style="margin-top: 60px; text-align: center; font-size: 0.8em; opacity: 0.6;">
+            SECUREMESSENGER 1.0 | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
+        </div>
     </div>
-
-    <h2>1. The Service (Blind Relay & Mere Conduit Status)</h2>
-    <p>In accordance with <strong>Article 4 of the EU Digital Services Act (Regulation 2022/2065)</strong>, I provide an intermediary service consisting of the "mere conduit" of encrypted information. I:
-    <ul>
-        <li>Do not initiate the transmission of messages.</li>
-        <li>Do not select the receiver (routing is handled via non-reversible <strong>Routing ID</strong> hashes).</li>
-        <li>Do not select or modify the information contained in the transmission.</li>
-        <li>Do not maintain logs of IP addresses or query parameters.</li>
-    </ul></p>
-
-    <h2>2. Limitation of Liability & Physical Vaulting</h2>
-    <p>The application is provided "AS IS." You acknowledge that:
-    <ul>
-        <li><strong>Encryption-at-Rest:</strong> Your data is protected by <strong>SQLCipher (AES-256)</strong>. The master key is held exclusively in your device's hardware-backed keystore. I have no technical means to bypass this encryption.</li>
-        <li><strong>RAM Sanitization:</strong> To prevent forensic recovery, master keys are <strong>physically scrubbed from memory</strong> immediately after the database is opened.</li>
-        <li><strong>Zero-Trace Warranty:</strong> Because the server is "blind" and local storage is encrypted/sanitized, I cannot provide account recovery, content moderation, or data restoration. To the maximum extent permitted by law, I shall not be liable for any damages arising from data loss or the use of the app.</li>
-    </ul></p>
-
-    <h2>3. User Sovereignty & Responsibility</h2>
-    <p>Security is a shared responsibility. You are the sole custodian of:
-    <ul>
-        <li><strong>The 12-Word Identity Vault (BIP39):</strong> This mnemonic is your only master key. Because it is hashed locally using <strong>PBKDF2</strong> before reaching the server, I cannot help you recover your account if this phrase is lost.</li>
-        <li><strong>Routing IDs:</strong> Your account is tied to a deterministic hash. Protect your human username and your mnemonic to maintain control over your Routing ID.</li>
-    </ul></p>
-
-    <h2>4. Active Decay & Ephemeral Data Policy</h2>
-    <p>By using this service, you acknowledge and agree to its ephemeral nature:
-    <ul>
-        <li><strong>Server-Side TTL:</strong> Any message not delivered within 30 days is <strong>physically and permanently destroyed</strong> by the database engine on the relay server.</li>
-        <li><strong>Local Active Decay:</strong> You may manually choose a <strong>Retention Policy</strong> (1 Hour, 24 Hours, 30 Days). I provide an "Active Decay" engine that wakes up hourly to securely scrub and physically purge expired data from your device.</li>
-        <li><strong>Forensic Shredding:</strong> Manual deletions and automated purges utilize a two-stage wipe (overwrite then delete) followed by a database <strong>VACUUM</strong> to ensure no forensic remnants remain on the disk.</li>
-    </ul></p>
-
-    <h2>5. Logout Protocols</h2>
-    <p>I provide two distinct methods for ending a session:
-    <ul>
-        <li><strong>Standard Logout:</strong> Clears session tokens but <strong>preserves Signal Identity Keys</strong> to ensure your cryptographic identity remains stable for your contacts.</li>
-        <li><strong>Secure Wipe & Logout:</strong> A "Scorched Earth" option that physically destroys all cryptographic keys and clears the local database vault. Use this option only if you intend to leave no trace of your existence on the device.</li>
-    </ul></p>
-
-    <h2>6. Prohibited Use & Notice-and-Action</h2>
-    <p>You agree not to use the service for illegal purposes. While I cannot read your messages, I comply with the <strong>DSA Article 16 mechanism</strong>. If a Routing ID is reported with credible evidence of illegal activity, I reserve the right to terminate or restrict access for that specific ID. I cannot access message content to verify claims.</p>
-
-    <h2>7. Governing Law</h2>
-    <p>This agreement is governed by the laws of the European Union and the Member State of my establishment (Europe).</p>
-
-    <p><strong>Contact for Legal Inquiries:</strong> <a href="mailto:legal.securemessenger@proton.me">legal.securemessenger@proton.me</a></p>
 </body>
 </html>
