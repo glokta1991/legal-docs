@@ -3,78 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureMessenger | The Technical Manifesto</title>
+    <title>SecureMessenger | The Ghost Protocol Manifesto</title>
     <style>
-        body {
-            background-color: #EDE6D6; /* Your app's Creamy Sand */
-            color: #1a1a1a;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 800px;
-            background: #F5F1E8;
-            padding: 50px;
-            border: 1px solid #D2D2B4;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
-        }
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            border-bottom: 2px solid #1a1a1a;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-        h2 {
-            color: #27ae60; /* Secure Green */
-            border-left: 5px solid #27ae60;
-            padding-left: 15px;
-            margin-top: 40px;
-        }
-        .warning {
-            color: #e74c3c;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            border: 2px dashed #e74c3c;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        .footer {
-            margin-top: 60px;
-            text-align: center;
-            font-size: 0.8em;
-            opacity: 0.6;
-        }
+        body { background-color: #EDE6D6; color: #1a1a1a; font-family: 'Georgia', serif; line-height: 1.6; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .container { max-width: 850px; background: #F5F1E8; padding: 60px; border: 1px solid #D2D2B4; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); }
+        .header-branding { text-align: center; margin-bottom: 40px; }
+        .header-branding img { max-width: 180px; height: auto; filter: grayscale(100%); }
+        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
+        .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
+        h1 { text-align: center; font-size: 2.5em; text-transform: uppercase; letter-spacing: 4px; border-bottom: 2px solid #1a1a1a; padding-bottom: 20px; margin-bottom: 40px; }
+        h2 { color: #27ae60; border-left: 5px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.3em; }
+        .warning-banner { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; text-transform: uppercase; border: 2px solid #e74c3c; }
+        .quote { text-align: center; font-style: italic; font-size: 1.2em; margin-bottom: 40px; opacity: 0.8; }
+        .footer { margin-top: 80px; text-align: center; font-size: 0.85em; font-weight: bold; opacity: 0.6; border-top: 1px solid #1a1a1a; padding-top: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Official Branding Header -->
+        <div class="header-branding">
+            <img src="logo.png" alt="SecureMessenger Logo">
+            <div class="contact-line">
+                OFFICIAL CONTACT: <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a; text-decoration: underline;">securemessenger4U@proton.me</a>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
         <h1>The Ghost Protocol</h1>
-        <p style="text-align: center; font-style: italic;">"Power is not found in what you can see, but in what you can choose to surrender."</p>
+        <p class="quote">"Power is not found in what you can see, but in what you can choose to surrender."</p>
 
-        <div class="warning">GHOST PROTOCOL ACTIVE: FORENSICALLY SILENT</div>
+        <div class="warning-banner">GHOST PROTOCOL ACTIVE: FORENSICALLY SILENT</div>
 
-        <h2>1. The Blind Relay (Backend)</h2>
-        <p>Our server is a stateless, zero-visibility pass-through. Plaintext usernames never leave your device; they are hashed locally via HMAC-SHA256. We collect ZERO logs, IP addresses, or metadata.</p>
+        <h2>1. The Volatile Relay (Zero-Visibility)</h2>
+        <p>Our backend is engineered as a <b>Memory-First Relay</b>. If a recipient is online, messages pass through RAM and vanish instantly, never touching the server's physical disk. We use <b>512-bit Quantum-Hardened salts</b> for HMAC-SHA256 Routing IDs, ensuring that identities remain mathematically anonymous even against future adversarial advancements.</p>
 
-        <h2>2. Active Decay (Data Destruction)</h2>
-        <p>SecureMessenger doesn't just "delete" data; it destroys it. Using forensic scrubbing, messages are overwritten with random bytes before physical deletion. A mandatory 30-day TTL index ensures undelivered data is physically purged from the server hardware.</p>
+        <h2>2. Technical Surrender (Compliance by Inability)</h2>
+        <p>SecureMessenger strips power away from the developer. We do not require phone numbers, emails, or names. We possess zero technical ability to decrypt messages, map social graphs, or identify users. In compliance with <b>GDPR Art. 11</b> and <b>DSA Art. 4</b>, we are legally and technically excluded from providing data we do not possess.</p>
 
-        <h2>3. Deniable Sovereignty (Duress)</h2>
-        <p>Digital security is useless without physical safety. Our <b>Duress Protocol</b> allows a user to provide a "Panic PIN" that triggers a silent, forensic wipe of all local Signal keys and databases, while displaying a generic network error to provide a plausible alibi.</p>
+        <h2>3. Active Decay (Forensic Destruction)</h2>
+        <p>Standard data deletion is a liability. We implement <b>Active Decay</b>: a forensic scrubbing protocol that overwrites expired records with random noise ([PURGED]) followed by a physical database <b>VACUUM</b>. Server-side, undelivered data is physically purged via a mandatory <b>7-day TTL index</b>.</p>
 
-        <h2>4. Zero-Knowledge Identity</h2>
-        <p>BIP39 Mnemonic seeds ensure that your identity is sovereign. We do not hold your keys. We cannot reset your password. We have no technical power over your data.</p>
+        <h2>4. Deniable Sovereignty (The Duress Alibi)</h2>
+        <p>Digital encryption is useless without physical protection. Our <b>Duress Protocol</b> allows a user to enter a secondary "Panic PIN" which triggers a silent, total forensic wipe of all keys and data. The application then displays a fake <b>503 Network Error</b>, providing a credible technical alibi for an empty application state.</p>
+
+        <h2>5. Cryptographic Ratcheting</h2>
+        <p>Every communication is sealed via the <b>Signal Protocol</b>. The Double Ratchet algorithm provides <b>Perfect Forward Secrecy (PFS)</b>, ensuring that the compromise of a single message key cannot reveal the history of the conversation.</p>
 
         <div class="footer">
-            SECUREMESSENGER 1.0 | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
+            SECUREMESSENGER 1.0 | dQuantumBear | THE ARCHITECTURE OF TECHNICAL SURRENDER 🛡️🚀🐻‍❄️🏁
         </div>
     </div>
 </body>
