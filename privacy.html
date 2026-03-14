@@ -5,68 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - SecureMessenger</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background-color: #fdf6e3; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #27ae60; margin-top: 2rem; }
-        .shield-box { background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin: 20px 0; font-style: italic; border-left: 5px solid #27ae60; }
+        body { font-family: 'Georgia', serif; line-height: 1.6; color: #1a1a1a; max-width: 850px; margin: 0 auto; padding: 2rem; background-color: #EDE6D6; }
+        .container { background: #fff; padding: 40px; border: 1px solid #D2D2B4; border-radius: 4px; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); }
+        .header-branding { text-align: center; margin-bottom: 40px; }
+        .header-branding img { max-width: 180px; height: auto; filter: grayscale(100%); }
+        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
+        .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
+        h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: #27ae60; margin-top: 2rem; border-left: 4px solid #27ae60; padding-left: 10px; }
+        .shield-box { background: #fdf6e3; border: 1px dashed #e74c3c; padding: 20px; border-radius: 4px; margin: 20px 0; }
+        .legal-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; text-transform: uppercase; }
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p><strong>Effective Date: March 13, 2026</strong></p>
+    <div class="container">
+        <!-- Branding Header -->
+        <div class="header-branding">
+            <img src="logo.png" alt="SecureMessenger Logo">
+            <div class="contact-line">
+                OFFICIAL CONTACT: <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a; text-decoration: underline;">securemessenger4U@proton.me</a>
+            </div>
+            <div class="header-divider"></div>
+        </div>
 
-    <div class="shield-box">
-        <strong>Zero-Knowledge Disclosure:</strong> SecureMessenger utilizes a "Blind Relay" architecture. This application is developed by an independent solo developer in Europe and is designed so that <strong>I have no technical power</strong> to identify users, map social graphs, or decrypt communications. My architecture is built on the principle of total surrender of control over user data.
+        <h1>Privacy Policy</h1>
+        <p><strong>Effective Date: March 13, 2026</strong></p>
+
+        <div class="legal-notice">
+            Zero-Liability Architecture: Technical Surrender active.
+        </div>
+
+        <div class="shield-box">
+            <strong>Forensic Disclaimer:</strong> This application is designed such that the developer <strong>cannot</strong> assist in identifying users or decrypting data. SecureMessenger is a neutral tool. By using this app, you acknowledge that the developer has surrendered all technical power over your communications.
+        </div>
+
+        <h2>1. Compliance by Inability (Subpoena Immunity)</h2>
+        <p>Because the developer does not possess identities, cryptographic keys, server logs, or social graphs, I am <strong>legally and technically excluded</strong> from the ability to comply with data extraction requests or subpoenas. SecureMessenger operates on the doctrine of "Technical Surrender."</p>
+
+        <h2>2. User Responsibility & ZERO Liability</h2>
+        <p>SecureMessenger is a neutral conduit. The developer does not control or monitor user conduct. <strong>The developer assumes ZERO responsibility</strong> for illegal activities, misuse, or abuse of the platform. Users are solely accountable for their own communications and the legality of their actions under their local jurisdiction.</p>
+
+        <h2>3. Data Volatility (Active Decay)</h2>
+        <p>SecureMessenger implements forensic scrubbing (Active Decay) to physically destroy data. Once shredded via the app's internal protocols, data is non-recoverable by the developer or any third party.</p>
+
+        <div style="margin-top: 60px; text-align: center; font-size: 0.8em; opacity: 0.6;">
+            SECUREMESSENGER 1.0 | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
+        </div>
     </div>
-
-    <h2>1. Data I Do NOT Collect</h2>
-    <p>To ensure absolute privacy, I do not require, collect, or store:
-    <ul>
-        <li>Real names, phone numbers, or email addresses.</li>
-        <li>Plaintext passwords or recovery phrases (BIP39 mnemonics).</li>
-        <li>Browser history, device identifiers (IMEI/Serial), or location data.</li>
-    </ul></p>
-
-    <h2>2. Anonymized Routing & The Blind Relay</h2>
-    <p>Under the GDPR, I process only the absolute functional minimum necessary to route encrypted data packets:
-    <ul>
-        <li><strong>Routing ID (HMAC-SHA256):</strong> Your username never leaves your device in plaintext. It is transformed locally into a non-reversible 64-character hash. I only see this hash; I cannot link it back to your human identity.</li>
-        <li><strong>Zero-Knowledge Passwords:</strong> Passwords are hashed locally using SHA-256. I only store "Scrambled Fingerprints," making server-side breaches useless.</li>
-        <li><strong>Metadata Scrubbing:</strong> My server logs are hardcoded to redact IP addresses and scrub query parameters. I do not track who you are or who you talk to.</li>
-    </ul></p>
-
-    <h2>3. The Local Encrypted Vault (Ghost Protocol)</h2>
-    <p>Your data is protected on your physical device using forensic-grade safeguards:
-    <ul>
-        <li><strong>Encryption-at-Rest (SQLCipher):</strong> Your local database is encrypted with <strong>AES-256</strong>. The master key is generated randomly and stored in your device’s hardware-backed Keystore (TEE/SE).</li>
-        <li><strong>RAM Sanitization:</strong> To prevent memory-scraping attacks, all cryptographic keys are handled as byte arrays and are <strong>physically zeroed out in RAM</strong> immediately after use.</li>
-        <li><strong>Physical Guard:</strong> The application prevents screenshots and hides content from the "Recents" menu. The optional Biometric Lock provides a secondary layer of physical security.</li>
-    </ul></p>
-
-    <h2>4. Active Decay & Forensic Shredding</h2>
-    <p>SecureMessenger does not just "delete" data; it destroys it:
-    <ul>
-        <li><strong>Targeted Shredding:</strong> When you delete a message or shred history, the app performs a two-stage wipe: it overwrites the content with random data before physical deletion.</li>
-        <li><strong>Local TTL (Self-Destruct):</strong> You may choose a Retention Policy (1 Hour, 24 Hours, 30 Days). My "Active Decay" engine wakes up hourly to securely scrub and purge expired data.</li>
-        <li><strong>Database Vacuuming:</strong> Following a shredding operation, I trigger a physical <strong>VACUUM</strong> command to ensure no forensic remnants remain on the disk.</li>
-    </ul></p>
-
-    <h2>5. Data Retention & Volatility (Server-Side)</h2>
-    <p>Messages are deleted from the relay immediately upon successful delivery. Any undelivered encrypted blobs are automatically purged via a <strong>30-day TTL (Time-To-Live) index</strong>. I maintain no permanent records.</p>
-
-    <h2>6. Zero-Discovery Policy</h2>
-    <p>To prevent userbase enumeration, search is <strong>Exact-Match only</strong>. You cannot browse the user list. You must possess the exact human username or the 64-character Routing ID to find a contact.</p>
-
-    <h2>7. Right to Erasure (GDPR)</h2>
-    <p>I provide a <strong>"Secure Wipe & Logout"</strong> option. This "Nuclear Option" physically destroys all cryptographic keys on the device, clears the local database, and signals the server to destroy any associated Routing ID records, fulfilling your Right to Erasure instantly.</p>
-
-    <h2>8. Report Abuse (DSA Article 16)</h2>
-    <p>In compliance with the EU Digital Services Act, users may report Routing IDs for illegal activity. I will review reports and may restrict specific Routing IDs from the relay, though I cannot access message content due to the E2EE architecture.</p>
-
-    <h2>9. Contact</h2>
-    <p>Individual Developer: dQuantumBear<br>
-    Email: <a href="mailto:legal.securemessenger@proton.me">legal.securemessenger@proton.me</a></p>
 </body>
 </html>
