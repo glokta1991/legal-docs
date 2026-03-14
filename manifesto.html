@@ -5,17 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecureMessenger | The Ghost Protocol Manifesto</title>
     <style>
-        body { background-color: #EDE6D6; color: #1a1a1a; font-family: 'Georgia', serif; line-height: 1.6; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
-        .container { max-width: 850px; background: #F5F1E8; padding: 60px; border: 1px solid #D2D2B4; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); }
-        .header-branding { text-align: center; margin-bottom: 40px; }
-        .header-branding img { max-width: 180px; height: auto; filter: grayscale(100%); }
-        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
-        .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
-        h1 { text-align: center; font-size: 2.5em; text-transform: uppercase; letter-spacing: 4px; border-bottom: 2px solid #1a1a1a; padding-bottom: 20px; margin-bottom: 40px; }
-        h2 { color: #27ae60; border-left: 5px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.3em; }
-        .warning-banner { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; text-transform: uppercase; border: 2px solid #e74c3c; }
-        .quote { text-align: center; font-style: italic; font-size: 1.2em; margin-bottom: 40px; opacity: 0.8; }
-        .footer { margin-top: 80px; text-align: center; font-size: 0.85em; font-weight: bold; opacity: 0.6; border-top: 1px solid #1a1a1a; padding-top: 20px; }
+        body { 
+            background-color: #EDE6D6; 
+            color: #1a1a1a; 
+            font-family: 'Georgia', serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 40px 20px; 
+            display: flex; 
+            justify-content: center; 
+        }
+        .container { 
+            max-width: 850px; 
+            background: #F5F1E8; 
+            padding: 60px; 
+            border: 1px solid #D2D2B4; 
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
+        }
+        .header-branding { 
+            text-align: center; 
+            margin-bottom: 40px; 
+        }
+        .header-branding img { 
+            max-width: 180px; 
+            height: auto; 
+            /* AI-FIX: Grayscale filter removed to restore original logo color */
+        }
+        .contact-line { 
+            margin-top: 15px; 
+            font-family: 'Courier New', Courier, monospace; 
+            font-weight: bold; 
+            font-size: 0.9em; 
+            letter-spacing: 1px; 
+        }
+        .header-divider { 
+            border-bottom: 2px solid #1a1a1a; 
+            width: 60%; 
+            margin: 20px auto; 
+        }
+        h1 { 
+            text-align: center; 
+            font-size: 2.5em; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            border-bottom: 2px solid #1a1a1a; 
+            padding-bottom: 20px; 
+            margin-bottom: 40px; 
+        }
+        h2 { 
+            color: #27ae60; 
+            border-left: 5px solid #27ae60; 
+            padding-left: 15px; 
+            margin-top: 40px; 
+            text-transform: uppercase; 
+            font-size: 1.3em; 
+        }
+        .warning-banner { 
+            background: #1a1a1a; 
+            color: #fff; 
+            padding: 20px; 
+            margin: 30px 0; 
+            font-weight: bold; 
+            text-align: center; 
+            text-transform: uppercase; 
+            border: 2px solid #e74c3c; 
+        }
+        .quote { 
+            text-align: center; 
+            font-style: italic; 
+            font-size: 1.2em; 
+            margin-bottom: 40px; 
+            opacity: 0.8; 
+        }
+        .footer { 
+            margin-top: 80px; 
+            text-align: center; 
+            font-size: 0.85em; 
+            font-weight: bold; 
+            opacity: 0.6; 
+            border-top: 1px solid #1a1a1a; 
+            padding-top: 20px; 
+        }
     </style>
 </head>
 <body>
@@ -44,7 +114,7 @@
         <p>Standard data deletion is a liability. We implement <b>Active Decay</b>: a forensic scrubbing protocol that overwrites expired records with random noise ([PURGED]) followed by a physical database <b>VACUUM</b>. Server-side, undelivered data is physically purged via a mandatory <b>7-day TTL index</b>.</p>
 
         <h2>4. Deniable Sovereignty (The Duress Alibi)</h2>
-        <p>Digital encryption is useless without physical protection. Our <b>Duress Protocol</b> allows a user to enter a secondary "Panic PIN" which triggers a silent, total forensic wipe of all keys and data. The application then displays a fake <b>503 Network Error</b>, providing a credible technical alibi for an empty application state.</p>
+        <p>Digital security is useless without physical protection. Our <b>Duress Protocol</b> allows a user to enter a secondary "Panic PIN" which triggers a silent, total forensic wipe of all keys and data. The application then displays a fake <b>503 Network Error</b>, providing a credible technical alibi for an empty application state.</p>
 
         <h2>5. Cryptographic Ratcheting</h2>
         <p>Every communication is sealed via the <b>Signal Protocol</b>. The Double Ratchet algorithm provides <b>Perfect Forward Secrecy (PFS)</b>, ensuring that the compromise of a single message key cannot reveal the history of the conversation.</p>
