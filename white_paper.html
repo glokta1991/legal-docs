@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://glokta1991.github.io/legal-docs/white_paper.html">
     <meta property="og:title" content="The Ghost Protocol | SecureMessenger White Paper">
-    <meta property="og:description" content="An architecture of Technical Surrender. Exploring the forensic and cryptographic standards of SecureMessenger.">
+    <meta property="og:description" content="Architecture of Technical Surrender. A forensic-grade, zero-knowledge communication standard.">
     <meta property="og:image" content="https://glokta1991.github.io/legal-docs/logo.png">
 
     <!-- Twitter -->
@@ -20,97 +20,26 @@
     <meta property="twitter:image" content="https://glokta1991.github.io/legal-docs/logo.png">
 
     <style>
-        body {
-            background-color: #EDE6D6;
-            color: #1a1a1a;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 900px;
-            background: #F5F1E8;
-            padding: 60px;
-            border: 1px solid #D2D2B4;
-            box-shadow: 15px 15px 0px rgba(0,0,0,0.05);
-        }
-        .header-branding {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .header-branding img {
-            max-width: 180px;
-            height: auto;
-            /* AI-FIX: Grayscale filter removed to restore logo color */
-        }
-        .contact-line {
-            margin-top: 15px;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-        }
-        .header-divider {
-            border-bottom: 2px solid #1a1a1a;
-            width: 60%;
-            margin: 20px auto;
-        }
-        h1 {
-            text-align: center;
-            font-size: 2.8em;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-            opacity: 0.8;
-        }
-        h2 {
-            color: #27ae60;
-            border-left: 6px solid #27ae60;
-            padding-left: 15px;
-            margin-top: 50px;
-            text-transform: uppercase;
-            font-size: 1.4em;
-        }
-        .abstract {
-            background: #EDE6D6;
-            padding: 30px;
-            font-style: italic;
-            border: 1px solid #D2D2B4;
-            margin-bottom: 40px;
-        }
-        .warning-box {
-            color: #e74c3c;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            border: 2px dashed #e74c3c;
-            padding: 20px;
-            margin: 40px 0;
-        }
-        .status-footer {
-            margin-top: 80px;
-            text-align: center;
-            font-size: 0.9em;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border-top: 1px solid #1a1a1a;
-            padding-top: 20px;
-        }
+        body { background-color: #EDE6D6; color: #1a1a1a; font-family: 'Georgia', serif; line-height: 1.6; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .container { max-width: 900px; background: #F5F1E8; padding: 60px; border: 1px solid #D2D2B4; box-shadow: 15px 15px 0px rgba(0,0,0,0.05); }
+        .header-branding { text-align: center; margin-bottom: 40px; }
+        .header-branding img { max-width: 180px; height: auto; }
+        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
+        .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
+        h1 { text-align: center; font-size: 2.5em; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 10px; }
+        .subtitle { text-align: center; font-size: 1.3em; font-weight: bold; letter-spacing: 2px; margin-bottom: 40px; opacity: 0.8; }
+        h2 { color: #27ae60; border-left: 6px solid #27ae60; padding-left: 15px; margin-top: 50px; text-transform: uppercase; font-size: 1.4em; }
+        h3 { font-size: 1.1em; margin-top: 25px; border-bottom: 1px solid #D2D2B4; display: inline-block; }
+        p, li { font-size: 1.05em; color: #333; }
+        ul { list-style-type: square; padding-left: 20px; }
+        li { margin-bottom: 15px; }
+        .warning-box { color: #e74c3c; font-weight: bold; text-transform: uppercase; text-align: center; border: 2px dashed #e74c3c; padding: 20px; margin: 40px 0; }
+        .status-footer { margin-top: 80px; text-align: center; font-size: 0.9em; font-weight: bold; letter-spacing: 1px; border-top: 1px solid #1a1a1a; padding-top: 20px; }
+        .tech-summary { background: #EDE6D6; padding: 30px; border: 1px solid #D2D2B4; margin-top: 40px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Official Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
@@ -119,29 +48,61 @@
             <div class="header-divider"></div>
         </div>
 
-        <h1>The Ghost Protocol</h1>
+        <h1>SecureMessenger: Technical Whitepaper</h1>
         <div class="subtitle">Architecture of Technical Surrender</div>
-
-        <div class="abstract">
-            <strong>Abstract:</strong> This white paper defines the formal architectural standards of SecureMessenger, a communication platform engineered for Technical Surrender. Unlike traditional "secure" messengers that retain the power to compromise users through metadata, key management, or forensic remnants, SecureMessenger is designed to be physically and technically incapable of betraying its users. By mathematically excluding the developer from the user's data lifecycle, we achieve a state of sovereign privacy.
-        </div>
 
         <div class="warning-box">GHOST PROTOCOL STATUS: ACTIVE & FORENSICALLY SILENT</div>
 
-        <h2>1. Identity Sovereignty (BIP39)</h2>
-        <p>Identities are generated locally using BIP39 Mnemonic Seeds (12 words). The developer has zero ability to reset passwords or recover identities.</p>
+        <h2>1. Identity & Network Architecture</h2>
+        <ul>
+            <li><strong>Decentralized Identity (BIP39):</strong> Identity is founded on a 12-word Mnemonic seed generated locally. The developer never has access to this seed or the resulting private keys.</li>
+            <li><strong>Blind Relay (HMAC Routing):</strong> Backend is a stateless "dumb" relay. Usernames are hashed locally via HMAC-SHA256 with quantum-hardened salts. The server knows "Packet A" goes to "Queue B" but has no link to real identity.</li>
+            <li><strong>Zero-Discovery (Direct-Dial):</strong> Global user lists are destroyed. Search is exact-match only, preventing social graph enumeration.</li>
+            <li><strong>Protocol Self-Healing:</strong> Automated handshakes silently re-negotiate secure tunnels if a session mismatch is detected, ensuring "Invisible Security."</li>
+        </ul>
 
-        <h2>2. The Blind Relay (Network)</h2>
-        <p>The backend acts as a Volatile Relay. We use 512-bit Quantum-Hardened salts for Routing ID hashes. Messages vanish from memory upon delivery without touching the server's disk.</p>
+        <h2>2. At-Rest & Persistence Security</h2>
+        <ul>
+            <li><strong>Encrypted Vault (SQLCipher):</strong> Local storage is protected by AES-256 byte-level encryption, accessible only via hardware-backed keys.</li>
+            <li><strong>Header Kill-Switch (Scorched Earth):</strong> Pre-Init audit physically destroys the database if a plaintext header or identity mismatch is detected.</li>
+            <li><strong>Active Data Decay:</strong> Messages are tagged with timestamps. A background engine overwrites expired data with random noise before physical purging.</li>
+            <li><strong>Local Identity Map:</strong> Human-readable names exist only on the user's encrypted disk; the server only processes "User_xxxx" placeholders.</li>
+        </ul>
 
-        <h2>3. Cryptographic Ratcheting</h2>
-        <p>Utilizes the Signal Protocol. Double Ratchet ensures Perfect Forward Secrecy (PFS) for every individual message.</p>
+        <h2>3. Forensic & Memory Hardening</h2>
+        <ul>
+            <li><strong>Zero-String Policy:</strong> Database passphrases are handled exclusively as ByteArrays to avoid the immutable Java String Pool.</li>
+            <li><strong>RAM Sanitization:</strong> Arrays.fill(key, 0.toByte()) scrubs sensitive keys from RAM the millisecond the handshake is complete.</li>
+            <li><strong>TEE-Bound Security:</strong> Master keys are physically wrapped by the Secure Element (SE/TEE). Biometric signatures are required to unlock the vault for a narrow window.</li>
+            <li><strong>Cloud Cord Cut (P2P Avatars):</strong> Profile pictures are shared strictly Peer-to-Peer as Base64 blobs inside the encrypted Signal envelope.</li>
+        </ul>
 
-        <h2>4. Active Decay (Forensics)</h2>
-        <p>Forensic Scrubbing overwrites expired records with [PURGED] bytes followed by a physical database VACUUM to erase traces from storage.</p>
+        <h2>4. Lifecycle & Physical Guarding</h2>
+        <ul>
+            <li><strong>Screen Privacy:</strong> Enforces FLAG_SECURE to block screenshots and masks app content in the Android task switcher.</li>
+            <li><strong>Dual-Path Logout:</strong>
+                <ul>
+                    <li><em>Nuclear (Secure Wipe):</em> Total forensic destruction of all local keys and tables.</li>
+                    <li><em>Standard:</em> Session lock that preserves Identity Keys while scrubbing RAM.</li>
+                </ul>
+            </li>
+            <li><strong>Client-Side Metadata Guard:</strong> Masked WebSocket URLs and redacted logs prevent metadata capture by the OS or server.</li>
+        </ul>
 
-        <h2>5. Deniable Sovereignty (Duress)</h2>
-        <p>A secondary Panic PIN triggers a silent, total forensic wipe of all keys and data, displaying a fake 503 Network Error as an alibi.</p>
+        <div class="tech-summary">
+            <h3>Android Agent Technical Summary</h3>
+            <p>The development process followed a "Total Hardening" philosophy, moving beyond standard commercial encryption toward forensic silence.</p>
+            <p><strong>Technical Breakthroughs:</strong></p>
+            <ol>
+                <li><strong>Wrapped Key Solution:</strong> Architected a non-exportable wrapper that remains accessible to the SQLCipher driver.</li>
+                <li><strong>Identity Recovery Discovery:</strong> Local social graph reconstruction maintains UX while keeping the server "blind."</li>
+                <li><strong>Encrypted Profile Handshake:</strong> Optimized Base64 injection into the Signal Protocol Double Ratchet envelope.</li>
+            </ol>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; font-style: italic;">
+            "SecureMessenger does not ask for the user's trust; it makes trust irrelevant through technical surrender."
+        </p>
 
         <div class="status-footer">
             SECUREMESSENGER 1.0 | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
