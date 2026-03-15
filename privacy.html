@@ -7,55 +7,24 @@
     <style>
         /* MOBILE-FIRST LAYOUT FIX */
         * { box-sizing: border-box; }
-        
-        body { 
-            background-color: #EDE6D6; 
-            margin: 0; 
-            padding: 20px; 
-            display: flex; 
-            justify-content: center; 
-            font-family: 'Georgia', serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-        }
-
-        .document-container { 
-            background-color: #ffffff;
-            width: 100%;
-            max-width: 850px; 
-            padding: 50px 40px; 
-            border: 1px solid #D2D2B4; 
-            border-radius: 4px;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
-            overflow-wrap: break-word;
-            margin: 0 auto;
-        }
-
+        body { background-color: #EDE6D6; margin: 0; padding: 20px; display: flex; justify-content: center; font-family: 'Georgia', serif; line-height: 1.7; color: #1a1a1a; }
+        .document-container { background-color: #ffffff; width: 100%; max-width: 850px; padding: 50px 40px; border: 1px solid #D2D2B4; border-radius: 4px; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); overflow-wrap: break-word; margin: 0 auto; }
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
         .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
         .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
-
-        h1 { text-align: center; font-size: 2.2em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; line-height: 1.2; }
-        h2 { color: #27ae60; border-left: 5px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.2em; }
-        
+        h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+        h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
         .nuclear-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #e74c3c; }
-        .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
-        
-        p, li { font-size: 1.05em; color: #222; text-align: justify; }
         ul { padding-left: 20px; }
         li { margin-bottom: 12px; }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8em; }
-            .document-container { padding: 30px 20px; }
-            body { padding: 10px; }
-        }
+        .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
+        .compliance-footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid #1a1a1a; text-align: center; font-size: 0.85em; }
+        @media (max-width: 600px) { h1 { font-size: 1.8em; } .document-container { padding: 30px 20px; } body { padding: 10px; } }
     </style>
 </head>
 <body>
     <div class="document-container">
-        <!-- Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
@@ -67,24 +36,30 @@
         <h1>Privacy Policy & Legal Framework</h1>
         <p style="text-align: center;"><strong>Effective Date: March 15, 2026</strong></p>
 
-        <div class="nuclear-notice">
-            TECHNICAL SURRENDER ACTIVE. ZERO DEVELOPER VISIBILITY.
-        </div>
+        <div class="nuclear-notice">TECHNICAL SURRENDER ACTIVE. ZERO DEVELOPER VISIBILITY.</div>
 
         <h2>1. GDPR Article 11 Processing</h2>
-        <p>In accordance with <span class="legal-ref">Art. 11 GDPR</span>, SecureMessenger is designed for anonymity. We are not required to identify natural persons to satisfy data subject rights. We do not collect names, phone numbers, or emails. Because we cannot identify you, we cannot fulfill "Right to Access" requests unless you provide your private keys—which we never possess.</p>
+        <p>In accordance with <span class="legal-ref">Art. 11 GDPR</span>, SecureMessenger is designed for anonymity. We are not required to identify natural persons to satisfy data subject rights. We do not collect names, phone numbers, or emails.</p>
 
-        <h2>2. German TDDDG Compliance</h2>
-        <p>Pursuant to <span class="legal-ref">§ 25 TDDDG</span>, we do not store or access information on your terminal equipment that is not strictly necessary for the technical provision of the messaging service. Zero tracking cookies are used. Local storage is strictly functional and encrypted.</p>
+        <h2>2. Right to Erasure (Art. 17 GDPR)</h2>
+        <p>Users may exercise their Right to Erasure at any time. We provide two distinct technical methods:</p>
+        <ul>
+            <li><strong>The Administrative Exit:</strong> Via the 'Terminate Contract' button in Settings, which ends the legal relationship and forensically wipes all local data.</li>
+            <li><strong>The Emergency Exit:</strong> Via the Secondary Password (Duress Protocol), which silently incinerates data for physical protection.</li>
+        </ul>
+        <p>Both methods ensure that no personal data or metadata remains on the device or our volatile relay. This process is <strong>instantaneous and irreversible</strong>.</p>
 
-        <h2>3. Rights of the Data Subject (Art. 15-21 GDPR)</h2>
-        <p>You have the right to access, rectification, and erasure of your data. Due to our Zero-Knowledge architecture, the <strong>Scorched Earth Protocol</strong> within the app serves as your primary tool to exercise your Right to Erasure (<span class="legal-ref">Art. 17</span>) instantly and locally.</p>
+        <h2>3. Data Retention & Volatility</h2>
+        <p>Our protocol follows a 'Strict Deletion' principle. Undelivered messages expire after 7 days on the server hardware. We do not maintain backups, logs, or shadow copies of any communications.</p>
 
-        <h2>4. Data Protection Officer</h2>
+        <h2>4. Data Protection Officer (DPO)</h2>
         <p>Given the zero-data nature of our processing, a formal DPO is not required under <span class="legal-ref">Art. 37 GDPR</span>. All inquiries should be directed to the official contact listed above.</p>
 
-        <div style="margin-top: 80px; text-align: center; font-size: 1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px;">
-            Status: GHOST PROTOCOL ACTIVE. 🐻💖M
+        <div class="compliance-footer">
+            <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br>
+            <strong>Jurisdiction:</strong> German BGB & TDDDG Framework applied.<br>
+            <strong>Last Verification:</strong> March 15, 2026.<br><br>
+            <strong>Status: GHOST PROTOCOL ACTIVE. 🐻💖M</strong>
         </div>
     </div>
 </body>
