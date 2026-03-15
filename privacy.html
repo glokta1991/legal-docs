@@ -5,38 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - SecureMessenger</title>
     <style>
+        /* MOBILE-FIRST LAYOUT FIX */
         * { box-sizing: border-box; }
+        
         body { 
             background-color: #EDE6D6; 
             margin: 0; 
             padding: 20px; 
             display: flex; 
             justify-content: center; 
-            font-family: 'Georgia', serif; 
-            line-height: 1.7; 
-            color: #1a1a1a; 
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #1a1a1a;
         }
+
         .document-container { 
-            background-color: #ffffff; 
-            width: 100%; 
+            background-color: #ffffff;
+            width: 100%;
             max-width: 850px; 
-            padding: 40px 30px; 
+            padding: 50px 40px; 
             border: 1px solid #D2D2B4; 
-            border-radius: 4px; 
+            border-radius: 4px;
             box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
-            margin: 0 auto; 
             overflow-wrap: break-word;
+            margin: 0 auto;
         }
+
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
         .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
-        h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
-        h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
+        .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
+
+        h1 { text-align: center; font-size: 2.2em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; line-height: 1.2; }
+        h2 { color: #27ae60; border-left: 5px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.2em; }
+        
         .nuclear-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #e74c3c; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 12px; }
         .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
         
+        p, li { font-size: 1.05em; color: #222; text-align: justify; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 12px; }
+
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; }
             .document-container { padding: 30px 20px; }
@@ -46,11 +55,13 @@
 </head>
 <body>
     <div class="document-container">
+        <!-- Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
-                OFFICIAL CONTACT: <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a;">securemessenger4U@proton.me</a>
+                OFFICIAL CONTACT: <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a; text-decoration: underline;">securemessenger4U@proton.me</a>
             </div>
+            <div class="header-divider"></div>
         </div>
 
         <h1>Privacy Policy & Legal Framework</h1>
@@ -61,13 +72,16 @@
         </div>
 
         <h2>1. GDPR Article 11 Processing</h2>
-        <p>Pursuant to <strong>Art. 11 GDPR</strong>, we are not required to identify natural persons. We do not collect names, phone numbers, or emails. Because we cannot identify you, we cannot fulfill "Right to Access" requests unless you provide your private keys—which we never possess.</p>
+        <p>In accordance with <span class="legal-ref">Art. 11 GDPR</span>, SecureMessenger is designed for anonymity. We are not required to identify natural persons to satisfy data subject rights. We do not collect names, phone numbers, or emails. Because we cannot identify you, we cannot fulfill "Right to Access" requests unless you provide your private keys—which we never possess.</p>
 
-        <h2>2. German TDDDG § 25 Compliance</h2>
-        <p>In accordance with <strong>§ 25 TDDDG</strong>, we do not store or access any information on your device that is not strictly necessary for the technical provision of the messaging service. Zero tracking cookies are used.</p>
+        <h2>2. German TDDDG Compliance</h2>
+        <p>Pursuant to <span class="legal-ref">§ 25 TDDDG</span>, we do not store or access information on your terminal equipment that is not strictly necessary for the technical provision of the messaging service. Zero tracking cookies are used. Local storage is strictly functional and encrypted.</p>
 
-        <h2>3. Mere Conduit (DSA Art. 4)</h2>
-        <p>SecureMessenger acts as a neutral relay under the Digital Services Act. We assume zero liability for transmitted content as we lack access to unencrypted data.</p>
+        <h2>3. Rights of the Data Subject (Art. 15-21 GDPR)</h2>
+        <p>You have the right to access, rectification, and erasure of your data. Due to our Zero-Knowledge architecture, the <strong>Scorched Earth Protocol</strong> within the app serves as your primary tool to exercise your Right to Erasure (<span class="legal-ref">Art. 17</span>) instantly and locally.</p>
+
+        <h2>4. Data Protection Officer</h2>
+        <p>Given the zero-data nature of our processing, a formal DPO is not required under <span class="legal-ref">Art. 37 GDPR</span>. All inquiries should be directed to the official contact listed above.</p>
 
         <div style="margin-top: 80px; text-align: center; font-size: 1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px;">
             Status: GHOST PROTOCOL ACTIVE. 🐻💖M
