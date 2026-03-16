@@ -4,7 +4,7 @@
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - SecureMessenger</title>
     <style>
-        /* MOBILE-FIRST LAYOUT FIX */
+        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
         
         body { 
@@ -60,49 +60,69 @@
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
-                POINT OF CONTACT (DSA ART. 12): <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a; text-decoration: underline;">securemessenger4U@proton.me</a>
+                OFFICIAL POINT OF CONTACT (DSA): <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a; text-decoration: underline;">securemessenger4U@proton.me</a>
             </div>
             <div class="header-divider"></div>
         </div>
 
-        <h1>Terms of Service</h1>
-        <p style="text-align: center;"><strong>Last Updated: March 15, 2026</strong></p>
+        <h1>Terms of Service: SecureMessenger (v5.7)</h1>
+        <p style="text-align: center;"><strong>Last Updated: March 16, 2026</strong></p>
 
         <div class="nuclear-notice">
-            Zero-Knowledge utility: Technical Surrender Active.
+            Zero-Knowledge Utility: Technical Surrender Active.
         </div>
 
         <h2>1. Subject of Agreement & Technical Surrender</h2>
-        <p>SecureMessenger provides a decentralized, end-to-end encrypted communication utility. Under German law, this is a "Digital Product" (<span class="legal-ref">§ 327 BGB</span>). By using this service, you acknowledge the <strong>Doctrine of Inability</strong>: the Developer has no technical means to reset seeds, recover data, or intercept messages.</p>
-
-        <h2>2. Mere Conduit Status (DSA Art. 4)</h2>
-        <p>SecureMessenger acts strictly as a "Mere Conduit" relay. We do not initiate transmissions, select receivers, or modify information. Under the <strong>EU Digital Services Act</strong>, we assume zero liability for transmitted content.</p>
-
-        <h2>3. Limitation of Liability (German BGB Standards)</h2>
-        <p>In accordance with <span class="legal-ref">§ 307-309 BGB</span>:</p>
+        <p>SecureMessenger provides a decentralized, end-to-end encrypted (E2EE) communication utility. Under German law, this is a "Digital Product" (<span class="legal-ref">§ 327 BGB</span>).</p>
         <ul>
-            <li><strong>Unlimited Liability:</strong> Only for damages resulting from injury to life, body, or health, or cases of gross negligence.</li>
-            <li><strong>Limited Liability:</strong> For simple negligence, the Developer is only liable if an "essential contractual obligation" (<span class="legal-ref">Kardinalpflicht</span>) is breached.</li>
-            <li><strong>Data Loss:</strong> We are NOT liable for data loss caused by your failure to secure the 12-word seed or your use of the Duress/Termination wipe features.</li>
+            <li><strong>The Doctrine of Inability:</strong> By using this service, you acknowledge that the Developer (Provider) has no technical means to reset seeds, recover data, or intercept messages.</li>
+            <li><strong>Self-Custody:</strong> You are the sole custodian of your private keys and 12-word recovery seed. The Provider cannot recover access to your identity once the local database is lost or wiped.</li>
         </ul>
 
-        <h2>4. Warranty & Updates (§ 327f BGB)</h2>
-        <p>We provide security updates to maintain protocol integrity. You are responsible for installing these updates. Statutory warranty rights (<span class="legal-ref">Mängelhaftung</span>) are limited by the technical nature of the architecture.</p>
-
-        <h2>5. Termination & Withdrawal (§ 312k BGB)</h2>
+        <h2>2. Mere Conduit Status & Intermediary Shield</h2>
+        <p>The Provider acts strictly as a "Mere Conduit" relay service under <span class="legal-ref">Art. 4 Digital Services Act (DSA)</span> and <span class="legal-ref">§ 7-10 DDG</span>.</p>
         <ul>
-            <li><strong>Termination:</strong> You may terminate this contract at any time by executing the <strong>'Terminate Contract'</strong> button in Settings.</li>
-            <li><strong>Withdrawal:</strong> Pursuant to <span class="legal-ref">§ 356a BGB</span>, your right of withdrawal expires once the forensic wipe is executed, as the contract data is then destroyed.</li>
+            <li><strong>Non-Intervention:</strong> The Provider does not initiate transmissions, select the recipients, or modify the encrypted information.</li>
+            <li><strong>Zero Liability for Content:</strong> Pursuant to <span class="legal-ref">Art. 4-6 DSA</span>, the Provider assumes zero liability for the content transmitted through the relay.</li>
+            <li><strong>Notice & Action:</strong> While the Provider cannot view content, it will comply with legally binding German court orders to block specific Routing IDs (HMAC-SHA256) from accessing the relay server to prevent the further dissemination of illegal content.</li>
         </ul>
 
-        <h2>6. Dispute Resolution (ODR)</h2>
-        <p>The EU Commission provides a platform for out-of-court dispute resolution: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>.</p>
+        <h2>3. Limitation of Liability (§ 307-309 BGB)</h2>
+        <p>In accordance with German BGB standards for General Terms and Conditions (AGB):</p>
+        <ul>
+            <li><strong>Unlimited Liability:</strong> Only applies to damages resulting from injury to life, body, or health, or cases of intent or gross negligence.</li>
+            <li><strong>Simple Negligence:</strong> For simple negligence, the Provider is only liable if a "Kardinalpflicht" (essential contractual obligation) is breached. In such cases, liability is limited to typical, foreseeable damages.</li>
+            <li><strong>Scorched Earth Clause:</strong> The Provider is not liable for data loss caused by the user’s failure to secure their seed or the intentional execution of the Duress/Termination forensic wipe features.</li>
+        </ul>
+
+        <h2>4. Data Portability & The EU Data Act (2025/26)</h2>
+        <p>In compliance with the EU Data Act and <span class="legal-ref">Art. 20 GDPR</span>, SecureMessenger provides a "Portable Ghost" export feature.</p>
+        <ul>
+            <li><strong>Portability:</strong> Users may export their technical identity bundle (Routing ID, Contact List, Identity Epoch) at any time.</li>
+            <li><strong>Interoperability:</strong> This export is provided in a common, machine-readable JSON format to facilitate the transition between terminal devices or compatible protocols.</li>
+        </ul>
+
+        <h2>5. Statutory Warranty & Updates (§ 327f BGB)</h2>
+        <ul>
+            <li><strong>Maintenance:</strong> The Provider will provide "Security Updates" necessary to keep the digital product in conformity with the contract.</li>
+            <li><strong>User Duty:</strong> You are responsible for installing updates within a reasonable timeframe. The Provider is not liable for security breaches resulting from the use of outdated client versions.</li>
+        </ul>
+
+        <h2>6. Termination, Withdrawal & Erasure (§ 312k, § 356a BGB)</h2>
+        <ul>
+            <li><strong>Termination:</strong> You may terminate this contract at any time via the "Terminate Contract" button.</li>
+            <li><strong>Forensic Withdrawal:</strong> Pursuant to <span class="legal-ref">§ 356a BGB</span>, your right of withdrawal expires once the "Scorched Earth" forensic wipe is executed, as the digital service is fully rendered and the contract data is destroyed.</li>
+            <li><strong>Right to Erasure:</strong> Termination results in the immediate, atomic incineration of your Routing ID on the relay server and the permanent deletion of local data.</li>
+        </ul>
+
+        <h2>7. Dispute Resolution</h2>
+        <p>The EU Commission provides a platform for out-of-court dispute resolution: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. The place of jurisdiction for all disputes is the registered seat of the Provider in Germany.</p>
 
         <div class="compliance-footer">
             <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br>
             <strong>Jurisdiction:</strong> German BGB & TDDDG Framework applied.<br>
-            <strong>Last Verification:</strong> March 15, 2026.<br><br>
-            <strong>Status: GHOST PROTOCOL ACTIVE. 🐻💖M</strong>
+            <strong>Last Verification:</strong> March 16, 2026.<br><br>
+            <strong>Status: GHOST PROTOCOL ACTIVE. 🛡️🚀🐻</strong>
         </div>
     </div>
 </body>
