@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Privacy Policy - SecureMessenger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SecureMessenger</title>
     <style>
         /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
@@ -103,8 +104,8 @@
             <strong lang="en">Status: GHOST PROTOCOL ACTIVE | ZERO-KNOWLEDGE ARCHITECTURE</strong>
             <strong lang="de">Status: GHOST-PROTOKOLL AKTIV | ZERO-KNOWLEDGE-ARCHITEKTUR</strong><br>
             
-            <span lang="en">Effective Date: March 27, 2026</span>
-            <span lang="de">Gültigkeitsdatum: 27. März 2026</span><br>
+            <span lang="en">Effective Date: March 28, 2026</span>
+            <span lang="de">Gültigkeitsdatum: 28. März 2026</span><br>
             
             <span lang="en">Jurisdiction: Federal Republic of Germany (BGB, DDG, TDDDG)</span>
             <span lang="de">Gerichtsstand: Bundesrepublik Deutschland (BGB, DDG, TDDDG)</span>
@@ -147,19 +148,19 @@
             <span lang="de">Um die Anforderungen von <span class="legal-ref">Art. 5 DSGVO</span> (Integrität und Vertraulichkeit) zu erfüllen, sind folgende Protokolle aktiv:</span>
         </p>
         <ul>
-            <li><strong><span lang="en">Metadata Sterilization:</span><span lang="de">Metadaten-Sterilisierung:</span></strong> <span lang="en">The service automatically strips all non-routing metadata (e.g., original filenames, device identifiers, and MIME types). All attachments are stored as anonymized, encrypted binary blobs (application/octet-stream).</span><span lang="de">Der Dienst entfernt automatisch alle Nicht-Routing-Metadaten (z. B. ursprüngliche Dateinamen, Gerätekennungen und MIME-Typen). Alle Anhänge werden als anonymisierte, verschlüsselte Binärobjekte gespeichert.</span></li>
+            <li><strong><span lang="en">Metadata Sterilization:</span><span lang="de">Metadaten-Sterilisierung:</span></strong> <span lang="en">The service automatically strips all non-routing metadata (e.g., original filenames and device identifiers). Media captured via the integrated "Ghost Capture" pipeline is locally scrubbed of EXIF data (GPS, model, timestamps) before encryption.</span><span lang="de">Der Dienst entfernt automatisch alle Nicht-Routing-Metadaten (z. B. ursprüngliche Dateinamen und Gerätekennungen). Über die integrierte „Ghost Capture“-Pipeline aufgenommene Medien werden vor der Verschlüsselung lokal von EXIF-Daten (GPS, Modell, Zeitstempel) befreit.</span></li>
             <li><strong><span lang="en">Traffic Analysis Protection:</span><span lang="de">Schutz vor Verkehrsanalyse:</span></strong> <span lang="en">The client implements automated Traffic Padding and Synthetic Noise Injection to prevent network-level observers from analyzing packet sizes or transmission frequency.</span><span lang="de">Der Client implementiert automatisiertes Traffic-Padding und synthetische Rauschinjektion, um zu verhindern, dass Beobachter auf Netzwerkebene Paketgrößen oder Übertragungsfrequenzen analysieren.</span></li>
             <li><strong><span lang="en">Ephemeral Persistence (TTL):</span><span lang="de">Ephemere Persistenz (TTL):</span></strong> <span lang="en">All relayed data is subject to a 24-hour Time-To-Live (TTL) index. After 24 hours, all binary blobs are physically destroyed from the infrastructure. No backups or archives are maintained.</span><span lang="de">Alle weitergeleiteten Daten unterliegen einem 24-Stunden-Time-To-Live (TTL)-Index. Nach 24 Stunden werden alle Binärobjekte physisch aus der Infrastruktur gelöscht. Es werden keine Backups oder Archive unterhalten.</span></li>
         </ul>
 
-        <h2>4. TDDDG & <span lang="en">Cookies</span><span lang="de">Cookie-Richtlinie</span></h2>
+        <h2>4. TDDDG & <span lang="en">Terminal Sovereignty</span><span lang="de">Endgeräte-Souveränität</span></h2>
         <p>
-            <span lang="en">Pursuant to <span class="legal-ref">§ 25 TDDDG</span>, this application does not utilize tracking cookies, browser fingerprinting, or any terminal-access technology for user profiling.</span>
-            <span lang="de">Gemäß <span class="legal-ref">§ 25 TDDDG</span> nutzt diese Anwendung keine Tracking-Cookies, Browser-Fingerprinting oder andere Technologien zum Zugriff auf Endgeräte für das User-Profiling.</span>
+            <span lang="en">Pursuant to <span class="legal-ref">§ 25 TDDDG</span>, terminal equipment access is strictly limited:</span>
+            <span lang="de">Gemäß <span class="legal-ref">§ 25 TDDDG</span> ist der Zugriff auf Endeinrichtungen streng begrenzt:</span>
         </p>
         <ul>
-            <li><strong><span lang="en">Strict Necessity:</span><span lang="de">Unbedingte Erforderlichkeit:</span></strong> <span lang="en">Local storage (SQLCipher AES-256) is used exclusively for information strictly necessary for the technical provision of the messaging service requested by the user (<span class="legal-ref">§ 25 para. 2 No. 2 TDDDG</span>).</span><span lang="de">Die lokale Speicherung (SQLCipher AES-256) erfolgt ausschließlich für Informationen, die für die technische Bereitstellung des vom Nutzer ausdrücklich gewünschten Telemediendienstes unbedingt erforderlich sind (<span class="legal-ref">§ 25 Abs. 2 Nr. 2 TDDDG</span>).</span></li>
-            <li><strong><span lang="en">Terminal Sovereignty:</span><span lang="de">Endgeräte-Souveränität:</span></strong> <span lang="en">Local database security is further hardened by hardware-level isolation; encryption keys are generated and stored within the device's hardware-backed Trusted Execution Environment (TEE/SE), ensuring they remain under the user's exclusive physical control and are inaccessible to the service provider.</span><span lang="de">Die Sicherheit der lokalen Datenbank wird durch Hardware-Isolierung verstärkt; Verschlüsselungsschlüssel werden innerhalb der hardwaregestützten Trusted Execution Environment (TEE/SE) des Geräts generiert und gespeichert. Dies stellt sicher, dass sie unter der exklusiven physischen Kontrolle des Nutzers bleiben und für den Diensteanbieter unzugänglich sind.</span></li>
+            <li><strong><span lang="en">Terminal Access (Camera & Microphone):</span><span lang="de">Endgerätezugriff (Kamera & Mikrofon):</span></strong> <span lang="en">Access to the terminal equipment's camera and microphone is strictly user-initiated. No data is processed for biometric identification. Media is processed locally on the device to strip metadata and is stored in a volatile internal cache for the purpose of technical transmission only. This access is strictly necessary for the provision of the requested messaging service pursuant to <span class="legal-ref">§ 25 para. 2 No. 2 TDDDG</span>.</span><span lang="de">Der Zugriff auf Kamera und Mikrofon des Endgeräts erfolgt ausschließlich nutzerinitiiert. Es werden keine Daten zur biometrischen Identifizierung verarbeitet. Medien werden lokal auf dem Gerät verarbeitet, um Metadaten zu entfernen, und in einem flüchtigen internen Cache ausschließlich zum Zwecke der technischen Übermittlung gespeichert. Dieser Zugriff ist für die Bereitstellung des gewünschten Messaging-Dienstes gemäß <span class="legal-ref">§ 25 Abs. 2 Nr. 2 TDDDG</span> unbedingt erforderlich.</span></li>
+            <li><strong><span lang="en">Cryptographic Hardening:</span><span lang="de">Kryptografische Härtung:</span></strong> <span lang="en">Encryption keys are generated and stored within the device's hardware-backed Trusted Execution Environment (TEE/SE), ensuring they remain under the user's exclusive physical control and are inaccessible to the service provider.</span><span lang="de">Verschlüsselungsschlüssel werden innerhalb der hardwaregestützten Trusted Execution Environment (TEE/SE) des Geräts generiert und gespeichert. Dies stellt sicher, dass sie unter der exklusiven physischen Kontrolle des Nutzers bleiben und für den Diensteanbieter unzugänglich sind.</span></li>
         </ul>
 
         <h2>5. Digital Services Act (DSA)</h2>
@@ -180,7 +181,7 @@
 
         <div class="compliance-footer">
             <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br>
-            <strong>Verification Date:</strong> March 27, 2026.<br><br>
+            <strong>Verification Date:</strong> March 28, 2026.<br><br>
             <strong>Status: GHOST PROTOCOL v5.9 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
         </div>
     </div>
