@@ -4,47 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecureMessenger | DSA Transparency Report</title>
-    <!-- CSS logic from previous mobile fix preserved -->
+    <style>
+        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
+        * { box-sizing: border-box; }
+        
+        body { 
+            background-color: #EDE6D6; 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: center; 
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+        }
+
+        .document-container { 
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 850px; 
+            padding: 50px 40px; 
+            border: 1px solid #D2D2B4; 
+            border-radius: 4px;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
+            overflow-wrap: break-word;
+            margin: 0 auto;
+        }
+
+        /* TRANSLATION TOGGLE STYLING */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .lang-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #1a1a1a;
+            background: #fff;
+            transition: 0.2s;
+        }
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        /* Hiding logic based on html lang attribute */
+        html[lang="de"] [lang="en"] { display: none; }
+        html[lang="en"] [lang="de"] { display: none; }
+
+        .header-branding { text-align: center; margin-bottom: 40px; }
+        .header-branding img { max-width: 180px; height: auto; }
+        .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
+
+        h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+        h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
+        
+        table { width:100%; border-collapse: collapse; margin: 30px 0; }
+        th, td { padding: 12px; border: 1px solid #1a1a1a; text-align: left; }
+        th { background: #1a1a1a; color: #fff; border-color: #fff; }
+
+        .status-footer { margin-top: 80px; text-align: center; font-size: 1.1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6em; }
+            .document-container { padding: 30px 20px; }
+            body { padding: 10px; }
+        }
+    </style>
 </head>
 <body>
     <div class="document-container">
-        <!-- Header Branding -->
-        <h1>DSA Transparency Report (Annual)</h1>
-        <p><strong>Provider:</strong> SecureMessenger Protocol</p>
-        <p><strong>Reporting Period:</strong> Jan 1, 2025 – Dec 31, 2025 (and Q1 2026)</p>
-        <p><strong>Harmonized Template ID:</strong> DSA-REG-2024-TR</p>
-
-        <div class="data-block">
-            <table style="width:100%; border-collapse: collapse;">
-                <tr style="background:#1a1a1a; color:#fff;">
-                    <th style="padding:10px; border:1px solid #fff;">Category</th>
-                    <th style="padding:10px; border:1px solid #fff;">Metric</th>
-                </tr>
-                <tr>
-                    <td style="padding:10px; border:1px solid #1a1a1a;">Orders from Authorities (Art. 9)</td>
-                    <td style="padding:10px; border:1px solid #1a1a1a; text-align:center;">0</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px; border:1px solid #1a1a1a;">Notices from Users (Art. 16)</td>
-                    <td style="padding:10px; border:1px solid #1a1a1a; text-align:center;">0</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px; border:1px solid #1a1a1a;">Content Removal (Art. 15)</td>
-                    <td style="padding:10px; border:1px solid #1a1a1a; text-align:center;">0</td>
-                </tr>
-                <tr>
-                    <td style="padding:10px; border:1px solid #1a1a1a;">Median Time to Action</td>
-                    <td style="padding:10px; border:1px solid #1a1a1a; text-align:center;">N/A</td>
-                </tr>
-            </table>
+        
+        <div class="lang-switch">
+            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
         </div>
 
-        <h2>Statement of Reasons</h2>
-        <p>No content moderation is technically possible within the SecureMessenger ecosystem. All data is End-to-End Encrypted (E2EE) using the Signal Protocol. The developer possesses zero technical ability to intercept, view, or moderate unencrypted user content.</p>
+        <!-- Branding Header -->
+        <div class="header-branding">
+            <img src="logo.png" alt="SecureMessenger Logo">
+            <div class="header-divider"></div>
+        </div>
 
-        <div style="margin-top: 80px; text-align: center; font-size: 1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px;">
-            Status: GHOST PROTOCOL ACTIVE. 🐻💖M
+        <h1>
+            <span lang="en">DSA Transparency Report (Annual)</span>
+            <span lang="de">DSA-Transparenzbericht (Jährlich)</span>
+        </h1>
+        
+        <p>
+            <strong><span lang="en">Provider:</span><span lang="de">Anbieter:</span></strong> 
+            SecureMessenger Protocol (Technical Relay)
+        </p>
+        <p>
+            <strong><span lang="en">Reporting Period:</span><span lang="de">Berichtszeitraum:</span></strong> 
+            Jan 1, 2025 – Dec 31, 2025 (and Q1 2026)
+        </p>
+        <p>
+            <strong><span lang="en">Harmonized Template ID:</span><span lang="de">Dokumenten-ID:</span></strong> 
+            DSA-REG-2024-TR-v5.9
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th><span lang="en">Category</span><span lang="de">Kategorie</span></th>
+                    <th><span lang="en">Metric</span><span lang="de">Kennzahl</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span lang="en">Orders from Authorities (Art. 9)</span><span lang="de">Anordnungen von Behörden (Art. 9)</span></td>
+                    <td style="text-align:center;">0</td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Notices from Users (Art. 16)</span><span lang="de">Meldungen von Nutzern (Art. 16)</span></td>
+                    <td style="text-align:center;">0</td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Content Removal (Art. 15)</span><span lang="de">Inhaltsentfernung (Art. 15)</span></td>
+                    <td style="text-align:center;">0</td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Median Time to Action</span><span lang="de">Durchschnittliche Bearbeitungszeit</span></td>
+                    <td style="text-align:center;">N/A</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2><span lang="en">Statement of Reasons</span><span lang="de">Begründung</span></h2>
+        <p>
+            <span lang="en">No content moderation is technically possible within the SecureMessenger ecosystem. All data is End-to-End Encrypted (E2EE) using the Signal Protocol. Pursuant to the doctrine of <strong>Technical Nescience</strong>, the provider possesses zero technical ability to intercept, view, or moderate unencrypted user content. Consequently, the number of removal actions is zero.</span>
+            <span lang="de">Eine Inhaltsmoderation ist innerhalb des SecureMessenger-Ökosystems technisch nicht möglich. Alle Daten sind über das Signal-Protokoll Ende-zu-Ende verschlüsselt (E2EE). Gemäß der Doktrin der <strong>technischen Unkenntnis</strong> besitzt der Anbieter keinerlei technische Möglichkeiten, unverschlüsselte Nutzerinhalte abzufangen, einzusehen oder zu moderieren. Folglich liegt die Anzahl der Moderationsmaßnahmen bei Null.</span>
+        </p>
+
+        <div class="status-footer">
+            Status: GHOST PROTOCOL v5.9 ACTIVE. dQuantumBear 🛡️🚀Bear❤️M
         </div>
     </div>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-lang', lang);
+            updateButtons(lang);
+        }
+
+        function updateButtons(lang) {
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+        }
+
+        // Initialize from storage or default to DE
+        const savedLang = localStorage.getItem('preferred-lang') || 'de';
+        setLang(savedLang);
+    </script>
 </body>
 </html>
