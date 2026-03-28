@@ -4,69 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecureMessenger | Technical White Paper</title>
-
-    <!-- Open Graph / Social Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://glokta1991.github.io/legal-docs/white_paper.html">
-    <meta property="og:title" content="The Ghost Protocol | SecureMessenger White Paper">
-    <meta property="og:description" content="Architecture of Technical Surrender. A forensic-grade, zero-knowledge standard.">
-    <meta property="og:image" content="https://glokta1991.github.io/legal-docs/logo.png">
-
     <style>
-        /* UI FIX: Full Mobile Centering & Box Sizing */
         * { box-sizing: border-box; }
-        
-        body { 
-            background-color: #EDE6D6; 
-            color: #1a1a1a; 
-            font-family: 'Georgia', serif; 
-            line-height: 1.7; 
-            margin: 0; 
-            padding: 20px; 
-            display: flex; 
-            justify-content: center; 
-        }
-
-        .document-container { 
-            background-color: #ffffff; 
-            width: 100%; 
-            max-width: 850px; 
-            padding: 50px 40px; 
-            border: 1px solid #D2D2B4; 
-            border-radius: 4px;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
-            overflow-wrap: break-word;
-            margin: 0 auto;
-        }
-
+        body { background-color: #EDE6D6; color: #1a1a1a; font-family: 'Georgia', serif; line-height: 1.7; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .document-container { background-color: #ffffff; width: 100%; max-width: 850px; padding: 50px 40px; border: 1px solid #D2D2B4; border-radius: 4px; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); overflow-wrap: break-word; margin: 0 auto; }
+        .lang-switch { text-align: right; margin-bottom: 20px; font-family: 'Courier New', monospace; font-weight: bold; }
+        .lang-btn { cursor: pointer; padding: 5px 10px; border: 1px solid #1a1a1a; background: #fff; transition: 0.2s; }
+        .lang-btn.active { background: #1a1a1a; color: #fff; }
+        html[lang="de"] [lang="en"] { display: none; }
+        html[lang="en"] [lang="de"] { display: none; }
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
         .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
         .header-divider { border-bottom: 2px solid #1a1a1a; width: 40%; margin: 20px auto; }
-
         h1 { text-align: center; font-size: 2.2em; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 10px; line-height: 1.2; }
         .subtitle { text-align: center; font-size: 1.1em; font-weight: bold; letter-spacing: 2px; margin-bottom: 40px; opacity: 0.7; }
-        
         h2 { color: #27ae60; border-left: 6px solid #27ae60; padding-left: 15px; margin-top: 50px; text-transform: uppercase; font-size: 1.3em; }
-        
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
         ul { list-style-type: square; padding-left: 20px; }
         li { margin-bottom: 15px; }
-
         .warning-box { background: #1a1a1a; color: #fff; padding: 20px; margin: 40px 0; font-weight: bold; text-transform: uppercase; text-align: center; border: 2px solid #e74c3c; }
-        .tech-summary { background: #fdf6e3; padding: 30px; border: 1px solid #D2D2B4; margin-top: 40px; }
         .status-footer { margin-top: 80px; text-align: center; font-size: 1.1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px; }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8em; }
-            .document-container { padding: 40px 20px; }
-            body { padding: 10px; }
-        }
+        @media (max-width: 600px) { h1 { font-size: 1.8em; } .document-container { padding: 40px 20px; } body { padding: 10px; } }
     </style>
 </head>
 <body>
     <div class="document-container">
-        <!-- Official Branding Header -->
+        <div class="lang-switch">
+            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
+        </div>
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
@@ -74,62 +41,50 @@
             </div>
             <div class="header-divider"></div>
         </div>
-
-        <h1>Technical Whitepaper</h1>
-        <div class="subtitle">Architecture of Technical Surrender</div>
-
+        <h1><span lang="en">Technical Whitepaper</span><span lang="de">Technisches Whitepaper</span></h1>
+        <div class="subtitle"><span lang="en">Architecture of Technical Surrender</span><span lang="de">Architektur der technischen Kapitulation</span></div>
         <div class="warning-box">
-            Protocol Version: 5.9 | Status: Forensically Silent
+            <span lang="en">Protocol Version: 5.9 | Status: Forensically Silent</span>
+            <span lang="de">Protokoll-Version: 5.9 | Status: Forensisch Stumm</span>
         </div>
-
         <h2>Abstract</h2>
-        <p>This white paper defines the formal architectural standards of <strong>SecureMessenger</strong>, a communication platform engineered for <strong>Technical Surrender</strong>. By mathematically excluding the developer from the user's data lifecycle, we achieve a state of sovereign privacy. SecureMessenger satisfies the requirements of <strong>GDPR Article 11</strong>, the <strong>German TDDDG</strong>, and the <strong>Digital Services Act (DSA)</strong> by ensuring that no identifiable data is processed, stored, or accessible at any point in the relay chain.</p>
-
-        <h2>1. Identity & Zero-Knowledge Entry</h2>
-        <p>Identity is founded on <strong>BIP39 Mnemonic Entropy</strong>, removing the need for traditional user databases.</p>
+        <p>
+            <span lang="en">This white paper defines the formal architectural standards of <strong>SecureMessenger</strong>, a communication platform engineered for <strong>Technical Surrender</strong>. By mathematically excluding the developer from the user's data lifecycle, we achieve a state of sovereign privacy. SecureMessenger satisfies the requirements of <strong>GDPR Article 11</strong>, the <strong>German TDDDG</strong>, and the <strong>Digital Services Act (DSA)</strong>.</span>
+            <span lang="de">Dieses Whitepaper definiert die formalen Architekturstandards von <strong>SecureMessenger</strong>, einer Kommunikationsplattform, die auf <strong>technische Kapitulation</strong> ausgelegt ist. Durch den mathematischen Ausschluss des Entwicklers aus dem Datenlebenszyklus des Nutzers erreichen wir einen Zustand souveräner Privatsphäre. SecureMessenger erfüllt die Anforderungen der <strong>DSGVO Artikel 11</strong>, des deutschen <strong>TDDDG</strong> und des <strong>Digital Services Act (DSA)</strong>.</span>
+        </p>
+        <h2>1. <span lang="en">Identity & Zero-Knowledge Entry</span><span lang="de">Identität & Zero-Knowledge-Einstieg</span></h2>
         <ul>
-            <li><strong>Local Seed Generation:</strong> A 12-word recovery phrase is generated via 256-bit local entropy. This seed is the <i>only</i> source of truth and never leaves the device.</li>
-            <li><strong>PBKDF2 Hardening:</strong> Passwords and seeds are transformed via client-side PBKDF2 with 10,000 iterations. The server only receives a "Scrambled Fingerprint" for session authentication.</li>
-            <li><strong>HMAC-SHA256 Routing:</strong> Human usernames are hashed locally using a <strong>512-bit quantum-hardened salt</strong>. This deterministic hashing ensures that routing data is stripped of identifying characteristics upon arrival at the relay.</li>
+            <li><span lang="en"><strong>Local Seed Generation:</strong> A 12-word recovery phrase is generated via 256-bit local entropy. This seed is the <i>only</i> source of truth and never leaves the device.</span>
+            <span lang="de"><strong>Lokale Seed-Generierung:</strong> Eine 12-Wort-Wiederherstellungsphrase wird über lokale 256-Bit-Entropie generiert. Dieser Seed ist die <i>einzige</i> Quelle der Wahrheit und verlässt das Gerät nie.</span></li>
+            <li><span lang="en"><strong>HMAC-SHA256 Routing:</strong> Human usernames are hashed locally using a <strong>512-bit quantum-hardened salt</strong>. This deterministic hashing ensures that routing data is stripped of identifying characteristics upon arrival at the relay.</span>
+            <span lang="de"><strong>HMAC-SHA256 Routing:</strong> Benutzernamen werden lokal mit einem <strong>512-Bit-Quanten-gehärteten Salt</strong> gehasht. Dieses deterministische Hashing stellt sicher, dass Routing-Daten bei der Ankunft am Relay von identifizierenden Merkmalen befreit sind.</span></li>
         </ul>
-
-        <h2>2. Cryptographic Ratcheting (Signal Protocol)</h2>
-        <p>We utilize the <strong>Signal Double Ratchet</strong> for all End-to-End Encryption (E2EE), ensuring every message has its own unique, rotating key.</p>
+        <h2>2. <span lang="en">Cryptographic Ratcheting (Signal Protocol)</span><span lang="de">Kryptografisches Ratcheting (Signal-Protokoll)</span></h2>
         <ul>
-            <li><strong>Perfect Forward Secrecy (PFS):</strong> Encryption keys rotate every 48 hours via <strong>Signed PreKey Rotation</strong>. Compromising one key cannot decrypt past or future traffic.</li>
-            <li><strong>Automatic Repair Handshakes:</strong> If a device detects a session desync (e.g., identity reset), the client automatically triggers an <strong>Invisible Handshake</strong> to re-negotiate the secure tunnel instantly.</li>
-            <li><strong>PreKey Replenishment:</strong> The client monitors and replenishes server-side PreKey batches to maintain "Always-On" E2EE initialization.</li>
+            <li><span lang="en"><strong>Perfect Forward Secrecy (PFS):</strong> Encryption keys rotate every 48 hours via <strong>Signed PreKey Rotation</strong>. Compromising one key cannot decrypt past or future traffic.</span>
+            <span lang="de"><strong>Perfect Forward Secrecy (PFS):</strong> Verschlüsselungsschlüssel rotieren alle 48 Stunden über <strong>Signed PreKey Rotation</strong>. Die Kompromittierung eines Schlüssels kann weder vergangene noch zukünftige Verkehre entschlüsseln.</span></li>
+            <li><span lang="en"><strong>Auto-Repair Handshakes:</strong> If a device detects a session desync, the client automatically triggers an <strong>Invisible Handshake</strong> to re-negotiate the secure tunnel instantly.</span>
+            <span lang="de"><strong>Auto-Repair Handshakes:</strong> Wenn ein Gerät eine Sitzungs-Asynchronität feststellt, löst der Client automatisch einen <strong>unsichtbaren Handshake</strong> aus, um den sicheren Tunnel sofort neu auszuhandeln.</span></li>
         </ul>
-
-        <h2>3. Persistence & Database Hardening</h2>
-        <p>The device is a vault, not a witness. We implement <strong>SQLCipher AES-256</strong> byte-level encryption.</p>
+        <h2>3. <span lang="en">Persistence & Hardening</span><span lang="de">Persistenz & Härtung</span></h2>
         <ul>
-            <li><strong>Wrapped Key Solution:</strong> The master key is encrypted by a hardware-backed key anchored in the phone's <strong>Secure Element (TEE/SE)</strong>, ensuring the key cannot be extracted even with root access.</li>
-            <li><strong>RAM Sanitization:</strong> Master keys are handled as ByteArrays and physically zeroed out using <code>Arrays.fill()</code> the millisecond the database handshake completes.</li>
-            <li><strong>Scorched Earth Pre-Check:</strong> Upon startup, the app audits the database integrity. If a plaintext header or hash mismatch is detected, the file is physically destroyed before initialization.</li>
+            <li><span lang="en"><strong>Wrapped Key Solution:</strong> The master key is encrypted by a hardware-backed key anchored in the phone's <strong>Secure Element (TEE/SE)</strong>, ensuring the key cannot be extracted even with root access.</span>
+            <span lang="de"><strong>Wrapped Key Lösung:</strong> Der Hauptschlüssel wird durch einen hardwaregestützten Schlüssel verschlüsselt, der im <strong>Secure Element (TEE/SE)</strong> des Telefons verankert ist, sodass der Schlüssel selbst mit Root-Zugriff nicht extrahiert werden kann.</span></li>
         </ul>
-
-        <h2>4. Relay & Metadata Sterilization</h2>
-        <p>SecureMessenger implements a <strong>Blind Relay</strong> architecture to prevent metadata harvesting.</p>
-        <ul>
-            <li><strong>Metadata Stripping:</strong> The relay automatically strips all non-routing metadata, including original filenames and device identifiers. All attachments are stored as anonymized binary blobs.</li>
-            <li><strong>Traffic Analysis Protection:</strong> The client implements <strong>Synthetic Noise Injection</strong> and traffic padding to prevent network-level observers from analyzing transmission frequency or packet sizes.</li>
-            <li><strong>Ephemeral Persistence:</strong> All data is subject to a 24-hour <strong>Time-To-Live (TTL)</strong> index. After 24 hours, binary blobs are physically incinerated from the infrastructure.</li>
-        </ul>
-
-        <h2>5. Deniable Sovereignty (Duress Protocol)</h2>
-        <ul>
-            <li><strong>The Panic PIN:</strong> A secondary user-defined password that, if entered at login, triggers a silent, total forensic wipe of all keys, contacts, and messages.</li>
-            <li><strong>The 503 Alibi:</strong> Post-wipe, the app displays a fake <strong>"Network Error (503)"</strong> to provide a technical excuse for an empty vault during physical inspections.</li>
-            <li><strong>OS Shielding:</strong> <code>FLAG_SECURE</code> blocks screenshots, screen recording, and masks content in the Android task switcher.</li>
-        </ul>
-
-        <h2>6. Regulatory & Legal Framework</h2>
-        <p>Built on the legal doctrine of <strong>Compliance by Inability</strong>. Because we do not possess identities, keys, or logs, we are technically and legally excluded from the ability to fulfill data extraction or content moderation requests.</p>
-
+        <h2>4. <span lang="en">Active Decay (Forensic Destruction)</span><span lang="de">Aktiver Verfall (Forensische Zerstörung)</span></h2>
+        <p>
+            <span lang="en">Data is a toxic asset. We implement <strong>Active Decay</strong>: a forensic protocol where expired records are overwritten with random noise ([PURGED]) to fill SQLite free-lists before a hardware-level <strong>VACUUM</strong> is triggered.</span>
+            <span lang="de">Daten sind ein toxischer Vermögenswert. Wir implementieren <strong>Active Decay</strong>: ein forensisches Protokoll, bei dem abgelaufene Datensätze mit Zufallsrauschen ([PURGED]) überschrieben werden, um SQLite-Freilisten zu füllen, bevor ein Hardware-Level-<strong>VACUUM</strong> ausgelöst wird.</span>
+        </p>
         <div class="status-footer">
             Status: GHOST PROTOCOL v5.9 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M
         </div>
     </div>
+    <script>
+        function setLang(lang) { document.documentElement.lang = lang; localStorage.setItem('preferred-lang', lang); updateButtons(lang); }
+        function updateButtons(lang) { document.getElementById('btn-en').classList.toggle('active', lang === 'en'); document.getElementById('btn-de').classList.toggle('active', lang === 'de'); }
+        const savedLang = localStorage.getItem('preferred-lang') || 'de';
+        setLang(savedLang);
+    </script>
 </body>
 </html>
