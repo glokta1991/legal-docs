@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - SecureMessenger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Privacy Policy - SecureMessenger</title>
     <style>
         /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
@@ -31,6 +30,29 @@
             margin: 0 auto;
         }
 
+        /* TRANSLATION TOGGLE STYLING */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .lang-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #1a1a1a;
+            background: #fff;
+            transition: 0.2s;
+        }
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        /* Hiding logic based on html lang attribute */
+        html[lang="de"] [lang="en"] { display: none; }
+        html[lang="en"] [lang="de"] { display: none; }
+
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
         .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
@@ -57,6 +79,12 @@
 </head>
 <body>
     <div class="document-container">
+        
+        <div class="lang-switch">
+            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
+        </div>
+
         <!-- Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
@@ -66,77 +94,112 @@
             <div class="header-divider"></div>
         </div>
 
-        <h1>SecureMessenger: Privacy Policy & Legal Framework</h1>
+        <h1>
+            <span lang="en">Privacy Policy & Legal Framework</span>
+            <span lang="de">Datenschutzerklärung & Rechtlicher Rahmen</span>
+        </h1>
+        
         <p style="text-align: center;">
-            <strong>Status: GHOST PROTOCOL ACTIVE | ZERO-KNOWLEDGE ARCHITECTURE</strong><br>
-            <strong>Effective Date: March 27, 2026</strong><br>
-            <strong>Jurisdiction: Federal Republic of Germany (BGB, DDG, TDDDG)</strong>
+            <strong lang="en">Status: GHOST PROTOCOL ACTIVE | ZERO-KNOWLEDGE ARCHITECTURE</strong>
+            <strong lang="de">Status: GHOST-PROTOKOLL AKTIV | ZERO-KNOWLEDGE-ARCHITEKTUR</strong><br>
+            
+            <span lang="en">Effective Date: March 27, 2026</span>
+            <span lang="de">Gültigkeitsdatum: 27. März 2026</span><br>
+            
+            <span lang="en">Jurisdiction: Federal Republic of Germany (BGB, DDG, TDDDG)</span>
+            <span lang="de">Gerichtsstand: Bundesrepublik Deutschland (BGB, DDG, TDDDG)</span>
         </p>
 
         <div class="nuclear-notice">
-            TECHNICAL SHIELD ACTIVE | MERE CONDUIT PROTECTION ENABLED
+            <span lang="en">TECHNICAL SHIELD ACTIVE | MERE CONDUIT PROTECTION ENABLED</span>
+            <span lang="de">TECHNISCHER SCHUTZ AKTIV | MERE-CONDUIT-SCHUTZ AKTIVIERT</span>
         </div>
 
-        <h2>1. Impressum (German Legal Disclosure)</h2>
-        <p>Pursuant to <span class="legal-ref">§ 5 DDG</span> (Digital Services Act Implementation):</p>
+        <h2>1. Impressum</h2>
+        <p>
+            <span lang="en">Pursuant to <span class="legal-ref">§ 5 DDG</span> (Digital Services Act Implementation):</span>
+            <span lang="de">Gemäß <span class="legal-ref">§ 5 DDG</span> (Digitale-Dienste-Gesetz):</span>
+        </p>
         <ul>
-            <li><strong>Service Provider:</strong> [Your Full Name/Entity Name via Impressum-Privat-Schutz]</li>
-            <li><strong>Ladungsfähige Anschrift:</strong> [The Service Address provided by your Impressum provider]</li>
+            <li><strong><span lang="en">Service Provider:</span><span lang="de">Diensteanbieter:</span></strong> [Your Full Name/Entity Name via Impressum-Privat-Schutz]</li>
+            <li><strong><span lang="en">Ladungsfähige Anschrift:</span><span lang="de">Ladungsfähige Anschrift:</span></strong> [The Service Address provided by your Impressum provider]</li>
             <li><strong>Official Contact:</strong> securemessenger4U@proton.me</li>
-            <li><strong>Legal Nature:</strong> The Service Provider acts strictly as a Technical Intermediary (Mere Conduit) under <span class="legal-ref">§ 7-10 DDG</span>. The service does not initiate the transmission, does not select the receiver, and does not select or modify the information contained in the transmission. This service does not fall under editorial supervision according to <span class="legal-ref">§ 18 MStV</span>.</li>
+            <li>
+                <span lang="en"><strong>Legal Nature:</strong> The Service Provider acts strictly as a Technical Intermediary (Mere Conduit) under <span class="legal-ref">§ 7-10 DDG</span>. The service does not initiate the transmission, does not select the receiver, and does not select or modify the information contained in the transmission. This service does not fall under editorial supervision according to <span class="legal-ref">§ 18 MStV</span>.</span>
+                <span lang="de"><strong>Rechtliche Einordnung:</strong> Der Diensteanbieter agiert ausschließlich als technischer Mittler (Mere Conduit) gemäß <span class="legal-ref">§ 7-10 DDG</span>. Der Dienst veranlasst die Übermittlung nicht, wählt den Empfänger nicht aus und wählt oder verändert die übermittelten Informationen nicht. Dieser Dienst unterliegt nicht der redaktionellen Aufsicht gemäß <span class="legal-ref">§ 18 MStV</span>.</span>
+            </li>
         </ul>
 
-        <h2>2. GDPR Article 11 (Processing of Anonymous Data)</h2>
-        <p>In accordance with <span class="legal-ref">Art. 11 GDPR</span>, SecureMessenger is architected for total anonymity.</p>
+        <h2>2. GDPR / DSGVO Article 11</h2>
+        <p>
+            <span lang="en">In accordance with <span class="legal-ref">Art. 11 GDPR</span>, SecureMessenger is architected for total anonymity.</span>
+            <span lang="de">In Übereinstimmung mit <span class="legal-ref">Art. 11 DSGVO</span> ist SecureMessenger auf absolute Anonymität ausgelegt.</span>
+        </p>
         <ul>
-            <li><strong>No Identification:</strong> We do not collect, store, or process names, phone numbers, email addresses, or IP metadata.</li>
-            <li><strong>Blind-Relay Architecture:</strong> All routing data is stripped of identifying characteristics upon arrival. We do not maintain logs of "who talked to whom" or "when."</li>
-            <li><strong>Data Subject Rights:</strong> Because we are technically unable to identify natural persons, we cannot fulfill "Right to Access" or "Right to Portability" requests. To do so would require the collection of new personal data, which violates our core principle of data minimization (<span class="legal-ref">Art. 5 GDPR</span>).</li>
+            <li><strong><span lang="en">No Identification:</span><span lang="de">Keine Identifizierung:</span></strong> <span lang="en">We do not collect, store, or process names, phone numbers, email addresses, or IP metadata.</span><span lang="de">Wir erheben, speichern oder verarbeiten keine Namen, Telefonnummern, E-Mail-Adressen oder IP-Metadaten.</span></li>
+            <li><strong><span lang="en">Blind-Relay Architecture:</span><span lang="de">Blind-Relay-Architektur:</span></strong> <span lang="en">All routing data is stripped of identifying characteristics upon arrival. We do not maintain logs of "who talked to whom" or "when."</span><span lang="de">Alle Routing-Daten werden bei Ankunft von identifizierenden Merkmalen befreit. Wir führen keine Protokolle darüber, wer mit wem oder wann kommuniziert hat.</span></li>
+            <li><strong><span lang="en">Data Subject Rights:</span><span lang="de">Betroffenenrechte:</span></strong> <span lang="en">Because we are technically unable to identify natural persons, we cannot fulfill "Right to Access" or "Right to Portability" requests. To do so would require the collection of new personal data, which violates our core principle of data minimization (<span class="legal-ref">Art. 5 GDPR</span>).</span><span lang="de">Da wir technisch nicht in der Lage sind, natürliche Personen zu identifizieren, können wir Auskunfts- oder Übertragbarkeitsanfragen nicht erfüllen. Dies würde die Erhebung neuer personenbezogener Daten erfordern, was gegen unseren Grundsatz der Datenminimierung verstößt (<span class="legal-ref">Art. 5 DSGVO</span>).</span></li>
         </ul>
 
-        <h2>3. Forensic Data Minimization & Metadata Suppression</h2>
-        <p>To satisfy the requirements of <span class="legal-ref">Art. 5 GDPR</span> (Integrity and Confidentiality), the following protocols are active:</p>
+        <h2>3. <span lang="en">Forensic Data Minimization</span><span lang="de">Forensische Datenminimierung</span></h2>
+        <p>
+            <span lang="en">To satisfy the requirements of <span class="legal-ref">Art. 5 GDPR</span> (Integrity and Confidentiality), the following protocols are active:</span>
+            <span lang="de">Um die Anforderungen von <span class="legal-ref">Art. 5 DSGVO</span> (Integrität und Vertraulichkeit) zu erfüllen, sind folgende Protokolle aktiv:</span>
+        </p>
         <ul>
-            <li><strong>Metadata Sterilization:</strong> The service automatically strips all non-routing metadata (e.g., original filenames, device identifiers, and MIME types). All attachments are stored as anonymized, encrypted binary blobs (application/octet-stream).</li>
-            <li><strong>Traffic Analysis Protection:</strong> The client implements automated Traffic Padding and Synthetic Noise Injection to prevent network-level observers from analyzing packet sizes or transmission frequency.</li>
-            <li><strong>Ephemeral Persistence (TTL):</strong> All relayed data is subject to a 24-hour Time-To-Live (TTL) index. After 24 hours, all binary blobs are physically destroyed from the infrastructure. No backups or archives are maintained.</li>
+            <li><strong><span lang="en">Metadata Sterilization:</span><span lang="de">Metadaten-Sterilisierung:</span></strong> <span lang="en">The service automatically strips all non-routing metadata (e.g., original filenames, device identifiers, and MIME types). All attachments are stored as anonymized, encrypted binary blobs (application/octet-stream).</span><span lang="de">Der Dienst entfernt automatisch alle Nicht-Routing-Metadaten (z. B. ursprüngliche Dateinamen, Gerätekennungen und MIME-Typen). Alle Anhänge werden als anonymisierte, verschlüsselte Binärobjekte gespeichert.</span></li>
+            <li><strong><span lang="en">Traffic Analysis Protection:</span><span lang="de">Schutz vor Verkehrsanalyse:</span></strong> <span lang="en">The client implements automated Traffic Padding and Synthetic Noise Injection to prevent network-level observers from analyzing packet sizes or transmission frequency.</span><span lang="de">Der Client implementiert automatisiertes Traffic-Padding und synthetische Rauschinjektion, um zu verhindern, dass Beobachter auf Netzwerkebene Paketgrößen oder Übertragungsfrequenzen analysieren.</span></li>
+            <li><strong><span lang="en">Ephemeral Persistence (TTL):</span><span lang="de">Ephemere Persistenz (TTL):</span></strong> <span lang="en">All relayed data is subject to a 24-hour Time-To-Live (TTL) index. After 24 hours, all binary blobs are physically destroyed from the infrastructure. No backups or archives are maintained.</span><span lang="de">Alle weitergeleiteten Daten unterliegen einem 24-Stunden-Time-To-Live (TTL)-Index. Nach 24 Stunden werden alle Binärobjekte physisch aus der Infrastruktur gelöscht. Es werden keine Backups oder Archive unterhalten.</span></li>
         </ul>
 
-        <h2>4. German TDDDG Compliance & Zero-Cookie Policy</h2>
-        <p>Pursuant to <span class="legal-ref">§ 25 TDDDG</span>, this application does not utilize tracking cookies, browser fingerprinting, or any terminal-access technology for user profiling.</p>
+        <h2>4. TDDDG & <span lang="en">Cookies</span><span lang="de">Cookie-Richtlinie</span></h2>
+        <p>
+            <span lang="en">Pursuant to <span class="legal-ref">§ 25 TDDDG</span>, this application does not utilize tracking cookies, browser fingerprinting, or any terminal-access technology for user profiling.</span>
+            <span lang="de">Gemäß <span class="legal-ref">§ 25 TDDDG</span> nutzt diese Anwendung keine Tracking-Cookies, Browser-Fingerprinting oder andere Technologien zum Zugriff auf Endgeräte für das User-Profiling.</span>
+        </p>
         <ul>
-            <li><strong>Strict Necessity:</strong> Local storage (SQLCipher AES-256) is used exclusively for information strictly necessary for the technical provision of the messaging service requested by the user (<span class="legal-ref">§ 25 para. 2 No. 2 TDDDG</span>).</li>
-            <li><strong>Terminal Sovereignty:</strong> Local database security is further hardened by hardware-level isolation; encryption keys are generated and stored within the device's hardware-backed Trusted Execution Environment (TEE/SE), ensuring they remain under the user's exclusive physical control and are inaccessible to the service provider.</li>
-            <li><strong>No Consent Required:</strong> Because no non-essential data is accessed or stored on your terminal equipment, no cookie consent banner is legally required.</li>
+            <li><strong><span lang="en">Strict Necessity:</span><span lang="de">Unbedingte Erforderlichkeit:</span></strong> <span lang="en">Local storage (SQLCipher AES-256) is used exclusively for information strictly necessary for the technical provision of the messaging service requested by the user (<span class="legal-ref">§ 25 para. 2 No. 2 TDDDG</span>).</span><span lang="de">Die lokale Speicherung (SQLCipher AES-256) erfolgt ausschließlich für Informationen, die für die technische Bereitstellung des vom Nutzer ausdrücklich gewünschten Telemediendienstes unbedingt erforderlich sind (<span class="legal-ref">§ 25 Abs. 2 Nr. 2 TDDDG</span>).</span></li>
+            <li><strong><span lang="en">Terminal Sovereignty:</span><span lang="de">Endgeräte-Souveränität:</span></strong> <span lang="en">Local database security is further hardened by hardware-level isolation; encryption keys are generated and stored within the device's hardware-backed Trusted Execution Environment (TEE/SE), ensuring they remain under the user's exclusive physical control and are inaccessible to the service provider.</span><span lang="de">Die Sicherheit der lokalen Datenbank wird durch Hardware-Isolierung verstärkt; Verschlüsselungsschlüssel werden innerhalb der hardwaregestützten Trusted Execution Environment (TEE/SE) des Geräts generiert und gespeichert. Dies stellt sicher, dass sie unter der exklusiven physischen Kontrolle des Nutzers bleiben und für den Diensteanbieter unzugänglich sind.</span></li>
         </ul>
 
-        <h2>5. Digital Services Act (DSA) Intermediary Shield</h2>
-        <p>The provider operates as a "Mere Conduit" under the EU Digital Services Act.</p>
+        <h2>5. Digital Services Act (DSA)</h2>
         <ul>
-            <li><strong>Technical Nescience:</strong> Pursuant to <span class="legal-ref">Art. 4 DSA</span>, the provider maintains a state of technical ignorance regarding the content of transmissions. As a solo developer providing a neutral technical tool, the provider has no "actual knowledge" of illegal activity.</li>
-            <li><strong>Content Moderation:</strong> No content moderation is technically possible. All data is End-to-End Encrypted (E2EE) via the Signal Protocol.</li>
-            <li><strong>Order Compliance:</strong> Any restriction of a Routing ID (Public Key) following a valid court order from a German or EU authority will be documented. Note: The provider can only block an ID; it cannot recover or provide content.</li>
+            <li><strong><span lang="en">Technical Nescience:</span><span lang="de">Technische Unkenntnis:</span></strong> <span lang="en">Pursuant to Art. 4 DSA, the provider maintains a state of technical ignorance regarding the content of transmissions. As a solo developer providing a neutral technical tool, the provider has no "actual knowledge" of illegal activity.</span><span lang="de">Gemäß Art. 4 DSA bewahrt der Anbieter einen Zustand technischer Unkenntnis über die Inhalte der Übermittlungen. Als unabhängiger Entwickler eines neutralen technischen Werkzeugs hat der Anbieter keine „tatsächliche Kenntnis“ von rechtswidrigen Aktivitäten.</span></li>
+            <li><strong><span lang="en">Content Moderation:</span><span lang="de">Inhaltsmoderation:</span></strong> <span lang="en">No content moderation is technically possible. All data is End-to-End Encrypted (E2EE) via the Signal Protocol.</span><span lang="de">Eine Inhaltsmoderation ist technisch nicht möglich. Alle Daten sind über das Signal-Protokoll Ende-zu-Ende verschlüsselt (E2EE).</span></li>
         </ul>
 
-        <h2>6. Right to Erasure & Identity Death Protocols (Art. 17 GDPR)</h2>
-        <p>Users may exercise their "Right to be Forgotten" instantly and irreversibly through three built-in mechanisms:</p>
+        <h2>6. <span lang="en">Right to Erasure</span><span lang="de">Recht auf Löschung</span></h2>
+        <p>
+            <span lang="en">Users may exercise their "Right to be Forgotten" instantly through three built-in mechanisms:</span>
+            <span lang="de">Nutzer können ihr „Recht auf Vergessenwerden“ sofort über drei integrierte Mechanismen ausüben:</span>
+        </p>
         <ul>
-            <li><strong>Administrative Termination:</strong> Triggering "Terminate Account" in Settings initiates an immediate server-side record incineration.</li>
-            <li><strong>Identity Death Protocol:</strong> The server physically purges the user's Public Key bundle from the relay upon request. This "kills" the cryptographic identity on the network.</li>
-            <li><strong>Duress Protocol (Panic PIN):</strong> A secondary "Emergency Password" performs a forensic-level data wipe for immediate physical safety.</li>
+            <li><strong><span lang="en">Identity Death:</span><span lang="de">Identitäts-Tod:</span></strong> <span lang="en">The server physically purges the user's Public Key bundle from the relay upon request. This "kills" the cryptographic identity on the network.</span><span lang="de">Der Server löscht auf Anfrage das Public-Key-Bundle des Nutzers physisch aus dem Relay. Dies „tötet“ die kryptografische Identität im Netzwerk.</span></li>
+            <li><strong><span lang="en">Duress Protocol:</span><span lang="de">Notfall-Protokoll:</span></strong> <span lang="en">A secondary "Emergency Password" performs a forensic-level data wipe for immediate physical safety.</span><span lang="de">Ein sekundäres „Notfall-Passwort“ führt eine Datenlöschung auf forensischem Niveau für die unmittelbare physische Sicherheit durch.</span></li>
         </ul>
-        <p><em>Note: Once these protocols are triggered, data recovery is mathematically and forensically impossible.</em></p>
-
-        <h2>7. Liability & Technical Neutrality</h2>
-        <p>The provider offers a neutral, dual-use technical tool. The provider is not a "Telecommunications Service Provider" under <span class="legal-ref">§ 172 TKG</span>, as no contractual relationship or exchange of payment exists. The service is provided "as-is" to protect the fundamental rights to privacy and freedom of expression (<span class="legal-ref">Art. 5 GG</span>).</p>
-
-        <p>Any legal disputes shall be settled in the jurisdiction of the provider's registered seat.</p>
 
         <div class="compliance-footer">
             <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br>
             <strong>Verification Date:</strong> March 27, 2026.<br><br>
-            <strong>System Integrity: GHOST PROTOCOL v5.9 ACTIVE. dQuantumBear🛡️🚀🐻❤️M</strong>
+            <strong>Status: GHOST PROTOCOL v5.9 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
         </div>
     </div>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-lang', lang);
+            updateButtons(lang);
+        }
+
+        function updateButtons(lang) {
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+        }
+
+        // Initialize from storage or default to DE (given the jurisdiction)
+        const savedLang = localStorage.getItem('preferred-lang') || 'de';
+        setLang(savedLang);
+    </script>
 </body>
 </html>
