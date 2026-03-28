@@ -5,59 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - SecureMessenger</title>
     <style>
-        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
-        
-        body { 
-            background-color: #EDE6D6; 
-            margin: 0; 
-            padding: 20px; 
-            display: flex; 
-            justify-content: center; 
-            font-family: 'Georgia', serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-        }
-
-        .document-container { 
-            background-color: #ffffff;
-            width: 100%;
-            max-width: 850px; 
-            padding: 50px 40px; 
-            border: 1px solid #D2D2B4; 
-            border-radius: 4px;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
-            overflow-wrap: break-word;
-            margin: 0 auto;
-        }
-
+        body { background-color: #EDE6D6; margin: 0; padding: 20px; display: flex; justify-content: center; font-family: 'Georgia', serif; line-height: 1.7; color: #1a1a1a; }
+        .document-container { background-color: #ffffff; width: 100%; max-width: 850px; padding: 50px 40px; border: 1px solid #D2D2B4; border-radius: 4px; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); overflow-wrap: break-word; margin: 0 auto; }
+        .lang-switch { text-align: right; margin-bottom: 20px; font-family: 'Courier New', monospace; font-weight: bold; }
+        .lang-btn { cursor: pointer; padding: 5px 10px; border: 1px solid #1a1a1a; background: #fff; transition: 0.2s; }
+        .lang-btn.active { background: #1a1a1a; color: #fff; }
+        html[lang="de"] [lang="en"] { display: none; }
+        html[lang="en"] [lang="de"] { display: none; }
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
         .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
         .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
-
         h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
         h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
-        
         .utility-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #e74c3c; }
         .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
-        
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
         ul { padding-left: 20px; }
         li { margin-bottom: 12px; }
-
         .compliance-footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid #1a1a1a; text-align: center; font-size: 0.85em; }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8em; }
-            .document-container { padding: 30px 20px; }
-            body { padding: 10px; }
-        }
+        @media (max-width: 600px) { h1 { font-size: 1.8em; } .document-container { padding: 30px 20px; } body { padding: 10px; } }
     </style>
 </head>
 <body>
     <div class="document-container">
-        <!-- Branding Header -->
+        <div class="lang-switch">
+            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
+        </div>
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
@@ -65,76 +41,74 @@
             </div>
             <div class="header-divider"></div>
         </div>
-
-        <h1>Terms of Service: SecureMessenger (v5.9)</h1>
+        <h1><span lang="en">Terms of Service</span><span lang="de">Nutzungsbedingungen</span></h1>
         <p style="text-align: center;">
-            <strong>Status: GHOST PROTOCOL ACTIVE | TECHNICAL SURRENDER</strong><br>
-            <strong>Last Updated: March 28, 2026</strong><br>
-            <strong>Jurisdiction: Federal Republic of Germany (BGB, DDG, DSA)</strong>
+            <strong lang="en">Status: GHOST PROTOCOL ACTIVE | TECHNICAL SURRENDER</strong>
+            <strong lang="de">Status: GHOST-PROTOKOLL AKTIV | TECHNISCHE KAPITULATION</strong><br>
+            <span lang="en">Last Updated: March 28, 2026</span><span lang="de">Zuletzt aktualisiert: 28. März 2026</span><br>
+            <span lang="en">Jurisdiction: Federal Republic of Germany (BGB, DDG, DSA)</span><span lang="de">Gerichtsstand: Bundesrepublik Deutschland (BGB, DDG, DSA)</span>
         </p>
-
         <div class="utility-notice">
-            TECHNICAL INABILITY DECLARED | ZERO-KNOWLEDGE ARCHITECTURE
+            <span lang="en">ZERO-KNOWLEDGE UTILITY | TECHNICAL INABILITY DECLARED</span>
+            <span lang="de">ZERO-KNOWLEDGE-DIENST | TECHNISCHE UNFÄHIGKEIT ERKLÄRT</span>
         </div>
-
-        <h2>1. Subject of Agreement & Technical Surrender</h2>
-        <p>SecureMessenger provides a decentralized, end-to-end encrypted (E2EE) communication utility. Under German law, this is a "Digital Product" (<span class="legal-ref">§ 327 BGB</span>).</p>
+        <h2>1. <span lang="en">Subject of Agreement & Technical Surrender</span><span lang="de">Gegenstand der Vereinbarung & Technische Kapitulation</span></h2>
+        <p>
+            <span lang="en">SecureMessenger provides a decentralized, end-to-end encrypted (E2EE) communication utility. Under German law, this is a "Digital Product" (<span class="legal-ref">§ 327 BGB</span>).</span>
+            <span lang="de">SecureMessenger stellt ein dezentrales, Ende-zu-Ende verschlüsseltes (E2EE) Kommunikationswerkzeug bereit. Nach deutschem Recht handelt es sich hierbei um ein „digitales Produkt“ (<span class="legal-ref">§ 327 BGB</span>).</span>
+        </p>
         <ul>
-            <li><strong>The Doctrine of Inability:</strong> You acknowledge that the Provider has no technical means to reset seeds, recover data, or intercept transmissions. The architecture is a Blind Relay; the Provider is physically and mathematically incapable of accessing plaintext or metadata.</li>
-            <li><strong>Self-Custody:</strong> You are the sole custodian of your private keys and recovery seeds. Cryptographic keys are anchored in the device's hardware-backed Trusted Execution Environment (TEE/SE). This hardware isolation ensures that the Provider is physically excluded from the user's security domain. Loss of keys equals total loss of data.</li>
+            <li><span lang="en"><strong>The Doctrine of Inability:</strong> You acknowledge that the Provider has no technical means to reset seeds, recover data, or intercept transmissions. The architecture is a Blind Relay; the Provider is physically and mathematically incapable of accessing plaintext or metadata.</span>
+            <span lang="de"><strong>Doktrin der Unfähigkeit:</strong> Sie erkennen an, dass der Anbieter keine technischen Möglichkeiten hat, Seeds zurückzusetzen, Daten wiederherzustellen oder Übertragungen abzufangen. Die Architektur ist ein Blind-Relay; der Anbieter ist physisch und mathematisch nicht in der Lage, auf Klartext oder Metadaten zuzugreifen.</span></li>
+            <li><span lang="en"><strong>Self-Custody:</strong> You are the sole custodian of your private keys and recovery seeds. Cryptographic keys are anchored in the device's hardware-backed Trusted Execution Environment (TEE/SE). The Provider cannot recover access once the local database is lost or wiped. Loss of keys equals total loss of data.</span>
+            <span lang="de"><strong>Selbstverwahrung:</strong> Sie sind der alleinige Verwalter Ihrer privaten Schlüssel und Wiederherstellungs-Seeds. Kryptografische Schlüssel sind in der hardwaregestützten Trusted Execution Environment (TEE/SE) des Geräts verankert. Der Anbieter kann den Zugriff nicht wiederherstellen, wenn die lokale Datenbank verloren geht oder gelöscht wird. Der Verlust der Schlüssel bedeutet den totalen Datenverlust.</span></li>
         </ul>
-
-        <h2>2. Mere Conduit Status & Intermediary Shield (DSA)</h2>
-        <p>The Provider acts strictly as a Technical Intermediary (Mere Conduit) relay service under <span class="legal-ref">Art. 4 DSA</span> and <span class="legal-ref">§ 7-10 DDG</span>.</p>
+        <h2>2. <span lang="en">Mere Conduit Status & Intermediary Shield (DSA)</span><span lang="de">Mere Conduit Status & Haftungsausschluss (DSA)</span></h2>
+        <p>
+            <span lang="en">The Provider acts strictly as a Technical Intermediary (Mere Conduit) relay service under <span class="legal-ref">Art. 4 DSA</span> and <span class="legal-ref">§ 7-10 DDG</span>.</span>
+            <span lang="de">Der Anbieter agiert ausschließlich als technischer Mittler (Mere Conduit) gemäß <span class="legal-ref">Art. 4 DSA</span> und <span class="legal-ref">§ 7-10 DDG</span>.</span>
+        </p>
         <ul>
-            <li><strong>Non-Intervention:</strong> The Provider does not initiate transmissions, select the recipients, or modify the encrypted information.</li>
-            <li><strong>Zero Liability for Content:</strong> Pursuant to Art. 4-6 DSA, the Provider assumes zero liability for the content transmitted through the relay. The Provider maintains a state of Technical Nescience (Statutory Ignorance) regarding the nature of relayed data.</li>
-            <li><strong>Notice & Action:</strong> While the Provider cannot view content, it will comply with legally binding German court orders to block specific Routing IDs (HMAC-SHA256) from accessing the relay server. This is the only technical moderation action possible.</li>
+            <li><span lang="en"><strong>Non-Intervention:</strong> The Provider does not initiate transmissions, select the recipients, or modify the encrypted information.</span>
+            <span lang="de"><strong>Nicht-Intervention:</strong> Der Anbieter veranlasst die Übermittlung nicht, wählt die Empfänger nicht aus und verändert die verschlüsselten Informationen nicht.</span></li>
+            <li><span lang="en"><strong>Zero Liability:</strong> Pursuant to Art. 4-6 DSA, the Provider assumes zero liability for the content transmitted. The Provider maintains a state of Technical Nescience (Statutory Ignorance) regarding relayed data.</span>
+            <span lang="de"><strong>Haftungsausschluss:</strong> Gemäß Art. 4-6 DSA übernimmt der Anbieter keine Haftung für die übermittelten Inhalte. Der Anbieter bewahrt einen Zustand technischer Unkenntnis (gesetzliche Unkenntnis) hinsichtlich der weitergeleiteten Daten.</span></li>
+            <li><span lang="en"><strong>Notice & Action:</strong> While the Provider cannot view content, it will comply with legally binding German court orders to block specific Routing IDs (HMAC-SHA256) from accessing the relay server.</span>
+            <span lang="de"><strong>Notice & Action:</strong> Obwohl der Anbieter keine Inhalte einsehen kann, wird er rechtsverbindlichen deutschen Gerichtsbeschlüssen nachkommen, um bestimmten Routing-IDs (HMAC-SHA256) den Zugriff auf den Relay-Server zu sperren.</span></li>
         </ul>
-
-        <h2>3. Traffic Analysis & Forensic Hardening</h2>
+        <h2>3. <span lang="en">Traffic Analysis & Hardening</span><span lang="de">Verkehrsanalyse & Härtung</span></h2>
         <ul>
-            <li><strong>Protocol Neutrality:</strong> The service utilizes automated Traffic Padding and Noise Injection to protect user metadata. Users acknowledge that these features are essential for the "Forensic-Grade" security of the product.</li>
-            <li><strong>Ephemeral Relay:</strong> All binary data (attachments) is subject to a 24-hour Time-To-Live (TTL). The Provider is not a storage or backup service. Failure to download data within 24 hours results in permanent, unrecoverable erasure from the relay.</li>
+            <li><span lang="en"><strong>Protocol Neutrality:</strong> The service utilizes automated Traffic Padding and Noise Injection to protect user metadata. Users acknowledge that these features are essential for the "Forensic-Grade" security of the product.</span>
+            <span lang="de"><strong>Protokoll-Neutralität:</strong> Der Dienst nutzt automatisiertes Traffic-Padding und Rauschinjektion zum Schutz der Metadaten. Die Nutzer erkennen an, dass diese Funktionen für die forensische Sicherheit des Produkts unerlässlich sind.</span></li>
+            <li><span lang="en"><strong>Ephemeral Relay:</strong> All binary data (attachments) is subject to a 24-hour Time-To-Live (TTL). The Provider is not a storage or backup service.</span>
+            <span lang="de"><strong>Ephemeres Relay:</strong> Alle Binärdaten (Anhänge) unterliegen einer 24-Stunden-Time-To-Live (TTL). Der Anbieter ist kein Speicher- oder Backup-Dienst.</span></li>
         </ul>
-
-        <h2>4. Limitation of Liability (§ 307-309 BGB)</h2>
+        <h2>4. <span lang="en">Limitation of Liability</span><span lang="de">Haftungsbeschränkung</span></h2>
+        <p><span lang="en">In accordance with German BGB standards (§§ 307-309 BGB):</span><span lang="de">In Übereinstimmung mit dem BGB (§§ 307-309 BGB):</span></p>
         <ul>
-            <li><strong>Unlimited Liability:</strong> Only applies to damages resulting from injury to life, body, or health, or cases of intent or gross negligence.</li>
-            <li><strong>Simple Negligence:</strong> For simple negligence, the Provider is only liable if a "Kardinalpflicht" (essential contractual obligation) is breached. In such cases, liability is limited to typical, foreseeable damages.</li>
-            <li><strong>Scorched Earth Clause:</strong> The Provider is not liable for data loss caused by:
-                <ul>
-                    <li>User failure to secure recovery seeds.</li>
-                    <li>The intentional or accidental execution of the Duress/Panic PIN or Nuclear Wipe features.</li>
-                    <li>Automated server-side purging of keys following an Identity Death request.</li>
-                </ul>
-            </li>
+            <li><span lang="en"><strong>Unlimited Liability:</strong> Only applies to damages resulting from injury to life, body, or health, or cases of intent or gross negligence.</span><span lang="de"><strong>Unbeschränkte Haftung:</strong> Gilt nur für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie bei Vorsatz oder grober Fahrlässigkeit.</span></li>
+            <li><span lang="en"><strong>Scorched Earth Clause:</strong> The Provider is not liable for data loss caused by user failure to secure seeds or the execution of Duress/Panic PIN features.</span><span lang="de"><strong>Scorched-Earth-Klausel:</strong> Der Anbieter haftet nicht für Datenverluste, die durch Versäumnisse des Nutzers bei der Sicherung von Seeds oder die Ausführung von Notfall-Wipe-Funktionen entstehen.</span></li>
         </ul>
-
-        <h2>5. Statutory Warranty & Updates (§ 327f BGB)</h2>
+        <h2>5. <span lang="en">Warranty & Updates</span><span lang="de">Gewährleistung & Updates</span></h2>
         <ul>
-            <li><strong>Maintenance:</strong> The Provider will provide "Security Updates" necessary to keep the digital product in conformity with the contract.</li>
-            <li><strong>User Duty:</strong> You are responsible for installing updates. As a solo developer, the Provider is not liable for security breaches resulting from the use of outdated client versions or compromised local operating systems.</li>
+            <li><span lang="en"><strong>Maintenance:</strong> The Provider will provide "Security Updates" necessary to keep the digital product in conformity (<span class="legal-ref">§ 327f BGB</span>).</span><span lang="de"><strong>Wartung:</strong> Der Anbieter stellt Sicherheitsupdates bereit, die für den Erhalt der Vertragsmäßigkeit des digitalen Produkts erforderlich sind (<span class="legal-ref">§ 327f BGB</span>).</span></li>
         </ul>
-
-        <h2>6. Termination & Identity Death (§ 312k, § 356a BGB)</h2>
+        <h2>6. <span lang="en">Termination</span><span lang="de">Beendigung</span></h2>
         <ul>
-            <li><strong>Termination:</strong> You may terminate this contract at any time via the "Terminate Contract" button in Settings.</li>
-            <li><strong>Forensic Withdrawal:</strong> Pursuant to § 356a BGB, your right of withdrawal expires once the "Scorched Earth" forensic wipe is executed, as the digital service is fully rendered and the contract data is destroyed.</li>
-            <li><strong>Atomic Incineration:</strong> Termination results in the immediate, atomic incineration of your Routing ID on the relay server. This is an irreversible forensic action.</li>
+            <li><span lang="en"><strong>Atomic Incineration:</strong> Termination results in the immediate, atomic incineration of your Routing ID on the relay server. This is an irreversible forensic action.</span><span lang="de"><strong>Atomare Verbrennung:</strong> Die Kündigung führt zur sofortigen, atomaren Vernichtung Ihrer Routing-ID auf dem Relay-Server. Dies ist ein irreversibler forensischer Vorgang.</span></li>
         </ul>
-
-        <h2>7. Dispute Resolution & Solo-Developer Clause</h2>
-        <p>The EU Commission provides a platform for out-of-court dispute resolution: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>.</p>
-        <ul>
-            <li><strong>Independent Entity:</strong> Users acknowledge the Provider is an independent developer with no corporate affiliation or external funding.</li>
-            <li><strong>Jurisdiction:</strong> The place of jurisdiction for all disputes is the registered seat of the Provider in Germany.</li>
-        </ul>
-
+        <h2>7. <span lang="en">Dispute Resolution</span><span lang="de">Streitbeilegung</span></h2>
+        <p><span lang="en">The EU Commission provides a platform for out-of-court dispute resolution: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>.</span><span lang="de">Die EU-Kommission stellt eine Plattform zur außergerichtlichen Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>.</span></p>
         <div class="compliance-footer">
             <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br><br>
             <strong>System Integrity: GHOST PROTOCOL dQuantumBear 🐻❤️M</strong>
         </div>
     </div>
+    <script>
+        function setLang(lang) { document.documentElement.lang = lang; localStorage.setItem('preferred-lang', lang); updateButtons(lang); }
+        function updateButtons(lang) { document.getElementById('btn-en').classList.toggle('active', lang === 'en'); document.getElementById('btn-de').classList.toggle('active', lang === 'de'); }
+        const savedLang = localStorage.getItem('preferred-lang') || 'de';
+        setLang(savedLang);
+    </script>
 </body>
 </html>
