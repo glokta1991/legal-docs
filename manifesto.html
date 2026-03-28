@@ -5,25 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecureMessenger | The Ghost Protocol Manifesto</title>
     <style>
+        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
-        body { background-color: #EDE6D6; color: #1a1a1a; font-family: 'Georgia', serif; line-height: 1.7; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
-        .container { max-width: 850px; background: #ffffff; padding: 60px 40px; border: 1px solid #D2D2B4; border-radius: 4px; box-shadow: 10px 10px 0px rgba(0,0,0,0.05); overflow-wrap: break-word; }
-        .lang-switch { text-align: right; margin-bottom: 20px; font-family: 'Courier New', monospace; font-weight: bold; }
-        .lang-btn { cursor: pointer; padding: 5px 10px; border: 1px solid #1a1a1a; background: #fff; transition: 0.2s; }
-        .lang-btn.active { background: #1a1a1a; color: #fff; }
+        
+        body { 
+            background-color: #EDE6D6; 
+            color: #1a1a1a; 
+            font-family: 'Georgia', serif; 
+            line-height: 1.7; 
+            margin: 0; 
+            padding: 40px 20px; 
+            display: flex; 
+            justify-content: center; 
+        }
+        .container { 
+            max-width: 850px; 
+            background: #ffffff; 
+            padding: 60px 40px; 
+            border: 1px solid #D2D2B4; 
+            border-radius: 4px;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
+            overflow-wrap: break-word;
+        }
+
+        /* TRANSLATION TOGGLE */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .lang-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #1a1a1a;
+            background: #fff;
+            transition: 0.2s;
+        }
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
         html[lang="de"] [lang="en"] { display: none; }
         html[lang="en"] [lang="de"] { display: none; }
+
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
         .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
         .header-divider { border-bottom: 2px solid #1a1a1a; width: 40%; margin: 20px auto; }
+
         h1 { text-align: center; font-size: 2.5em; text-transform: uppercase; letter-spacing: 4px; border-bottom: 2px solid #1a1a1a; padding-bottom: 20px; margin-bottom: 40px; }
-        h2 { color: #27ae60; border-left: 5px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.3em; }
+        h2 { color: #27ae60; border-left: 6px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.3em; }
+        
         .warning-banner { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; text-transform: uppercase; border: 2px solid #e74c3c; }
         .quote { text-align: center; font-style: italic; font-size: 1.2em; margin-bottom: 40px; opacity: 0.8; }
+        
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
+        
         .footer { margin-top: 80px; text-align: center; font-size: 1.1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px; }
-        @media (max-width: 600px) { h1 { font-size: 1.8em; } .container { padding: 40px 20px; } body { padding: 10px; } }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            .container { padding: 40px 20px; }
+            body { padding: 10px; }
+        }
     </style>
 </head>
 <body>
@@ -32,6 +78,8 @@
             <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
             <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
         </div>
+
+        <!-- Official Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
@@ -39,42 +87,72 @@
             </div>
             <div class="header-divider"></div>
         </div>
+
         <h1>The Ghost Protocol</h1>
         <p class="quote">
             <span lang="en">"True security is not the possession of a key, but the total surrender of the lock."</span>
             <span lang="de">„Wahre Sicherheit liegt nicht im Besitz eines Schlüssels, sondern in der totalen Kapitulation des Schlosses.“</span>
         </p>
+
         <div class="warning-banner">
             <span lang="en">SYSTEM INTEGRITY: GHOST PROTOCOL v5.9 ACTIVE</span>
             <span lang="de">SYSTEMINTEGRITÄT: GHOST-PROTOKOLL v5.9 AKTIV</span>
         </div>
+
         <h2>1. <span lang="en">The Blind Relay (Technical Nescience)</span><span lang="de">Das Blind-Relay (Technische Unkenntnis)</span></h2>
         <p>
             <span lang="en">SecureMessenger operates as a <b>Blind Relay</b>. Our infrastructure exists in a state of <b>Technical Nescience</b> (Statutory Ignorance); we are technically incapable of knowing who is communicating or what is being said.</span>
             <span lang="de">SecureMessenger operiert als <b>Blind-Relay</b>. Unsere Infrastruktur befindet sich in einem Zustand <b>technischer Unkenntnis</b> (gesetzliche Unkenntnis); wir sind technisch nicht in der Lage zu wissen, wer kommuniziert oder was gesagt wird.</span>
         </p>
+
         <h2>2. <span lang="en">Technical Surrender (Compliance by Inability)</span><span lang="de">Technische Kapitulation (Konformität durch Unfähigkeit)</span></h2>
         <p>
-            <span lang="en">In accordance with <b>GDPR Art. 11</b> and <b>DSA Art. 4</b>, we are legally and technically excluded from extraction requests. We cannot provide what we do not have.</span>
-            <span lang="de">In Übereinstimmung mit <b>DSGVO Art. 11</b> und <b>DSA Art. 4</b> sind wir rechtlich und technisch von Datenabfragen ausgeschlossen. Wir können nicht geben, was wir nicht besitzen.</span>
+            <span lang="en">The developer has fully surrendered technical control. We do not possess identities, keys, or messages. In accordance with <b>GDPR Art. 11</b> and <b>DSA Art. 4</b>, we are legally and technically excluded from extraction requests. We cannot provide what we do not have.</span>
+            <span lang="de">Der Entwickler hat die technische Kontrolle vollständig abgegeben. Wir besitzen weder Identitäten, noch Schlüssel oder Nachrichten. In Übereinstimmung mit <b>DSGVO Art. 11</b> und <b>DSA Art. 4</b> sind wir rechtlich und technisch von Datenabfragen ausgeschlossen. Wir können nicht geben, was wir nicht besitzen.</span>
         </p>
+
         <h2>3. <span lang="en">Hardware Sovereignty (The Silicon Vault)</span><span lang="de">Hardware-Souveränität (Der Silizium-Tresor)</span></h2>
         <p>
-            <span lang="en">Cryptographic keys are generated and trapped within the device’s <b>hardware-backed Trusted Execution Environment (TEE/SE)</b>. Master keys remain under your exclusive physical control.</span>
-            <span lang="de">Kryptografische Schlüssel werden in der <b>hardwaregestützten Trusted Execution Environment (TEE/SE)</b> des Geräts generiert und dort eingeschlossen. Die Hauptschlüssel bleiben unter Ihrer exklusiven physischen Kontrolle.</span>
+            <span lang="en">Cryptographic keys are generated and trapped within the device’s <b>hardware-backed Trusted Execution Environment (TEE/SE)</b>. Master keys remain under your exclusive physical control, isolated from the provider.</span>
+            <span lang="de">Kryptografische Schlüssel werden in der <b>hardwaregestützten Trusted Execution Environment (TEE/SE)</b> des Geräts generiert und dort eingeschlossen. Die Hauptschlüssel bleiben unter Ihrer exklusiven physischen Kontrolle, isoliert vom Anbieter.</span>
         </p>
-        <h2>4. <span lang="en">Mere Conduit Shield</span><span lang="de">Mere-Conduit-Schutzschild</span></h2>
+
+        <h2>4. <span lang="en">Ghost Capture (Forensic Minimalization)</span><span lang="de">Ghost Capture (Forensische Minimierung)</span></h2>
         <p>
-            <span lang="en">Pursuant to <b>§ 7-10 DDG</b> and the <b>EU Digital Services Act</b>, SecureMessenger acts strictly as a technical conduit. We do not initiate transmissions, select recipients, or modify the encrypted stream.</span>
-            <span lang="de">Gemäß <b>§ 7-10 DDG</b> und dem <b>EU Digital Services Act</b> agiert SecureMessenger ausschließlich als technischer Durchleiter. Wir veranlassen keine Übermittlungen, wählen keine Empfänger aus und verändern den verschlüsselten Datenstrom nicht.</span>
+            <span lang="en">Real-time media capture is hardened against forensic discovery. Photos are scrubbed of EXIF metadata locally before encryption. Voice notes are recorded strictly to a volatile internal sandbox, subject to immediate incineration during a Duress wipe.</span>
+            <span lang="de">Echtzeit-Medienaufnahmen sind gegen forensische Analysen gehärtet. Fotos werden vor der Verschlüsselung lokal von EXIF-Metadaten befreit. Sprachnachrichten werden ausschließlich in einer flüchtigen internen Sandbox aufgezeichnet, die bei einem Notfall-Wipe sofort vernichtet wird.</span>
         </p>
+
+        <h2>5. <span lang="en">Active Decay (Forensic Destruction)</span><span lang="de">Aktiver Verfall (Forensische Zerstörung)</span></h2>
+        <p>
+            <span lang="en">Data is a toxic asset. We implement <b>Active Decay</b>: a forensic protocol where expired records are overwritten with noise ([PURGED]) before physical deletion. Relayed blobs are subject to an atomic 24-hour TTL incineration.</span>
+            <span lang="de">Daten sind ein toxischer Vermögenswert. Wir implementieren <b>Active Decay</b>: ein forensisches Protokoll, bei dem abgelaufene Datensätze vor der physischen Löschung mit Rauschen ([PURGED]) überschrieben werden. Weitergeleitete Blobs unterliegen einer atomaren 24-Stunden-TTL-Vernichtung.</span>
+        </p>
+
+        <h2>6. <span lang="en">Mere Conduit Shield</span><span lang="de">Mere-Conduit-Schutzschild</span></h2>
+        <p>
+            <span lang="en">Pursuant to <b>§ 7-10 DDG</b> and the <b>EU Digital Services Act</b>, SecureMessenger acts strictly as a technical conduit. We do not initiate transmissions, select recipients, or modify the stream. We provide the neutral tool; you provide the sovereignty.</span>
+            <span lang="de">Gemäß <b>§ 7-10 DDG</b> und dem <b>EU Digital Services Act</b> agiert SecureMessenger ausschließlich als technischer Durchleiter. Wir veranlassen keine Übermittlungen, wählen keine Empfänger aus und verändern den Datenstrom nicht. Wir stellen das neutrale Werkzeug; Sie stellen die Souveränität.</span>
+        </p>
+
         <div class="footer">
             SYSTEM INTEGRITY: GHOST PROTOCOL v5.9 ACTIVE | dQuantumBear 🛡️🚀🐻❤️M
         </div>
     </div>
+
     <script>
-        function setLang(lang) { document.documentElement.lang = lang; localStorage.setItem('preferred-lang', lang); updateButtons(lang); }
-        function updateButtons(lang) { document.getElementById('btn-en').classList.toggle('active', lang === 'en'); document.getElementById('btn-de').classList.toggle('active', lang === 'de'); }
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-lang', lang);
+            updateButtons(lang);
+        }
+
+        function updateButtons(lang) {
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+        }
+
+        // Initialize from storage or default to DE
         const savedLang = localStorage.getItem('preferred-lang') || 'de';
         setLang(savedLang);
     </script>
