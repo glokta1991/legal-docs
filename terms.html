@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - SecureMessenger</title>
     <style>
         /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
@@ -35,10 +36,10 @@
         .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
         .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
 
-        h1 { text-align: center; font-size: 2.2em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; line-height: 1.2; }
-        h2 { color: #27ae60; border-left: 5px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.2em; }
+        h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+        h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
         
-        .nuclear-notice { background: #1a1a1a; color: #fff; padding: 25px; margin: 30px 0; font-weight: bold; text-align: center; text-transform: uppercase; border: 2px solid #e74c3c; }
+        .utility-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #e74c3c; }
         .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
         
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
@@ -65,64 +66,74 @@
             <div class="header-divider"></div>
         </div>
 
-        <h1>Terms of Service: SecureMessenger (v5.7)</h1>
-        <p style="text-align: center;"><strong>Last Updated: March 16, 2026</strong></p>
+        <h1>Terms of Service: SecureMessenger (v5.9)</h1>
+        <p style="text-align: center;">
+            <strong>Status: GHOST PROTOCOL ACTIVE | TECHNICAL SURRENDER</strong><br>
+            <strong>Last Updated: March 28, 2026</strong><br>
+            <strong>Jurisdiction: Federal Republic of Germany (BGB, DDG, DSA)</strong>
+        </p>
 
-        <div class="nuclear-notice">
-            Zero-Knowledge Utility: Technical Surrender Active.
+        <div class="utility-notice">
+            TECHNICAL INABILITY DECLARED | ZERO-KNOWLEDGE ARCHITECTURE
         </div>
 
         <h2>1. Subject of Agreement & Technical Surrender</h2>
         <p>SecureMessenger provides a decentralized, end-to-end encrypted (E2EE) communication utility. Under German law, this is a "Digital Product" (<span class="legal-ref">§ 327 BGB</span>).</p>
         <ul>
-            <li><strong>The Doctrine of Inability:</strong> By using this service, you acknowledge that the Developer (Provider) has no technical means to reset seeds, recover data, or intercept messages.</li>
-            <li><strong>Self-Custody:</strong> You are the sole custodian of your private keys and 12-word recovery seed. The Provider cannot recover access to your identity once the local database is lost or wiped.</li>
+            <li><strong>The Doctrine of Inability:</strong> You acknowledge that the Provider has no technical means to reset seeds, recover data, or intercept transmissions. The architecture is a Blind Relay; the Provider is physically and mathematically incapable of accessing plaintext or metadata.</li>
+            <li><strong>Self-Custody:</strong> You are the sole custodian of your private keys and recovery seeds. Cryptographic keys are anchored in the device's hardware-backed Trusted Execution Environment (TEE/SE). This hardware isolation ensures that the Provider is physically excluded from the user's security domain. Loss of keys equals total loss of data.</li>
         </ul>
 
-        <h2>2. Mere Conduit Status & Intermediary Shield</h2>
-        <p>The Provider acts strictly as a "Mere Conduit" relay service under <span class="legal-ref">Art. 4 Digital Services Act (DSA)</span> and <span class="legal-ref">§ 7-10 DDG</span>.</p>
+        <h2>2. Mere Conduit Status & Intermediary Shield (DSA)</h2>
+        <p>The Provider acts strictly as a Technical Intermediary (Mere Conduit) relay service under <span class="legal-ref">Art. 4 DSA</span> and <span class="legal-ref">§ 7-10 DDG</span>.</p>
         <ul>
             <li><strong>Non-Intervention:</strong> The Provider does not initiate transmissions, select the recipients, or modify the encrypted information.</li>
-            <li><strong>Zero Liability for Content:</strong> Pursuant to <span class="legal-ref">Art. 4-6 DSA</span>, the Provider assumes zero liability for the content transmitted through the relay.</li>
-            <li><strong>Notice & Action:</strong> While the Provider cannot view content, it will comply with legally binding German court orders to block specific Routing IDs (HMAC-SHA256) from accessing the relay server to prevent the further dissemination of illegal content.</li>
+            <li><strong>Zero Liability for Content:</strong> Pursuant to Art. 4-6 DSA, the Provider assumes zero liability for the content transmitted through the relay. The Provider maintains a state of Technical Nescience (Statutory Ignorance) regarding the nature of relayed data.</li>
+            <li><strong>Notice & Action:</strong> While the Provider cannot view content, it will comply with legally binding German court orders to block specific Routing IDs (HMAC-SHA256) from accessing the relay server. This is the only technical moderation action possible.</li>
         </ul>
 
-        <h2>3. Limitation of Liability (§ 307-309 BGB)</h2>
-        <p>In accordance with German BGB standards for General Terms and Conditions (AGB):</p>
+        <h2>3. Traffic Analysis & Forensic Hardening</h2>
+        <ul>
+            <li><strong>Protocol Neutrality:</strong> The service utilizes automated Traffic Padding and Noise Injection to protect user metadata. Users acknowledge that these features are essential for the "Forensic-Grade" security of the product.</li>
+            <li><strong>Ephemeral Relay:</strong> All binary data (attachments) is subject to a 24-hour Time-To-Live (TTL). The Provider is not a storage or backup service. Failure to download data within 24 hours results in permanent, unrecoverable erasure from the relay.</li>
+        </ul>
+
+        <h2>4. Limitation of Liability (§ 307-309 BGB)</h2>
         <ul>
             <li><strong>Unlimited Liability:</strong> Only applies to damages resulting from injury to life, body, or health, or cases of intent or gross negligence.</li>
             <li><strong>Simple Negligence:</strong> For simple negligence, the Provider is only liable if a "Kardinalpflicht" (essential contractual obligation) is breached. In such cases, liability is limited to typical, foreseeable damages.</li>
-            <li><strong>Scorched Earth Clause:</strong> The Provider is not liable for data loss caused by the user’s failure to secure their seed or the intentional execution of the Duress/Termination forensic wipe features.</li>
-        </ul>
-
-        <h2>4. Data Portability & The EU Data Act (2025/26)</h2>
-        <p>In compliance with the EU Data Act and <span class="legal-ref">Art. 20 GDPR</span>, SecureMessenger provides a "Portable Ghost" export feature.</p>
-        <ul>
-            <li><strong>Portability:</strong> Users may export their technical identity bundle (Routing ID, Contact List, Identity Epoch) at any time.</li>
-            <li><strong>Interoperability:</strong> This export is provided in a common, machine-readable JSON format to facilitate the transition between terminal devices or compatible protocols.</li>
+            <li><strong>Scorched Earth Clause:</strong> The Provider is not liable for data loss caused by:
+                <ul>
+                    <li>User failure to secure recovery seeds.</li>
+                    <li>The intentional or accidental execution of the Duress/Panic PIN or Nuclear Wipe features.</li>
+                    <li>Automated server-side purging of keys following an Identity Death request.</li>
+                </ul>
+            </li>
         </ul>
 
         <h2>5. Statutory Warranty & Updates (§ 327f BGB)</h2>
         <ul>
             <li><strong>Maintenance:</strong> The Provider will provide "Security Updates" necessary to keep the digital product in conformity with the contract.</li>
-            <li><strong>User Duty:</strong> You are responsible for installing updates within a reasonable timeframe. The Provider is not liable for security breaches resulting from the use of outdated client versions.</li>
+            <li><strong>User Duty:</strong> You are responsible for installing updates. As a solo developer, the Provider is not liable for security breaches resulting from the use of outdated client versions or compromised local operating systems.</li>
         </ul>
 
-        <h2>6. Termination, Withdrawal & Erasure (§ 312k, § 356a BGB)</h2>
+        <h2>6. Termination & Identity Death (§ 312k, § 356a BGB)</h2>
         <ul>
-            <li><strong>Termination:</strong> You may terminate this contract at any time via the "Terminate Contract" button.</li>
-            <li><strong>Forensic Withdrawal:</strong> Pursuant to <span class="legal-ref">§ 356a BGB</span>, your right of withdrawal expires once the "Scorched Earth" forensic wipe is executed, as the digital service is fully rendered and the contract data is destroyed.</li>
-            <li><strong>Right to Erasure:</strong> Termination results in the immediate, atomic incineration of your Routing ID on the relay server and the permanent deletion of local data.</li>
+            <li><strong>Termination:</strong> You may terminate this contract at any time via the "Terminate Contract" button in Settings.</li>
+            <li><strong>Forensic Withdrawal:</strong> Pursuant to § 356a BGB, your right of withdrawal expires once the "Scorched Earth" forensic wipe is executed, as the digital service is fully rendered and the contract data is destroyed.</li>
+            <li><strong>Atomic Incineration:</strong> Termination results in the immediate, atomic incineration of your Routing ID on the relay server. This is an irreversible forensic action.</li>
         </ul>
 
-        <h2>7. Dispute Resolution</h2>
-        <p>The EU Commission provides a platform for out-of-court dispute resolution: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>. The place of jurisdiction for all disputes is the registered seat of the Provider in Germany.</p>
+        <h2>7. Dispute Resolution & Solo-Developer Clause</h2>
+        <p>The EU Commission provides a platform for out-of-court dispute resolution: <a href="https://ec.europa.eu/consumers/odr">https://ec.europa.eu/consumers/odr</a>.</p>
+        <ul>
+            <li><strong>Independent Entity:</strong> Users acknowledge the Provider is an independent developer with no corporate affiliation or external funding.</li>
+            <li><strong>Jurisdiction:</strong> The place of jurisdiction for all disputes is the registered seat of the Provider in Germany.</li>
+        </ul>
 
         <div class="compliance-footer">
-            <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br>
-            <strong>Jurisdiction:</strong> German BGB & TDDDG Framework applied.<br>
-            <strong>Last Verification:</strong> March 16, 2026.<br><br>
-            <strong>Status: GHOST PROTOCOL ACTIVE. dQuantumBear🛡️🚀🐻❤️M</strong>
+            <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br><br>
+            <strong>System Integrity: GHOST PROTOCOL dQuantumBear 🐻❤️M</strong>
         </div>
     </div>
 </body>
