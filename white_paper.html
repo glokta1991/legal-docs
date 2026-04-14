@@ -99,74 +99,82 @@
             <span lang="de">Technisches Whitepaper</span>
         </h1>
         <div class="subtitle">
-            <span lang="en">Architecture of Technical Surrender</span>
-            <span lang="de">Architektur der technischen Kapitulation</span>
+            <span lang="en">The GHOST RELAY Architecture</span>
+            <span lang="de">Die GHOST RELAY Architektur</span>
         </div>
 
         <div class="warning-box">
-            <span lang="en">Protocol Version: 5.9 | Status: Forensically Silent</span>
-            <span lang="de">Protokoll-Version: 5.9 | Status: Forensisch Stumm</span>
+            <span lang="en">Protocol Version: 8.2.1 | Status: Forensically Synchronized</span>
+            <span lang="de">Protokoll-Version: 8.2.1 | Status: Forensisch Synchronisiert</span>
         </div>
 
         <h2><span lang="en">Abstract</span><span lang="de">Kurzfassung</span></h2>
         <p>
-            <span lang="en">This white paper defines the formal architectural standards of <strong>SecureMessenger</strong>, a communication platform engineered for <strong>Technical Surrender</strong>. By mathematically excluding the developer from the user's data lifecycle, we achieve a state of sovereign privacy. SecureMessenger satisfies the requirements of <strong>GDPR Article 11</strong>, the <strong>German TDDDG</strong>, and the <strong>Digital Services Act (DSA)</strong>.</span>
-            <span lang="de">Dieses Whitepaper definiert die formalen Architekturstandards von <strong>SecureMessenger</strong>, einer Kommunikationsplattform, die auf <strong>technische Kapitulation</strong> ausgelegt ist. Durch den mathematischen Ausschluss des Entwicklers aus dem Datenlebenszyklus des Nutzers erreichen wir einen Zustand souveräner Privatsphäre. SecureMessenger erfüllt die Anforderungen der <strong>DSGVO Artikel 11</strong>, des deutschen <strong>TDDDG</strong> und des <strong>Digital Services Act (DSA)</strong>.</span>
+            <span lang="en">This white paper defines the formal architectural standards of <strong>SecureMessenger</strong>, a communication platform engineered for <strong>Sovereign Privacy</strong>. By mathematically excluding the relay provider from the user's data lifecycle, we achieve a state of "Double-Blind" communication. SecureMessenger satisfies the requirements of <strong>GDPR (Articles 15, 17, & 20)</strong>, the <strong>German TDDDG</strong>, and the <strong>Digital Services Act (DSA)</strong>.</span>
+            <span lang="de">Dieses Whitepaper definiert die formalen Architekturstandards von <strong>SecureMessenger</strong>, einer Kommunikationsplattform, die auf <strong>souveräne Privatsphäre</strong> ausgelegt ist. Durch den mathematischen Ausschluss des Relay-Anbieters aus dem Datenlebenszyklus des Nutzers erreichen wir einen Zustand der "Double-Blind"-Kommunikation. SecureMessenger erfüllt die Anforderungen der <strong>DSGVO (Artikel 15, 17 & 20)</strong>, des deutschen <strong>TDDDG</strong> und des <strong>Digital Services Act (DSA)</strong>.</span>
         </p>
 
-        <h2>1. <span lang="en">Identity & Zero-Knowledge Entry</span><span lang="de">Identität & Zero-Knowledge-Einstieg</span></h2>
+        <h2>1. <span lang="en">Identity Anonymization & The Routing ID</span><span lang="de">Identitäts-Anonymisierung & die Routing-ID</span></h2>
         <p>
-            <span lang="en">SecureMessenger eliminates the concept of "user databases." Identity is founded on <strong>BIP39 Mnemonic Entropy</strong>.</span>
-            <span lang="de">SecureMessenger verzichtet vollständig auf klassische Nutzerdatenbanken. Identität basiert hier auf <strong>BIP39 Mnemonic-Entropie</strong>.</span>
+            <span lang="en">SecureMessenger eliminates the concept of "user databases." Identity is founded on cryptographic derivation rather than PII.</span>
+            <span lang="de">SecureMessenger verzichtet auf klassische Nutzerdatenbanken. Identität basiert auf kryptografischer Ableitung statt auf personenbezogenen Daten (PII).</span>
         </p>
         <ul>
-            <li><span lang="en"><strong>Local Seed Generation:</strong> A 12-word recovery phrase is generated via 256-bit local entropy. This seed is the <i>only</i> source of truth and never leaves the device.</span>
-            <span lang="de"><strong>Lokale Seed-Generierung:</strong> Eine 12-Wort-Wiederherstellungsphrase wird über lokale 256-Bit-Entropie generiert. Dieser Seed ist die <i>einzige</i> Quelle der Wahrheit und verlässt das Gerät nie.</span></li>
-            <li><span lang="en"><strong>HMAC-SHA256 Routing:</strong> Human usernames are hashed locally using a <strong>512-bit quantum-hardened salt</strong>. This ensures that routing data is stripped of identifying characteristics upon arrival at the relay.</span>
-            <span lang="de"><strong>HMAC-SHA256 Routing:</strong> Benutzernamen werden lokal mit einem <strong>512-Bit-Quanten-gehärteten Salt</strong> gehasht. Dies stellt sicher, dass Routing-Daten bei der Ankunft am Relay von identifizierenden Merkmalen befreit sind.</span></li>
+            <li><span lang="en"><strong>HMAC-SHA256 Routing:</strong> Human usernames are transformed locally into a 64-character <strong>Routing ID</strong> using a 512-bit quantum-hardened salt. The relay server only sees this hash, preventing identity correlation.</span>
+            <span lang="de"><strong>HMAC-SHA256 Routing:</strong> Benutzernamen werden lokal mit einem 512-Bit-Quanten-gehärteten Salt in eine 64-stellige <strong>Routing-ID</strong> umgewandelt. Der Relay-Server sieht nur diesen Hash, was eine Identitätskorrelation verhindert.</span></li>
+            <li><span lang="en"><strong>Searchable Hash Index:</strong> To prevent traffic correlation, the search feature uses a secondary, distinct salt to generate a <code>searchHash</code>. This allows users to find contacts without exposing their primary Routing ID.</span>
+            <span lang="de"><strong>Durchsuchbarer Hash-Index:</strong> Um Traffic-Korrelation zu verhindern, nutzt die Suchfunktion ein zweites, separates Salt zur Generierung eines <code>searchHash</code>. Dies ermöglicht das Finden von Kontakten, ohne die primäre Routing-ID offenzulegen.</span></li>
         </ul>
 
-        <h2>2. <span lang="en">Cryptographic Ratcheting (Signal Protocol)</span><span lang="de">Kryptografisches Ratcheting (Signal-Protokoll)</span></h2>
+        <h2>2. <span lang="en">The Shielded Media Pipeline (AES-256-GCM)</span><span lang="de">Die abgeschirmte Medien-Pipeline (AES-256-GCM)</span></h2>
+        <p>
+            <span lang="en">Every attachment (Video, Image, Document) is treated as a "Toxic Asset" and encrypted before it touches the network.</span>
+            <span lang="de">Jeder Anhang (Video, Bild, Dokument) wird als "toxischer Vermögenswert" behandelt und verschlüsselt, bevor er das Netzwerk berührt.</span>
+        </p>
+        <ul>
+            <li><span lang="en"><strong>Local Streaming Encryption:</strong> Media is encrypted on-device using <strong>AES-256-GCM</strong>. We utilize a streaming cipher to handle large files without RAM exhaustion.</span>
+            <span lang="de"><strong>Lokale Streaming-Verschlüsselung:</strong> Medien werden auf dem Gerät mit <strong>AES-256-GCM</strong> verschlüsselt. Wir nutzen eine Streaming-Verschlüsselung, um große Dateien ohne RAM-Überlastung zu verarbeiten.</span></li>
+            <li><span lang="en"><strong>E2EE Metadata Locking:</strong> Filenames and MIME types are locked inside the Signal E2EE envelope. The storage layer only sees an opaque binary blob (<strong>GHOST_BLOB</strong>).</span>
+            <span lang="de"><strong>E2EE Metadaten-Sperre:</strong> Dateinamen und MIME-Typen sind im Signal-E2EE-Umschlag eingeschlossen. Die Speicherebene sieht nur einen undurchsichtigen Binär-Blob (<strong>GHOST_BLOB</strong>).</span></li>
+        </ul>
+
+        <h2>3. <span lang="en">Cryptographic Ratcheting & Session Healing</span><span lang="de">Kryptografisches Ratcheting & Sitzungs-Heilung</span></h2>
         <p>
             <span lang="en">We utilize the <strong>Signal Double Ratchet</strong> for all End-to-End Encryption (E2EE), ensuring every message has its own unique, rotating key.</span>
             <span lang="de">Wir nutzen das <strong>Signal Double Ratchet</strong>-Verfahren für die Ende-zu-Ende-Verschlüsselung (E2EE), wodurch jede Nachricht über einen eigenen, rotierenden Schlüssel verfügt.</span>
         </p>
         <ul>
-            <li><span lang="en"><strong>Perfect Forward Secrecy (PFS):</strong> Encryption keys rotate every 48 hours via <strong>Signed PreKey Rotation</strong>. Compromising one key cannot decrypt past or future traffic.</span>
-            <span lang="de"><strong>Perfect Forward Secrecy (PFS):</strong> Verschlüsselungsschlüssel rotieren alle 48 Stunden über <strong>Signed PreKey Rotation</strong>. Eine Kompromittierung einzelner Schlüssel ermöglicht keine Entschlüsselung vergangener oder zukünftiger Daten.</span></li>
-            <li><span lang="en"><strong>Auto-Repair Handshakes:</strong> If a device detects a session desync, the client automatically triggers an <strong>Invisible Handshake</strong> to re-negotiate the secure tunnel instantly.</span>
-            <span lang="de"><strong>Auto-Repair Handshakes:</strong> Erkennt ein Gerät eine Sitzungs-Asynchronität, löst der Client automatisch einen <strong>unsichtbaren Handshake</strong> aus, um den sicheren Tunnel sofort neu auszuhandeln.</span></li>
+            <li><span lang="en"><strong>Perfect Forward Secrecy (PFS):</strong> Encryption keys rotate per-message. Compromising one key provides zero access to past or future traffic.</span>
+            <span lang="de"><strong>Perfect Forward Secrecy (PFS):</strong> Verschlüsselungsschlüssel rotieren pro Nachricht. Eine Kompromittierung einzelner Schlüssel ermöglicht keinen Zugriff auf vergangene oder zukünftige Daten.</span></li>
+            <li><span lang="en"><strong>Atomic Session Healing:</strong> The client automatically detects session desyncs and triggers an <strong>Invisible Handshake</strong> to re-negotiate the secure tunnel instantly.</span>
+            <span lang="de"><strong>Atomare Sitzungs-Heilung:</strong> Der Client erkennt Sitzungs-Asynchronitäten automatisch und löst einen <strong>unsichtbaren Handshake</strong> aus, um den sicheren Tunnel sofort neu auszuhandeln.</span></li>
         </ul>
 
-        <h2>3. <span lang="en">Persistence & Hardening</span><span lang="de">Persistenz & Härtung</span></h2>
+        <h2>4. <span lang="en">Forensic Destruction & Anti-Forensics</span><span lang="de">Forensische Zerstörung & Anti-Forensik</span></h2>
         <p>
-            <span lang="en">The device is a vault, not a witness. We implement <strong>SQLCipher AES-256</strong> byte-level encryption.</span>
-            <span lang="de">Das Endgerät ist ein Tresor, kein Zeuge. Wir implementieren <strong>SQLCipher AES-256</strong> Verschlüsselung auf Byte-Ebene.</span>
+            <span lang="en">The device is a vault, not a witness. We implement hardened local security protocols.</span>
+            <span lang="de">Das Endgerät ist ein Tresor, kein Zeuge. Wir implementieren gehärtete lokale Sicherheitsprotokolle.</span>
         </p>
         <ul>
-            <li><span lang="en"><strong>Wrapped Key Solution:</strong> The master key is encrypted by a hardware-backed key anchored in the phone's <strong>Secure Element (TEE/SE)</strong>, ensuring the key cannot be extracted even with root access.</span>
-            <span lang="de"><strong>Wrapped Key Lösung:</strong> Der Hauptschlüssel wird durch einen hardwaregestützten Schlüssel verschlüsselt, der im <strong>Secure Element (TEE/SE)</strong> des Telefons verankert ist. Dies verhindert eine Extraktion des Schlüssels selbst bei Root-Zugriff.</span></li>
-            <li><span lang="en"><strong>RAM Sanitization:</strong> Master keys are handled as ByteArrays and physically zeroed out using <code>Arrays.fill()</code> the exact millisecond the database handshake completes.</span>
-            <span lang="de"><strong>RAM-Sanitierung:</strong> Hauptschlüssel werden als ByteArrays behandelt und in der Millisekunde, in der der Datenbank-Handshake abgeschlossen ist, physisch mit <code>Arrays.fill()</code> überschrieben.</span></li>
+            <li><span lang="en"><strong>Duress Protocol:</strong> A secondary "Duress Password" on the login screen triggers a silent <strong>Forensic Wipe</strong>, shredding all local keys and the SQLCipher database instantly.</span>
+            <span lang="de"><strong>Notfall-Protokoll:</strong> Ein sekundäres "Notfall-Passwort" im Login-Bildschirm löst einen stillen <strong>forensischen Wipe</strong> aus, der sofort alle lokalen Schlüssel und die SQLCipher-Datenbank vernichtet.</span></li>
+            <li><span lang="en"><strong>Traffic Analysis Resistance:</strong> All E2EE envelopes are normalized to a <strong>1KB Padding Target</strong> to mask the true length of the plaintext, defeating pattern-matching attacks.</span>
+            <span lang="de"><strong>Traffic-Analyse-Resistenz:</strong> Alle E2EE-Umschläge werden auf ein <strong>1KB Padding-Ziel</strong> normiert, um die wahre Länge des Klartexts zu verschleiern und Muster-Erkennung zu verhindern.</span></li>
         </ul>
 
-        <h2>4. <span lang="en">Forensic Media Pipeline (Ghost Capture)</span><span lang="de">Forensische Medien-Pipeline (Ghost Capture)</span></h2>
-        <ul>
-            <li><span lang="en"><strong>EXIF Incineration:</strong> Photos captured via the integrated camera pipeline are locally scrubbed of all EXIF metadata (GPS, device model, software version) in a background thread before encryption.</span>
-            <span lang="de"><strong>EXIF-Vernichtung:</strong> Über die integrierte Kamera-Pipeline aufgenommene Fotos werden in einem Hintergrund-Thread lokal von allen EXIF-Metadaten (GPS, Gerätemodell, Softwareversion) befreit, bevor sie verschlüsselt werden.</span></li>
-            <li><span lang="en"><strong>Volatile Audio Sandbox:</strong> Voice notes are recorded directly to the application's internal <code>cacheDir</code>. These files are invisible to the OS media scanner and are subject to immediate incineration during a Duress wipe.</span>
-            <span lang="de"><strong>Flüchtige Audio-Sandbox:</strong> Sprachnachrichten werden direkt im internen <code>cacheDir</code> der Anwendung aufgezeichnet. Diese Dateien sind für den Medien-Scanner des Betriebssystems unsichtbar und werden bei einem Notfall-Wipe sofort vernichtet.</span></li>
-        </ul>
-
-        <h2>5. <span lang="en">Active Decay (Forensic Destruction)</span><span lang="de">Aktiver Verfall (Forensische Zerstörung)</span></h2>
+        <h2>5. <span lang="en">Data Sovereignty & Portability (Art. 20)</span><span lang="de">Datensouveränität & Portabilität (Art. 20)</span></h2>
         <p>
-            <span lang="en">Data is a toxic asset. We implement <strong>Active Decay</strong>: a forensic protocol where expired records are overwritten with random noise ([PURGED]) to fill SQLite free-lists before a hardware-level <strong>VACUUM</strong> is triggered.</span>
-            <span lang="de">Daten sind ein toxischer Vermögenswert. Wir implementieren <strong>Active Decay</strong>: ein forensisches Protokoll, bei dem abgelaufene Datensätze mit Zufallsrauschen ([PURGED]) überschrieben werden, um SQLite-Freilisten zu füllen, bevor ein Hardware-Level-<strong>VACUUM</strong> ausgelöst wird.</span>
+            <span lang="en">Fulfilling GDPR requirements, SecureMessenger offers a <strong>Sovereign Identity Export</strong>.</span>
+            <span lang="de">In Erfüllung der DSGVO-Anforderungen bietet SecureMessenger einen <strong>souveränen Identitätsexport</strong> an.</span>
         </p>
+        <ul>
+            <li><span lang="en"><strong>JSON Portability:</strong> Users can generate a signed JSON bundle containing their Routing ID and contact list, allowing identity portability without server-side backups.</span>
+            <span lang="de"><strong>JSON-Portabilität:</strong> Nutzer können ein signiertes JSON-Paket mit ihrer Routing-ID und Kontaktliste generieren, was Identitätsportabilität ohne serverseitige Backups ermöglicht.</span></li>
+        </ul>
 
         <div class="status-footer">
             <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br><br>
-            <strong>System Integrity: GHOST PROTOCOL v5.9 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
+            <strong>System Integrity: GHOST PROTOCOL v8.2.1 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
         </div>
     </div>
 
@@ -182,7 +190,7 @@
             document.getElementById('btn-de').classList.toggle('active', lang === 'de');
         }
 
-        // Initialize from storage or default to DE (given the jurisdiction)
+        // Initialize from storage or default to DE
         const savedLang = localStorage.getItem('preferred-lang') || 'de';
         setLang(savedLang);
     </script>
