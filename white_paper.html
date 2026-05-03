@@ -73,7 +73,7 @@
 
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; }
-            .document-container { padding: 40px 20px; }
+            .document-container { padding: 30px 20px; }
             body { padding: 10px; }
         }
     </style>
@@ -89,7 +89,7 @@
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
-                OFFICIAL CONTACT: <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a; text-decoration: underline;">securemessenger4U@proton.me</a>
+                OFFICIAL CONTACT: <a href="mailto:securemessenger0@gmail.com" style="color: #1a1a1a; text-decoration: underline;">securemessenger0@gmail.com</a>
             </div>
             <div class="header-divider"></div>
         </div>
@@ -99,82 +99,68 @@
             <span lang="de">Technisches Whitepaper</span>
         </h1>
         <div class="subtitle">
-            <span lang="en">The GHOST RELAY Architecture</span>
-            <span lang="de">Die GHOST RELAY Architektur</span>
+            <span lang="en">The GHOST PROTOCOL Architecture</span>
+            <span lang="de">Die GHOST-PROTOKOLL Architektur</span>
         </div>
 
         <div class="warning-box">
-            <span lang="en">Protocol Version: 9.5.2 | Status: Production Hardened</span>
-            <span lang="de">Protokoll-Version: 9.5.2 | Status: Produktions-Gehärtet</span>
+            <span lang="en">Protocol Version: 10.8.2 | Status: Forensic Hardened</span>
+            <span lang="de">Protokoll-Version: 10.8.2 | Status: Forensisch-Gehärtet</span>
         </div>
 
         <h2><span lang="en">Abstract</span><span lang="de">Kurzfassung</span></h2>
         <p>
-            <span lang="en">This white paper defines the formal architectural standards of <strong>SecureMessenger</strong>, a communication platform engineered for <strong>Zero-Knowledge Infrastructure Neutrality</strong>. By mathematically excluding the relay provider from the user's data lifecycle and utilizing a handshake-bypass uplink, we achieve a state of "Double-Blind" communication. SecureMessenger satisfies the requirements of <strong>GDPR (Articles 15, 17, 20 & 25)</strong>, the <strong>German TDDDG</strong>, and the <strong>Digital Services Act (DSA)</strong>.</span>
-            <span lang="de">Dieses Whitepaper definiert die formalen Architekturstandards von <strong>SecureMessenger</strong>, einer Kommunikationsplattform, die auf <strong>Zero-Knowledge-Infrastrukturneutralität</strong> ausgelegt ist. Durch den mathematischen Ausschluss des Relay-Anbieters aus dem Datenlebenszyklus des Nutzers und die Nutzung eines Handshake-Bypass-Uplinks erreichen wir einen Zustand der "Double-Blind"-Kommunikation. SecureMessenger erfüllt die Anforderungen der <strong>DSGVO (Artikel 15, 17, 20 & 25)</strong>, des deutschen <strong>TDDDG</strong> und des <strong>Digital Services Act (DSA)</strong>.</span>
+            <span lang="en">This white paper defines the formal architectural standards of <strong>SecureMessenger</strong>, a communication platform engineered for <strong>Technical Nescience</strong>. By mathematically excluding the relay provider from the user's data lifecycle and enforcing zero IP logging, we achieve a state of "Double-Blind" communication. SecureMessenger satisfies the requirements of <strong>GDPR (Art. 11)</strong>, the <strong>German DDG (§ 7)</strong>, and the <strong>EU Digital Services Act (Art. 4)</strong>.</span>
+            <span lang="de">Dieses Whitepaper definiert die formalen Architekturstandards von <strong>SecureMessenger</strong>, einer Kommunikationsplattform, die auf <strong>technische Unkenntnis</strong> ausgelegt ist. Durch den mathematischen Ausschluss des Relay-Anbieters aus dem Datenlebenszyklus und die Durchsetzung einer Null-IP-Protokollierung erreichen wir eine "Double-Blind"-Kommunikation. SecureMessenger erfüllt die Anforderungen der <strong>DSGVO (Art. 11)</strong>, des deutschen <strong>DDG (§ 7)</strong> und des <strong>EU Digital Services Act (Art. 4)</strong>.</span>
         </p>
 
-        <h2>1. <span lang="en">Zero-Knowledge Identity & The Auth Gate</span><span lang="de">Zero-Knowledge-Identität & Das Auth-Gate</span></h2>
+        <h2>1. <span lang="en">Zero-Knowledge Identity & Zero IP Logging</span><span lang="de">Zero-Knowledge-Identität & Null-IP-Protokollierung</span></h2>
         <p>
-            <span lang="en">SecureMessenger eliminates Personal Identifiable Information (PII) collection. Identity is founded on cryptographic derivation rather than central databases.</span>
-            <span lang="de">SecureMessenger verzichtet auf die Erfassung personenbezogener Daten (PII). Identität basiert auf kryptografischer Ableitung statt auf zentralen Datenbanken.</span>
+            <span lang="en">SecureMessenger eliminates Personal Identifiable Information (PII) collection. Registration requires <b>Zero Personal Data</b> (No Emails, No Phone Numbers).</span>
+            <span lang="de">SecureMessenger verzichtet auf die Erfassung personenbezogener Daten (PII). Die Registrierung erfordert <b>null persönliche Daten</b> (keine E-Mails, keine Telefonnummern).</span>
         </p>
         <ul>
-            <li><span lang="en"><strong>HMAC-SHA256 Routing:</strong> Human usernames are transformed locally into a 64-character <strong>Routing ID</strong>. The relay server is a "Blind Relay" that only recognizes these hashes, preventing any link to a real-world identity.</span>
-            <span lang="de"><strong>HMAC-SHA256 Routing:</strong> Benutzernamen werden lokal in eine 64-stellige <strong>Routing-ID</strong> umgewandelt. Der Relay-Server fungiert als "Blind Relay", das nur diese Hashes erkennt, was jede Verbindung zu einer realen Identität verhindert.</span></li>
-            <li><span lang="en"><strong>Panda-Hardened Auth Gate:</strong> Access to sensitive metadata handshakes (like upload signatures) is gated by Routing ID verification. The server verifies the presence of a legitimate Routing ID without ever knowing the plaintext user it represents.</span>
-            <span lang="de"><strong>Panda-gehärtetes Auth-Gate:</strong> Der Zugriff auf sensible Metadaten-Handshakes (wie Upload-Signaturen) wird durch eine Routing-ID-Verifizierung geschützt. Der Server prüft das Vorhandensein einer legitimen Routing-ID, ohne jemals den dazugehörigen Klartext-Nutzer zu kennen.</span></li>
+            <li><span lang="en"><strong>HMAC-SHA256 Routing:</strong> Identity is derived from 12-word mnemonic entropy. Human usernames are transformed locally into 64-character Routing IDs. The server routes data blindly without cryptographic links to a natural person.</span>
+            <span lang="de"><strong>HMAC-SHA256 Routing:</strong> Die Identität wird aus einer 12-Wörter-Mnemonic-Entropie abgeleitet. Benutzernamen werden lokal in 64-stellige Routing-IDs umgewandelt. Der Server leitet Daten blind weiter, ohne kryptografische Verbindung zu einer natürlichen Person.</span></li>
+            <li><span lang="en"><strong>Instant Connection Erasure:</strong> Our "Blind Relay" is engineered to discard incoming IP addresses instantly. We do not store, log, or maintain connection metadata, ensuring your physical location remains your own.</span>
+            <span lang="de"><strong>Sofortige Verbindungslöschung:</strong> Unser „Blind-Relay“ ist so konzipiert, dass eingehende IP-Adressen sofort verworfen werden. Wir speichern, protokollieren oder pflegen keine Verbindungsmetadaten, um sicherzustellen, dass Ihr physischer Standort Ihr Geheimnis bleibt.</span></li>
         </ul>
 
-        <h2>2. <span lang="en">Infrastructure Neutrality & Media Uplink</span><span lang="de">Infrastruktur-Neutralität & Medien-Uplink</span></h2>
+        <h2>2. <span lang="en">Scorched Metadata Architecture</span><span lang="de">Scorched Metadata Architektur</span></h2>
         <p>
-            <span lang="en">To protect privacy and prevent traffic analysis, SecureMessenger separates message metadata from binary data flows.</span>
-            <span lang="de">Um die Privatsphäre zu schützen und Traffic-Analysen zu verhindern, trennt SecureMessenger Nachrichten-Metadaten von binären Datenströmen.</span>
+            <span lang="en">The server is physically blind to the nature of transmissions. We implement the "Scorched Metadata" standard.</span>
+            <span lang="de">Der Server ist physisch blind für die Art der Übertragungen. Wir implementieren den „Scorched Metadata“-Standard.</span>
         </p>
         <ul>
-            <li><span lang="en"><strong>Handshake-and-Bypass Orchestration:</strong> The GHOST RELAY provides a time-limited (300s) SHA-256 signature to the client. The device then uplinks the <strong>AES-256-GCM</strong> encrypted blob directly to hardened storage, ensuring the app backend never touches binary data or IP addresses associated with large file transfers.</span>
-            <span lang="de"><strong>Handshake-and-Bypass Orchestrierung:</strong> Das GHOST RELAY stellt dem Client eine zeitlich begrenzte (300s) SHA-256-Signatur zur Verfügung. Das Gerät lädt den mit <strong>AES-256-GCM</strong> verschlüsselten Blob direkt in einen gehärteten Speicher hoch, wodurch das App-Backend niemals mit Binärdaten oder IP-Adressen in Berührung kommt, die mit großen Dateitransfers assoziiert sind.</span></li>
-            <li><span lang="en"><strong>Dual-Blind Storage:</strong> The storage provider receives an opaque binary (GHOST_BLOB) with no decryption keys, while the Relay remains blind to the file's existence. This achieves 100% infrastructure neutrality.</span>
-            <span lang="de"><strong>Dual-Blind-Speicherung:</strong> Der Speicheranbieter erhält einen undurchsichtigen Binär-Blob (GHOST_BLOB) ohne Entschlüsselungs-Keys, während das Relay blind für die Existenz der Datei bleibt. Dies erreicht eine 100%ige Infrastrukturneutralität.</span></li>
+            <li><span lang="en"><strong>Enveloped Metadata Encryption:</strong> Filenames, media keys (AES-GCM), and captions are encrypted <i>inside</i> the Signal message envelope. The relay only sees an opaque routing blob and random noise.</span>
+            <span lang="de"><strong>Verschlüsselte Umschlag-Metadaten:</strong> Dateinamen, Media-Keys (AES-GCM) und Bildunterschriften werden <i>innerhalb</i> des Signal-Nachrichtenumschlags verschlüsselt. Das Relay sieht nur einen undurchsichtigen Routing-Blob und zufälliges Rauschen.</span></li>
+            <li><span lang="en"><strong>Internal Media Isolation:</strong> Decrypted images, videos, and GIFs are rendered exclusively via <b>Immersive Internal Players</b>. Media remains in secure volatile memory and is never exposed to the OS gallery or external system providers.</span>
+            <span lang="de"><strong>Interne Medien-Isolation:</strong> Entschlüsselte Bilder, Videos und GIFs werden ausschließlich über <b>immersive interne Player</b> gerendert. Medien verbleiben im sicheren flüchtigen Speicher und werden niemals der Systemgalerie oder externen Systemanbietern zugänglich gemacht.</span></li>
         </ul>
 
-        <h2>3. <span lang="en">Cryptographic Ratcheting & Metadata Locking</span><span lang="de">Kryptografisches Ratcheting & Metadaten-Sperre</span></h2>
+        <h2>3. <span lang="en">The Handshake (Consent-First Model)</span><span lang="de">Der Handshake (Consent-First-Modell)</span></h2>
         <p>
-            <span lang="en">All communication utilizes the <strong>Signal Double Ratchet</strong> for End-to-End Encryption (E2EE), ensuring message-level key rotation.</span>
-            <span lang="de">Die gesamte Kommunikation nutzt das <strong>Signal Double Ratchet</strong>-Verfahren für die Ende-zu-Ende-Verschlüsselung (E2EE), wodurch eine Schlüsselrotation auf Nachrichtenebene gewährleistet wird.</span>
+            <span lang="en">To prevent discovery probing, we have replaced static identity strings with an active handshake protocol.</span>
+            <span lang="de">Um Discovery-Probing zu verhindern, haben wir statische Identitäts-Strings durch ein aktives Handshake-Protokoll ersetzt.</span>
         </p>
         <ul>
-            <li><span lang="en"><strong>Perfect Forward Secrecy (PFS):</strong> Encryption keys rotate per-message. Compromising a single session key provides zero access to past or future traffic.</span>
-            <span lang="de"><strong>Perfect Forward Secrecy (PFS):</strong> Verschlüsselungsschlüssel rotieren pro Nachricht. Eine Kompromittierung eines einzelnen Sitzungsschlüssels ermöglicht keinen Zugriff auf vergangene oder zukünftige Daten.</span></li>
-            <li><span lang="en"><strong>Envelope Metadata Locking:</strong> Critical metadata, such as filenames, media keys, and timestamps, are locked inside the E2EE envelope. The Relay server only processes the encrypted delivery header.</span>
-            <span lang="de"><strong>Umschlag-Metadaten-Sperre:</strong> Kritische Metadaten wie Dateinamen, Media-Keys und Zeitstempel werden im E2EE-Umschlag eingeschlossen. Der Relay-Server verarbeitet lediglich den verschlüsselten Zustellungs-Header.</span></li>
+            <li><span lang="en"><strong>Temporary 6-Digit Codes:</strong> Users establish trust via short-lived (24h) 6-digit Invite Codes. This allows for convenient exchange over audio or email without leaking permanent IDs.</span>
+            <span lang="de"><strong>Temporäre 6-stellige Codes:</strong> Nutzer bauen Vertrauen über kurzlebige (24h) 6-stellige Einladungscodes auf. Dies ermöglicht den bequemen Austausch über Audio oder E-Mail, ohne permanente IDs preiszugeben.</span></li>
+            <li><span lang="en"><strong>Active Consent:</strong> Online status and avatars are not shared until a connection request is actively accepted via the <b>Green Check</b> handshake. This ensures total network invisibility to unauthorized requesters.</span>
+            <span lang="de"><strong>Aktiver Konsens:</strong> Online-Status und Avatare werden erst geteilt, wenn eine Verbindungsanfrage aktiv über den <b>grünen Haken</b> akzeptiert wurde. Dies gewährleistet totale Netzwerk-Unsichtbarkeit gegenüber unbefugten Anfragenden.</span></li>
         </ul>
 
-        <h2>4. <span lang="en">Forensic Hardening & Sanitization</span><span lang="de">Forensische Härtung & Bereinigung</span></h2>
-        <p>
-            <span lang="en">SecureMessenger treats the device as a vault. We implement "Zero-Trace" protocols to prevent data recovery from local storage.</span>
-            <span lang="de">SecureMessenger behandelt das Gerät wie einen Tresor. Wir implementieren "Zero-Trace"-Protokolle, um eine Datenwiederherstellung aus dem lokalen Speicher zu verhindern.</span>
-        </p>
+        <h2>4. <span lang="en">Forensic Hardening & Shredding</span><span lang="de">Forensische Härtung & Schreddern</span></h2>
         <ul>
-            <li><span lang="en"><strong>Active Cache Purging:</strong> Immediately following a successful or failed media upload, the Orchestrator physically deletes temporary encrypted artifacts from the device cache, ensuring no forensic traces of the "Toxic Asset" remain in RAM or flash storage.</span>
-            <span lang="de"><strong>Aktive Cache-Bereinigung:</strong> Unmittelbar nach einem erfolgreichen oder fehlgeschlagenen Medien-Upload löscht der Orchestrator physisch temporäre verschlüsselte Artefakte aus dem Geräte-Cache, sodass keine forensischen Spuren des "Toxischen Assets" im RAM oder Flash-Speicher verbleiben.</span></li>
-            <li><span lang="en"><strong>The Panic PIN (Duress Protocol):</strong> Entering a secondary "Panic PIN" triggers a silent, high-priority forensic wipe of all local SQLCipher databases and cryptographic keys, displaying a generic connection error to obfuscate the wipe.</span>
-            <span lang="de"><strong>Die Panic-PIN (Notfall-Protokoll):</strong> Die Eingabe einer sekundären "Panic-PIN" löst einen stillen forensischen Wipe mit hoher Priorität für alle lokalen SQLCipher-Datenbanken und kryptografischen Schlüssel aus, während ein generischer Verbindungsfehler angezeigt wird, um den Wipe zu verschleiern.</span></li>
-        </ul>
-
-        <h2>5. <span lang="en">Sovereign Data Sovereignty (GDPR Art. 20)</span><span lang="de">Souveräne Datensouveränität (DSGVO Art. 20)</span></h2>
-        <p>
-            <span lang="en">To fulfill the "Right to Portability," users maintain absolute control over their identity bundles.</span>
-            <span lang="de">Um das "Recht auf Portabilität" zu erfüllen, behalten die Nutzer die absolute Kontrolle über ihre Identitäts-Bundles.</span>
-        </p>
-        <ul>
-            <li><span lang="en"><strong>Identity Portability:</strong> Users can export a signed JSON bundle containing their Routing ID and contact graph. Since SecureMessenger stores zero user data on the server, this bundle is the only way to recover an identity, ensuring data sovereignty.</span>
-            <span lang="de"><strong>Identitäts-Portabilität:</strong> Nutzer können ein signiertes JSON-Paket mit ihrer Routing-ID und ihrem Kontakt-Graphen exportieren. Da SecureMessenger keinerlei Nutzerdaten auf dem Server speichert, ist dieses Bundle die einzige Möglichkeit zur Wiederherstellung einer Identität.</span></li>
+            <li><span lang="en"><strong>Forensic Shredding:</strong> Deletions trigger an <b>Active Overwrite Protocol</b>. Data is overwritten with high-entropy random bytes before physical deletion to defeat forensic recovery tools on flash storage.</span>
+            <span lang="de"><strong>Forensisches Schreddern:</strong> Löschvorgänge lösen ein <b>aktives Überschreibprotokoll</b> aus. Daten werden vor der physischen Löschung mit Zufalls-Entropie überschrieben, um forensische Wiederherstellungswerkzeuge auf Flash-Speichern zu vereiteln.</span></li>
+            <li><span lang="en"><strong>Deniable Sovereignty:</strong> The <b>Panic PIN</b> triggers a silent, forensic-level wipe of all local databases and keys while simulating a network connection error for physical alibi verification.</span>
+            <span lang="de"><strong>Dementierbare Souveränität:</strong> Die <b>Panic-PIN</b> löst eine stille Löschung aller lokalen Datenbanken und Schlüssel auf forensischem Niveau aus, während ein Netzwerkverbindungsfehler für ein physisches Alibi simuliert wird.</span></li>
         </ul>
 
         <div class="status-footer">
-            <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) & GDPR Art. 25 (Privacy by Design) Compliant.<br><br>
-            <strong>System Integrity: GHOST PROTOCOL v9.5.2 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
+            <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) & German DDG Compliant.<br><br>
+            <strong>System Integrity: GHOST PROTOCOL v10.8 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
         </div>
     </div>
 
@@ -190,7 +176,6 @@
             document.getElementById('btn-de').classList.toggle('active', lang === 'de');
         }
 
-        // Initialize from storage or default to DE
         const savedLang = localStorage.getItem('preferred-lang') || 'de';
         setLang(savedLang);
     </script>
