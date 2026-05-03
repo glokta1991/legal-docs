@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - SecureMessenger</title>
+    <style>
+        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
+        * { box-sizing: border-box; }
+        
+        body { 
+            background-color: #EDE6D6; 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: center; 
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+        }
+
+        .document-container { 
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 850px; 
+            padding: 50px 40px; 
+            border: 1px solid #D2D2B4; 
+            border-radius: 4px;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
+            overflow-wrap: break-word;
+            margin: 0 auto;
+        }
+
+        /* TRANSLATION TOGGLE STYLING */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .lang-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #1a1a1a;
+            background: #fff;
+            transition: 0.2s;
+        }
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        /* Hiding logic based on html lang attribute */
+        html[lang="de"] [lang="en"] { display: none; }
+        html[lang="en"] [lang="de"] { display: none; }
+
+        .header-branding { text-align: center; margin-bottom: 40px; }
+        .header-branding img { max-width: 180px; height: auto; }
+        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
+        .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
+
+        h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+        h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
+        
+        .nuclear-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #e74c3c; }
+        .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
+        
+        p, li { font-size: 1.05em; color: #222; text-align: justify; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 12px; }
+
+        .compliance-footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid #1a1a1a; text-align: center; font-size: 0.85em; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            .document-container { padding: 30px 20px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="document-container">
+        
+        <div class="lang-switch">
+            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
+        </div>
+
+        <!-- Branding Header -->
+        <div class="header-branding">
+            <img src="logo.png" alt="SecureMessenger Logo">
+            <div class="contact-line">
+                OFFICIAL CONTACT: <a href="mailto:securemessenger0@gmail.com" style="color: #1a1a1a; text-decoration: underline;">securemessenger0@gmail.com</a>
+            </div>
+            <div class="header-divider"></div>
+        </div>
+
+        <h1>
+            <span lang="en">Cookie Transparency Policy</span>
+            <span lang="de">Cookie-Transparenzrichtlinie</span>
+        </h1>
+        
+        <p style="text-align: center;">
+            <strong lang="en">Status: ZERO-TRACKING ARCHITECTURE</strong>
+            <strong lang="de">Status: ZERO-TRACKING-ARCHITEKTUR</strong><br>
+            
+            <span lang="en">Last Updated: April 29, 2026</span>
+            <span lang="de">Zuletzt aktualisiert: 29. April 2026</span>
+        </p>
+
+        <div class="nuclear-notice">
+            <span lang="en">ZERO ANALYTICS | ZERO TRACKING | ZERO MARKETING COOKIES</span>
+            <span lang="de">NULL ANALYTICS | NULL TRACKING | NULL MARKETING-COOKIES</span>
+        </div>
+
+        <h2>1. <span lang="en">The Principle of Non-Observation</span><span lang="de">Das Prinzip der Nicht-Beobachtung</span></h2>
+        <p>
+            <span lang="en">SecureMessenger is engineered for <b>Technical Nescience</b>. We do not track user behavior, utilize Google Analytics, or deploy third-party marketing pixels. Your navigation on this portal remains invisible to us.</span>
+            <span lang="de">SecureMessenger ist auf <b>technische Unkenntnis</b> ausgelegt. Wir verfolgen kein Nutzerverhalten, nutzen kein Google Analytics und setzen keine Marketing-Pixel von Drittanbietern ein. Ihre Navigation auf diesem Portal bleibt für uns unsichtbar.</span>
+        </p>
+
+        <h2>2. <span lang="en">Mandatory Security Cookies</span><span lang="de">Zwingend erforderliche Sicherheits-Cookies</span></h2>
+        <p>
+            <span lang="en">While our application code is cookie-free, we utilize <b>Cloudflare</b> infrastructure to protect our relay from Distributed Denial of Service (DDoS) attacks and automated bots.</span>
+            <span lang="de">Während unser Anwendungscode cookie-frei ist, nutzen wir die <b>Cloudflare</b>-Infrastruktur, um unser Relay vor Distributed-Denial-of-Service (DDoS)-Angriffen und automatisierten Bots zu schützen.</span>
+        </p>
+        <ul>
+            <li><strong><span lang="en">Strictly Necessary:</span><span lang="de">Unbedingt erforderlich:</span></strong> <span lang="en">You may occasionally see a security cookie (e.g., <span class="legal-ref">__cf_bm</span>).</span><span lang="de">Gelegentlich können Sie ein Sicherheits-Cookie sehen (z. B. <span class="legal-ref">__cf_bm</span>).</span></li>
+            <li><strong><span lang="en">Purpose:</span><span lang="de">Zweck:</span></strong> <span lang="en">Bot protection and security verification. It does not track personal identity or browsing history.</span><span lang="de">Bot-Schutz und Sicherheitsverifizierung. Es werden weder die persönliche Identität noch der Browserverlauf verfolgt.</span></li>
+            <li><strong><span lang="en">Legal Status:</span><span lang="de">Rechtlicher Status:</span></strong> <span lang="en">Exempt from consent under <b>§ 25 para. 2 TDDDG</b> and GDPR as these are technically essential for service security.</span><span lang="de">Einwilligungsfrei gemäß <b>§ 25 Abs. 2 TDDDG</b> und DSGVO, da diese für die Sicherheit des Dienstes technisch unerlässlich sind.</span></li>
+        </ul>
+
+        <h2>3. <span lang="en">Your Sovereignty</span><span lang="de">Ihre Souveränität</span></h2>
+        <p>
+            <span lang="en">Since we do not collect personal data via cookies, no "Cookie Banner" or "Opt-out" is required. Your privacy is protected by the protocol by default. You are a ghost on this website.</span>
+            <span lang="de">Da wir keine personenbezogenen Daten über Cookies erheben, ist kein „Cookie-Banner“ oder „Opt-out“ erforderlich. Ihre Privatsphäre wird standardmäßig durch das Protokoll geschützt. Sie sind ein Geist auf dieser Website.</span>
+        </p>
+
+        <div class="compliance-footer">
+            <strong>Legal Audit Status:</strong> TDDDG & EU DSA Compliant.<br>
+            <strong>Verification Date:</strong> April 29, 2026.<br><br>
+            <strong lang="en">Status: GHOST PROTOCOL v10.8 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
+            <strong lang="de">Status: GHOST-PROTOKOLL v10.8 AKTIV. dQuantumBear 🛡️🚀🐻❤️M</strong>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-lang', lang);
+            updateButtons(lang);
+        }
+
+        function updateButtons(lang) {
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+        }
+
+        const savedLang = localStorage.getItem('preferred-lang') || 'de';
+        setLang(savedLang);
+    </script>
+</body>
+</html>
