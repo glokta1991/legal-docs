@@ -50,7 +50,6 @@
             color: #fff;
         }
 
-        /* Hiding logic based on html lang attribute */
         html[lang="de"] [lang="en"] { display: none; }
         html[lang="en"] [lang="de"] { display: none; }
 
@@ -85,7 +84,6 @@
             <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
         </div>
 
-        <!-- Official Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
             <div class="contact-line">
@@ -99,68 +97,72 @@
             <span lang="de">Technisches Whitepaper</span>
         </h1>
         <div class="subtitle">
-            <span lang="en">The GHOST PROTOCOL Architecture</span>
-            <span lang="de">Die GHOST-PROTOKOLL Architektur</span>
+            <span lang="en">The GHOST PROTOCOL v10.8 Architecture</span>
+            <span lang="de">Die GHOST-PROTOKOLL v10.8 Architektur</span>
         </div>
 
         <div class="warning-box">
-            <span lang="en">Protocol Version: 10.8.2 | Status: Forensic Hardened</span>
-            <span lang="de">Protokoll-Version: 10.8.2 | Status: Forensisch-Gehärtet</span>
+            <span lang="en">Status: Forensic Gold Master | Technical Nescience Active</span>
+            <span lang="de">Status: Forensischer Gold-Master | Technische Unkenntnis Aktiv</span>
         </div>
 
-        <h2><span lang="en">Abstract</span><span lang="de">Kurzfassung</span></h2>
+        <h2><span lang="en">Abstract: The Doctrine of Nescience</span><span lang="de">Abstract: Die Doktrin der Unkenntnis</span></h2>
         <p>
-            <span lang="en">This white paper defines the formal architectural standards of <strong>SecureMessenger</strong>, a communication platform engineered for <strong>Technical Nescience</strong>. By mathematically excluding the relay provider from the user's data lifecycle and enforcing zero IP logging, we achieve a state of "Double-Blind" communication. SecureMessenger satisfies the requirements of <strong>GDPR (Art. 11)</strong>, the <strong>German DDG (§ 7)</strong>, and the <strong>EU Digital Services Act (Art. 4)</strong>.</span>
-            <span lang="de">Dieses Whitepaper definiert die formalen Architekturstandards von <strong>SecureMessenger</strong>, einer Kommunikationsplattform, die auf <strong>technische Unkenntnis</strong> ausgelegt ist. Durch den mathematischen Ausschluss des Relay-Anbieters aus dem Datenlebenszyklus und die Durchsetzung einer Null-IP-Protokollierung erreichen wir eine "Double-Blind"-Kommunikation. SecureMessenger erfüllt die Anforderungen der <strong>DSGVO (Art. 11)</strong>, des deutschen <strong>DDG (§ 7)</strong> und des <strong>EU Digital Services Act (Art. 4)</strong>.</span>
+            <span lang="en">SecureMessenger defines a new standard in <b>Infrastructure Neutrality</b>. By utilizing a "Double-Blind" relay architecture, the service provider is physically and mathematically excluded from the data lifecycle. The app utilizes hardware-backed encryption anchoring and scorched-metadata protocols to ensure that even under physical inspection, the vault remains a silent witness.</span>
+            <span lang="de">SecureMessenger definiert einen neuen Standard in der <b>Infrastrukturneutralität</b>. Durch eine „Double-Blind“-Relay-Architektur wird der Dienstanbieter physisch und mathematisch aus dem Datenlebenszyklus ausgeschlossen. Die App nutzt hardwaregestützte Verschlüsselungsverankerung und Scorched-Metadata-Protokolle, um sicherzustellen, dass der Tresor selbst bei physischer Inspektion ein stummer Zeuge bleibt.</span>
         </p>
 
-        <h2>1. <span lang="en">Zero-Knowledge Identity & Zero IP Logging</span><span lang="de">Zero-Knowledge-Identität & Null-IP-Protokollierung</span></h2>
-        <p>
-            <span lang="en">SecureMessenger eliminates Personal Identifiable Information (PII) collection. Registration requires <b>Zero Personal Data</b> (No Emails, No Phone Numbers).</span>
-            <span lang="de">SecureMessenger verzichtet auf die Erfassung personenbezogener Daten (PII). Die Registrierung erfordert <b>null persönliche Daten</b> (keine E-Mails, keine Telefonnummern).</span>
-        </p>
+        <h2>1. <span lang="en">Identity & Entropy Layer</span><span lang="de">Identitäts- & Entropie-Ebene</span></h2>
         <ul>
-            <li><span lang="en"><strong>HMAC-SHA256 Routing:</strong> Identity is derived from 12-word mnemonic entropy. Human usernames are transformed locally into 64-character Routing IDs. The server routes data blindly without cryptographic links to a natural person.</span>
-            <span lang="de"><strong>HMAC-SHA256 Routing:</strong> Die Identität wird aus einer 12-Wörter-Mnemonic-Entropie abgeleitet. Benutzernamen werden lokal in 64-stellige Routing-IDs umgewandelt. Der Server leitet Daten blind weiter, ohne kryptografische Verbindung zu einer natürlichen Person.</span></li>
-            <li><span lang="en"><strong>Instant Connection Erasure:</strong> Our "Blind Relay" is engineered to discard incoming IP addresses instantly. We do not store, log, or maintain connection metadata, ensuring your physical location remains your own.</span>
-            <span lang="de"><strong>Sofortige Verbindungslöschung:</strong> Unser „Blind-Relay“ ist so konzipiert, dass eingehende IP-Adressen sofort verworfen werden. Wir speichern, protokollieren oder pflegen keine Verbindungsmetadaten, um sicherzustellen, dass Ihr physischer Standort Ihr Geheimnis bleibt.</span></li>
+            <li><span lang="en"><b>BIP39 Sovereign Seeds:</b> Identity is founded on 256-bit entropy represented as a 12-word recovery phrase. No emails, phone numbers, or PII are collected.</span>
+            <span lang="de"><b>BIP39 Souveräne Seeds:</b> Die Identität basiert auf einer 256-Bit-Entropie, die als 12-Wörter-Recovery-Seed dargestellt wird. Es werden keine E-Mails, Telefonnummern oder PII erhoben.</span></li>
+            <li><span lang="en"><b>HMAC-SHA256 Routing IDs:</b> Human usernames are salted with a 512-bit quantum-resistant hash locally on the device. The server only recognizes these 64-character Routing IDs, maintaining a total lack of linkability to a natural person.</span>
+            <span lang="de"><b>HMAC-SHA256 Routing-IDs:</b> Benutzernamen werden lokal auf dem Gerät mit einem 512-Bit quantenresistenten Hash gesalzen. Der Server erkennt nur diese 64-stelligen Routing-IDs, wodurch keinerlei Verknüpfbarkeit zu einer natürlichen Person besteht.</span></li>
         </ul>
 
-        <h2>2. <span lang="en">Scorched Metadata Architecture</span><span lang="de">Scorched Metadata Architektur</span></h2>
-        <p>
-            <span lang="en">The server is physically blind to the nature of transmissions. We implement the "Scorched Metadata" standard.</span>
-            <span lang="de">Der Server ist physisch blind für die Art der Übertragungen. Wir implementieren den „Scorched Metadata“-Standard.</span>
-        </p>
+        <h2>2. <span lang="en">Cryptographic Ratcheting Layer</span><span lang="de">Kryptografische Ratcheting-Ebene</span></h2>
         <ul>
-            <li><span lang="en"><strong>Enveloped Metadata Encryption:</strong> Filenames, media keys (AES-GCM), and captions are encrypted <i>inside</i> the Signal message envelope. The relay only sees an opaque routing blob and random noise.</span>
-            <span lang="de"><strong>Verschlüsselte Umschlag-Metadaten:</strong> Dateinamen, Media-Keys (AES-GCM) und Bildunterschriften werden <i>innerhalb</i> des Signal-Nachrichtenumschlags verschlüsselt. Das Relay sieht nur einen undurchsichtigen Routing-Blob und zufälliges Rauschen.</span></li>
-            <li><span lang="en"><strong>Internal Media Isolation:</strong> Decrypted images, videos, and GIFs are rendered exclusively via <b>Immersive Internal Players</b>. Media remains in secure volatile memory and is never exposed to the OS gallery or external system providers.</span>
-            <span lang="de"><strong>Interne Medien-Isolation:</strong> Entschlüsselte Bilder, Videos und GIFs werden ausschließlich über <b>immersive interne Player</b> gerendert. Medien verbleiben im sicheren flüchtigen Speicher und werden niemals der Systemgalerie oder externen Systemanbietern zugänglich gemacht.</span></li>
+            <li><span lang="en"><b>Signal Double Ratchet:</b> Every message utilizes a unique, rotating AES-256 key. Perfect Forward Secrecy (PFS) ensures that compromise of a single key provides zero access to past or future traffic.</span>
+            <span lang="de"><b>Signal Double Ratchet:</b> Jede Nachricht verwendet einen eindeutigen, rotierenden AES-256-Schlüssel. Perfect Forward Secrecy (PFS) stellt sicher, dass die Kompromittierung eines einzelnen Schlüssels keinen Zugriff auf vergangene oder zukünftige Daten ermöglicht.</span></li>
+            <li><span lang="en"><b>Signed PreKey Rotation:</b> Clients automatically rotate identity signatures and PreKey bundles every 48 hours, preventing long-term session analysis.</span>
+            <span lang="de"><b>Signed PreKey Rotation:</b> Clients rotieren automatisch alle 48 Stunden Identitätssignaturen und PreKey-Bundles, was langfristige Sitzungsanalysen verhindert.</span></li>
         </ul>
 
-        <h2>3. <span lang="en">The Handshake (Consent-First Model)</span><span lang="de">Der Handshake (Consent-First-Modell)</span></h2>
-        <p>
-            <span lang="en">To prevent discovery probing, we have replaced static identity strings with an active handshake protocol.</span>
-            <span lang="de">Um Discovery-Probing zu verhindern, haben wir statische Identitäts-Strings durch ein aktives Handshake-Protokoll ersetzt.</span>
-        </p>
+        <h2>3. <span lang="en">Transport & Relay Layer (Blind Relay)</span><span lang="de">Transport- & Relay-Ebene (Blind Relay)</span></h2>
         <ul>
-            <li><span lang="en"><strong>Temporary 6-Digit Codes:</strong> Users establish trust via short-lived (24h) 6-digit Invite Codes. This allows for convenient exchange over audio or email without leaking permanent IDs.</span>
-            <span lang="de"><strong>Temporäre 6-stellige Codes:</strong> Nutzer bauen Vertrauen über kurzlebige (24h) 6-stellige Einladungscodes auf. Dies ermöglicht den bequemen Austausch über Audio oder E-Mail, ohne permanente IDs preiszugeben.</span></li>
-            <li><span lang="en"><strong>Active Consent:</strong> Online status and avatars are not shared until a connection request is actively accepted via the <b>Green Check</b> handshake. This ensures total network invisibility to unauthorized requesters.</span>
-            <span lang="de"><strong>Aktiver Konsens:</strong> Online-Status und Avatare werden erst geteilt, wenn eine Verbindungsanfrage aktiv über den <b>grünen Haken</b> akzeptiert wurde. Dies gewährleistet totale Netzwerk-Unsichtbarkeit gegenüber unbefugten Anfragenden.</span></li>
+            <li><span lang="en"><b>Zero IP Protocol:</b> The Ktor-based Netty relay is configured for <b>Instant Metadata Discard</b>. Incoming IP addresses are processed in volatile RAM and immediately overwritten. No connection logs, timestamps, or geolocation metadata are maintained.</span>
+            <span lang="de"><b>Zero-IP-Protokoll:</b> Das Ktor-basierte Netty-Relay ist für <b>Instant Metadata Discard</b> konfiguriert. Eingehende IP-Adressen werden im flüchtigen RAM verarbeitet und sofort überschrieben. Es werden keine Verbindungsprotokolle, Zeitstempel oder Geolokalisierungs-Metadaten geführt.</span></li>
+            <li><span lang="en"><b>Stateless WebSocket Relay:</b> The backend acts as a mere conduit. Messages are pushed to active sessions via RAM-to-RAM delivery. Undelivered messages are subject to a 24-hour hardware-level TTL purge.</span>
+            <span lang="de"><b>Zustandsloses WebSocket-Relay:</b> Das Backend agiert als reiner technischer Durchleiter. Nachrichten werden über RAM-zu-RAM-Zustellung an aktive Sitzungen gepusht. Nicht zugestellte Nachrichten unterliegen einer 24-Stunden-TTL-Löschung auf Hardware-Ebene.</span></li>
         </ul>
 
-        <h2>4. <span lang="en">Forensic Hardening & Shredding</span><span lang="de">Forensische Härtung & Schreddern</span></h2>
+        <h2>4. <span lang="en">The Handshake Protocol (v10.7)</span><span lang="de">Das Handshake-Protokoll (v10.7)</span></h2>
         <ul>
-            <li><span lang="en"><strong>Forensic Shredding:</strong> Deletions trigger an <b>Active Overwrite Protocol</b>. Data is overwritten with high-entropy random bytes before physical deletion to defeat forensic recovery tools on flash storage.</span>
-            <span lang="de"><strong>Forensisches Schreddern:</strong> Löschvorgänge lösen ein <b>aktives Überschreibprotokoll</b> aus. Daten werden vor der physischen Löschung mit Zufalls-Entropie überschrieben, um forensische Wiederherstellungswerkzeuge auf Flash-Speichern zu vereiteln.</span></li>
-            <li><span lang="en"><strong>Deniable Sovereignty:</strong> The <b>Panic PIN</b> triggers a silent, forensic-level wipe of all local databases and keys while simulating a network connection error for physical alibi verification.</span>
-            <span lang="de"><strong>Dementierbare Souveränität:</strong> Die <b>Panic-PIN</b> löst eine stille Löschung aller lokalen Datenbanken und Schlüssel auf forensischem Niveau aus, während ein Netzwerkverbindungsfehler für ein physisches Alibi simuliert wird.</span></li>
+            <li><span lang="en"><b>Temporary Invite Codes:</b> Trust is established via short-lived (24h) 6-digit codes. This eliminates the need to exchange permanent hashes over insecure channels.</span>
+            <span lang="de"><b>Temporäre Einladungscodes:</b> Vertrauen wird über kurzlebige (24h) 6-stellige Codes aufgebaut. Dies erübrigt den Austausch permanenter Hashes über unsichere Kanäle.</span></li>
+            <li><span lang="en"><b>Active Consent Gate:</b> Presence metadata (Dots/Avatars) is cryptographically locked until a connection request is actively accepted. "Discovery Probing" is mathematically impossible.</span>
+            <span lang="de"><b>Aktives Konsens-Gate:</b> Präsenz-Metadaten (Dots/Avatare) sind kryptografisch gesperrt, bis eine Verbindungsanfrage aktiv akzeptiert wird. „Discovery Probing“ ist mathematisch unmöglich.</span></li>
+        </ul>
+
+        <h2>5. <span lang="en">Forensic Media Pipeline</span><span lang="de">Forensische Medien-Pipeline</span></h2>
+        <ul>
+            <li><span lang="en"><b>Scorched Metadata Standard:</b> Filenames, media keys, and types are encrypted <i>inside</i> the Signal envelope. The storage provider (Cloudinary) only sees opaque AES-256-GCM binary blobs with zero context.</span>
+            <span lang="de"><b>Scorched Metadata Standard:</b> Dateinamen, Media-Keys und Typen werden <i>innerhalb</i> des Signal-Umschlags verschlüsselt. Der Speicheranbieter (Cloudinary) sieht nur undurchsichtige AES-256-GCM-Binär-Blobs ohne jeglichen Kontext.</span></li>
+            <li><span lang="en"><b>Secure RAM Sandbox:</b> Decrypted media is rendered via internal players directly into secure RAM buffers. Media never touches the OS gallery or persistent flash storage in plaintext.</span>
+            <span lang="de"><b>Secure RAM Sandbox:</b> Entschlüsselte Medien werden über interne Player direkt in sichere RAM-Puffer gerendert. Medien gelangen niemals im Klartext in die OS-Galerie oder den persistenten Flash-Speicher.</span></li>
+        </ul>
+
+        <h2>6. <span lang="en">Forensic Hardening & Recovery</span><span lang="de">Forensische Härtung & Wiederherstellung</span></h2>
+        <ul>
+            <li><span lang="en"><b>Active Decay (Entropy Overwrite):</b> Records are not "deleted"—they are shredded. The app overwrites database entries with high-entropy random bytes before physical deletion to defeat forensic NAND recovery.</span>
+            <span lang="de"><b>Active Decay (Entropie-Überschreibung):</b> Datensätze werden nicht „gelöscht“ – sie werden geschreddert. Die App überschreibt Datenbankeinträge vor der physischen Löschung mit Zufalls-Entropie, um forensische NAND-Wiederherstellungen zu vereiteln.</span></li>
+            <li><span lang="en"><b>Panic PIN & 503 Alibi:</b> A user-defined secondary PIN triggers a total local forensic wipe. Post-wipe, the app simulates a generic "503 Service Unavailable" error to provide a plausible technical alibi during duress.</span>
+            <span lang="de"><b>Panic-PIN & 503-Alibi:</b> Eine nutzerdefinierte sekundäre PIN löst eine vollständige lokale forensische Löschung aus. Nach dem Wipe simuliert die App einen generischen „503 Service Unavailable“-Fehler, um bei Zwang ein plausibles technisches Alibi zu bieten.</span></li>
         </ul>
 
         <div class="status-footer">
-            <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) & German DDG Compliant.<br><br>
-            <strong>System Integrity: GHOST PROTOCOL v10.8 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
+            Legal Compliance: EU DSA, GDPR Art. 11, German DDG § 7.<br>
+            System Integrity: GHOST PROTOCOL v10.8 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M
         </div>
     </div>
 
