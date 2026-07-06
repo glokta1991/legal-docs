@@ -62,6 +62,7 @@
         .subtitle { text-align: center; font-size: 1.1em; font-weight: bold; letter-spacing: 2px; margin-bottom: 40px; opacity: 0.7; }
 
         h2 { color: #27ae60; border-left: 6px solid #27ae60; padding-left: 15px; margin-top: 50px; text-transform: uppercase; font-size: 1.3em; }
+        h3 { font-size: 1.1em; color: #1a1a1a; margin-top: 25px; margin-bottom: 10px; }
 
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
         ul { list-style-type: square; padding-left: 20px; }
@@ -93,76 +94,296 @@
         </div>
 
         <h1>
-            <span lang="en">Technical Whitepaper</span>
-            <span lang="de">Technisches Whitepaper</span>
+            <span lang="en">Technical White Paper & Architectural Audit</span>
+            <span lang="de">Technisches Whitepaper & Architektur-Audit</span>
         </h1>
         <div class="subtitle">
-            <span lang="en">The GHOST PROTOCOL v9.5.1-PANDA Architecture</span>
-            <span lang="de">Die GHOST-PROTOKOLL v9.5.1-PANDA Architektur</span>
+            <span lang="en">SecureMessenger: The Architecture of Zero-Knowledge Sovereignty</span>
+            <span lang="de">SecureMessenger: Die Architektur der Zero-Knowledge-Souveränität</span>
         </div>
 
         <div class="warning-box">
-            <span lang="en">Status: Commercial Grade | Forensic Audit Ready</span>
-            <span lang="de">Status: Marktreif | Bereit für forensisches Audit</span>
+            <span lang="en">Date: June 14, 2024 | Project: SecureMessenger</span>
+            <span lang="de">Datum: 14. Juni 2024 | Projekt: SecureMessenger</span>
         </div>
 
-        <h2><span lang="en">Abstract: The Architecture of Sovereignty</span><span lang="de">Abstract: Die Architektur der Souveränität</span></h2>
+        <h2><span lang="en">I. Executive Summary & Market Value Proposition</span><span lang="de">I. Management-Zusammenfassung & Markt-Nutzenversprechen</span></h2>
+
+        <h3>1.1 <span lang="en">Overview</span><span lang="de">Überblick</span></h3>
         <p>
-            <span lang="en">SecureMessenger defines a new standard in <b>Zero-Knowledge Sovereignty</b>. By engineering "Technical Surrender" into every layer, the service provider is physically and mathematically excluded from the data lifecycle. The platform achieves an absolute Encrypted Zero-Knowledge Zero-Visibility Transportation Layer, ensuring the vault remains a silent witness even under physical inspection.</span>
-            <span lang="de">SecureMessenger definiert einen neuen Standard in der <b>Zero-Knowledge-Souveränität</b>. Durch die Implementierung von „Technical Surrender“ in jeder Ebene wird der Dienstanbieter physisch und mathematisch aus dem Datenlebenszyklus ausgeschlossen. Die Plattform realisiert eine absolut verschlüsselte Zero-Knowledge Zero-Visibility Transportschicht, die sicherstellt, dass der Tresor selbst bei physischer Inspektion ein stummer Zeuge bleibt.</span>
+            <span lang="en">SecureMessenger is a forensic-grade, decentralized communications platform engineered under the doctrine of Technical Surrender. Unlike market incumbents (e.g., WhatsApp, Telegram) that retain the administrative power to compromise user data through central metadata indexing or key escrow, SecureMessenger is structurally designed to be "Blind by Default." The platform achieves an absolute Encrypted Zero-Knowledge Zero-Visibility Transportation Layer, insulating the operating entity from data liability and metadata subpoenae.</span>
+            <span lang="de">SecureMessenger ist eine forensische, dezentrale Kommunikationsplattform, die nach der Doktrin des „Technical Surrender“ entwickelt wurde. Im Gegensatz zu etablierten Marktteilnehmern (z. B. WhatsApp, Telegram), die die administrative Macht behalten, Benutzerdaten durch zentrale Metadaten-Indizierung oder Key-Escrow zu kompromittieren, ist SecureMessenger strukturell darauf ausgelegt, „blind by default“ zu sein. Die Plattform realisiert eine absolut verschlüsselte Zero-Knowledge Zero-Visibility Transportschicht, die das betreibende Unternehmen von Datenhaftung und Metadaten-Vorladungen isoliert.</span>
         </p>
 
-        <h2>1. <span lang="en">Identity & Entropy Layer</span><span lang="de">Identitäts- & Entropie-Ebene</span></h2>
+        <h3>1.2 <span lang="en">Core Value Drivers</span><span lang="de">Kern-Werttreiber</span></h3>
         <ul>
-            <li><span lang="en"><b>BIP39 Sovereign Seeds:</b> Identity is founded on 256-bit entropy represented as a 12-word recovery phrase. No emails, phone numbers, or PII are collected.</span>
-            <span lang="de"><b>BIP39 Souveräne Seeds:</b> Die Identität basiert auf einer 256-Bit-Entropie, die als 12-Wörter-Recovery-Seed dargestellt wird. Es werden keine E-Mails, Telefonnummern oder PII erhoben.</span></li>
-            <li><span lang="en"><b>HMAC-SHA256 Routing IDs:</b> Human usernames are salted with a 512-bit quantum-hardened hash locally on the device. The server only recognizes these 64-character Routing IDs, maintaining a total lack of linkability to a natural person.</span>
-            <span lang="de"><b>HMAC-SHA256 Routing-IDs:</b> Benutzernamen werden lokal auf dem Gerät mit einem 512-Bit quantengehärteten Hash gesalzen. Der Server erkennt nur diese 64-stelligen Routing-IDs, wodurch keinerlei Verknüpfbarkeit zu einer natürlichen Person besteht.</span></li>
+            <li>
+                <span lang="en"><b>Server Blindness:</b> The backend infrastructure (Ktor/Netty/MongoDB) is a stateless relay. It is technically incapable of seeing usernames, profiles, unencrypted metadata, or social graphs.</span>
+                <span lang="de"><b>Server-Blindheit:</b> Die Backend-Infrastruktur (Ktor/Netty/MongoDB) ist ein zustandsloses Relay. Sie ist technisch nicht in der Lage, Benutzernamen, Profile, unverschlüsselte Metadaten oder soziale Graphen einzusehen.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Client-Side Identity Autonomy:</b> Identity is established via 256-bit local entropy (BIP39), removing the need for phone numbers or email addresses—the primary vectors for state-level deanonymization.</span>
+                <span lang="de"><b>Clientseitige Identitätsautonomie:</b> Die Identität wird über eine lokale 256-Bit-Entropie (BIP39) etabliert, wodurch Telefonnummern oder E-Mail-Adressen – die primären Vektoren für staatliche Deanonymisierung – überflüssig werden.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Zero-Collection Compliance:</b> By excluding central databases of natural persons, the platform is natively compliant with GDPR Art. 11, DSA Art. 4, and the German TDDDG, as no identifiable data is processed.</span>
+                <span lang="de"><b>Zero-Collection Compliance:</b> Durch den Verzicht auf zentrale Datenbanken natürlicher Personen ist die Plattform nativ konform mit DSGVO Art. 11, DSA Art. 4 und dem deutschen TDDDG, da keine identifizierbaren Daten verarbeitet werden.</span>
+            </li>
         </ul>
 
-        <h2>2. <span lang="en">Cryptographic Core (X3DH & Ratcheting)</span><span lang="de">Kryptografischer Kern (X3DH & Ratcheting)</span></h2>
+        <h2><span lang="en">II. The Encrypted Zero-Knowledge Zero-Visibility Transportation Layer</span><span lang="de">II. Die verschlüsselte Zero-Knowledge Zero-Visibility Transportschicht</span></h2>
+
+        <h3>2.1 <span lang="en">Stateless Blind Relay Architecture</span><span lang="de">2.1 Zustandslose Blind-Relay-Architektur</span></h3>
+        <p>
+            <span lang="en">The SecureMessenger transportation layer operates as a Stateless Blind Relay. Data packets pass through the pipeline strictly as opaque, indistinguishable cryptographic blobs.</span>
+            <span lang="de">Die Transportschicht von SecureMessenger arbeitet als zustandsloses Blind-Relay. Datenpakete passieren die Pipeline ausschließlich als opake, ununterscheidbare kryptografische Blobs.</span>
+        </p>
         <ul>
-            <li><span lang="en"><b>Signal Double Ratchet:</b> Every message utilizes a unique, rotating AES-256 key. Perfect Forward Secrecy (PFS) ensures that compromise of a single key provides zero access to past or future traffic.</span>
-            <span lang="de"><b>Signal Double Ratchet:</b> Jede Nachricht verwendet einen eindeutigen, rotierenden AES-256-Schlüssel. Perfect Forward Secrecy (PFS) stellt sicher, dass die Kompromittierung eines einzelnen Schlüssels keinen Zugriff auf vergangene oder zukünftige Daten ermöglicht.</span></li>
-            <li><span lang="en"><b>Deterministic Identity Anchor:</b> Identity keys are derived via PBKDF2 with 10,000 iterations from the BIP39 seed. This allows users to restore their exact cryptographic identity on new hardware without cloud backups.</span>
-            <span lang="de"><b>Deterministischer Identitäts-Anker:</b> Identitätsschlüssel werden mittels PBKDF2 mit 10.000 Iterationen aus dem BIP39-Seed abgeleitet. Dies ermöglicht es Benutzern, ihre exakte kryptografische Identität auf neuer Hardware ohne Cloud-Backups wiederherzustellen.</span></li>
+            <li>
+                <span lang="en"><b>HMAC-SHA256 Routing:</b> Natural usernames never reach the network. The client performs a local SecurityUtils.generateRoutingId() operation, hashing the username with a project-specific 512-bit salt to produce a 64-character hexadecimal Routing ID. The relay routes data to these IDs without a cryptographic link to the user’s identity.</span>
+                <span lang="de"><b>HMAC-SHA256 Routing:</b> Klarnamen erreichen niemals das Netzwerk. Der Client führt eine lokale SecurityUtils.generateRoutingId()-Operation aus, bei der der Benutzername mit einem projektspezifischen 512-Bit-Salt gehasht wird, um eine 64-stellige hexadezimale Routing-ID zu erzeugen. Das Relay leitet Daten an diese IDs weiter, ohne eine kryptografische Verbindung zur Identität des Benutzers herzustellen.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Asymmetric Telemetry Prevention:</b> Network traffic is isolated using a custom WebSocketManager that redacts IP addresses at the socket level and prevents the formation of an indexed social graph.</span>
+                <span lang="de"><b>Asymmetrische Telemetrie-Prävention:</b> Der Netzwerkverkehr wird durch einen benutzerdefinierten WebSocketManager isoliert, der IP-Adressen auf Socket-Ebene entfernt und die Bildung eines indizierten sozialen Graphen verhindert.</span>
+            </li>
         </ul>
 
-        <h2>3. <span lang="en">Transport Layer (Blind Relay)</span><span lang="de">Transportschicht (Blind Relay)</span></h2>
+        <h3>2.2 <span lang="en">Transport-Layer Security (TLS) vs. E2EE</span><span lang="de">2.2 Transport-Layer Security (TLS) vs. E2EE</span></h3>
+        <p>
+            <span lang="en">While TLS protects the data in transit from external interceptors, SecureMessenger treats the relay itself as a potential adversary. The Signal Protocol (Double Ratchet) is used to wrap every payload, ensuring that even if the relay were compromised, the data remains cryptographically inaccessible.</span>
+            <span lang="de">Während TLS die Daten während der Übertragung vor externen Interzeptoren schützt, betrachtet SecureMessenger das Relay selbst als potenziellen Angreifer. Das Signal-Protokoll (Double Ratchet) wird verwendet, um jede Payload zu umhüllen, wodurch sichergestellt wird, dass die Daten selbst bei einer Kompromittierung des Relays kryptografisch unzugänglich bleiben.</span>
+        </p>
+
+        <h2><span lang="en">III. Client-Side Cryptographic Core (Deep Dive)</span><span lang="de">III. Clientseitiger kryptografischer Kern (Deep Dive)</span></h2>
+
+        <h3>3.1 <span lang="en">Session Initialization (X3DH)</span><span lang="de">3.1 Sitzungs-Initialisierung (X3DH)</span></h3>
+        <p>
+            <span lang="en">SecureMessenger implements the Extended Triple Diffie-Hellman (X3DH) key agreement protocol to establish a shared secret between mutually untrusted parties.</span>
+            <span lang="de">SecureMessenger implementiert das Extended Triple Diffie-Hellman (X3DH) Key-Agreement-Protokoll, um ein gemeinsames Geheimnis zwischen gegenseitig nicht vertrauenswürdigen Parteien zu etablieren.</span>
+        </p>
         <ul>
-            <li><span lang="en"><b>Asymmetric Telemetry Prevention:</b> Network traffic is isolated using a custom WebSocketManager that redacts IP addresses at the socket level. No connection logs, timestamps, or geolocation metadata are maintained.</span>
-            <span lang="de"><b>Asymmetrische Telemetrie-Prävention:</b> Der Netzwerkverkehr wird durch einen benutzerdefinierten WebSocketManager isoliert, der IP-Adressen auf Socket-Ebene entfernt. Es werden keine Verbindungsprotokolle, Zeitstempel oder Geolokalisierungs-Metadaten geführt.</span></li>
-            <li><span lang="en"><b>Stateless WebSocket Relay:</b> The backend acts as a mere conduit. Messages are pushed to active sessions via RAM-to-RAM delivery. Undelivered messages are subject to a mandatory 30-day hardware-level TTL purge.</span>
-            <span lang="de"><b>Zustandsloses WebSocket-Relay:</b> Das Backend agiert als reiner technischer Durchleiter. Nachrichten werden über RAM-zu-RAM-Zustellung an aktive Sitzungen gepusht. Nicht zugestellte Nachrichten unterliegen einer obligatorischen 30-Tage-TTL-Löschung auf Hardware-Ebene.</span></li>
+            <li>
+                <span lang="en"><b>Identity Keys (IK):</b> Long-term Curve25519 key pair.</span>
+                <span lang="de"><b>Identity Keys (IK):</b> Langfristiges Curve25519-Schlüsselpaar.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Signed PreKeys (SPK):</b> Rotated every 48 hours (via SignalKeyManager.performKeyMaintenance()) to ensure forward secrecy.</span>
+                <span lang="de"><b>Signed PreKeys (SPK):</b> Werden alle 48 Stunden rotiert (via SignalKeyManager.performKeyMaintenance()), um Forward Secrecy zu gewährleisten.</span>
+            </li>
+            <li>
+                <span lang="en"><b>One-Time PreKeys (OPK):</b> A batch of 80 ephemeral keys replenished automatically, ensuring "always-on" E2EE initialization even for offline recipients.</span>
+                <span lang="de"><b>One-Time PreKeys (OPK):</b> Ein Batch von 80 ephemeren Schlüsseln, die automatisch aufgefüllt werden, was eine „Always-on“-E2EE-Initialisierung auch für Offline-Empfänger ermöglicht.</span>
+            </li>
         </ul>
 
-        <h2>4. <span lang="en">Zero-Visibility Media Pipeline</span><span lang="de">Zero-Visibility Medien-Pipeline</span></h2>
+        <h3>3.2 <span lang="en">The Double Ratchet Mechanism</span><span lang="de">3.2 Der Double-Ratchet-Mechanismus</span></h3>
+        <p>
+            <span lang="en">Payload encryption is managed by the Double Ratchet mechanism, combining a Diffie-Hellman (DH) Ratchet and a Symmetric-Key Ratchet.</span>
+            <span lang="de">Die Verschlüsselung der Payload wird durch den Double-Ratchet-Mechanismus verwaltet, der einen Diffie-Hellman (DH) Ratchet und einen Symmetric-Key Ratchet kombiniert.</span>
+        </p>
         <ul>
-            <li><span lang="en"><b>Sovereign Key Recovery:</b> Proprietary .ghost files are indexed via SHA-256 hashes. If opened via the OS, the app automatically recovers the AES media key from the local Sovereign Vault, ensuring bit-perfect decryption without unencrypted headers.</span>
-            <span lang="de"><b>Souveräne Schlüsselwiederherstellung:</b> Proprietäre .ghost-Dateien werden über SHA-256-Hashes indiziert. Beim Öffnen über das OS stellt die App den AES-Media-Key automatisch aus dem lokalen Sovereign Vault wieder her, was eine bitgenaue Entschlüsselung ohne unverschlüsselte Header ermöglicht.</span></li>
-            <li><span lang="en"><b>Decrypt-to-Cache Gateway:</b> Document types (PDF/DOCX) are decrypted into an isolated cache for external viewer compatibility. This cache is subjected to a Multi-Pass Forensic Shred immediately upon the user returning to the app context.</span>
-            <span lang="de"><b>Decrypt-to-Cache Gateway:</b> Dokumenttypen (PDF/DOCX) werden für die Kompatibilität mit externen Viewern in einen isolierten Cache entschlüsselt. Dieser Cache wird sofort nach Rückkehr des Benutzers in den App-Kontext einem Multi-Pass Forensic Shred unterzogen.</span></li>
-            <li><span lang="en"><b>Blind Proxy Link Previews:</b> Previews for social platforms are routed through dedicated forensic proxies (fxtiktok, vxreddit) to strip IP headers and prevent device fingerprinting by target servers.</span>
-            <span lang="de"><b>Blind-Proxy-Link-Vorschauen:</b> Vorschauen für soziale Plattformen werden über dedizierte forensische Proxys (fxtiktok, vxreddit) geleitet, um IP-Header zu entfernen und Device-Fingerprinting durch Zielserver zu verhindern.</span></li>
+            <li>
+                <span lang="en"><b>Perfect Forward Secrecy (PFS):</b> Every message is encrypted with a unique key derived from the rolling ratchet. Compromising one key yields no access to previous messages.</span>
+                <span lang="de"><b>Perfect Forward Secrecy (PFS):</b> Jede Nachricht wird mit einem eindeutigen Schlüssel verschlüsselt, der aus dem rotierenden Ratchet abgeleitet wird. Die Kompromittierung eines Schlüssels ermöglicht keinen Zugriff auf vorherige Nachrichten.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Break-in Recovery (Future Secrecy):</b> If an adversary compromises a device's current state, the DH ratchet ensures the session "heals" as soon as the next message exchange occurs, locking the adversary out of future communications.</span>
+                <span lang="de"><b>Break-in Recovery (Future Secrecy):</b> Wenn ein Angreifer den aktuellen Zustand eines Geräts kompromittiert, stellt der DH-Ratchet sicher, dass die Sitzung „heilt“, sobald der nächste Nachrichtenaustausch stattfindet, wodurch der Angreifer von der zukünftigen Kommunikation ausgeschlossen wird.</span>
+            </li>
         </ul>
 
-        <h2>5. <span lang="en">Forensic Hardening & Recovery</span><span lang="de">Forensische Härtung & Wiederherstellung</span></h2>
+        <h3>3.3 <span lang="en">Deterministic Identity & BIP39 Restorations</span><span lang="de">3.3 Deterministische Identität & BIP39-Wiederherstellungen</span></h3>
+        <p>
+            <span lang="en">A unique architectural masterstroke is the Deterministic Identity Anchor. Instead of generating random identity keys that would trigger "Identity Changed" warnings during device migration, SecureMessenger derives the master keypair from the 12-word BIP39 mnemonic.</span>
+            <span lang="de">Ein einzigartiger architektonischer Meilenstein ist der deterministische Identitätsanker. Anstatt zufällige Identitätsschlüssel zu generieren, die bei einer Gerätemigration Warnungen über eine „geänderte Identität“ auslösen würden, leitet SecureMessenger das Master-Schlüsselpaar aus dem 12-Wörter-BIP39-Mnemonic ab.</span>
+        </p>
         <ul>
-            <li><span lang="en"><b>Active Decay (Entropy Overwrite):</b> Records are not "deleted"—they are shredded. The app overwrites database entries with high-entropy random bytes and executes a hardware-level VACUUM to defeat forensic NAND recovery.</span>
-            <span lang="de"><b>Active Decay (Entropie-Überschreibung):</b> Datensätze werden nicht „gelöscht“ – sie werden geschreddert. Die App überschreibt Datenbankeinträge mit Zufalls-Entropie hoher Entropie und führt ein Hardware-Level VACUUM aus, um forensische NAND-Wiederherstellungen zu vereiteln.</span></li>
-            <li><span lang="en"><b>Panic PIN & 503 Alibi:</b> A user-defined secondary PIN triggers a silent total forensic wipe of all keys and data. Post-wipe, the app displays a fake "503 Network Error" to provide a plausible technical alibi during duress.</span>
-            <span lang="de"><b>Panic-PIN & 503-Alibi:</b> Eine nutzerdefinierte sekundäre PIN löst eine stille, vollständige forensische Löschung aller Schlüssel und Daten aus. Nach dem Wipe zeigt die App einen gefälschten „503 Network Error“ an, um bei Zwang ein plausibles technisches Alibi zu bieten.</span></li>
+            <li>
+                <span lang="en"><b>Derivation Formula:</b> PBKDF2(HMAC-SHA256, Username + Mnemonic, Salt="GHOST_IDENTITY...", Iterations=4096).</span>
+                <span lang="de"><b>Ableitungsformel:</b> PBKDF2(HMAC-SHA256, Username + Mnemonic, Salt=„GHOST_IDENTITY...“, Iterationen=4096).</span>
+            </li>
+            <li>
+                <span lang="en"><b>Forensic Impact:</b> This allows a user to restore their exact cryptographic identity on any new hardware without a cloud-based backup, maintaining sovereignty over their private keys.</span>
+                <span lang="de"><b>Forensische Auswirkung:</b> Dies ermöglicht es einem Benutzer, seine exakte kryptografische Identität auf jeder neuen Hardware ohne Cloud-basiertes Backup wiederherzustellen und so die Souveränität über seine privaten Schlüssel zu behalten.</span>
+            </li>
         </ul>
 
-        <h2>6. <span lang="en">Commercial Grade Standards</span><span lang="de">Standards auf Marktniveau</span></h2>
+        <h3>3.4 <span lang="en">Local Storage Encryption (SQLCipher AES-256)</span><span lang="de">3.4 Lokale Speicherverschlüsselung (SQLCipher AES-256)</span></h3>
+        <p>
+            <span lang="en">Data-at-rest is protected via SQLCipher. The database file is encrypted at the page level using AES-256 in XTS mode.</span>
+            <span lang="de">Ruhende Daten (Data-at-rest) werden über SQLCipher geschützt. Die Datenbankdatei wird auf Seitenebene mit AES-256 im XTS-Modus verschlüsselt.</span>
+        </p>
         <ul>
-            <li><span lang="en"><b>Adaptive Typography Engine (v2.0.0):</b> Implements responsive scaling and Anti-Tofu Glyph Fallbacks to ensure high-entropy readability and accessibility compliance (WCAG 1.4.4) across all Android hardware.</span>
-            <span lang="de"><b>Adaptive Typografie-Engine (v2.0.0):</b> Implementiert responsives Skalieren und Anti-Tofu Glyph Fallbacks, um Lesbarkeit bei hoher Entropie und Barrierefreiheits-Compliance (WCAG 1.4.4) auf jeder Android-Hardware zu gewährleisten.</span></li>
+            <li>
+                <span lang="en"><b>TEE/SE Key Wrapping:</b> The master passphrase for the database is never stored in plaintext. It is wrapped using an AES-GCM key stored in the Android Trusted Execution Environment (TEE) via the DatabasePassphraseManager. This prevents physical memory dumps from compromising the vault.</span>
+                <span lang="de"><b>TEE/SE Key Wrapping:</b> Die Master-Passphrase für die Datenbank wird niemals im Klartext gespeichert. Sie wird mit einem AES-GCM-Schlüssel umhüllt, der in der Android Trusted Execution Environment (TEE) via DatabasePassphraseManager gespeichert ist. Dies verhindert, dass physische Speicherdumps den Tresor kompromittieren.</span>
+            </li>
+        </ul>
+
+        <h3>3.5 <span lang="en">Memory Space Hardening (RAM Sanitization)</span><span lang="de">3.5 Speicherhärtung (RAM-Sanitisation)</span></h3>
+        <p>
+            <span lang="en">To mitigate "Heap Allocation Leaks," SecureMessenger enforces strict RAM hygiene:</span>
+            <span lang="de">Um „Heap Allocation Leaks“ zu minimieren, erzwingt SecureMessenger eine strikte RAM-Hygiene:</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en">Sensitive keys and mnemonics are handled as ByteArray or CharArray.</span>
+                <span lang="de">Sensible Schlüssel und Mnemonics werden als ByteArray oder CharArray verarbeitet.</span>
+            </li>
+            <li>
+                <span lang="en">In the finally block of every cryptographic operation (e.g., MnemonicUtils.generateSeed), the memory is physically zeroed out using Arrays.fill(key, 0).</span>
+                <span lang="de">Im finally-Block jeder kryptografischen Operation (z. B. MnemonicUtils.generateSeed) wird der Speicher physisch mit Arrays.fill(key, 0) auf Null gesetzt.</span>
+            </li>
+        </ul>
+
+        <h2><span lang="en">IV. Zero-Visibility Media & Attachment Pipeline</span><span lang="de">IV. Zero-Visibility Medien- & Anhangs-Pipeline</span></h2>
+
+        <h3>4.1 <span lang="en">Ephemeral Symmetric Media Keys</span><span lang="de">4.1 Ephemere symmetrische Media-Keys</span></h3>
+        <p>
+            <span lang="en">High-overhead attachments (videos, images, documents) are encrypted using a Hybrid Blob Architecture:</span>
+            <span lang="de">Attachments mit hohem Overhead (Videos, Bilder, Dokumente) werden mittels einer Hybrid-Blob-Architektur verschlüsselt:</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en">1. The client generates a unique 256-bit AES symmetric key for the specific file.</span>
+                <span lang="de">1. Der Client generiert einen eindeutigen symmetrischen 256-Bit AES-Schlüssel für die spezifische Datei.</span>
+            </li>
+            <li>
+                <span lang="en">2. The file is encrypted locally.</span>
+                <span lang="de">2. Die Datei wird lokal verschlüsselt.</span>
+            </li>
+            <li>
+                <span lang="en">3. The encrypted binary is uploaded to an untrusted storage provider (Cloudinary).</span>
+                <span lang="de">3. Das verschlüsselte Binary wird zu einem nicht vertrauenswürdigen Speicheranbieter (Cloudinary) hochgeladen.</span>
+            </li>
+            <li>
+                <span lang="en">4. The symmetric key and URL are sealed inside the Signal E2EE envelope and sent to the recipient.</span>
+                <span lang="de">4. Der symmetrische Schlüssel und die URL werden im Signal-E2EE-Umschlag versiegelt und an den Empfänger gesendet.</span>
+            </li>
+        </ul>
+
+        <h3>4.2 <span lang="en">Metadata Sterilization (EXIF Incineration)</span><span lang="de">4.2 Metadaten-Sterilisation (EXIF-Verbrennung)</span></h3>
+        <p>
+            <span lang="en">Before encryption, every captured media item undergoes a forensic scrub via the MetadataStripper.</span>
+            <span lang="de">Vor der Verschlüsselung wird jedes aufgenommene Medienobjekt einem forensischen Scrubbing via MetadataStripper unterzogen.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Physical Overwrite:</b> The JPEG/MP4 header is parsed, and GPS tags, device signatures (Model/Make), and timestamps are physically overwritten or cleared.</span>
+                <span lang="de"><b>Physisches Überschreiben:</b> Der JPEG/MP4-Header wird analysiert, und GPS-Tags, Gerätesignaturen (Modell/Marke) sowie Zeitstempel werden physisch überschrieben oder gelöscht.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Privacy Impact:</b> This ensures that even if a recipient saves a photo to their local gallery, the originating user's physical location and device fingerprint are deleted.</span>
+                <span lang="de"><b>Datenschutzauswirkung:</b> Dies stellt sicher, dass selbst wenn ein Empfänger ein Foto in seiner lokalen Galerie speichert, der physische Standort und der Geräte-Fingerabdruck des Absenders gelöscht sind.</span>
+            </li>
+        </ul>
+
+        <h3>4.3 <span lang="en">Volatile RAM-Only Decryption</span><span lang="de">4.3 Flüchtige RAM-only Entschlüsselung</span></h3>
+        <p>
+            <span lang="en">To satisfy the "Technical Surrender" requirement, SecureMessenger prevents the creation of intermediate unencrypted files on storage.</span>
+            <span lang="de">Um die Anforderung des „Technical Surrender“ zu erfüllen, verhindert SecureMessenger die Erstellung von unverschlüsselten Zwischendateien auf dem Speicher.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Save Plain:</b> When a user saves a file to their gallery, the stream is decrypted in a volatile RAM buffer and piped directly to the MediaStore API.</span>
+                <span lang="de"><b>Save Plain:</b> Wenn ein Benutzer eine Datei in seiner Galerie speichert, wird der Stream in einem flüchtigen RAM-Puffer entschlüsselt und direkt an die MediaStore-API geleitet.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Audio Sandbox:</b> Voice notes are recorded and decrypted strictly in memory, zero-filling the buffer immediately after the MediaPlayer release.</span>
+                <span lang="de"><b>Audio-Sandbox:</b> Sprachnachrichten werden ausschließlich im Speicher aufgenommen und entschlüsselt, wobei der Puffer unmittelbar nach der Freigabe des MediaPlayers mit Nullen gefüllt wird.</span>
+            </li>
+        </ul>
+
+        <h2><span lang="en">V. Fault-Tolerant Self-Healing Mechanics (The Stability Engine)</span><span lang="de">V. Fehlertolerante Self-Healing-Mechanik (Die Stabilitäts-Engine)</span></h2>
+
+        <h3>5.1 <span lang="en">Silent Decryption Recovery</span><span lang="de">5.1 Stille Entschlüsselungs-Wiederherstellung</span></h3>
+        <p>
+            <span lang="en">The SignalMessageManager implements a Silent Recovery Protocol to handle ratchet desynchronization (e.g., after long periods of inactivity or storage corruption).</span>
+            <span lang="de">Der SignalMessageManager implementiert ein Silent-Recovery-Protokoll, um Ratchet-Desynchronisationen zu handhaben (z. B. nach langen Inaktivitätsphasen oder Speicherbeschädigungen).</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Invisible Handshake:</b> If a DuplicateMessageException or a decryption failure is detected, the app automatically triggers an IDENTITY_RESET handshake. This re-negotiates the secure tunnel in the background without UI interruption or leaking metadata.</span>
+                <span lang="de"><b>Unsichtbarer Handshake:</b> Wenn eine DuplicateMessageException oder ein Entschlüsselungsfehler erkannt wird, löst die App automatisch einen IDENTITY_RESET-Handshake aus. Dies handelt den sicheren Tunnel im Hintergrund neu aus, ohne die Benutzeroberfläche zu unterbrechen oder Metadaten preiszugeben.</span>
+            </li>
+        </ul>
+
+        <h3>5.2 <span lang="en">Anti-Ghosting UI Guard</span><span lang="de">5.2 Anti-Ghosting UI Guard</span></h3>
+        <p>
+            <span lang="en">The system explicitly prevents "Ghost Users" by quarantining unverified incoming signals until a successful ratchet handshake is completed. This ensures the user's contact list remains a "Sovereign Social Graph," unpolluted by unencrypted profile data.</span>
+            <span lang="de">Das System verhindert explizit „Ghost User“, indem es unverifizierte eingehende Signale unter Quarantäne stellt, bis ein erfolgreicher Ratchet-Handshake abgeschlossen ist. Dies stellt sicher, dass die Kontaktliste des Benutzers ein „souveräner sozialer Graph“ bleibt, der nicht durch unverschlüsselte Profildaten verunreinigt wird.</span>
+        </p>
+
+        <h2><span lang="en">VI. Sovereign Multi-Device Migration Model</span><span lang="de">VI. Souveränes Multi-Device-Migrationsmodell</span></h2>
+
+        <h3>6.1 <span lang="en">Local P2P Migration Engine</span><span lang="de">6.1 Lokale P2P-Migrations-Engine</span></h3>
+        <p>
+            <span lang="en">SecureMessenger bypasses Google/Apple cloud dependencies through a Local Peer-to-Peer Migration Engine.</span>
+            <span lang="de">SecureMessenger umgeht Cloud-Abhängigkeiten von Google/Apple durch eine lokale Peer-to-Peer-Migrations-Engine.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>QR Handshake:</b> The source device displays a QR code containing its local IP and a temporary session key.</span>
+                <span lang="de"><b>QR-Handshake:</b> Das Quellgerät zeigt einen QR-Code an, der seine lokale IP und einen temporären Sitzungsschlüssel enthält.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Encrypted Tunnel:</b> The target device scans the QR, establishes a TLS-secured local network connection, and streams the encrypted database payload directly across the air-gap.</span>
+                <span lang="de"><b>Verschlüsselter Tunnel:</b> Das Zielgerät scannt den QR, baut eine TLS-gesicherte lokale Netzwerkverbindung auf und streamt die verschlüsselte Datenbank-Payload direkt über den Air-Gap.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Revocation:</b> Upon successful migration, a SYSTEM_DEVICE_REVOKE signal is sent to the relay to drop stale WebSocket pipelines for the old hardware.</span>
+                <span lang="de"><b>Widerruf:</b> Nach erfolgreicher Migration wird ein SYSTEM_DEVICE_REVOKE-Signal an das Relay gesendet, um veraltete WebSocket-Pipelines für die alte Hardware zu schließen.</span>
+            </li>
+        </ul>
+
+        <h2><span lang="en">VII. Infrastructure, Scalability, & Technical Debt Audit</span><span lang="de">VII. Infrastruktur, Skalierbarkeit & Technical-Debt-Audit</span></h2>
+
+        <h3>7.1 <span lang="en">Dependency & Licensing Compliance</span><span lang="de">7.1 Abhängigkeiten & Lizenz-Compliance</span></h3>
+        <p>
+            <span lang="en">The platform utilizes industry-standard, commercially-friendly libraries:</span>
+            <span lang="de">Die Plattform nutzt Industriestandard-Bibliotheken, die kommerziell nutzbar sind:</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Signal Protocol:</b> libsignal-android (GPLv3/Commercial-compatible implementation).</span>
+                <span lang="de"><b>Signal-Protokoll:</b> libsignal-android (GPLv3/kommerzielle kompatible Implementierung).</span>
+            </li>
+            <li>
+                <span lang="en"><b>Persistence:</b> Room + SQLCipher (BSD/Apache 2.0).</span>
+                <span lang="de"><b>Persistenz:</b> Room + SQLCipher (BSD/Apache 2.0).</span>
+            </li>
+            <li>
+                <span lang="en"><b>Concurrency:</b> Kotlin Coroutines & Flow (Zero-leakage reactive streams).</span>
+                <span lang="de"><b>Konkurrenz:</b> Kotlin Coroutines & Flow (Zero-leakage reaktive Streams).</span>
+            </li>
+        </ul>
+
+        <h3>7.2 <span lang="en">Performance & Threading</span><span lang="de">7.2 Leistung & Threading</span></h3>
+        <p>
+            <span lang="en">Computationally expensive cryptographic operations (Double Ratchet rotations, 4096-iteration PBKDF2) are strictly isolated to Dispatchers.IO via Coroutines. This maintains a fluid 60FPS UI performance even during high-volume message processing.</span>
+            <span lang="de">Rechenintensive kryptografische Operationen (Double-Ratchet-Rotationen, PBKDF2 mit 4096 Iterationen) werden via Coroutines strikt auf Dispatchers.IO isoliert. Dies sorgt für eine flüssige 60FPS-UI-Performance, selbst bei hohem Nachrichtenaufkommen.</span>
+        </p>
+
+        <h3>7.3 <span lang="en">Security Audit Results</span><span lang="de">7.3 Ergebnisse des Sicherheits-Audits</span></h3>
+        <ul>
+            <li>
+                <span lang="en"><b>Data Leakage:</b> None detected. Unencrypted profiles never touch the relay.</span>
+                <span lang="de"><b>Datenabfluss:</b> Keine erkannt. Unverschlüsselte Profile berühren niemals das Relay.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Forensic Remnants:</b> Minimized via Active Decay (Shredding + VACUUM).</span>
+                <span lang="de"><b>Forensische Überreste:</b> Minimiert durch Active Decay (Shredding + VACUUM).</span>
+            </li>
+            <li>
+                <span lang="en"><b>Protocol Resilience:</b> High. The system successfully heals from identity resets and network fragmentation.</span>
+                <span lang="de"><b>Protokoll-Resilienz:</b> Hoch. Das System erholt sich erfolgreich von Identitäts-Resets und Netzwerkfragmentierung.</span>
+            </li>
         </ul>
 
         <div class="status-footer">
-            Legal Compliance: EU DSA, GDPR Art. 11, German TDDDG § 25.<br>
-            System Integrity: GHOST PROTOCOL v9.5.1-PANDA ACTIVE. dQuantumBear 🛡️🚀🐻❤️
+            Legal Compliance: EU DSGVO, GDPR Art. 11, German TDDDG § 25.<br>
+            System Integrity: GHOST PROTOCOL v9.5.1 ACTIVE. dQuantumBear 🛡️🚀🐻❤️
         </div>
     </div>
 
