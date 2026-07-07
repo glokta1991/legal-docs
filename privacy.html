@@ -7,26 +7,26 @@
     <style>
         /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
-        
-        body { 
-            background-color: #EDE6D6; 
-            margin: 0; 
-            padding: 20px; 
-            display: flex; 
-            justify-content: center; 
+
+        body {
+            background-color: #EDE6D6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
             font-family: 'Georgia', serif;
             line-height: 1.7;
             color: #1a1a1a;
         }
 
-        .document-container { 
+        .document-container {
             background-color: #ffffff;
             width: 100%;
-            max-width: 850px; 
-            padding: 50px 40px; 
-            border: 1px solid #D2D2B4; 
+            max-width: 850px;
+            padding: 50px 40px;
+            border: 1px solid #D2D2B4;
             border-radius: 4px;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
             overflow-wrap: break-word;
             margin: 0 auto;
         }
@@ -61,10 +61,10 @@
 
         h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
         h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
-        
+
         .nuclear-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #e74c3c; }
         .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
-        
+
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
         ul { padding-left: 20px; }
         li { margin-bottom: 12px; }
@@ -80,7 +80,7 @@
 </head>
 <body>
     <div class="document-container">
-        
+
         <div class="lang-switch">
             <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
             <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
@@ -99,14 +99,14 @@
             <span lang="en">Privacy Policy & Legal Framework</span>
             <span lang="de">Datenschutzerklärung & Rechtlicher Rahmen</span>
         </h1>
-        
+
         <p style="text-align: center;">
             <strong lang="en">Status: GHOST PROTOCOL v10.8 ACTIVE | ZERO-KNOWLEDGE ARCHITECTURE</strong>
             <strong lang="de">Status: GHOST-PROTOKOLL v10.8 AKTIV | ZERO-KNOWLEDGE-ARCHITEKTUR</strong><br>
-            
+
             <span lang="en">Effective Date: April 29, 2026</span>
             <span lang="de">Gültigkeitsdatum: 29. April 2026</span><br>
-            
+
             <span lang="en">Jurisdiction: Federal Republic of Germany (BGB, DDG, TDDDG)</span>
             <span lang="de">Gerichtsstand: Bundesrepublik Deutschland (BGB, DDG, TDDDG)</span>
         </p>
@@ -173,6 +173,34 @@
             <li><strong><span lang="en">Forensic Shredding:</span><span lang="de">Forensisches Schreddern:</span></strong> <span lang="en">Data is overwritten with random entropy before deletion to prevent recovery by forensic software. Entire history can be nuked with one click.</span><span lang="de">Daten werden vor der Löschung mit Zufalls-Entropie überschrieben, um eine Wiederherstellung durch forensische Software zu verhindern. Der gesamte Verlauf kann mit einem Klick gelöscht werden.</span></li>
             <li><strong><span lang="en">Panic PIN:</span><span lang="de">Panic PIN:</span></strong> <span lang="en">A secondary password that triggers a silent forensic wipe while simulating a connection error for physical safety.</span><span lang="de">Ein sekundäres Passwort, das zur physischen Sicherheit eine stille forensische Löschung auslöst, während ein Verbindungsfehler simuliert wird.</span></li>
         </ul>
+
+        <h2>7. <span lang="en">Voice & Video Communication (VoIP)</span><span lang="de">Sprach- & Videokommunikation (VoIP)</span></h2>
+        <p>
+            <span lang="en">To facilitate real-time, end-to-end encrypted voice and video calls, the application utilizes the following permissions:</span>
+            <span lang="de">Um Ende-zu-Ende-verschlüsselte Sprach- und Videoanrufe in Echtzeit zu ermöglichen, nutzt die Anwendung die folgenden Berechtigungen:</span>
+        </p>
+        <ul>
+            <li>
+                <strong>Microphone (RECORD_AUDIO):</strong>
+                <span lang="en">Requested exclusively during active VoIP calls to capture voice data for transmission. No audio data is stored, recorded, or uploaded to our servers.</span>
+                <span lang="de">Wird ausschließlich während aktiver VoIP-Anrufe angefordert, um Sprachdaten für die Übermittlung zu erfassen. Es werden keine Audiodaten gespeichert, aufgezeichnet oder auf unsere Server hochgeladen.</span>
+            </li>
+            <li>
+                <strong>Camera (CAMERA):</strong>
+                <span lang="en">Requested exclusively for video calling functionality. Camera access is strictly limited to the duration of the active call and is not utilized for background monitoring or image capture outside of your active communication session.</span>
+                <span lang="de">Wird ausschließlich für Videoanruffunktionen angefordert. Der Kamerazugriff ist streng auf die Dauer des aktiven Anrufs beschränkt und wird nicht für die Hintergrundüberwachung oder Bildaufnahme außerhalb Ihrer aktiven Kommunikationssitzung verwendet.</span>
+            </li>
+            <li>
+                <strong>Foreground Service (FOREGROUND_SERVICE_MEDIA_PLAYBACK):</strong>
+                <span lang="en">Used to maintain the integrity of the encrypted media stream during active calls. This ensures that your encrypted communication remains stable and is not terminated by the Android OS lifecycle management while the application is in the background.</span>
+                <span lang="de">Wird verwendet, um die Integrität des verschlüsselten Medienstroms während aktiver Anrufe aufrechtzuerhalten. Dies stellt sicher, dass Ihre verschlüsselte Kommunikation stabil bleibt und nicht durch das Lifecycle-Management des Android-Betriebssystems beendet wird, während sich die Anwendung im Hintergrund befindet.</span>
+            </li>
+        </ul>
+        <p>
+            <strong><span lang="en">Compliance Disclosure:</span><span lang="de">Compliance-Offenlegung:</span></strong><br>
+            <span lang="en">We adhere to the Google Play Developer Policy regarding the use of high-risk permissions. Users are presented with a prominent, in-app disclosure screen explaining the necessity of these permissions immediately prior to any system-level request. Our architecture ensures that all media remains end-to-end encrypted, and our infrastructure operates solely as a technical conduit, meaning we possess no technical means to access, inspect, or store the content of your communications.</span>
+            <span lang="de">Wir halten uns an die Google Play-Entwicklerrichtlinien bezüglich der Verwendung von Hochrisiko-Berechtigungen. Den Nutzern wird unmittelbar vor jeder Anfrage auf Systemebene ein deutlicher In-App-Offenlegungsbildschirm angezeigt, der die Notwendigkeit dieser Berechtigungen erläutert. Unsere Architektur stellt sicher, dass alle Medien Ende-zu-Ende verschlüsselt bleiben, und unsere Infrastruktur fungiert ausschließlich als technischer Kanal, was bedeutet, dass wir über keine technischen Mittel verfügen, um auf die Inhalte Ihrer Kommunikation zuzugreifen, sie zu inspizieren oder zu speichern.</span>
+        </p>
 
         <div class="compliance-footer">
             <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br>
