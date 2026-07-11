@@ -3,72 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureMessenger | DSA Transparency Report</title>
+    <title>SecureMessenger | Transparency Report (Q1 2026)</title>
+
+    <!-- Open Graph / Social Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://glokta1991.github.io/legal-docs/transparency_report.html">
+    <meta property="og:title" content="SecureMessenger | Transparency Report (Q1 2026)">
+    <meta property="og:description" content="Official Transparency Report. Documenting Zero-Visibility and technical surrender.">
+    <meta property="og:image" content="https://glokta1991.github.io/legal-docs/logo.png">
+
     <style>
-        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
+        /* MOBILE-FIRST LAYOUT FIX */
         * { box-sizing: border-box; }
-        
-        body { 
-            background-color: #EDE6D6; 
-            margin: 0; 
-            padding: 20px; 
-            display: flex; 
-            justify-content: center; 
+
+        body {
+            background-color: #EDE6D6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
             font-family: 'Georgia', serif;
             line-height: 1.7;
             color: #1a1a1a;
         }
 
-        .document-container { 
+        .document-container {
             background-color: #ffffff;
             width: 100%;
-            max-width: 850px; 
-            padding: 50px 40px; 
-            border: 1px solid #D2D2B4; 
+            max-width: 850px;
+            padding: 50px 40px;
+            border: 1px solid #D2D2B4;
             border-radius: 4px;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
             overflow-wrap: break-word;
             margin: 0 auto;
         }
 
-        /* TRANSLATION TOGGLE STYLING */
-        .lang-switch {
-            text-align: right;
-            margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-        }
-        .lang-btn {
-            cursor: pointer;
-            padding: 5px 10px;
-            border: 1px solid #1a1a1a;
-            background: #fff;
-            transition: 0.2s;
-        }
-        .lang-btn.active {
-            background: #1a1a1a;
-            color: #fff;
-        }
-
-        /* Hiding logic based on html lang attribute */
-        html[lang="de"] [lang="en"] { display: none; }
-        html[lang="en"] [lang="de"] { display: none; }
-
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
+        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
         .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
 
-        h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
-        h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
-        
-        table { width:100%; border-collapse: collapse; margin: 30px 0; }
-        th, td { padding: 12px; border: 1px solid #1a1a1a; text-align: left; }
-        th { background: #1a1a1a; color: #fff; border-color: #fff; }
+        h1 { text-align: center; font-size: 2.2em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; line-height: 1.2; }
+        h2 { color: #27ae60; border-left: 5px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.2em; }
 
-        .status-footer { margin-top: 80px; text-align: center; font-size: 1.1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px; }
+        .nuclear-notice { background: #1a1a1a; color: #fff; padding: 25px; margin: 30px 0; font-weight: bold; text-align: center; text-transform: uppercase; border: 2px solid #990000; }
+        .data-block { background: #fdf6e3; border: 1px dashed #2c3e50; padding: 20px; margin: 20px 0; }
+
+        p, li { font-size: 1.05em; color: #222; text-align: justify; }
+        ul { list-style-type: square; padding-left: 20px; }
+        li { margin-bottom: 12px; }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.6em; }
+            h1 { font-size: 1.8em; }
             .document-container { padding: 30px 20px; }
             body { padding: 10px; }
         }
@@ -76,94 +63,58 @@
 </head>
 <body>
     <div class="document-container">
-        
-        <div class="lang-switch">
-            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
-            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
-        </div>
-
         <!-- Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
+            <div class="contact-line">
+                OFFICIAL CONTACT: <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a;">securemessenger4U@proton.me</a>
+            </div>
             <div class="header-divider"></div>
         </div>
 
-        <h1>
-            <span lang="en">DSA Transparency Report</span>
-            <span lang="de">DSA-Transparenzbericht</span>
-        </h1>
-        
-        <p>
-            <strong><span lang="en">Provider:</span><span lang="de">Anbieter:</span></strong> 
-            SecureMessenger Protocol (Mere Conduit Relay)
-        </p>
-        <p>
-            <strong><span lang="en">Reporting Period:</span><span lang="de">Berichtszeitraum:</span></strong> 
-            Jan 1, 2025 – April 29, 2026
-        </p>
-        <p>
-            <strong><span lang="en">Regulatory ID:</span><span lang="de">Dokumenten-ID:</span></strong> 
-            DSA-REG-2026-TR-v10.8
+        <h1>Transparency Report</h1>
+        <p style="text-align: center;"><strong>Reporting Period: January 1, 2026 – March 15, 2026</strong></p>
+
+        <div class="nuclear-notice">
+            Service Type: Mere Conduit (Art. 4 DSA) | Status: Forensically Silent
+        </div>
+
+        <h2>1. Requests from Law Enforcement</h2>
+        <div class="data-block">
+            <ul>
+                <li><strong>Total Requests for User Data:</strong> 0</li>
+                <li><strong>Requests Complied With:</strong> 0</li>
+                <li><strong>Reason for Non-Compliance:</strong> SecureMessenger is a Zero-Knowledge architecture. No user identities, IP logs, or unencrypted message contents are stored or retrievable.</li>
+            </ul>
+        </div>
+
+        <h2>2. Content Moderation (DSA Art. 15)</h2>
+        <ul>
+            <li><strong>Automated Moderation Actions:</strong> 0 (No automated scanning performed).</li>
+            <li><strong>Manual Content Removals:</strong> 0 (Developer has no access to unencrypted content).</li>
+            <li><strong>Notices of Illegal Content received:</strong> 0</li>
+        </ul>
+
+        <h2>3. System Integrity & Governance</h2>
+        <ul>
+            <li><strong>Scorched Earth Executions:</strong> [Data not tracked - User local only].</li>
+            <li><strong>Infrastructure:</strong> Relays operate on volatile RAM-only instances to ensure zero persistence.</li>
+            <li><strong>Audit Status:</strong> All systems operating under Ghost Protocol parameters.</li>
+        </ul>
+
+        <h2>4. Fraud Prevention & Scarcity</h2>
+        <ul>
+            <li><strong>Account Farming Blocked:</strong> Integration with <b>Play Integrity API</b> and <b>TEE-Hardware Anchoring</b> successfully prevents bot-driven account creation.</li>
+            <li><strong>Privacy Preservation:</strong> Scarcity is enforced via salted SHA-256 hardware hashes. No raw device IDs (IMEI/Serial) have been processed or stored.</li>
+        </ul>
+
+        <p style="text-align: center; margin-top: 40px; font-style: italic;">
+            "Transparency is the byproduct of technical inability."
         </p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th><span lang="en">Category (Digital Services Act)</span><span lang="de">Kategorie (Digitale-Dienste-Gesetz)</span></th>
-                    <th><span lang="en">Metric</span><span lang="de">Kennzahl</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span lang="en">Orders from Authorities (Art. 9 DSA)</span><span lang="de">Anordnungen von Behörden (Art. 9 DSA)</span></td>
-                    <td style="text-align:center;">0</td>
-                </tr>
-                <tr>
-                    <td><span lang="en">Notices of Illegal Content (Art. 16 DSA)</span><span lang="de">Meldungen rechtswidriger Inhalte (Art. 16 DSA)</span></td>
-                    <td style="text-align:center;">0</td>
-                </tr>
-                <tr>
-                    <td><span lang="en">Content Moderation / Removal (Art. 15)</span><span lang="de">Inhaltsmoderation / Entfernung (Art. 15)</span></td>
-                    <td style="text-align:center;">0</td>
-                </tr>
-                <tr>
-                    <td><span lang="en">Median Time to Resolution</span><span lang="de">Durchschnittliche Bearbeitungszeit</span></td>
-                    <td style="text-align:center;">N/A</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2><span lang="en">1. Average Monthly Active Recipients (Art. 24)</span><span lang="de">1. Durchschnittliche monatliche Nutzer (Art. 24)</span></h2>
-        <p>
-            <span lang="en">SecureMessenger implements a <b>Zero-Knowledge Architecture</b>. We do not track user accounts, logins, or active sessions. Based on technical telemetry of the "Blind Relay" traffic, the estimated number of active recipients in the EU is <b>less than 5,000</b>. This is well below the threshold for VLOP classification.</span>
-            <span lang="de">SecureMessenger implementiert eine <b>Zero-Knowledge-Architektur</b>. Wir verfolgen keine Benutzerkonten, Logins oder aktiven Sitzungen. Basierend auf technischer Telemetrie des „Blind-Relay“-Verkehrs liegt die geschätzte Anzahl der aktiven Nutzer in der EU bei <b>weniger als 5.000</b>. Dies liegt weit unter der Schwelle für die Einstufung als VLOP.</span>
-        </p>
-
-        <h2><span lang="en">2. Statement of Reasons</span><span lang="de">2. Begründung</span></h2>
-        <p>
-            <span lang="en">Pursuant to the doctrine of <b>Technical Nescience</b> (Compliance by Inability), no content moderation is possible. All transmissions are End-to-End Encrypted (E2EE) via the Signal Double Ratchet. The provider has no technical means to intercept, view, or modify the relayed data stream. As a neutral technical intermediary (Mere Conduit), the provider assumes zero liability for user content.</span>
-            <span lang="de">Gemäß der Doktrin der <b>technischen Unkenntnis</b> (Konformität durch Unfähigkeit) ist keine Inhaltsmoderation möglich. Alle Übermittlungen sind über das Signal-Double-Ratchet-Verfahren Ende-zu-Ende verschlüsselt (E2EE). Der Anbieter hat keine technischen Möglichkeiten, den weitergeleiteten Datenstrom abzufangen, einzusehen oder zu verändern. Als neutraler technischer Mittler (Mere Conduit) übernimmt der Anbieter keinerlei Haftung für Nutzerinhalte.</span>
-        </p>
-
-        <div class="status-footer">
-            Status: GHOST PROTOCOL v10.8 ACTIVE. dQuantumBear 🛡️🚀Bear❤️M
+        <div style="margin-top: 80px; text-align: center; font-size: 1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px;">
+            Status: GHOST PROTOCOL ACTIVE. 🐻💖M
         </div>
     </div>
-
-    <script>
-        function setLang(lang) {
-            document.documentElement.lang = lang;
-            localStorage.setItem('preferred-lang', lang);
-            updateButtons(lang);
-        }
-
-        function updateButtons(lang) {
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-        }
-
-        const savedLang = localStorage.getItem('preferred-lang') || 'de';
-        setLang(savedLang);
-    </script>
 </body>
 </html>
