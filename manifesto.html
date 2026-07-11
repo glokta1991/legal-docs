@@ -3,151 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureMessenger | The Ghost Protocol Manifesto</title>
+    <title>SecureMessenger | The Technical Manifesto</title>
     <style>
-        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
-        * { box-sizing: border-box; }
-        
-        body { 
-            background-color: #EDE6D6; 
-            color: #1a1a1a; 
-            font-family: 'Georgia', serif; 
-            line-height: 1.7; 
-            margin: 0; 
-            padding: 40px 20px; 
-            display: flex; 
-            justify-content: center; 
+        body {
+            background-color: #EDE6D6;
+            color: #1a1a1a;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
         }
-        .container { 
-            max-width: 850px; 
-            background: #ffffff; 
-            padding: 60px 40px; 
-            border: 1px solid #D2D2B4; 
-            border-radius: 4px;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.05); 
-            overflow-wrap: break-word;
+        .container {
+            max-width: 800px;
+            background: #F5F1E8;
+            padding: 50px;
+            border: 1px solid #D2D2B4;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
         }
-
-        /* TRANSLATION TOGGLE */
-        .lang-switch {
-            text-align: right;
-            margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #27ae60;
+            border-left: 5px solid #27ae60;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        .warning {
+            color: #990000;
             font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            border: 2px dashed #990000;
+            padding: 20px;
+            margin: 30px 0;
         }
-        .lang-btn {
-            cursor: pointer;
-            padding: 5px 10px;
-            border: 1px solid #1a1a1a;
-            background: #fff;
-            transition: 0.2s;
-        }
-        .lang-btn.active {
-            background: #1a1a1a;
-            color: #fff;
-        }
-
-        html[lang="de"] [lang="en"] { display: none; }
-        html[lang="en"] [lang="de"] { display: none; }
-
-        .header-branding { text-align: center; margin-bottom: 40px; }
-        .header-branding img { max-width: 180px; height: auto; }
-        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
-        .header-divider { border-bottom: 2px solid #1a1a1a; width: 40%; margin: 20px auto; }
-
-        h1 { text-align: center; font-size: 2.5em; text-transform: uppercase; letter-spacing: 4px; border-bottom: 2px solid #1a1a1a; padding-bottom: 20px; margin-bottom: 40px; }
-        h2 { color: #27ae60; border-left: 6px solid #27ae60; padding-left: 15px; margin-top: 40px; text-transform: uppercase; font-size: 1.3em; }
-        
-        .warning-banner { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; text-transform: uppercase; border: 2px solid #e74c3c; }
-        .quote { text-align: center; font-style: italic; font-size: 1.2em; margin-bottom: 40px; opacity: 0.8; }
-        
-        p, li { font-size: 1.05em; color: #222; text-align: justify; }
-        
-        .footer { margin-top: 80px; text-align: center; font-size: 1.1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px; }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8em; }
-            .container { padding: 40px 20px; }
-            body { padding: 10px; }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            opacity: 0.6;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="lang-switch">
-            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
-            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
-        </div>
-
-        <!-- Official Branding Header -->
-        <div class="header-branding">
-            <img src="logo.png" alt="SecureMessenger Logo">
-            <div class="contact-line">
-                OFFICIAL CONTACT: <a href="mailto:securemessenger0@gmail.com" style="color: #1a1a1a; text-decoration: underline;">securemessenger0@gmail.com</a>
-            </div>
-            <div class="header-divider"></div>
-        </div>
-
         <h1>The Ghost Protocol</h1>
-        <p class="quote">
-            <span lang="en">"Visibility is a choice. We choose none."</span>
-            <span lang="de">„Sichtbarkeit ist eine Wahl. Wir wählen keine.“</span>
-        </p>
+        <p style="text-align: center; font-style: italic;">"Power is not found in what you can see, but in what you can choose to surrender."</p>
 
-        <div class="warning-banner">
-            <span lang="en">SYSTEM INTEGRITY: GHOST PROTOCOL v10.8 ACTIVE</span>
-            <span lang="de">SYSTEMINTEGRITÄT: GHOST-PROTOKOLL v10.8 AKTIV</span>
-        </div>
+        <div class="warning">GHOST PROTOCOL ACTIVE: FORENSICALLY SILENT</div>
 
-        <h2>1. <span lang="en">Technical Nescience (The Blind Relay)</span><span lang="de">Technische Unkenntnis (Das Blind-Relay)</span></h2>
-        <p>
-            <span lang="en">SecureMessenger operates as a <b>Blind Relay</b>. Our infrastructure exists in a state of statutory ignorance; we discard IP addresses instantly and maintain zero logs. We are technically and physically incapable of knowing who is communicating or their physical location.</span>
-            <span lang="de">SecureMessenger operiert als <b>Blind-Relay</b>. Unsere Infrastruktur befindet sich in einem Zustand gesetzlicher Unkenntnis; wir verwerfen IP-Adressen sofort und führen keinerlei Protokolle. Wir sind technisch und physisch nicht in der Lage zu wissen, wer kommuniziert oder wo sich die Beteiligten befinden.</span>
-        </p>
+        <h2>1. The Blind Relay (Backend)</h2>
+        <p>Our server is a stateless, zero-visibility pass-through. Plaintext usernames never leave your device; they are hashed locally via HMAC-SHA256. We collect ZERO logs, IP addresses, or metadata.</p>
 
-        <h2>2. <span lang="en">Scorched Metadata</span><span lang="de">Scorched Metadata</span></h2>
-        <p>
-            <span lang="en">The server must be blind to message content. We implement <b>Scorched Metadata</b>: filenames, media keys, and captions are encrypted <i>inside</i> the message envelope. The relay sees only random noise and an opaque routing hash. Your media remains your secret.</span>
-            <span lang="de">Der Server muss blind für Nachrichteninhalte sein. Wir implementieren <b>Scorched Metadata</b>: Dateinamen, Media-Keys und Bildunterschriften werden <i>innerhalb</i> des Nachrichtenumschlags verschlüsselt. Das Relay sieht nur zufälliges Rauschen und einen undurchsichtigen Routing-Hash. Ihre Medien bleiben Ihr Geheimnis.</span>
-        </p>
+        <h2>2. Active Decay (Data Destruction)</h2>
+        <p>SecureMessenger doesn't just "delete" data; it destroys it. Using forensic scrubbing, messages are overwritten with random bytes before physical deletion. A mandatory 30-day TTL index ensures undelivered data is physically purged from the server hardware.</p>
 
-        <h2>3. <span lang="en">The Handshake (Active Consent)</span><span lang="de">Der Handshake (Aktiver Konsens)</span></h2>
-        <p>
-            <span lang="en">Identity hashes are toxic artifacts. We establish trust via temporary <b>6-digit Invite Codes</b>. No metadata, status, or avatar is shared until a connection request is actively accepted via the <b>Consent Handshake</b>. This prevents discovery probing and metadata leakage.</span>
-            <span lang="de">Identitäts-Hashes sind toxische Artefakte. Wir bauen Vertrauen über temporäre <b>6-stellige Einladungscodes</b> auf. Es werden keine Metadaten, Status oder Avatare geteilt, bis eine Verbindungsanfrage aktiv über den <b>Konsens-Handshake</b> akzeptiert wurde. Dies verhindert Discovery-Probing und das Abfließen von Metadaten.</span>
-        </p>
+        <h2>3. Deniable Sovereignty (Duress)</h2>
+        <p>Digital security is useless without physical safety. Our <b>Duress Protocol</b> allows a user to provide a "Panic PIN" that triggers a silent, forensic wipe of all local Signal keys and databases, while displaying a generic network error to provide a plausible alibi.</p>
 
-        <h2>4. <span lang="en">Forensic Destruction (Shredding)</span><span lang="de">Forensische Zerstörung (Schreddern)</span></h2>
-        <p>
-            <span lang="en">Deletions are forensic actions. SecureMessenger does not just "remove" records; it overwrites them with <b>high-entropy random bytes</b> before physical deletion. This ensures that no traces remain on the silicon for recovery software to find.</span>
-            <span lang="de">Löschvorgänge sind forensische Handlungen. SecureMessenger entfernt Datensätze nicht einfach nur; er überschreibt sie vor der physischen Löschung mit <b>Zufalls-Entropie</b>. Dies stellt sicher, dass keine Spuren auf dem Silizium verbleiben, die von Wiederherstellungssoftware gefunden werden könnten.</span>
-        </p>
+        <h2>4. Zero-Knowledge Identity</h2>
+        <p>BIP39 Mnemonic seeds ensure that your identity is sovereign. We do not hold your keys. We cannot reset your password. We have no technical power over your data.</p>
 
-        <h2>5. <span lang="en">Terminal Sovereignty (Hardware Vault)</span><span lang="de">Endgeräte-Souveränität (Hardware-Tresor)</span></h2>
-        <p>
-            <span lang="en">Your device is your vault. Encryption keys are trapped within the <b>hardware-backed Secure Element (TEE)</b> and remain under your exclusive physical control. Decrypted media stays isolated in <b>Secure RAM</b>, never leaking to system galleries or external caches.</span>
-            <span lang="de">Ihr Gerät ist Ihr Tresor. Verschlüsselungsschlüssel sind im <b>hardwaregestützten Secure Element (TEE)</b> eingeschlossen und bleiben unter Ihrer exklusiven physischen Kontrolle. Entschlüsselte Medien bleiben im <b>Secure RAM</b> isoliert und gelangen nie in Systemgalerien oder externe Caches.</span>
-        </p>
+        <h2>5. Platform Sovereignty</h2>
+        <p>We utilize the <b>Google Play Integrity API</b> and the Android <b>Hardware Secure Element (TEE)</b> to ensure that only genuine, untampered devices can access the network. By anchoring a unique cryptographic hash to your hardware, we enforce a strict "One-Account-Per-Device" scarcity model while maintaining 100% user anonymity. No phone numbers, no emails, no spambots. Your phone is your passport.</p>
 
         <div class="footer">
-            GHOST PROTOCOL v10.8 | dQuantumBear 🛡️🚀🐻❤️M
+            SECUREMESSENGER 10.0 | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
         </div>
     </div>
-
-    <script>
-        function setLang(lang) {
-            document.documentElement.lang = lang;
-            localStorage.setItem('preferred-lang', lang);
-            updateButtons(lang);
-        }
-
-        function updateButtons(lang) {
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-        }
-
-        const savedLang = localStorage.getItem('preferred-lang') || 'de';
-        setLang(savedLang);
-    </script>
 </body>
 </html>
