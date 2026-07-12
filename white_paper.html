@@ -72,7 +72,7 @@
         .status-footer { margin-top: 80px; text-align: center; font-size: 1.1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px; }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.8em; }
+            h1 { font-size: 1.6em; letter-spacing: 1px; word-break: keep-all; }
             .document-container { padding: 30px 20px; }
             body { padding: 10px; }
         }
@@ -103,8 +103,8 @@
         </div>
 
         <div class="warning-box">
-            <span lang="en">Date: June 14, 2024 | Project: SecureMessenger</span>
-            <span lang="de">Datum: 14. Juni 2024 | Projekt: SecureMessenger</span>
+            <span lang="en">Date: July 10, 2026 | Project: SecureMessenger</span>
+            <span lang="de">Datum: 10. Juli 2026 | Projekt: SecureMessenger</span>
         </div>
 
         <h2><span lang="en">I. Executive Summary & Market Value Proposition</span><span lang="de">I. Management-Zusammenfassung & Markt-Nutzenversprechen</span></h2>
@@ -157,7 +157,27 @@
 
         <h2><span lang="en">III. Client-Side Cryptographic Core (Deep Dive)</span><span lang="de">III. Clientseitiger kryptografischer Kern (Deep Dive)</span></h2>
 
-        <h3>3.1 <span lang="en">Session Initialization (X3DH)</span><span lang="de">3.1 Sitzungs-Initialisierung (X3DH)</span></h3>
+        <h3>3.1 <span lang="en">Identity & Hardware-Bound Scarcity (The 1-Device Rule)</span><span lang="de">3.1 Identität & Hardware-gebundene Knappheit (Die 1-Geräte-Regel)</span></h3>
+        <p>
+            <span lang="en">To satisfy commercial scarcity requirements and prevent automated Sybil attacks, SecureMessenger implements a dual-lock hardware anchoring system.</span>
+            <span lang="de">Um kommerzielle Knappheitsanforderungen zu erfüllen und automatisierte Sybil-Angriffe zu verhindern, implementiert SecureMessenger ein Hardware-Verankerungssystem mit Doppelsperre.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>TEE Hardware Anchor:</b> The client generates a permanent, non-exportable RSA-2048 keypair inside the device’s <b>Trusted Execution Environment (TEE)</b>. A salted SHA-256 hash of this key is transmitted to the server as a unique, anonymous hardware fingerprint.</span>
+                <span lang="de"><b>TEE-Hardware-Anker:</b> Der Client generiert ein dauerhaftes, nicht exportierbares RSA-2048-Schlüsselpaar in der <b>Trusted Execution Environment (TEE)</b> des Geräts. Ein salted SHA-256-Hash dieses Schlüssels wird als eindeutiger, anonymer Hardware-Fingerabdruck an den Server übermittelt.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Cryptographic Attestation:</b> The registration flow invokes the <b>Google Play Integrity API</b> to obtain a signed token, proving the device is a genuine, unrooted Android environment. The relay enforces <b>Registration Atomicity</b>, rejecting any attempt to register a hardware hash already marked as "Occupied."</span>
+                <span lang="de"><b>Kryptographische Attestierung:</b> Der Registrierungsablauf ruft die <b>Google Play Integrity API</b> auf, um ein signiertes Token zu erhalten, das beweist, dass das Gerät eine echte, nicht gerootete Android-Umgebung ist. Das Relay erzwingt <b>Registrierungs-Atomizität</b> und lehnt jeden Versuch ab, einen bereits als „belegt“ markierten Hardware-Hash zu registrieren.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Sovereign Backup Anchor:</b> A persistent identity marker is stored in the user's private Google Cloud configuration space via a hardened <b>backup_rules.xml</b>. This anchor survives app uninstalls, ensuring that a re-installed application can instantly detect existing hardware occupancy and force the 12-word recovery flow.</span>
+                <span lang="de"><b>Souveräner Backup-Anker:</b> Ein dauerhafter Identitätsmarker wird über eine gehärtete <b>backup_rules.xml</b> im privaten Google Cloud-Konfigurationsraum des Benutzers gespeichert. Dieser Anker übersteuert Deinstallationen der App und stellt sicher, dass eine neu installierte Anwendung eine bestehende Hardware-Belegung sofort erkennt und den 12-Wörter-Wiederherstellungsablauf erzwingt.</span>
+            </li>
+        </ul>
+
+        <h3>3.2 <span lang="en">Session Initialization (X3DH)</span><span lang="de">3.2 Sitzungs-Initialisierung (X3DH)</span></h3>
         <p>
             <span lang="en">SecureMessenger implements the Extended Triple Diffie-Hellman (X3DH) key agreement protocol to establish a shared secret between mutually untrusted parties.</span>
             <span lang="de">SecureMessenger implementiert das Extended Triple Diffie-Hellman (X3DH) Key-Agreement-Protokoll, um ein gemeinsames Geheimnis zwischen gegenseitig nicht vertrauenswürdigen Parteien zu etablieren.</span>
@@ -297,7 +317,23 @@
 
         <h2><span lang="en">V. Fault-Tolerant Self-Healing Mechanics (The Stability Engine)</span><span lang="de">V. Fehlertolerante Self-Healing-Mechanik (Die Stabilitäts-Engine)</span></h2>
 
-        <h3>5.1 <span lang="en">Silent Decryption Recovery</span><span lang="de">5.1 Stille Entschlüsselungs-Wiederherstellung</span></h3>
+        <h3>5.1 <span lang="en">Sovereign Recoverability (Deterministic Hydration)</span><span lang="de">5.1 Souveräne Wiederherstellbarkeit (Deterministische Hydrierung)</span></h3>
+        <p>
+            <span lang="en">SecureMessenger solves the "Amnesia" problem associated with local data wipes using purely decentralized mechanics.</span>
+            <span lang="de">SecureMessenger löst das mit lokalen Datenlöschungen verbundene „Amnesie“-Problem mit rein dezentralen Mechanismen.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Deterministic Key Derivation:</b> Upon re-authentication, the app re-derives the identical Signal Master Identity from the 12-word seed and username using PBKDF2-HMAC-SHA256. This ensures bit-perfect identity restoration, allowing contacts to recognize the user without "Security Code Changed" warnings.</span>
+                <span lang="de"><b>Deterministische Schlüsselableitung:</b> Bei der erneuten Authentifizierung leitet die App die identische Signal Master Identity aus dem 12-Wörter-Seed und dem Benutzernamen mittels PBKDF2-HMAC-SHA256 neu ab. Dies gewährleistet eine bitgenaue Identitätswiederherstellung, sodass Kontakte den Benutzer ohne Warnungen vor „geänderten Sicherheitscodes“ erkennen.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Shadow Resolution Protocol:</b> After a data wipe, the app executes a silent, encrypted handshake (IDENTITY_PROBE) with known contacts. Peer metadata (usernames and avatar pointers) are restored automatically in the background, preventing "Unknown Ghost" entries in the UI.</span>
+                <span lang="de"><b>Shadow Resolution Protokoll:</b> Nach einer Datenlöschung führt die App einen stillen, verschlüsselten Handshake (IDENTITY_PROBE) mit bekannten Kontakten durch. Peer-Metadaten (Benutzernamen und Avatar-Pointer) werden automatisch im Hintergrund wiederhergestellt, wodurch „Unknown Ghost“-Einträge in der Benutzeroberfläche verhindert werden.</span>
+            </li>
+        </ul>
+
+        <h3>5.2 <span lang="en">Silent Decryption Recovery</span><span lang="de">5.2 Stille Entschlüsselungs-Wiederherstellung</span></h3>
         <p>
             <span lang="en">The SignalMessageManager implements a Silent Recovery Protocol to handle ratchet desynchronization (e.g., after long periods of inactivity or storage corruption).</span>
             <span lang="de">Der SignalMessageManager implementiert ein Silent-Recovery-Protokoll, um Ratchet-Desynchronisationen zu handhaben (z. B. nach langen Inaktivitätsphasen oder Speicherbeschädigungen).</span>
@@ -317,23 +353,23 @@
 
         <h2><span lang="en">VI. Sovereign Multi-Device Migration Model</span><span lang="de">VI. Souveränes Multi-Device-Migrationsmodell</span></h2>
 
-        <h3>6.1 <span lang="en">Local P2P Migration Engine</span><span lang="de">6.1 Lokale P2P-Migrations-Engine</span></h3>
+        <h3>6.1 <span lang="en">Single-Seat Identity Handoff</span><span lang="de">6.1 Single-Seat Identitätsübergabe</span></h3>
         <p>
-            <span lang="en">SecureMessenger bypasses Google/Apple cloud dependencies through a Local Peer-to-Peer Migration Engine.</span>
-            <span lang="de">SecureMessenger umgeht Cloud-Abhängigkeiten von Google/Apple durch eine lokale Peer-to-Peer-Migrations-Engine.</span>
+            <span lang="en">To enforce account scarcity and prevent cloning, SecureMessenger implements an absolute "Single-Seat" handoff protocol during device migration.</span>
+            <span lang="de">Um Kontoknappheit zu erzwingen und Klonen zu verhindern, implementiert SecureMessenger ein absolutes „Single-Seat“-Übergabeprotokoll während der Gerätemigration.</span>
         </p>
         <ul>
             <li>
-                <span lang="en"><b>QR Handshake:</b> The source device displays a QR code containing its local IP and a temporary session key.</span>
-                <span lang="de"><b>QR-Handshake:</b> Das Quellgerät zeigt einen QR-Code an, der seine lokale IP und einen temporären Sitzungsschlüssel enthält.</span>
+                <span lang="en"><b>Remote Session Revocation:</b> Upon authentication on Device B (New), a <b>SYSTEM_DEVICE_REVOKE</b> signal is dispatched. The relay instantly terminates Device A’s WebSocket connection and invalidates its push tokens, ensuring identity exclusivity.</span>
+                <span lang="de"><b>Remote-Sitzungswiderruf:</b> Nach der Authentifizierung auf Gerät B (Neu) wird ein <b>SYSTEM_DEVICE_REVOKE</b>-Signal versendet. Das Relay beendet sofort die WebSocket-Verbindung von Gerät A und entwertet dessen Push-Token, um die Exklusivität der Identität zu gewährleisten.</span>
             </li>
             <li>
-                <span lang="en"><b>Encrypted Tunnel:</b> The target device scans the QR, establishes a TLS-secured local network connection, and streams the encrypted database payload directly across the air-gap.</span>
-                <span lang="de"><b>Verschlüsselter Tunnel:</b> Das Zielgerät scannt den QR, baut eine TLS-gesicherte lokale Netzwerkverbindung auf und streamt die verschlüsselte Datenbank-Payload direkt über den Air-Gap.</span>
+                <span lang="en"><b>Local P2P Wi-Fi Bridge:</b> Database migration (messages, settings, profiles) occurs via a direct local encrypted tunnel. This "Air-Bridge" bypasses third-party cloud infrastructure (Google Drive/iCloud), maintaining zero-visibility for the entire transfer lifecycle.</span>
+                <span lang="de"><b>Lokale P2P-Wi-Fi-Brücke:</b> Die Datenbankmigration (Nachrichten, Einstellungen, Profile) erfolgt über einen direkten lokalen verschlüsselten Tunnel. Diese „Air-Bridge“ umgeht Cloud-Infrastrukturen von Drittanbietern (Google Drive/iCloud) und gewährleistet Zero-Visibility während des gesamten Übertragungslebenszyklus.</span>
             </li>
             <li>
-                <span lang="en"><b>Revocation:</b> Upon successful migration, a SYSTEM_DEVICE_REVOKE signal is sent to the relay to drop stale WebSocket pipelines for the old hardware.</span>
-                <span lang="de"><b>Widerruf:</b> Nach erfolgreicher Migration wird ein SYSTEM_DEVICE_REVOKE-Signal an das Relay gesendet, um veraltete WebSocket-Pipelines für die alte Hardware zu schließen.</span>
+                <span lang="en"><b>Verified Forensic Destruction:</b> Device A triggers a mandatory <b>Scorched Earth</b> protocol only after Device B confirms successful mounting and integrity verification of the migrated vault. This ensures no forensic residue remains on the legacy hardware.</span>
+                <span lang="de"><b>Verifizierte forensische Löschung:</b> Gerät A löst ein obligatorisches <b>Scorched Earth</b>-Protokoll erst aus, nachdem Gerät B das erfolgreiche Mounten und die Integritätsprüfung des migrierten Tresors bestätigt hat. Dies stellt sicher, dass keine forensischen Rückstände auf der alten Hardware verbleiben.</span>
             </li>
         </ul>
 
