@@ -73,6 +73,7 @@
 
         @media (max-width: 600px) {
             h1 { font-size: 1.6em; letter-spacing: 1px; word-break: keep-all; }
+            .subtitle { font-size: 0.9em; letter-spacing: 1px; line-height: 1.4; }
             .document-container { padding: 30px 20px; }
             body { padding: 10px; }
         }
@@ -94,12 +95,12 @@
         </div>
 
         <h1>
-            <span lang="en">Technical White Paper & Architectural Audit</span>
-            <span lang="de">Technisches Whitepaper & Architektur-Audit</span>
+            <span lang="en">Technical White Paper & Architectural Audit (v25.0.11)</span>
+            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.0.11)</span>
         </h1>
         <div class="subtitle">
-            <span lang="en">SecureMessenger: The Architecture of Zero-Knowledge Sovereignty</span>
-            <span lang="de">SecureMessenger: Die Architektur der Zero-Knowledge-Souveränität</span>
+            <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
+            <span lang="de">SecureMessenger: Eine White-Label Encrypted Zero-Knowledge Kommunikationsplattform</span>
         </div>
 
         <div class="warning-box">
@@ -154,6 +155,26 @@
             <span lang="en">While TLS protects the data in transit from external interceptors, SecureMessenger treats the relay itself as a potential adversary. The Signal Protocol (Double Ratchet) is used to wrap every payload, ensuring that even if the relay were compromised, the data remains cryptographically inaccessible.</span>
             <span lang="de">Während TLS die Daten während der Übertragung vor externen Interzeptoren schützt, betrachtet SecureMessenger das Relay selbst als potenziellen Angreifer. Das Signal-Protokoll (Double Ratchet) wird verwendet, um jede Payload zu umhüllen, wodurch sichergestellt wird, dass die Daten selbst bei einer Kompromittierung des Relays kryptografisch unzugänglich bleiben.</span>
         </p>
+
+        <h3>2.3 <span lang="en">Scalable Handshake Resolution (v25.0.11)</span><span lang="de">2.3 Skalierbare Handshake-Auflösung (v25.0.11)</span></h3>
+        <p>
+            <span lang="en">SecureMessenger utilizes a persistent, database-backed invite system and encrypted VoIP signaling capable of handling 5,000+ concurrent users.</span>
+            <span lang="de">SecureMessenger nutzt ein persistentes, datenbankgestütztes Einladungssystem und verschlüsselte VoIP-Signalisierung, die für über 5.000 gleichzeitige Benutzer ausgelegt ist.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Large Payload Support:</b> Enforced a 100MB commercial ceiling for encrypted attachments (videos/documents) with a 25MB optimization trigger, ensuring the platform meets enterprise-grade communication standards.</span>
+                <span lang="de"><b>Große Payload-Unterstützung:</b> Implementierung einer kommerziellen Obergrenze von 100 MB für verschlüsselte Anhänge (Videos/Dokumente) mit einem Optimierungstrigger bei 25 MB, um sicherzustellen, dass die Plattform professionellen Kommunikationsstandards entspricht.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Autonomous Key Recovery:</b> The signature engine automatically fail-overs to an ephemeral <b>secp256r1</b> key pair if environment variables are mangled, ensuring compatibility across restricted OpenJDK/Render environments.</span>
+                <span lang="de"><b>Autonome Schlüsselwiederherstellung:</b> Die Signatur-Engine führt automatisch ein Failover auf ein ephemeres <b>secp256r1</b>-Schlüsselpaar durch, falls Umgebungsvariablen beschädigt sind, um die Kompatibilität in eingeschränkten OpenJDK/Render-Umgebungen zu gewährleisten.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Beta Identity Re-rolling:</b> Implemented an authorized bypass for <b>GHOST_BETA_TESTER</b> tokens. Authorized testers can re-register new identities on previously occupied hardware via automated server-side record purging and Android debug-layer token overrides. This enables frictionless testing without manual database intervention.</span>
+                <span lang="de"><b>Beta-Identitäts-Re-rolling:</b> Implementierung eines autorisierten Bypasses für <b>GHOST_BETA_TESTER</b>-Token. Autorisierte Tester können neue Identitäten auf bereits belegter Hardware über automatische serverseitige Datensatzbereinigung und Android-Debug-Layer-Token-Overrides neu registrieren. Dies ermöglicht reibungslose Testzyklen ohne manuelles Eingreifen in die Datenbank.</span>
+            </li>
+        </ul>
 
         <h2><span lang="en">III. Client-Side Cryptographic Core (Deep Dive)</span><span lang="de">III. Clientseitiger kryptografischer Kern (Deep Dive)</span></h2>
 
@@ -259,7 +280,23 @@
 
         <h2><span lang="en">IV. Zero-Visibility Media & Attachment Pipeline</span><span lang="de">IV. Zero-Visibility Medien- & Anhangs-Pipeline</span></h2>
 
-        <h3>4.1 <span lang="en">Ephemeral Symmetric Media Keys</span><span lang="de">4.1 Ephemere symmetrische Media-Keys</span></h3>
+        <h3>4.1 <span lang="en">Multi-Attachment Enclaves (Grouped Delivery)</span><span lang="de">4.1 Multi-Attachment-Enklaven (Gruppierte Zustellung)</span></h3>
+        <p>
+            <span lang="en">SecureMessenger implements an Atomic Bundling strategy for multiple attachments, ensuring commercial-grade performance without metadata leakage.</span>
+            <span lang="de">SecureMessenger implementiert eine Atomic-Bundling-Strategie für mehrere Anhänge, um eine Leistung auf kommerziellem Niveau ohne Abfluss von Metadaten zu gewährleisten.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Atomic Signal Wrap:</b> All attachment URLs and unique AES keys in a bundle are wrapped in a single encrypted Signal message, preventing the relay from correlating files.</span>
+                <span lang="de"><b>Atomic Signal Wrap:</b> Alle Anhang-URLs und eindeutigen AES-Schlüssel in einem Bundle werden in einer einzigen verschlüsselten Signal-Nachricht verpackt, wodurch verhindert wird, dass das Relay Dateien korreliert.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Parallel Forensic Scrub:</b> Metadata is stripped from all bundle members in parallel using specialized worker threads before the encryption stage.</span>
+                <span lang="de"><b>Paralleler forensischer Scrub:</b> Metadaten werden von allen Bundle-Mitgliedern parallel über spezialisierte Worker-Threads vor der Verschlüsselungsphase entfernt.</span>
+            </li>
+        </ul>
+
+        <h3>4.2 <span lang="en">Ephemeral Symmetric Media Keys</span><span lang="de">4.2 Ephemere symmetrische Media-Keys</span></h3>
         <p>
             <span lang="en">High-overhead attachments (videos, images, documents) are encrypted using a Hybrid Blob Architecture:</span>
             <span lang="de">Attachments mit hohem Overhead (Videos, Bilder, Dokumente) werden mittels einer Hybrid-Blob-Architektur verschlüsselt:</span>
@@ -330,6 +367,22 @@
             <li>
                 <span lang="en"><b>Shadow Resolution Protocol:</b> After a data wipe, the app executes a silent, encrypted handshake (IDENTITY_PROBE) with known contacts. Peer metadata (usernames and avatar pointers) are restored automatically in the background, preventing "Unknown Ghost" entries in the UI.</span>
                 <span lang="de"><b>Shadow Resolution Protokoll:</b> Nach einer Datenlöschung führt die App einen stillen, verschlüsselten Handshake (IDENTITY_PROBE) mit bekannten Kontakten durch. Peer-Metadaten (Benutzernamen und Avatar-Pointer) werden automatisch im Hintergrund wiederhergestellt, wodurch „Unknown Ghost“-Einträge in der Benutzeroberfläche verhindert werden.</span>
+            </li>
+        </ul>
+
+        <h3>5.2 <span lang="en">Hybrid AEC & Telecom Integration (VoIP Stability)</span><span lang="de">5.2 Hybrid-AEC & Telecom-Integration (VoIP-Stabilität)</span></h3>
+        <p>
+            <span lang="en">To achieve commercial-grade voice stability, SecureMessenger implements a dual-layered audio hardening strategy.</span>
+            <span lang="de">Um eine VoIP-Stabilität auf kommerziellem Niveau zu erreichen, implementiert SecureMessenger eine zweischichtige Audio-Härtungsstrategie.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Telecom Framework Integration:</b> By utilizing a Self-Managed ConnectionService, the application gains system-level priority for audio focus and background execution, bypassing aggressive OS power management (Doze mode).</span>
+                <span lang="de"><b>Telecom-Framework-Integration:</b> Durch die Nutzung eines Self-Managed ConnectionService erhält die Anwendung Systempriorität für Audiofokus und Hintergrundausführung, wodurch aggressives OS-Power-Management (Doze-Modus) umgangen wird.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Hybrid AEC & Volume Boost:</b> Acoustic Echo Cancellation (AEC) is handled by both hardware platform filters and a redundant software-based adaptive filter (AEC3). This model, combined with +150% digital gain injection, eliminates feedback screeching and ensures sufficient volume during speakerphone sessions.</span>
+                <span lang="de"><b>Hybrid-AEC & Volume Boost:</b> Die akustische Echokompensation (AEC) wird sowohl von Hardware-Plattformfiltern als auch von einem redundanten softwarebasierten adaptiven Filter (AEC3) verarbeitet. Dieses Modell, kombiniert mit einer +150% digitalen Gain-Injektion, eliminiert Rückkopplungs-Quietschen und sorgt für ausreichende Lautstärke bei Freisprechsitzungen.</span>
             </li>
         </ul>
 
@@ -419,7 +472,7 @@
 
         <div class="status-footer">
             Legal Compliance: EU DSGVO, GDPR Art. 11, German TDDDG § 25.<br>
-            System Integrity: GHOST PROTOCOL v9.5.1 ACTIVE. dQuantumBear 🛡️🚀🐻❤️
+            System Integrity: GHOST PROTOCOL v10.5.1 ACTIVE (v25.0.11 RELAY). dQuantumBear 🛡️🚀🐻❤️
         </div>
     </div>
 
