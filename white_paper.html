@@ -95,8 +95,8 @@
         </div>
 
         <h1>
-            <span lang="en">Technical White Paper & Architectural Audit (v25.0.11)</span>
-            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.0.11)</span>
+            <span lang="en">Technical White Paper & Architectural Audit (v25.0.13)</span>
+            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.0.13)</span>
         </h1>
         <div class="subtitle">
             <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
@@ -156,12 +156,16 @@
             <span lang="de">Während TLS die Daten während der Übertragung vor externen Interzeptoren schützt, betrachtet SecureMessenger das Relay selbst als potenziellen Angreifer. Das Signal-Protokoll (Double Ratchet) wird verwendet, um jede Payload zu umhüllen, wodurch sichergestellt wird, dass die Daten selbst bei einer Kompromittierung des Relays kryptografisch unzugänglich bleiben.</span>
         </p>
 
-        <h3>2.3 <span lang="en">Scalable Handshake Resolution (v25.0.11)</span><span lang="de">2.3 Skalierbare Handshake-Auflösung (v25.0.11)</span></h3>
+        <h3>2.3 <span lang="en">Scalable Handshake Resolution (v25.0.13)</span><span lang="de">2.3 Skalierbare Handshake-Auflösung (v25.0.13)</span></h3>
         <p>
             <span lang="en">SecureMessenger utilizes a persistent, database-backed invite system and encrypted VoIP signaling capable of handling 5,000+ concurrent users.</span>
             <span lang="de">SecureMessenger nutzt ein persistentes, datenbankgestütztes Einladungssystem und verschlüsselte VoIP-Signalisierung, die für über 5.000 gleichzeitige Benutzer ausgelegt ist.</span>
         </p>
         <ul>
+            <li>
+                <span lang="en"><b>Sovereign Short-Codes:</b> Replaced high-friction UUIDs with 10-character alphanumeric codes (Base32). This restores commercial ergonomics while maintaining $1.1 \times 10^{15}$ combinations to prevent brute-force discovery.</span>
+                <span lang="de"><b>Sovereign Short-Codes:</b> Hochreaktive UUIDs wurden durch 10-stellige alphanumerische Codes (Base32) ersetzt. Dies stellt die kommerzielle Ergonomie wieder her und behält gleichzeitig $1,1 \times 10^{15}$ Kombinationen bei, um Brute-Force-Entdeckungen zu verhindern.</span>
+            </li>
             <li>
                 <span lang="en"><b>Large Payload Support:</b> Enforced a 100MB commercial ceiling for encrypted attachments (videos/documents) with a 25MB optimization trigger, ensuring the platform meets enterprise-grade communication standards.</span>
                 <span lang="de"><b>Große Payload-Unterstützung:</b> Implementierung einer kommerziellen Obergrenze von 100 MB für verschlüsselte Anhänge (Videos/Dokumente) mit einem Optimierungstrigger bei 25 MB, um sicherzustellen, dass die Plattform professionellen Kommunikationsstandards entspricht.</span>
@@ -245,8 +249,8 @@
                 <span lang="de"><b>Ableitungsformel:</b> PBKDF2(HMAC-SHA256, Username + Mnemonic, Salt=„GHOST_IDENTITY...“, Iterationen=4096).</span>
             </li>
             <li>
-                <span lang="en"><b>Forensic Impact:</b> This allows a user to restore their exact cryptographic identity on any new hardware without a cloud-based backup, maintaining sovereignty over their private keys.</span>
-                <span lang="de"><b>Forensische Auswirkung:</b> Dies ermöglicht es einem Benutzer, seine exakte kryptografische Identität auf jeder neuen Hardware ohne Cloud-basiertes Backup wiederherzustellen und so die Souveränität über seine privaten Schlüssel zu behalten.</span>
+                <span lang="en"><b>Forensic Impact:</b> This allows a user to restore their exact cryptographic identity or reset a forgotten password on any hardware without a cloud-based backup, maintaining absolute sovereignty over their private keys.</span>
+                <span lang="de"><b>Forensische Auswirkung:</b> Dies ermöglicht es einem Benutzer, seine exakte kryptografische Identität wiederherzustellen oder ein vergessenes Passwort auf jeder Hardware ohne Cloud-basiertes Backup zurückzusetzen, wodurch die absolute Souveränität über seine privaten Schlüssel erhalten bleibt.</span>
             </li>
         </ul>
 
@@ -278,21 +282,29 @@
             </li>
         </ul>
 
-        <h2><span lang="en">IV. Zero-Visibility Media & Attachment Pipeline</span><span lang="de">IV. Zero-Visibility Medien- & Anhangs-Pipeline</span></h2>
+        <h2>IV. Sovereign Vault & Zero-Visibility Media Pipeline</h2>
 
-        <h3>4.1 <span lang="en">Multi-Attachment Enclaves (Grouped Delivery)</span><span lang="de">4.1 Multi-Attachment-Enklaven (Gruppierte Zustellung)</span></h3>
+        <h3>4.1 <span lang="en">The Sovereign Vault (Encrypted Archive Management)</span><span lang="de">Der Sovereign Vault (Verschlüsselte Archivverwaltung)</span></h3>
         <p>
-            <span lang="en">SecureMessenger implements an Atomic Bundling strategy for multiple attachments, ensuring commercial-grade performance without metadata leakage.</span>
-            <span lang="de">SecureMessenger implementiert eine Atomic-Bundling-Strategie für mehrere Anhänge, um eine Leistung auf kommerziellem Niveau ohne Abfluss von Metadaten zu gewährleisten.</span>
+            <span lang="en">SecureMessenger introduces the Sovereign Vault, a localized, encrypted repository for long-term storage of sensitive media. Unlike standard galleries, the Vault operates strictly within the "Ghost Protocol" parameters.</span>
+            <span lang="de">SecureMessenger führt den Sovereign Vault ein, ein lokales, verschlüsseltes Repository für die langfristige Speicherung sensibler Medien. Im Gegensatz zu Standardgalerien arbeitet der Vault streng innerhalb der „Ghost-Protokoll“-Parameter.</span>
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Atomic Signal Wrap:</b> All attachment URLs and unique AES keys in a bundle are wrapped in a single encrypted Signal message, preventing the relay from correlating files.</span>
-                <span lang="de"><b>Atomic Signal Wrap:</b> Alle Anhang-URLs und eindeutigen AES-Schlüssel in einem Bundle werden in einer einzigen verschlüsselten Signal-Nachricht verpackt, wodurch verhindert wird, dass das Relay Dateien korreliert.</span>
+                <span lang="en"><b>Proprietary .ghost Envelopes:</b> Media is exported as bit-perfect encrypted blobs. These files are indexed via deterministic SHA-256 hashes, allowing the app to recover decryption keys from the local TEE-backed database without server interaction.</span>
+                <span lang="de"><b>Proprietäre .ghost-Envelopes:</b> Medien werden als bitgenaue verschlüsselte Blobs exportiert. Diese Dateien werden über deterministische SHA-256-Hashes indiziert, sodass die App Entschlüsselungsschlüssel aus der lokalen TEE-gestützten Datenbank ohne Serverinteraktion wiederherstellen kann.</span>
             </li>
             <li>
-                <span lang="en"><b>Parallel Forensic Scrub:</b> Metadata is stripped from all bundle members in parallel using specialized worker threads before the encryption stage.</span>
-                <span lang="de"><b>Paralleler forensischer Scrub:</b> Metadaten werden von allen Bundle-Mitgliedern parallel über spezialisierte Worker-Threads vor der Verschlüsselungsphase entfernt.</span>
+                <span lang="en"><b>Forensic Metadata Sterilization:</b> Every object within the Vault undergoes mandatory "Active Scrubbing." GPS tags, device signatures, and EXIF headers are physically incinerated before the encryption stage.</span>
+                <span lang="de"><b>Forensische Metadaten-Sterilisation:</b> Jedes Objekt im Vault unterliegt einem obligatorischen „Active Scrubbing“. GPS-Tags, Gerätesignaturen und EXIF-Header werden vor der Verschlüsselungsphase physisch vernichtet.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Volatile RAM-Only Decryption:</b> To prevent plaintext leakage, Vault assets are decrypted strictly into a volatile RAM buffer for viewing. No unencrypted bytes ever touch the physical flash storage.</span>
+                <span lang="de"><b>Flüchtige RAM-only Entschlüsselung:</b> Um das Abfließen von Klartext zu verhindern, werden Vault-Assets für die Anzeige ausschließlich in einen flüchtigen RAM-Puffer entschlüsselt. Unverschlüsselte Bytes berühren niemals den physischen Flash-Speicher.</span>
+            </li>
+            <li>
+                <span lang="en"><b>One-Tap Forensic Shredding:</b> Deletion from the Vault triggers a multi-pass overwrite protocol, replacing file blocks with high-entropy noise to defeat forensic recovery tools.</span>
+                <span lang="de"><b>One-Tap Forensisches Schreddern:</b> Das Löschen aus dem Vault löst ein Multi-Pass-Überschreibprotokoll aus, bei dem Dateiblöcke durch Rauschen mit hoher Entropie ersetzt werden, um forensische Wiederherstellungstools zu neutralisieren.</span>
             </li>
         </ul>
 
@@ -356,8 +368,8 @@
 
         <h3>5.1 <span lang="en">Sovereign Recoverability (Deterministic Hydration)</span><span lang="de">5.1 Souveräne Wiederherstellbarkeit (Deterministische Hydrierung)</span></h3>
         <p>
-            <span lang="en">SecureMessenger solves the "Amnesia" problem associated with local data wipes using purely decentralized mechanics.</span>
-            <span lang="de">SecureMessenger löst das mit lokalen Datenlöschungen verbundene „Amnesie“-Problem mit rein dezentralen Mechanismen.</span>
+            <span lang="en">SecureMessenger solves the "Amnesia" problem associated with forgotten passwords or local data wipes using purely decentralized mechanics. Password recovery is fully supported but is architecturally dependent on the 12-word Master Key.</span>
+            <span lang="de">SecureMessenger löst das mit vergessenen Passwörtern oder lokalen Datenlöschungen verbundene „Amnesie“-Problem mit rein dezentralen Mechanismen. Die Passwort-Wiederherstellung wird vollständig unterstützt, ist jedoch architektonisch vom 12-Wörter-Master-Key abhängig.</span>
         </p>
         <ul>
             <li>
@@ -472,23 +484,33 @@
 
         <div class="status-footer">
             Legal Compliance: EU DSGVO, GDPR Art. 11, German TDDDG § 25.<br>
-            System Integrity: GHOST PROTOCOL v10.5.1 ACTIVE (v25.0.11 RELAY). dQuantumBear 🛡️🚀🐻❤️M
+            System Integrity: GHOST PROTOCOL v10.5.1 ACTIVE (v25.0.13 RELAY). dQuantumBear 🛡️🚀🐻❤️
         </div>
     </div>
 
     <script>
         function setLang(lang) {
-            document.documentElement.lang = lang;
-            localStorage.setItem('preferred-lang', lang);
-            updateButtons(lang);
+            const supportedLangs = ['en', 'de'];
+            const targetLang = supportedLangs.includes(lang) ? lang : 'en';
+            document.documentElement.lang = targetLang;
+            localStorage.setItem('preferred-lang', targetLang);
+            updateButtons(targetLang);
         }
 
         function updateButtons(lang) {
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+            const btnEn = document.getElementById('btn-en');
+            const btnDe = document.getElementById('btn-de');
+            if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+            if (btnDe) btnDe.classList.toggle('active', lang === 'de');
         }
 
-        const savedLang = localStorage.getItem('preferred-lang') || 'en';
+        // AI-FIX: Automatic Language Detection (v1.5.0)
+        // Priority: 1. URL Param (?lang=) | 2. LocalStorage | 3. Browser Navigator | 4. Default (en)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const browserLang = navigator.language.split('-')[0];
+
+        const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'en';
         setLang(savedLang);
     </script>
 </body>
