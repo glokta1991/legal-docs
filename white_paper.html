@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureMessenger | Technical White Paper</title>
+    <title>SecureMessenger | Technical White Paper (v25.1.0)</title>
     <style>
         /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
@@ -95,8 +95,8 @@
         </div>
 
         <h1>
-            <span lang="en">Technical White Paper & Architectural Audit (v25.0.13)</span>
-            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.0.13)</span>
+            <span lang="en">Technical White Paper & Architectural Audit (v25.1.0-FORENSIC-SANITIZATION)</span>
+            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.1.0-FORENSISCHE-BEREINIGUNG)</span>
         </h1>
         <div class="subtitle">
             <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
@@ -104,8 +104,10 @@
         </div>
 
         <div class="warning-box">
-            <span lang="en">Date: July 10, 2026 | Project: SecureMessenger</span>
-            <span lang="de">Datum: 10. Juli 2026 | Projekt: SecureMessenger</span>
+            <span lang="en">Date: July 22, 2026 | Project: SecureMessenger</span>
+            <span lang="de">Datum: 22. Juli 2026 | Projekt: SecureMessenger</span><br>
+            <span lang="en" style="color: #2ecc71;">[AUDIT CYCLE 25.1.0]: Forensic Metadata Sanitization & Enclave Integrity Active (Phases 1-5)</span>
+            <span lang="de" style="color: #2ecc71;">[AUDIT-ZYKLUS 25.1.0]: Forensische Metadaten-Bereinigung & Enklaven-Integrität aktiv (Phasen 1-5)</span>
         </div>
 
         <h2><span lang="en">I. Executive Summary & Market Value Proposition</span><span lang="de">I. Management-Zusammenfassung & Markt-Nutzenversprechen</span></h2>
@@ -134,19 +136,27 @@
 
         <h2><span lang="en">II. The Encrypted Zero-Knowledge Zero-Visibility Transportation Layer</span><span lang="de">II. Die verschlüsselte Zero-Knowledge Zero-Visibility Transportschicht</span></h2>
 
-        <h3>2.1 <span lang="en">Stateless Blind Relay Architecture</span><span lang="de">2.1 Zustandslose Blind-Relay-Architektur</span></h3>
+        <h3>2.1 <span lang="en">Blinded Routing & Metadata Isolation</span><span lang="de">2.1 Blinded Routing & Metadaten-Isolation</span></h3>
         <p>
-            <span lang="en">The SecureMessenger transportation layer operates as a Stateless Blind Relay. Data packets pass through the pipeline strictly as opaque, indistinguishable cryptographic blobs.</span>
-            <span lang="de">Die Transportschicht von SecureMessenger arbeitet als zustandsloses Blind-Relay. Datenpakete passieren die Pipeline ausschließlich als opake, ununterscheidbare kryptografische Blobs.</span>
+            <span lang="en">The SecureMessenger transportation layer operates as a Stateless Blind Relay. Data packets pass through the pipeline strictly as opaque, indistinguishable cryptographic blobs. The system is architected for total <b>Zero-Visibility Storage</b>.</span>
+            <span lang="de">Die Transportschicht von SecureMessenger arbeitet als zustandsloses Blind-Relay. Datenpakete passieren die Pipeline ausschließlich als opake, ununterscheidbare kryptografische Blobs. Das System ist auf eine vollständige <b>Zero-Visibility-Speicherung</b> ausgelegt.</span>
         </p>
         <ul>
             <li>
-                <span lang="en"><b>HMAC-SHA256 Routing:</b> Natural usernames never reach the network. The client performs a local SecurityUtils.generateRoutingId() operation, hashing the username with a project-specific 512-bit salt to produce a 64-character hexadecimal Routing ID. The relay routes data to these IDs without a cryptographic link to the user’s identity.</span>
-                <span lang="de"><b>HMAC-SHA256 Routing:</b> Klarnamen erreichen niemals das Netzwerk. Der Client führt eine lokale SecurityUtils.generateRoutingId()-Operation aus, bei der der Benutzername mit einem projektspezifischen 512-Bit-Salt gehasht wird, um eine 64-stellige hexadezimale Routing-ID zu erzeugen. Das Relay leitet Daten an diese IDs weiter, ohne eine kryptografische Verbindung zur Identität des Benutzers herzustellen.</span>
+                <span lang="en"><b>Blinded Recipient IDs:</b> Recipient identifiers are gehashed via SHA-256 and salted with a server-side pepper before database insertion. The relay delivers messages to these blinded pointers without knowledge of the true user identity.</span>
+                <span lang="de"><b>Blinded Recipient IDs:</b> Empfängerkennungen werden vor der Datenbankeinfügung über SHA-256 gehasht und mit einem serverseitigen Pepper gesalzen. Das Relay stellt Nachrichten an diese verblindeten Pointer zu, ohne Kenntnis der wahren Benutzeridentität.</span>
             </li>
             <li>
-                <span lang="en"><b>Asymmetric Telemetry Prevention:</b> Network traffic is isolated using a custom WebSocketManager that redacts IP addresses at the socket level and prevents the formation of an indexed social graph.</span>
-                <span lang="de"><b>Asymmetrische Telemetrie-Prävention:</b> Der Netzwerkverkehr wird durch einen benutzerdefinierten WebSocketManager isoliert, der IP-Adressen auf Socket-Ebene entfernt und die Bildung eines indizierten sozialen Graphen verhindert.</span>
+                <span lang="en"><b>Sender ID Stripping:</b> Sender identifiers are physically purged from all persistent message records. Every stored message is attributed to a generic "GHOST" sender at the database layer, permanently breaking the link between the sender and the message.</span>
+                <span lang="de"><b>Sender ID Stripping:</b> Absenderkennungen werden physisch aus allen persistenten Nachrichtendatensätzen entfernt. Jede gespeicherte Nachricht wird auf der Datenbankebene einem generischen „GHOST“-Absender zugeordnet, wodurch die Verbindung zwischen dem Absender und der Nachricht dauerhaft unterbrochen wird.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Identity Propagation (Inside-Ratchet):</b> To prevent metadata scraping, identity updates (Avatars, Usernames) are transmitted strictly <b>inside</b> the Signal Double Ratchet. The relay is physically incapable of "seeing" or linking user profile changes during the synchronization phase.</span>
+                <span lang="de"><b>Identitäts-Propagation (Inside-Ratchet):</b> Um das Scraping von Metadaten zu verhindern, werden Identitätsaktualisierungen (Avatare, Benutzernamen) ausschließlich <b>innerhalb</b> des Signal-Double-Ratchet übertragen. Das Relay ist physisch außerstande, Benutzerprofiländerungen während der Synchronisationsphase zu „sehen“ oder zu verknüpfen.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Volatile Handshaking:</b> Signal "Noise" and Heartbeat packets are handled strictly in-memory (volatile) and are never permitted to reach persistent storage, ensuring zero forensic residue of connection attempts.</span>
+                <span lang="de"><b>Flüchtiges Handshaking:</b> Signal-„Noise“- und Herzschlag-Pakete werden ausschließlich im Speicher (flüchtig) verarbeitet und dürfen niemals den persistenten Speicher erreichen, was null forensische Rückstände von Verbindungsversuchen gewährleistet.</span>
             </li>
         </ul>
 
@@ -156,15 +166,15 @@
             <span lang="de">Während TLS die Daten während der Übertragung vor externen Interzeptoren schützt, betrachtet SecureMessenger das Relay selbst als potenziellen Angreifer. Das Signal-Protokoll (Double Ratchet) wird verwendet, um jede Payload zu umhüllen, wodurch sichergestellt wird, dass die Daten selbst bei einer Kompromittierung des Relays kryptografisch unzugänglich bleiben.</span>
         </p>
 
-        <h3>2.3 <span lang="en">Scalable Handshake Resolution (v25.0.13)</span><span lang="de">2.3 Skalierbare Handshake-Auflösung (v25.0.13)</span></h3>
+        <h3>2.3 <span lang="en">Scalable Handshake Resolution (v25.0.25)</span><span lang="de">2.3 Skalierbare Handshake-Auflösung (v25.0.25)</span></h3>
         <p>
             <span lang="en">SecureMessenger utilizes a persistent, database-backed invite system and encrypted VoIP signaling capable of handling 5,000+ concurrent users.</span>
             <span lang="de">SecureMessenger nutzt ein persistentes, datenbankgestütztes Einladungssystem und verschlüsselte VoIP-Signalisierung, die für über 5.000 gleichzeitige Benutzer ausgelegt ist.</span>
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Sovereign Short-Codes:</b> Replaced high-friction UUIDs with 10-character alphanumeric codes (Base32). This restores commercial ergonomics while maintaining $1.1 \times 10^{15}$ combinations to prevent brute-force discovery.</span>
-                <span lang="de"><b>Sovereign Short-Codes:</b> Hochreaktive UUIDs wurden durch 10-stellige alphanumerische Codes (Base32) ersetzt. Dies stellt die kommerzielle Ergonomie wieder her und behält gleichzeitig $1,1 \times 10^{15}$ Kombinationen bei, um Brute-Force-Entdeckungen zu verhindern.</span>
+                <span lang="en"><b>Sovereign Short-Codes:</b> Replaced high-friction UUIDs with 6-character alphanumeric codes (Base32). This restores commercial ergonomics while maintaining $1.07 \times 10^9$ combinations to prevent brute-force discovery.</span>
+                <span lang="de"><b>Sovereign Short-Codes:</b> Hochreaktive UUIDs wurden durch 6-stellige alphanumerische Codes (Base32) ersetzt. Dies stellt die kommerzielle Ergonomie wieder her und behält gleichzeitig $1,07 \times 10^9$ Kombinationen bei, um Brute-Force-Entdeckungen zu verhindern.</span>
             </li>
             <li>
                 <span lang="en"><b>Large Payload Support:</b> Enforced a 100MB commercial ceiling for encrypted attachments (videos/documents) with a 25MB optimization trigger, ensuring the platform meets enterprise-grade communication standards.</span>
@@ -191,6 +201,10 @@
             <li>
                 <span lang="en"><b>TEE Hardware Anchor:</b> The client generates a permanent, non-exportable RSA-2048 keypair inside the device’s <b>Trusted Execution Environment (TEE)</b>. A salted SHA-256 hash of this key is transmitted to the server as a unique, anonymous hardware fingerprint.</span>
                 <span lang="de"><b>TEE-Hardware-Anker:</b> Der Client generiert ein dauerhaftes, nicht exportierbares RSA-2048-Schlüsselpaar in der <b>Trusted Execution Environment (TEE)</b> des Geräts. Ein salted SHA-256-Hash dieses Schlüssels wird als eindeutiger, anonymer Hardware-Fingerabdruck an den Server übermittelt.</span>
+            </li>
+            <li>
+                <span lang="en"><b>BETA BYPASS (Temporary):</b> To facilitate commercial-grade auditing, the <b>One-Device Rule</b> is programmatically bypassed for a group of 12 authorized beta testers. By utilizing the <b>GHOST_BETA_TESTER</b> token in debug builds, the relay allows surgical purging of existing hardware records, enabling testers to re-register identities without physical device migration. This logic will be fully revoked upon commercial release.</span>
+                <span lang="de"><b>BETA-BYPASS (Temporär):</b> Um Audits auf kommerziellem Niveau zu erleichtern, wird die <b>Ein-Gerät-Regel</b> programmatisch für eine Gruppe von 12 autorisierten Beta-Testern umgangen. Durch die Verwendung des <b>GHOST_BETA_TESTER</b>-Tokens in Debug-Builds ermöglicht das Relay die chirurgische Bereinigung bestehender Hardware-Datensätze, sodass Tester Identitäten ohne physische Gerätemigration neu registrieren können. Diese Logik wird bei der kommerziellen Veröffentlichung vollständig widerrufen.</span>
             </li>
             <li>
                 <span lang="en"><b>Cryptographic Attestation:</b> The registration flow invokes the <b>Google Play Integrity API</b> to obtain a signed token, proving the device is a genuine, unrooted Android environment. The relay enforces <b>Registration Atomicity</b>, rejecting any attempt to register a hardware hash already marked as "Occupied."</span>
@@ -254,15 +268,19 @@
             </li>
         </ul>
 
-        <h3>3.4 <span lang="en">Local Storage Encryption (SQLCipher AES-256)</span><span lang="de">3.4 Lokale Speicherverschlüsselung (SQLCipher AES-256)</span></h3>
+        <h3>3.4 <span lang="en">Local Storage Encryption & Binary Hardening</span><span lang="de">3.4 Lokale Speicherverschlüsselung & Binäre Härtung</span></h3>
         <p>
-            <span lang="en">Data-at-rest is protected via SQLCipher. The database file is encrypted at the page level using AES-256 in XTS mode.</span>
-            <span lang="de">Ruhende Daten (Data-at-rest) werden über SQLCipher geschützt. Die Datenbankdatei wird auf Seitenebene mit AES-256 im XTS-Modus verschlüsselt.</span>
+            <span lang="en">Data-at-rest is protected via SQLCipher (AES-256), complemented by forensic-grade binary hardening protocols.</span>
+            <span lang="de">Ruhende Daten (Data-at-rest) werden über SQLCipher (AES-256) geschützt, ergänzt durch forensische Binär-Härtungsprotokolle.</span>
         </p>
         <ul>
             <li>
-                <span lang="en"><b>TEE/SE Key Wrapping:</b> The master passphrase for the database is never stored in plaintext. It is wrapped using an AES-GCM key stored in the Android Trusted Execution Environment (TEE) via the DatabasePassphraseManager. This prevents physical memory dumps from compromising the vault.</span>
-                <span lang="de"><b>TEE/SE Key Wrapping:</b> Die Master-Passphrase für die Datenbank wird niemals im Klartext gespeichert. Sie wird mit einem AES-GCM-Schlüssel umhüllt, der in der Android Trusted Execution Environment (TEE) via DatabasePassphraseManager gespeichert ist. Dies verhindert, dass physische Speicherdumps den Tresor kompromittieren.</span>
+                <span lang="en"><b>TEE/SE Key Wrapping:</b> The master passphrase for the database is wrapped using an AES-GCM key stored in the Android Trusted Execution Environment (TEE). This prevents physical memory dumps from compromising the vault.</span>
+                <span lang="de"><b>TEE/SE Key Wrapping:</b> Die Master-Passphrase für die Datenbank wird mit einem AES-GCM-Schlüssel umhüllt, der in der Android Trusted Execution Environment (TEE) gespeichert ist. Dies verhindert, dass physische Speicherdumps den Tresor kompromittieren.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Binary Execution Hardening (16 KB Alignment):</b> To ensure compatibility with Android 15+ and prevent native library manipulation, the platform enforces 16 KB page-aligned memory mapping. Native libraries remain uncompressed and mmap-aligned within the APK, allowing for direct hardware-level execution and satisfying latest security audit requirements.</span>
+                <span lang="de"><b>Binäre Ausführungshärtung (16 KB Alignment):</b> Um die Kompatibilität mit Android 15+ sicherzustellen und Manipulationen an nativen Bibliotheken zu verhindern, erzwingt die Plattform 16 KB seitenorientiertes Memory-Mapping. Native Bibliotheken bleiben unkomprimiert und mmap-ausgerichtet innerhalb des APKs, was eine direkte Ausführung auf Hardwareebene ermöglicht und die neuesten Sicherheitsaudit-Anforderungen erfüllt.</span>
             </li>
         </ul>
 
@@ -286,13 +304,25 @@
 
         <h3>4.1 <span lang="en">The Sovereign Vault (Encrypted Archive Management)</span><span lang="de">Der Sovereign Vault (Verschlüsselte Archivverwaltung)</span></h3>
         <p>
-            <span lang="en">SecureMessenger introduces the Sovereign Vault, a localized, encrypted repository for long-term storage of sensitive media. Unlike standard galleries, the Vault operates strictly within the "Ghost Protocol" parameters.</span>
-            <span lang="de">SecureMessenger führt den Sovereign Vault ein, ein lokales, verschlüsseltes Repository für die langfristige Speicherung sensibler Medien. Im Gegensatz zu Standardgalerien arbeitet der Vault streng innerhalb der „Ghost-Protokoll“-Parameter.</span>
+            <span lang="en">SecureMessenger introduces the Sovereign Vault, a localized, encrypted repository for long-term storage of sensitive media and text. Unlike standard galleries, the Vault operates strictly within the "Ghost Protocol" parameters.</span>
+            <span lang="de">SecureMessenger führt den Sovereign Vault ein, ein lokales, verschlüsseltes Repository für die langfristige Speicherung sensibler Medien und Texte. Im Gegensatz zu Standardgalerien arbeitet der Vault streng innerhalb der „Ghost-Protokoll“-Parameter.</span>
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Proprietary .ghost Envelopes:</b> Media is exported as bit-perfect encrypted blobs. These files are indexed via deterministic SHA-256 hashes, allowing the app to recover decryption keys from the local TEE-backed database without server interaction.</span>
-                <span lang="de"><b>Proprietäre .ghost-Envelopes:</b> Medien werden als bitgenaue verschlüsselte Blobs exportiert. Diese Dateien werden über deterministische SHA-256-Hashes indiziert, sodass die App Entschlüsselungsschlüssel aus der lokalen TEE-gestützten Datenbank ohne Serverinteraktion wiederherstellen kann.</span>
+                <span lang="en"><b>Proprietary .ghost Envelopes:</b> Assets are exported as bit-perfect encrypted blobs. These files are indexed via deterministic SHA-256 hashes, allowing the app to recover decryption keys from the local TEE-backed database without server interaction.</span>
+                <span lang="de"><b>Proprietäre .ghost-Envelopes:</b> Assets werden als bitgenaue verschlüsselte Blobs exportiert. Diese Dateien werden über deterministische SHA-256-Hashes indiziert, sodass die App Entschlüsselungsschlüssel aus der lokalen TEE-gestützten Datenbank ohne Serverinteraktion wiederherstellen kann.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Forensic Metadata Sanitization (v25.1.0):</b> A mandatory, functional security layer that physically scrubs file headers before encryption. SecureMessenger overwrites GPS coordinates, device-specific make/model tags, and capture timestamps, ensuring that even if an encrypted blob is exported, it contains zero forensic links to the user's location or hardware identity.</span>
+                <span lang="de"><b>Forensische Metadaten-Bereinigung (v25.1.0):</b> Eine obligatorische, funktionale Sicherheitsschicht, die Dateiheader vor der Verschlüsselung physisch bereinigt. SecureMessenger überschreibt GPS-Koordinaten, gerätespezifische Hersteller-/Modell-Tags und Aufnahmezeitstempel, um sicherzustellen, dass ein exportierter verschlüsselter Blob keine forensischen Verbindungen zum Standort oder zur Hardware-Identität des Benutzers enthält.</span>
+            </li>
+            <li>
+                <span lang="en"><b>The Sovereign Transcript Seal (v11.0.0):</b> To mitigate "Side-Channel Data Leakage," SecureMessenger provides a direct-to-enclave archiving path for text messages. This process bypasses the system clipboard entirely, encrypting the message stream into an immutable forensic transcript. Each sealed record includes a provenance header (Sender ID/Timestamp) to ensure verifiability.</span>
+                <span lang="de"><b>The Sovereign Transcript Seal (v11.0.0):</b> Zur Minderung von „Side-Channel Data Leakage“ bietet SecureMessenger einen direkten Archivierungsweg in die Enklave für Textnachrichten. Dieser Prozess umgeht die Systemzwischenablage vollständig und verschlüsselt den Nachrichtenstream in ein unveränderliches forensisches Transkript. Jeder versiegelte Datensatz enthält einen Provenienz-Header (Sender-ID/Zeitstempel), um die Verifizierbarkeit sicherzustellen.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Sovereign Resharing (v25.0.19):</b> Users can securely reshare existing .ghost files from their Vault directly to other contacts. The system performs a local key-lookup and enqueues the encrypted blob for delivery, ensuring zero-knowledge continuity without redundant decryption/encryption cycles.</span>
+                <span lang="de"><b>Souveränes Weitergeben (v25.0.19):</b> Benutzer können vorhandene .ghost-Dateien aus ihrem Vault sicher direkt an andere Kontakte weitergeben. Das System führt eine lokale Schlüsselabfrage durch und stellt den verschlüsselten Blob zur Zustellung bereit, wodurch eine Zero-Knowledge-Kontinuität ohne redundante Entschlüsselungs-/Verschlüsselungszyklen gewährleistet wird.</span>
             </li>
             <li>
                 <span lang="en"><b>Forensic Metadata Sterilization:</b> Every object within the Vault undergoes mandatory "Active Scrubbing." GPS tags, device signatures, and EXIF headers are physically incinerated before the encryption stage.</span>
@@ -303,8 +333,8 @@
                 <span lang="de"><b>Flüchtige RAM-only Entschlüsselung:</b> Um das Abfließen von Klartext zu verhindern, werden Vault-Assets für die Anzeige ausschließlich in einen flüchtigen RAM-Puffer entschlüsselt. Unverschlüsselte Bytes berühren niemals den physischen Flash-Speicher.</span>
             </li>
             <li>
-                <span lang="en"><b>One-Tap Forensic Shredding:</b> Deletion from the Vault triggers a multi-pass overwrite protocol, replacing file blocks with high-entropy noise to defeat forensic recovery tools.</span>
-                <span lang="de"><b>One-Tap Forensisches Schreddern:</b> Das Löschen aus dem Vault löst ein Multi-Pass-Überschreibprotokoll aus, bei dem Dateiblöcke durch Rauschen mit hoher Entropie ersetzt werden, um forensische Wiederherstellungstools zu neutralisieren.</span>
+                <span lang="en"><b>One-Tap Forensic Shredding:</b> Deletion from the Vault triggers a 3-pass overwrite protocol, replacing file blocks with high-entropy noise to defeat forensic recovery tools.</span>
+                <span lang="de"><b>One-Tap Forensisches Schreddern:</b> Das Löschen aus dem Vault löst ein 3-Pass-Überschreibprotokoll aus, bei dem Dateiblöcke durch Rauschen mit hoher Entropie ersetzt werden, um forensische Wiederherstellungstools zu neutralisieren.</span>
             </li>
         </ul>
 
@@ -366,19 +396,23 @@
 
         <h2><span lang="en">V. Fault-Tolerant Self-Healing Mechanics (The Stability Engine)</span><span lang="de">V. Fehlertolerante Self-Healing-Mechanik (Die Stabilitäts-Engine)</span></h2>
 
-        <h3>5.1 <span lang="en">Sovereign Recoverability (Deterministic Hydration)</span><span lang="de">5.1 Souveräne Wiederherstellbarkeit (Deterministische Hydrierung)</span></h3>
+        <h3>5.1 <span lang="en">Sovereign Recoverability & The Ghost Tombstone (v25.0.25)</span><span lang="de">5.1 Souveräne Wiederherstellbarkeit & Das Ghost-Tombstone (v25.0.25)</span></h3>
         <p>
-            <span lang="en">SecureMessenger solves the "Amnesia" problem associated with forgotten passwords or local data wipes using purely decentralized mechanics. Password recovery is fully supported but is architecturally dependent on the 12-word Master Key.</span>
-            <span lang="de">SecureMessenger löst das mit vergessenen Passwörtern oder lokalen Datenlöschungen verbundene „Amnesie“-Problem mit rein dezentralen Mechanismen. Die Passwort-Wiederherstellung wird vollständig unterstützt, ist jedoch architektonisch vom 12-Wörter-Master-Key abhängig.</span>
+            <span lang="en">SecureMessenger implements a Nuclear Scorched Earth protocol known as the <b>Ghost Tombstone</b>. This mechanism ensures that "technical surrender" and "the right to be forgotten" are physically enforced on the relay hardware while maintaining the integrity of the Platform Sovereignty scarcity model.</span>
+            <span lang="de">SecureMessenger implementiert ein nukleares Scorched-Earth-Protokoll, bekannt als <b>Ghost Tombstone</b>. Dieser Mechanismus stellt sicher, dass der „Technical Surrender“ und das „Recht auf Vergessenwerden“ physisch auf der Relay-Hardware durchgesetzt werden, während die Integrität des Plattform-Souveränitäts-Knappheitsmodells gewahrt bleibt.</span>
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Deterministic Key Derivation:</b> Upon re-authentication, the app re-derives the identical Signal Master Identity from the 12-word seed and username using PBKDF2-HMAC-SHA256. This ensures bit-perfect identity restoration, allowing contacts to recognize the user without "Security Code Changed" warnings.</span>
-                <span lang="de"><b>Deterministische Schlüsselableitung:</b> Bei der erneuten Authentifizierung leitet die App die identische Signal Master Identity aus dem 12-Wörter-Seed und dem Benutzernamen mittels PBKDF2-HMAC-SHA256 neu ab. Dies gewährleistet eine bitgenaue Identitätswiederherstellung, sodass Kontakte den Benutzer ohne Warnungen vor „geänderten Sicherheitscodes“ erkennen.</span>
+                <span lang="en"><b>Atomic Activity Purge:</b> Upon execution, the relay performs a cascaded deletion of all documents in the <i>messages</i>, <i>invites</i>, and <i>signal_keys</i> collections associated with the user. This physically destroys all forensic residue of the user's social graph and network activity.</span>
+                <span lang="de"><b>Atomarer Activity-Purge:</b> Bei Ausführung führt das Relay eine kaskadierte Löschung aller Dokumente in den Kollektionen <i>messages</i>, <i>invites</i> und <i>signal_keys</i> durch, die dem Benutzer zugeordnet sind. Dies vernichtet physisch alle forensischen Rückstände des sozialen Graphen und der Netzwerkaktivität des Benutzers.</span>
             </li>
             <li>
-                <span lang="en"><b>Shadow Resolution Protocol:</b> After a data wipe, the app executes a silent, encrypted handshake (IDENTITY_PROBE) with known contacts. Peer metadata (usernames and avatar pointers) are restored automatically in the background, preventing "Unknown Ghost" entries in the UI.</span>
-                <span lang="de"><b>Shadow Resolution Protokoll:</b> Nach einer Datenlöschung führt die App einen stillen, verschlüsselten Handshake (IDENTITY_PROBE) mit bekannten Kontakten durch. Peer-Metadaten (Benutzernamen und Avatar-Pointer) werden automatisch im Hintergrund wiederhergestellt, wodurch „Unknown Ghost“-Einträge in der Benutzeroberfläche verhindert werden.</span>
+                <span lang="en"><b>Identity Scrubbing (Tombstoning):</b> For standard commercial users, the identity record is scrubbed of all metadata (Avatars, SearchHashes, and proofOfPossession are replaced with <i>[SHREDDED]</i>), but the <b>Hardware Hash</b> and Routing ID are preserved. This prevents users from abusing the Scorched Earth command to bypass the "One Account Per Phone" scarcity regulation.</span>
+                <span lang="de"><b>Identitäts-Scrubbing (Tombstoning):</b> Für standardmäßige kommerzielle Benutzer wird der Identitätsdatensatz von allen Metadaten bereinigt (Avatare, SearchHashes und proofOfPossession werden durch <i>[SHREDDED]</i> ersetzt), aber der <b>Hardware-Hash</b> und die Routing-ID bleiben erhalten. Dies verhindert, dass Benutzer den Scorched-Earth-Befehl missbrauchen, um die „Ein-Konto-pro-Telefon“-Knappheitsregulierung zu umgehen.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Deterministic Recovery:</b> Because SecureMessenger utilizes Deterministic Identity Derivation, a user who has "Tombstoned" their account can still recover their identical cryptographic identity using their 12-word seed, provided they remain on the same hardware anchor.</span>
+                <span lang="de"><b>Deterministische Wiederherstellung:</b> Da SecureMessenger eine deterministische Identitätsableitung nutzt, kann ein Benutzer, der sein Konto „getombstoned“ hat, seine identische kryptografische Identität weiterhin über seinen 12-Wörter-Seed wiederherstellen, sofern er am selben Hardware-Anker verbleibt.</span>
             </li>
         </ul>
 
@@ -438,7 +472,7 @@
             </li>
         </ul>
 
-        <h2><span lang="en">VII. Infrastructure, Scalability, & Technical Debt Audit</span><span lang="de">VII. Infrastruktur, Skalierbarkeit & Technical-Debt-Audit</span></h2>
+        <h2><span lang="en">VII. Infrastructure, Scalability, & Forensic TTL</span><span lang="de">VII. Infrastruktur, Skalierbarkeit & Forensische TTL</span></h2>
 
         <h3>7.1 <span lang="en">Dependency & Licensing Compliance</span><span lang="de">7.1 Abhängigkeiten & Lizenz-Compliance</span></h3>
         <p>
@@ -460,13 +494,29 @@
             </li>
         </ul>
 
-        <h3>7.2 <span lang="en">Performance & Threading</span><span lang="de">7.2 Leistung & Threading</span></h3>
+        <h3>7.2 <span lang="en">Forensic Retention & Time-to-Live (TTL)</span><span lang="de">7.2 Forensische Aufbewahrung & Time-to-Live (TTL)</span></h3>
         <p>
-            <span lang="en">Computationally expensive cryptographic operations (Double Ratchet rotations, 4096-iteration PBKDF2) are strictly isolated to Dispatchers.IO via Coroutines. This maintains a fluid 60FPS UI performance even during high-volume message processing.</span>
-            <span lang="de">Rechenintensive kryptografische Operationen (Double-Ratchet-Rotationen, PBKDF2 mit 4096 Iterationen) werden via Coroutines strikt auf Dispatchers.IO isoliert. Dies sorgt für eine flüssige 60FPS-UI-Performance, selbst bei hohem Nachrichtenaufkommen.</span>
+            <span lang="en">To satisfy the strictest forensic standards, SecureMessenger enforces an aggressive retention policy at the infrastructure level. All non-volatile signaling and media metadata are subject to a **1-hour mandatory TTL**. Once delivered or acknowledged, binary blobs and signaling packets are physically shredded from the relay instances.</span>
+            <span lang="de">Um strengste forensische Standards zu erfüllen, setzt SecureMessenger eine aggressive Aufbewahrungsrichtlinie auf Infrastrukturebene durch. Alle nicht flüchtigen Signalisierungs- und Medienmetadaten unterliegen einer **obligatorischen 1-stündigen TTL**. Nach der Zustellung oder Bestätigung werden Binär-Blobs und Signalisierungspakete physisch von den Relay-Instanzen geschreddert.</span>
         </p>
 
-        <h3>7.3 <span lang="en">Security Audit Results</span><span lang="de">7.3 Ergebnisse des Sicherheits-Audits</span></h3>
+        <h3>7.3 <span lang="en">Internationalization (I18N) & Runtime Safety (v9.5.1)</span><span lang="de">Internationalisierung (I18N) & Laufzeitsicherheit (v9.5.1)</span></h3>
+        <p>
+            <span lang="en">To ensure global stability and compliance, SecureMessenger enforces a strict "Zero-Hardcode" doctrine.</span>
+            <span lang="de">Um globale Stabilität und Compliance zu gewährleisten, erzwingt SecureMessenger eine strikte „Zero-Hardcode“-Doktrin.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Resource De-coupling:</b> All user-facing strings are extracted into centralized XML dictionaries. This prevents locale-based rendering failures and ensures that critical security alerts (e.g., HARDWARE_OCCUPIED) are properly localized across 21+ supported languages.</span>
+                <span lang="de"><b>Ressourcen-Entkopplung:</b> Alle benutzerorientierten Texte werden in zentralisierte XML-Wörterbücher extrahiert. Dies verhindert lokalisierungsbedingte Darstellungsfehler und stellt sicher, dass kritische Sicherheitswarnungen (z. B. HARDWARE_OCCUPIED) in allen 21+ unterstützten Sprachen korrekt lokalisiert sind.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Placeholder Forensic Audit:</b> Every translation file undergoes a structural audit to verify that formatting placeholders (e.g., %1$s, %1$d) match the expected JVM types. This eliminates "Translation Landmines"—runtime crashes caused by illegal format conversion exceptions in untranslated or poorly formatted locale files.</span>
+                <span lang="de"><b>Platzhalter-Forensik-Audit:</b> Jede Übersetzungsdatei wird einem strukturellen Audit unterzogen, um sicherzustellen, dass Formatierungsplatzhalter (z. B. %1$s, %1$d) den erwarteten JVM-Typen entsprechen. Dies eliminiert „Übersetzungs-Landminen“ – Laufzeitabstürze, die durch ungültige Formatkonvertierungsausnahmen in unübersetzten oder schlecht formatierten Lokalisierungsdateien verursacht werden.</span>
+            </li>
+        </ul>
+
+        <h3>7.4 <span lang="en">Security Audit Results</span><span lang="de">Ergebnisse des Sicherheits-Audits</span></h3>
         <ul>
             <li>
                 <span lang="en"><b>Data Leakage:</b> None detected. Unencrypted profiles never touch the relay.</span>
@@ -484,7 +534,7 @@
 
         <div class="status-footer">
             Legal Compliance: EU DSGVO, GDPR Art. 11, German TDDDG § 25.<br>
-            System Integrity: GHOST PROTOCOL v10.5.1 ACTIVE (v25.0.13 RELAY). dQuantumBear 🛡️🚀🐻❤️
+            System Integrity: GHOST PROTOCOL v25.1.0-FORENSIC-SANITIZATION ACTIVE. dQuantumBear 🛡️🚀🐻❤️
         </div>
     </div>
 
