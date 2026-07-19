@@ -52,36 +52,138 @@
             font-size: 0.8em;
             opacity: 0.6;
         }
+
+        /* TRANSLATION TOGGLE STYLING */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .lang-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #1a1a1a;
+            background: #fff;
+            transition: 0.2s;
+        }
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        html[lang="de"] [lang="en"] { display: none; }
+        html[lang="en"] [lang="de"] { display: none; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            h1 + p { font-size: 0.75em !important; line-height: 1.4; margin-bottom: 20px; }
+            .container { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>The Ghost Protocol</h1>
-        <p style="text-align: center; font-style: italic;">"Power is not found in what you can see, but in what you can choose to surrender."</p>
+        <div class="lang-switch">
+            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
+        </div>
+        <h1>
+            <span lang="en">The Ghost Protocol</span>
+            <span lang="de">Das Ghost-Protokoll</span>
+        </h1>
+        <p style="text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: -20px; font-size: 0.9em; color: #27ae60;">
+            <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
+            <span lang="de">SecureMessenger: Eine White-Label Encrypted Zero-Knowledge Kommunikationsplattform</span>
+        </p>
+        <p style="text-align: center; font-style: italic;">
+            <span lang="en">"Power is not found in what you can see, but in what you can choose to surrender."</span>
+            <span lang="de">„Macht liegt nicht in dem, was man sehen kann, sondern in dem, was man bereit ist aufzugeben.“</span>
+        </p>
 
-        <div class="warning">GHOST PROTOCOL ACTIVE: FORENSICALLY SILENT</div>
+        <div class="warning">
+            <span lang="en">GHOST PROTOCOL v25.1.0 ACTIVE: PANDA-HARDENED</span>
+            <span lang="de">GHOST-PROTOKOLL v25.1.0 AKTIV: PANDA-HARDENED</span><br>
+            <span lang="en" style="font-size: 0.8em; color: #f39c12;">AUDIT CYCLE: FORENSIC METADATA SANITIZATION (PHASES 1-5)</span>
+            <span lang="de" style="font-size: 0.8em; color: #f39c12;">AUDIT-ZYKLUS: FORENSISCHE METADATEN-BEREINIGUNG (PHASEN 1-5)</span>
+        </div>
 
-        <h2>1. The Blind Relay (Backend)</h2>
-        <p>Our server is a stateless, zero-visibility pass-through. Plaintext usernames never leave your device; they are hashed locally via HMAC-SHA256. We collect ZERO logs, IP addresses, or metadata.</p>
+        <h2>1. <span lang="en">The Blind Relay (Zero-Visibility Storage)</span><span lang="de">Das Blind-Relay (Zero-Visibility Speicherung)</span></h2>
+        <p>
+            <span lang="en">Our relay is a stateless, blind pass-through. We have implemented <b>Metadata Blinding</b>: message recipients are hashed via SHA-256 before storage, and sender IDs are physically stripped from the database ledger. The relay transmits data but retains ZERO knowledge of your social graph or communication patterns. All data remains on the relay for a maximum of 72 hours before mandatory physical destruction.</span>
+            <span lang="de">Unser Relay ist ein zustandsloser, blinder Durchgang. Wir haben <b>Metadaten-Verblindung</b> implementiert: Empfänger von Nachrichten werden vor der Speicherung über SHA-256 gehasht, und Absender-IDs werden physisch aus dem Datenbank-Ledger entfernt. Das Relay überträgt Daten, behält aber NULL Kenntnisse über Ihren sozialen Graphen oder Ihre Kommunikationsmuster. Alle Daten verbleiben maximal 72 Stunden auf dem Relay, bevor sie zwingend physisch vernichtet werden.</span>
+        </p>
 
-        <h2>2. Active Decay (Data Destruction)</h2>
-        <p>SecureMessenger doesn't just "delete" data; it destroys it. Using forensic scrubbing, messages are overwritten with random bytes before physical deletion. A mandatory 30-day TTL index ensures undelivered data is physically purged from the server hardware.</p>
+        <h2>2. <span lang="en">Active Decay (The Ghost Tombstone)</span><span lang="de">Aktiver Zerfall (Das Ghost-Tombstone)</span></h2>
+        <p>
+            <span lang="en">SecureMessenger doesn't just "delete" data; it destroys it. Communication transit data is subject to an automatic **72-hour decay protocol**. Furthermore, the <b>Ghost Tombstone</b> command triggers a cascaded physical destruction of all messages, invites, and cryptographic keys on the relay. While your activity is permanently incinerated, the hardware anchor remains "occupied" by your Routing ID to prevent scarcity abuse, while your 12-word seed remains the sovereign key to re-hydrating your identity locally.</span>
+            <span lang="de">SecureMessenger „löscht“ Daten nicht nur; es zerstört sie. Transitdaten der Kommunikation unterliegen einem automatischen **72-Stunden-Zerfallsprotokoll**. Darüber hinaus löst der <b>Ghost Tombstone</b>-Befehl eine kaskadierte physische Vernichtung aller Nachrichten, Einladungen und kryptografischen Schlüssel auf dem Relay aus. Während Ihre Aktivitäten dauerhaft verbrannt werden, bleibt der Hardware-Anker durch Ihre Routing-ID „belegt“, um Knappheitsmissbrauch zu verhindern, während Ihr 12-Wörter-Seed der souveräne Schlüssel zur lokalen Re-Hydrierung Ihrer Identität bleibt.</span>
+        </p>
 
-        <h2>3. Deniable Sovereignty (Duress)</h2>
-        <p>Digital security is useless without physical safety. Our <b>Duress Protocol</b> allows a user to provide a "Panic PIN" that triggers a silent, forensic wipe of all local Signal keys and databases, while displaying a generic network error to provide a plausible alibi.</p>
+        <h2>3. <span lang="en">Deniable Sovereignty (Duress)</span><span lang="de">Leugnbare Souveränität (Nötigung)</span></h2>
+        <p>
+            <span lang="en">Digital security is useless without physical safety. Our <b>Duress Protocol</b> allows a user to provide a "Panic PIN" that triggers a silent, forensic wipe of all local Signal keys and databases, while displaying a generic network error to provide a plausible alibi.</span>
+            <span lang="de">Digitale Sicherheit ist ohne physische Sicherheit nutzlos. Unser <b>Duress-Protokoll</b> ermöglicht es einem Benutzer, eine „Panik-PIN“ anzugeben, die eine stille, forensische Löschung aller lokalen Signal-Schlüssel und Datenbanken auslöst, während ein generischer Netzwerkfehler angezeigt wird, um ein plausibles Alibi zu bieten.</span>
+        </p>
 
-        <h2>4. Zero-Knowledge Identity</h2>
-        <p>BIP39 Mnemonic seeds ensure that your identity is sovereign. We do not hold your keys. We cannot reset your password. We have no technical power over your data.</p>
+        <h2>4. <span lang="en">Zero-Knowledge Identity & Propagation</span><span lang="de">Zero-Knowledge-Identität & Ausbreitung</span></h2>
+        <p>
+            <span lang="en">BIP39 Mnemonic seeds ensure that your identity is sovereign. We do not hold your keys. All identity updates (Avatars, Usernames) are transmitted <b>inside</b> the Signal Double Ratchet. The relay cannot "see" or scrape your profile changes, ensuring total privacy even during synchronization.</span>
+            <span lang="de">BIP39-Mnemonic-Seeds stellen sicher, dass Ihre Identität souverän ist. Wir besitzen Ihre Schlüssel nicht. Alle Identitätsaktualisierungen (Avatare, Benutzernamen) werden <b>innerhalb</b> des Signal-Double-Ratchet übertragen. Das Relay kann Ihre Profiländerungen nicht „sehen“ oder extrahieren, was absolute Privatsphäre auch während der Synchronisierung gewährleistet.</span>
+        </p>
 
-        <h2>5. Platform Sovereignty</h2>
-        <p>We utilize the <b>Google Play Integrity API</b> and the Android <b>Hardware Secure Element (TEE)</b> to ensure that only genuine, untampered devices can access the network. By anchoring a unique cryptographic hash to your hardware, we enforce a strict "One-Account-Per-Device" scarcity model while maintaining 100% user anonymity. No phone numbers, no emails, no spambots. Your phone is your passport.</p>
+        <h2>5. <span lang="en">Platform Sovereignty & Scarcity</span><span lang="de">Plattform-Souveränität & Knappheit</span></h2>
+        <p>
+            <span lang="en">We utilize the <b>Google Play Integrity API</b> and the Android <b>Hardware Secure Element (TEE)</b> to ensure that only genuine, untampered devices can access the network. By anchoring a unique cryptographic hash to your hardware, we enforce a strict "One-Account-Per-Device" scarcity model while maintaining 100% user anonymity. <b>NOTE:</b> During the current beta audit (v25.0.20), a temporary <b>GHOST_BETA_TESTER</b> bypass is active to allow 12 authorized testers to re-roll identities on their primary hardware. This exception is time-limited and will be purged upon commercial launch.</span>
+            <span lang="de">Wir nutzen die <b>Google Play Integrity API</b> und das Android <b>Hardware Secure Element (TEE)</b>, um sicherzustellen, dass nur echte, unmanipulierte Geräte auf das Netzwerk zugreifen können. Durch die Verankerung eines eindeutigen kryptografischen Hashs in Ihrer Hardware setzen wir ein striktes „Ein-Konto-pro-Gerät“-Knappheitsmodell durch, während die 100%ige Anonymität der Benutzer gewahrt bleibt. <b>HINWEIS:</b> Während des aktuellen Beta-Audits (v25.0.20) ist ein temporärer <b>GHOST_BETA_TESTER</b>-Bypass aktiv, um 12 autorisierten Testern das Re-Rolling von Identitäten auf ihrer primären Hardware zu ermöglichen. Diese Ausnahme ist zeitlich begrenzt und wird beim kommerziellen Start entfernt.</span>
+        </p>
 
-        <h2>6. Single-Seat Handoff</h2>
-        <p>Your identity is unique and non-clonable. We implement a strict <b>Single-Seat</b> rule: moving to a new device instantly revokes access for the old one. Migration occurs via a direct <b>Air-Bridge</b>—an encrypted local Wi-Fi tunnel that bypasses the cloud entirely. Once your new vault is verified, the old device is automatically shredded, leaving no forensic footprint behind.</p>
+        <h2>6. <span lang="en">Single-Seat Handoff</span><span lang="de">Single-Seat-Übergabe</span></h2>
+        <p>
+            <span lang="en">Your identity is unique and non-clonable. We implement a strict <b>Single-Seat</b> rule: moving to a new device instantly revokes access for the old one. Migration occurs via a direct <b>Air-Bridge</b>—an encrypted local Wi-Fi tunnel that bypasses the cloud entirely. Once your new vault is verified, the old device is automatically shredded, leaving no forensic footprint behind.</span>
+            <span lang="de">Ihre Identität ist einzigartig und nicht klonbar. Wir implementieren eine strikte <b>Single-Seat-Regel</b>: Der Umzug auf ein neues Gerät entzieht dem alten Gerät sofort den Zugriff. Die Migration erfolgt über eine direkte <b>Air-Bridge</b> – einen verschlüsselten lokalen Wi-Fi-Tunnel, der die Cloud vollständig umgeht. Sobald Ihr neuer Tresor verifiziert ist, wird das alte Gerät automatisch geschreddert und hinterlässt keinen forensischen Fußabdruck.</span>
+        </p>
+
+        <h2>7. <span lang="en">The Sovereign Vault & Forensic Sanitization</span><span lang="de">Der Sovereign Vault & Forensische Bereinigung</span></h2>
+        <p>
+            <span lang="en">SecureMessenger introduces the Sovereign Vault—a high-security repository for encrypted media. A core pillar of this enclave is <b>Forensic Metadata Sanitization</b>: every file is automatically scrubbed of tracking data (GPS, EXIF, Device Signatures) before encryption. The Vault enforces <b>Secure Viewing</b> and <b>3-Pass Forensic Shredding</b>, ensuring that unencrypted data never leaves the volatile memory space.</span>
+            <span lang="de">SecureMessenger führt den Sovereign Vault ein – ein hochsicheres Repository für verschlüsselte Medien. Eine Kernsäule dieser Enklave ist die <b>forensische Metadaten-Bereinigung</b>: Jede Datei wird vor der Verschlüsselung automatisch von Tracking-Daten (GPS, EXIF, Gerätesignaturen) bereinigt. Der Vault erzwingt <b>sicheres Ansehen</b> und <b>3-Pass-forensisches Schreddern</b>, um sicherzustellen, dass unverschlüsselte Daten niemals den flüchtigen Speicherbereich verlassen.</span>
+        </p>
+
+        <h2>8. <span lang="en">The Sovereign Transcript Seal (Zero-Clipboard)</span><span lang="de">Der Sovereign Transcript Seal (Zero-Clipboard)</span></h2>
+        <p>
+            <span lang="en">To mitigate "Side-Channel Data Leakage," SecureMessenger implements the <b>Transcript Seal</b> protocol. This allows users to move sensitive text conversations directly from the active database to the Sovereign Vault enclave without utilizing the system clipboard. Each seal generates a unique AES-256-GCM media key and injects a <b>Forensic Provenance Header</b> (Sender ID, Timestamp, Signature Verification), transforming ephemeral messages into immutable, verifiable forensic assets.</span>
+            <span lang="de">Zur Minderung von „Side-Channel Data Leakage“ implementiert SecureMessenger das <b>Transcript Seal</b>-Protokoll. Dies ermöglicht es Benutzern, sensible Textkonversationen direkt aus der aktiven Datenbank in die Sovereign Vault-Enklave zu verschieben, ohne die Systemzwischenablage zu nutzen. Jedes Siegel generiert einen eindeutigen AES-256-GCM-Medien-Key und injiziert einen <b>Forensic Provenance Header</b> (Sender-ID, Zeitstempel, Signaturprüfung), wodurch flüchtige Nachrichten in unveränderliche, verifizierbare forensische Assets transformiert werden.</span>
+        </p>
 
         <div class="footer">
-            SECUREMESSENGER 10.0 | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
+            SECUREMESSENGER v25.1.0-FORENSIC-WIPE | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
         </div>
     </div>
+
+    <script>
+        function setLang(lang) {
+            const supportedLangs = ['en', 'de'];
+            const targetLang = supportedLangs.includes(lang) ? lang : 'en';
+            document.documentElement.lang = targetLang;
+            localStorage.setItem('preferred-lang', targetLang);
+            updateButtons(targetLang);
+        }
+
+        function updateButtons(lang) {
+            const btnEn = document.getElementById('btn-en');
+            const btnDe = document.getElementById('btn-de');
+            if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+            if (btnDe) btnDe.classList.toggle('active', lang === 'de');
+        }
+
+        // AI-FIX: Automatic Language Detection (v1.5.0)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const browserLang = navigator.language.split('-')[0];
+
+        const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'en';
+        setLang(savedLang);
+    </script>
 </body>
 </html>
