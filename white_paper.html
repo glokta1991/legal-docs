@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureMessenger | Technical White Paper (v25.1.0)</title>
+    <title>SecureMessenger | Technical White Paper (v25.1.2)</title>
     <style>
         /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
@@ -95,8 +95,8 @@
         </div>
 
         <h1>
-            <span lang="en">Technical White Paper & Architectural Audit (v25.1.0-FORENSIC-SANITIZATION)</span>
-            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.1.0-FORENSISCHE-BEREINIGUNG)</span>
+            <span lang="en">Technical White Paper & Architectural Audit (v25.1.2-FORENSIC-SANITIZATION)</span>
+            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.1.2-FORENSISCHE-BEREINIGUNG)</span>
         </h1>
         <div class="subtitle">
             <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
@@ -106,8 +106,8 @@
         <div class="warning-box">
             <span lang="en">Date: July 22, 2026 | Project: SecureMessenger</span>
             <span lang="de">Datum: 22. Juli 2026 | Projekt: SecureMessenger</span><br>
-            <span lang="en" style="color: #2ecc71;">[AUDIT CYCLE 25.1.0]: Forensic Metadata Sanitization & Enclave Integrity Active (Phases 1-5)</span>
-            <span lang="de" style="color: #2ecc71;">[AUDIT-ZYKLUS 25.1.0]: Forensische Metadaten-Bereinigung & Enklaven-Integrität aktiv (Phasen 1-5)</span>
+            <span lang="en" style="color: #2ecc71;">[AUDIT CYCLE 25.1.2-STABLE]: Relay Shield Reshare Protocol & Forensic Enclave Integrity Active (Phases 1-8)</span>
+            <span lang="de" style="color: #2ecc71;">[AUDIT-ZYKLUS 25.1.2-STABLE]: Relay-Shield Reshare Protokoll & Forensische Enklaven-Integrität aktiv (Phasen 1-8)</span>
         </div>
 
         <h2><span lang="en">I. Executive Summary & Market Value Proposition</span><span lang="de">I. Management-Zusammenfassung & Markt-Nutzenversprechen</span></h2>
@@ -187,6 +187,10 @@
             <li>
                 <span lang="en"><b>Beta Identity Re-rolling:</b> Implemented an authorized bypass for <b>GHOST_BETA_TESTER</b> tokens. Authorized testers can re-register new identities on previously occupied hardware via automated server-side record purging and Android debug-layer token overrides. This enables frictionless testing without manual database intervention.</span>
                 <span lang="de"><b>Beta-Identitäts-Re-rolling:</b> Implementierung eines autorisierten Bypasses für <b>GHOST_BETA_TESTER</b>-Token. Autorisierte Tester können neue Identitäten auf bereits belegter Hardware über automatische serverseitige Datensatzbereinigung und Android-Debug-Layer-Token-Overrides neu registrieren. Dies ermöglicht reibungslose Testzyklen ohne manuelles Eingreifen in die Datenbank.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Transactional Relay Mutex (v25.1.2):</b> Implemented a localized <i>relayMutex</i> to enforce strict registration atomicity for multi-attachment bundles. This prevents race conditions and redundant network submissions (Triple-Delivery Mitigation) during parallel background uploads.</span>
+                <span lang="de"><b>Transaktionales Relay-Mutex (v25.1.2):</b> Implementierung eines lokalisierten <i>relayMutex</i>, um eine strikte Registrierungs-Atomizität für Multi-Attachment-Bundles zu erzwingen. Dies verhindert Race-Conditions und redundante Netzwerkübermittlungen (Triple-Delivery Mitigation) während paralleler Hintergrund-Uploads.</span>
             </li>
         </ul>
 
@@ -321,8 +325,28 @@
                 <span lang="de"><b>The Sovereign Transcript Seal (v11.0.0):</b> Zur Minderung von „Side-Channel Data Leakage“ bietet SecureMessenger einen direkten Archivierungsweg in die Enklave für Textnachrichten. Dieser Prozess umgeht die Systemzwischenablage vollständig und verschlüsselt den Nachrichtenstream in ein unveränderliches forensisches Transkript. Jeder versiegelte Datensatz enthält einen Provenienz-Header (Sender-ID/Zeitstempel), um die Verifizierbarkeit sicherzustellen.</span>
             </li>
             <li>
-                <span lang="en"><b>Sovereign Resharing (v25.0.19):</b> Users can securely reshare existing .ghost files from their Vault directly to other contacts. The system performs a local key-lookup and enqueues the encrypted blob for delivery, ensuring zero-knowledge continuity without redundant decryption/encryption cycles.</span>
-                <span lang="de"><b>Souveränes Weitergeben (v25.0.19):</b> Benutzer können vorhandene .ghost-Dateien aus ihrem Vault sicher direkt an andere Kontakte weitergeben. Das System führt eine lokale Schlüsselabfrage durch und stellt den verschlüsselten Blob zur Zustellung bereit, wodurch eine Zero-Knowledge-Kontinuität ohne redundante Entschlüsselungs-/Verschlüsselungszyklen gewährleistet wird.</span>
+                <span lang="en"><b>Relay Shield Resharing (v25.1.2):</b> To achieve commercial-grade security, vaulted items are reshared using the <b>Relay Shield</b> protocol. The system generates an ephemeral transport key, transcodes the file in a secure RAM sandbox, and enqueues the new blob for delivery. The original vault key is never exposed to the network layer.</span>
+                <span lang="de"><b>Relay-Shield Resharing (v25.1.2):</b> Um Sicherheit auf kommerziellem Niveau zu erreichen, werden Vault-Elemente über das <b>Relay-Shield</b>-Protokoll geteilt. Das System generiert einen ephemeren Transportschlüssel, transkodiert die Datei in einer sicheren RAM-Sandbox und stellt den neuen Blob zur Zustellung bereit. Der ursprüngliche Vault-Schlüssel wird niemals auf der Netzwerkschicht exponiert.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Atomic Enclave Ingress (v25.1.2):</b> SecureMessenger supports multi-attachment bundles. Multiple images, videos, or documents can be grouped into a single encrypted enclave, transmitted via a chained WorkManager relay, and reconstructed on the recipient's device without metadata leakage. Addressing is strictly enforced via <b>Composite Enclave IDs</b> (${messageId}_${attachmentId}) to ensure unique decryption paths.</span>
+                <span lang="de"><b>Atomarer Enklaven-Ingress (v25.1.2):</b> SecureMessenger unterstützt Multi-Attachment-Bundles. Mehrere Bilder, Videos oder Dokumente können in einer einzigen verschlüsselten Enklave gruppiert, über ein verkettetes WorkManager-Relay übertragen und auf dem Gerät des Empfängers ohne Metadaten-Abfluss rekonstruiert werden. Die Adressierung erfolgt strikt über <b>Composite Enclave IDs</b> (${messageId}_${attachmentId}), um eindeutige Entschlüsselungspfade zu gewährleisten.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Sovereign Enclave Swiping (v25.1.2):</b> Implemented a localized <i>InternalEnclaveMediaActivity</i> using ViewPager2. This allows users to navigate seamlessly through multi-media bundles via horizontal swipe gestures while maintaining bit-perfect RAM-only decryption for each frame.</span>
+                <span lang="de"><b>Souveränes Enklaven-Swiping (v25.1.2):</b> Implementierung einer lokalisierten <i>InternalEnclaveMediaActivity</i> mittels ViewPager2. Dies ermöglicht es Benutzern, nahtlos durch Multimedia-Bundles via horizontaler Wischgesten zu navigieren, während für jeden Frame eine bitgenaue RAM-only Entschlüsselung beibehalten wird.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Static GIF Previews (v25.1.2):</b> To ensure chat stream stability and user control, GIFs are rendered as static placeholders in the chat history. Animation is only triggered upon explicit user interaction, preventing unwanted background processing and visual flickering.</span>
+                <span lang="de"><b>Statische GIF-Vorschauen (v25.1.2):</b> Um die Stabilität des Chat-Streams und die Benutzerkontrolle zu gewährleisten, werden GIFs als statische Platzhalter im Chat-Verlauf gerendert. Die Animation wird erst bei expliziter Benutzerinteraktion ausgelöst, was unerwünschte Hintergrundverarbeitung und visuelles Flackern verhindert.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Neon Ghost Menu & Selection Logic:</b> To satisfy granular data control, the application features a context-sensitive menu for bundles. Users can selectively save individual items to the Vault or Gallery, ensuring absolute sovereignty over shared media.</span>
+                <span lang="de"><b>Neon Ghost Menu & Auswahl-Logik:</b> Um eine granulare Datenkontrolle zu gewährleisten, verfügt die Anwendung über ein kontextsensitives Menü für Bundles. Benutzer können gezielt einzelne Elemente im Vault oder in der Galerie speichern, was die absolute Souveränität über geteilte Medien sicherstellt.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Forced Player Release (Shredding Integrity):</b> To prevent forensic residue caused by OS file-locks, the system forcibly terminates active media players (Video/Audio) before executing a "Scorched Earth" or "Delete" command, ensuring bit-perfect 3-pass overwriting.</span>
+                <span lang="de"><b>Forced Player Release (Schredder-Integrität):</b> Um forensische Rückstände durch OS-Dateisperren zu verhindern, beendet das System aktiv laufende Medienplayer (Video/Audio) zwangsweise, bevor ein „Scorched Earth“- oder „Löschen“-Befehl ausgeführt wird, um ein bitgenaues 3-Pass-Überschreiben zu gewährleisten.</span>
             </li>
             <li>
                 <span lang="en"><b>Forensic Metadata Sterilization:</b> Every object within the Vault undergoes mandatory "Active Scrubbing." GPS tags, device signatures, and EXIF headers are physically incinerated before the encryption stage.</span>
@@ -496,8 +520,8 @@
 
         <h3>7.2 <span lang="en">Forensic Retention & Time-to-Live (TTL)</span><span lang="de">7.2 Forensische Aufbewahrung & Time-to-Live (TTL)</span></h3>
         <p>
-            <span lang="en">To satisfy the strictest forensic standards, SecureMessenger enforces an aggressive retention policy at the infrastructure level. All non-volatile signaling and media metadata are subject to a **1-hour mandatory TTL**. Once delivered or acknowledged, binary blobs and signaling packets are physically shredded from the relay instances.</span>
-            <span lang="de">Um strengste forensische Standards zu erfüllen, setzt SecureMessenger eine aggressive Aufbewahrungsrichtlinie auf Infrastrukturebene durch. Alle nicht flüchtigen Signalisierungs- und Medienmetadaten unterliegen einer **obligatorischen 1-stündigen TTL**. Nach der Zustellung oder Bestätigung werden Binär-Blobs und Signalisierungspakete physisch von den Relay-Instanzen geschreddert.</span>
+            <span lang="en">To satisfy the strictest forensic standards, SecureMessenger enforces an aggressive retention policy at the infrastructure level. All transit communication (Text, Media, and Signaling) is subject to a **72-hour mandatory TTL (Transit Window)**. Once delivered and acknowledged, or after the 3-day window has expired, binary blobs and signaling packets are physically shredded from the relay and storage instances. This ensures that the operating entity maintains Zero-Visibility and Zero-Possession of user history, while local chat history remains sovereign on the user's hardware.</span>
+            <span lang="de">Um strengste forensische Standards zu erfüllen, setzt SecureMessenger eine aggressive Aufbewahrungsrichtlinie auf Infrastrukturebene durch. Die gesamte Transit-Kommunikation (Text, Medien und Signalisierung) unterliegt einer **obligatorischen 72-stündigen TTL (Transit-Fenster)**. Nach der Zustellung und Bestätigung oder nach Ablauf des 3-Tage-Fensters werden Binär-Blobs und Signalisierungspakete physisch vom Relay und den Speicherinstanzen geschreddert. Dies stellt sicher, dass der Betreiber Null-Sichtbarkeit und Null-Besitz der Benutzerhistorie behält, während die lokale Chathistorie auf der Hardware des Benutzers souverän bleibt.</span>
         </p>
 
         <h3>7.3 <span lang="en">Internationalization (I18N) & Runtime Safety (v9.5.1)</span><span lang="de">Internationalisierung (I18N) & Laufzeitsicherheit (v9.5.1)</span></h3>
@@ -534,7 +558,7 @@
 
         <div class="status-footer">
             Legal Compliance: EU DSGVO, GDPR Art. 11, German TDDDG § 25.<br>
-            System Integrity: GHOST PROTOCOL v25.1.0-FORENSIC-SANITIZATION ACTIVE. dQuantumBear 🛡️🚀🐻❤️
+            System Integrity: GHOST PROTOCOL v25.1.2-FORENSIC-SANITIZATION ACTIVE. dQuantumBear 🛡️🚀🐻❤️
         </div>
     </div>
 
