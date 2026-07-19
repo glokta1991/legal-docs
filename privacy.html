@@ -73,6 +73,7 @@
 
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; }
+            h1 + p { font-size: 0.75em !important; line-height: 1.4; }
             .document-container { padding: 30px 20px; }
             body { padding: 10px; }
         }
@@ -99,13 +100,17 @@
             <span lang="en">Privacy Policy & Legal Framework</span>
             <span lang="de">Datenschutzerklärung & Rechtlicher Rahmen</span>
         </h1>
+        <p style="text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: -10px; font-size: 0.9em;">
+            <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
+            <span lang="de">SecureMessenger: Eine White-Label Encrypted Zero-Knowledge Kommunikationsplattform</span>
+        </p>
 
         <p style="text-align: center;">
-            <strong lang="en">Status: GHOST PROTOCOL v10.8 ACTIVE | ZERO-KNOWLEDGE ARCHITECTURE</strong>
-            <strong lang="de">Status: GHOST-PROTOKOLL v10.8 AKTIV | ZERO-KNOWLEDGE-ARCHITEKTUR</strong><br>
+            <strong lang="en">Status: GHOST PROTOCOL v13.1.2 ACTIVE | FORENSIC SANITIZATION (v25.1.2)</strong>
+            <strong lang="de">Status: GHOST-PROTOKOLL v13.1.2 AKTIV | FORENSISCHE BEREINIGUNG (v25.1.2)</strong><br>
 
-            <span lang="en">Effective Date: July 10, 2026</span>
-            <span lang="de">Gültigkeitsdatum: 10. Juli 2026</span><br>
+            <span lang="en">Effective Date: July 22, 2026</span>
+            <span lang="de">Gültigkeitsdatum: 22. Juli 2026</span><br>
 
             <span lang="en">Jurisdiction: Federal Republic of Germany (BGB, DDG, TDDDG)</span>
             <span lang="de">Gerichtsstand: Bundesrepublik Deutschland (BGB, DDG, TDDDG)</span>
@@ -113,7 +118,9 @@
 
         <div class="nuclear-notice">
             <span lang="en">TECHNICAL NESCIENCE | MERE CONDUIT PROTECTION ACTIVE</span>
-            <span lang="de">TECHNISCHE UNKENNTNIS | MERE-CONDUIT-SCHUTZ AKTIV</span>
+            <span lang="de">TECHNISCHE UNKENNTNIS | MERE-CONDUIT-SCHUTZ AKTIV</span><br>
+            <span lang="en" style="font-size: 0.8em; color: #f39c12;">BETA EXCEPTION: AUTHORIZED HARDWARE RE-ROLLING (v25.0.20)</span>
+            <span lang="de" style="font-size: 0.8em; color: #f39c12;">BETA-AUSNAHME: AUTORISIERTES HARDWARE-RE-ROLLING (v25.0.20)</span>
         </div>
 
         <h2>1. Impressum</h2>
@@ -131,13 +138,14 @@
             </li>
         </ul>
 
-        <h2>2. <span lang="en">Zero-Knowledge Identity</span><span lang="de">Zero-Knowledge Identität</span></h2>
+        <h2>2. <span lang="en">Zero-Visibility Storage</span><span lang="de">Zero-Visibility Speicherung</span></h2>
         <p>
-            <span lang="en">In accordance with <span class="legal-ref">Art. 11 GDPR</span>, SecureMessenger is architected for total anonymity.</span>
-            <span lang="de">In Übereinstimmung mit <span class="legal-ref">Art. 11 DSGVO</span> ist SecureMessenger auf absolute Anonymität ausgelegt.</span>
+            <span lang="en">In accordance with <span class="legal-ref">Art. 11 GDPR</span>, SecureMessenger is architected for total anonymity and metadata blindness.</span>
+            <span lang="de">In Übereinstimmung mit <span class="legal-ref">Art. 11 DSGVO</span> ist SecureMessenger auf absolute Anonymität und Metadaten-Blindheit ausgelegt.</span>
         </p>
         <ul>
-            <li><strong><span lang="en">No Identification:</span><span lang="de">Keine Identifizierung:</span></strong> <span lang="en">We do not collect names, phone numbers, or email addresses. Registration is via anonymous mnemonic seeds.</span><span lang="de">Wir erheben keine Namen, Telefonnummern oder E-Mail-Adressen. Die Registrierung erfolgt über anonyme mnemonische Seeds.</span></li>
+            <li><strong><span lang="en">Blinded Routing:</span><span lang="de">Verblindetes Routing:</span></strong> <span lang="en">Our relay delivers messages using <b>SHA-256 Hashes</b> of recipient IDs combined with a server-side pepper. The server is physically incapable of discovering the true destination of any packet in the database.</span><span lang="de">Unser Relay stellt Nachrichten mithilfe von <b>SHA-256-Hashes</b> der Empfänger-IDs in Kombination mit einem serverseitigen Pepper zu. Der Server ist physisch außerstande, das wahre Ziel eines Pakets in der Datenbank zu ermitteln.</span></li>
+            <li><strong><span lang="en">Sender Stripping:</span><span lang="de">Absender-Stripping:</span></strong> <span lang="en">Sender IDs are physically stripped from all persistent message records. Every stored message is attributed to a generic "GHOST" sender at the database layer, permanently breaking the link between the sender and the message.</span><span lang="de">Absender-IDs werden physisch aus allen persistenten Nachrichtendatensätzen entfernt. Jede gespeicherte Nachricht wird auf der Datenbankebene einem generischen „GHOST“-Absender zugeordnet, wodurch die Verbindung zwischen dem Absender und der Nachricht dauerhaft unterbrochen wird.</span></li>
             <li><strong><span lang="en">No IP Logging:</span><span lang="de">Keine IP-Protokollierung:</span></strong> <span lang="en">Our "Blind Relay" is configured to discard IP addresses instantly. We do not store, log, or link your physical location to your identity.</span><span lang="de">Unser "Blind-Relay" ist so konfiguriert, dass IP-Adressen sofort verworfen werden. Wir speichern, protokollieren oder verknüpfen Ihren physischen Standort nicht mit Ihrer Identität.</span></li>
             <li><strong><span lang="en">Zero Tracking:</span><span lang="de">Null Tracking:</span></strong> <span lang="en">We use <b>Zero Cookies</b>, zero analytics scripts, and zero third-party marketing SDKs.</span><span lang="de">Wir verwenden <b>Null Cookies</b>, keine Analyse-Skripte und keine Marketing-SDKs von Drittanbietern.</span></li>
         </ul>
@@ -149,6 +157,7 @@
         </p>
         <ul>
             <li><strong><span lang="en">Cryptographic Attestation:</span><span lang="de">Kryptographische Attestierung:</span></strong> <span lang="en">We utilize the <b>Google Play Integrity API</b> to verify device authenticity. The client obtains a hardware-backed token proving the environment is genuine and untampered.</span><span lang="de">Wir nutzen die <b>Google Play Integrity API</b> zur Verifizierung der Gerätechtheit. Der Client erhält ein hardwaregestütztes Token, das beweist, dass die Umgebung echt und unmanipuliert ist.</span></li>
+            <li><strong><span lang="en">BETA BYPASS (Temporary):</span><span lang="de">BETA-BYPASS (Temporär):</span></strong> <span lang="en">During the commercial audit phase, 12 authorized testers are permitted to utilize the <b>GHOST_BETA_TESTER</b> token. This authorizes the relay to surgically purge hardware occupancy records, allowing frictionless testing of the "One-Device" policy without physical hardware replacement. This exception is strictly internal and will be removed upon commercial launch.</span><span lang="de">Während der kommerziellen Audit-Phase ist es 12 autorisierten Testern gestattet, das <b>GHOST_BETA_TESTER</b>-Token zu verwenden. Dies autorisiert das Relay zur chirurgischen Bereinigung von Hardware-Belegungsdatensätzen, was ein reibungsloses Testen der „Ein-Gerät“-Richtlinie ohne physischen Hardware-Austausch ermöglicht. Diese Ausnahme ist rein intern und wird beim kommerziellen Start entfernt.</span></li>
             <li><strong><span lang="en">Salted TEE Fingerprinting:</span><span lang="de">Salted TEE-Fingerprinting:</span></strong> <span lang="en">A permanent, non-exportable key is generated in your device's <b>Hardware Secure Element (TEE/SE)</b>. We store only a salted SHA-256 hash of this public key to mark the hardware as "Occupied." No raw physical identifiers (IMEI, MAC, Serial) are ever processed or stored.</span><span lang="de">In dem <b>Hardware Secure Element (TEE/SE)</b> Ihres Geräts wird ein dauerhafter, nicht exportierbarer Schlüssel generiert. Wir speichern nur einen salted SHA-256-Hash dieses öffentlichen Schlüssels, um die Hardware als „belegt“ zu markieren. Es werden niemals physische Rohkennungen (IMEI, MAC, Seriennummer) verarbeitet oder gespeichert.</span></li>
             <li><strong><span lang="en">Sovereign Persistence Anchor:</span><span lang="de">Souveräner Persistenz-Anker:</span></strong> <span lang="en">A hidden anchor is stored in shared scoped storage and the user's private Google Cloud configuration space (1KB). These anchors survive uninstalls to detect existing hardware occupancy and automatically route returning users to the 12-word recovery flow.</span><span lang="de">Ein versteckter Anker wird im gemeinsamen Speicher und im privaten Google Cloud-Konfigurationsraum (1KB) des Benutzers gespeichert. Diese Anker überdauern Deinstallationen, um bestehende Hardware-Belegungen zu erkennen und wiederkehrende Benutzer automatisch zum 12-Wörter-Wiederherstellungsablauf zu leiten.</span></li>
         </ul>
@@ -187,8 +196,10 @@
         <h2>7. <span lang="en">Forensic Data Minimization</span><span lang="de">Forensische Datenminimierung</span></h2>
         <ul>
             <li><strong><span lang="en">Scorched Metadata:</span><span lang="de">Scorched Metadata:</span></strong> <span lang="en">Filenames, media keys, and captions are encrypted <i>inside</i> the message envelope. The server is physically blind to your media metadata.</span><span lang="de">Dateinamen, Media-Keys und Bildunterschriften werden <i>innerhalb</i> des Nachrichtenumschlags verschlüsselt. Der Server ist physisch blind für Ihre Medien-Metadaten.</span></li>
+            <li><strong><span lang="en">Atomic Bundling (v25.1.2):</span><span lang="de">Atomares Bundling (v25.1.2):</span></strong> <span lang="en">Multi-attachment enclaves are transmitted as a single manifest within the Signal message envelope. Individual assets are addressed via composite IDs (serverId_attachmentId) resolved strictly in RAM by the `SecureDocumentProvider` to prevent metadata leakage.</span><span lang="de">Multi-Attachment-Enklaven werden als ein einziges Manifest innerhalb des Signal-Nachrichtenumschlags übertragen. Einzelne Assets werden über zusammengesetzte IDs (serverId_attachmentId) adressiert, die ausschließlich im RAM vom `SecureDocumentProvider` aufgelöst werden, um Metadaten-Abfluss zu verhindern.</span></li>
             <li><strong><span lang="en">Metadata Sterilization:</span><span lang="de">Metadaten-Sterilisierung:</span></strong> <span lang="en">The "Ghost Capture" pipeline locally scrubs EXIF data (GPS, hardware signatures) before encryption.</span><span lang="de">Die „Ghost Capture“-Pipeline bereinigt EXIF-Daten (GPS, Hardware-Signaturen) lokal vor der Verschlüsselung.</span></li>
-            <li><strong><span lang="en">Ephemeral Persistence:</span><span lang="de">Ephemere Persistenz:</span></strong> <span lang="en">Undelivered messages are subject to a 24-hour TTL. Binary blobs are shredded from the infrastructure after delivery or expiration.</span><span lang="de">Nicht zugestellte Nachrichten unterliegen einer 24-Stunden-TTL. Binärobjekte werden nach Zustellung oder Ablauf von der Infrastruktur geschreddert.</span></li>
+            <li><strong><span lang="en">Ephemeral Transit Sovereignty:</span><span lang="de">Ephemere Transit-Souveränität:</span></strong> <span lang="en">To maintain the Zero-Visibility mandate, all communication data (Text and Media) is subject to a 72-hour Transit Window. After delivery or expiration of this window, data is physically shredded from the relay infrastructure. Local chat history on the user's terminal remains sovereign and is not subject to automated server-side deletion.</span><span lang="de">Um das Zero-Visibility-Mandat aufrechtzuerhalten, unterliegen alle Kommunikationsdaten (Text und Medien) einem 72-stündigen Transit-Fenster. Nach der Zustellung oder dem Ablauf dieses Fensters werden die Daten physisch aus der Relay-Infrastruktur geschreddert. Die lokale Chathistorie auf dem Endgerät des Benutzers bleibt souverän und unterliegt keiner automatisierten serverseitigen Löschung.</span></li>
+            <li><strong><span lang="en">Persistent Invite Isolation (v25.0.0):</span><span lang="de">Persistente Einladungs-Isolation (v25.0.0):</span></strong> <span lang="en">Invite codes are stored in a persistent database to ensure reliable handshakes. To maintain the Zero-Visibility mandate, these records contain only the invite hash and the sender's anonymous routing ID. Usernames and metadata are strictly excluded.</span><span lang="de">Einladungscodes werden in einer persistenten Datenbank gespeichert, um zuverlässige Handshakes zu gewährleisten. Um das Zero-Visibility-Mandat aufrechtzuerhalten, enthalten diese Datensätze nur den Einladungs-Hash und die anonyme Routing-ID des Senders. Benutzernamen und Metadaten sind strikt ausgeschlossen.</span></li>
         </ul>
 
         <h2>8. TDDDG & <span lang="en">Terminal Sovereignty</span><span lang="de">Endgeräte-Souveränität</span></h2>
@@ -202,13 +213,27 @@
             <li><strong><span lang="en">Hardware Security:</span><span lang="de">Hardware-Sicherheit:</span></strong> <span lang="en">Encryption keys are stored in the device's <b>Hardware Keystore (TEE/SE)</b> and remain under your exclusive physical control.</span><span lang="de">Verschlüsselungsschlüssel werden im <b>Hardware-Keystore (TEE/SE)</b> des Geräts gespeichert und bleiben unter Ihrer exklusiven physischen Kontrolle.</span></li>
         </ul>
 
-        <h2>9. <span lang="en">Nuclear Right to Erasure</span><span lang="de">Recht auf Löschung</span></h2>
+        <h2>9. <span lang="en">Sovereign Vault & Forensic Sanitization</span><span lang="de">Souveräner Tresor & Forensische Bereinigung</span></h2>
         <ul>
-            <li><strong><span lang="en">Forensic Shredding:</span><span lang="de">Forensisches Schreddern:</span></strong> <span lang="en">Data is overwritten with random entropy before deletion to prevent recovery by forensic software.</span><span lang="de">Daten werden vor der Löschung mit Zufalls-Entropie überschrieben, um eine Wiederherstellung durch forensische Software zu verhindern.</span></li>
+            <li><strong><span lang="en">Forensic Metadata Sanitization (Functional):</span><span lang="de">Forensische Metadaten-Bereinigung (Funktional):</span></strong> <span lang="en">SecureMessenger implements mandatory <b>Forensic Scrubbing</b> for all images and documents before encryption. GPS coordinates, device identifiers, and capture timestamps are physically overwritten in the file headers, ensuring zero-trace anonymity for all vaulted and shared assets.</span><span lang="de">SecureMessenger implementiert obligatorisches <b>Forensisches Scrubbing</b> für alle Bilder und Dokumente vor der Verschlüsselung. GPS-Koordinaten, Gerätekennungen und Aufnahmezeitstempel werden physisch in den Dateiheadern überschrieben, was eine Null-Spur-Anonymität für alle gespeicherten und geteilten Assets gewährleistet.</span></li>
+            <li><strong><span lang="en">Secure RAM-Only Viewing:</span><span lang="de">Sicheres RAM-only Ansehen:</span></strong> <span lang="en">Decrypted media is processed strictly in the app's <b>Secure RAM</b> during active session use. No plaintext data is ever synchronized with system galleries or unencrypted cloud backup services. Plaintext never touches disk storage.</span><span lang="de">Entschlüsselte Medien werden während der aktiven Sitzungsnutzung ausschließlich im <b>Secure RAM</b> der App verarbeitet. Es werden niemals Klartextdaten mit Systemgalerien oder unverschlüsselten Cloud-Backup-Diensten synchronisiert. Klartext berührt niemals den Festplattenspeicher.</span></li>
+            <li><strong><span lang="en">One-Tap Forensic Shredding:</span><span lang="de">One-Tap Forensisches Schreddern:</span></strong> <span lang="en">Deletion from the Vault triggers a 3-pass overwrite protocol with high-entropy noise to defeat forensic recovery tools.</span><span lang="de">Das Löschen aus dem Vault löst ein 3-Pass-Überschreibprotokoll mit hoch-entropischem Rauschen aus, um forensische Wiederherstellungstools zu neutralisieren.</span></li>
+        </ul>
+
+        <h2>10. <span lang="en">The Ghost Tombstone (Nuclear Scorched Earth)</span><span lang="de">Das Ghost-Tombstone (Nukleares Scorched-Earth)</span></h2>
+        <ul>
+            <li><strong><span lang="en">Cascaded Physical Destruction:</span><span lang="de">Kaskadierte physische Vernichtung:</span></strong> <span lang="en">Execution of the Scorched Earth command triggers an atomic delete cycle in the relay database. All documents in the <i>messages</i>, <i>invites</i>, and <i>signal_keys</i> collections associated with the user's identity are physically purged.</span><span lang="de">Die Ausführung des Scorched-Earth-Befehls löst einen atomaren Löschzyklus in der Relay-Datenbank aus. Alle Dokumente in den Kollektionen <i>messages</i>, <i>invites</i> und <i>signal_keys</i>, die der Identität des Benutzers zugeordnet sind, werden physisch gelöscht.</span></li>
+            <li><strong><span lang="en">Forensic Tombstoning:</span><span lang="de">Forensisches Tombstoning:</span></strong> <span lang="en">To maintain "One Account Per Phone" scarcity, the user record is <b>Scrubbed</b> (Metadata replaced with <i>[SHREDDED]</i>) but the hardware-anchored Routing ID is preserved. This satisfies Art. 17 GDPR (Right to Erasure) for activity data while enforcing legitimate interest in fraud prevention.</span><span lang="de">Um die „Ein-Konto-pro-Telefon“-Knappheit aufrechtzuerhalten, wird der Benutzerdatensatz <b>bereinigt</b> (Metadaten durch <i>[SHREDDED]</i> ersetzt), aber die hardware-verankerte Routing-ID bleibt erhalten. Dies erfüllt Art. 17 DSGVO (Recht auf Löschung) für Aktivitätsdaten bei gleichzeitiger Durchsetzung des berechtigten Interesses an der Betrugsprävention.</span></li>
             <li><strong><span lang="en">Panic PIN:</span><span lang="de">Panic PIN:</span></strong> <span lang="en">A secondary password that triggers a silent forensic wipe while simulating a connection error for physical safety.</span><span lang="de">Ein sekundäres Passwort, das zur physischen Sicherheit eine stille forensische Löschung auslöst, während ein Verbindungsfehler simuliert wird.</span></li>
         </ul>
 
-        <h2>10. <span lang="en">Data Processing Inventory</span><span lang="de">Inventar der Datenverarbeitung</span></h2>
+        <h2>11. <span lang="en">Zero-Clipboard Sovereign Archiving</span><span lang="de">Zero-Clipboard Souveräne Archivierung</span></h2>
+        <ul>
+            <li><strong><span lang="en">Side-Channel Mitigation:</span><span lang="de">Side-Channel-Minderung:</span></strong> <span lang="en">To protect sensitive text from clipboard-sniffing applications, SecureMessenger provides a direct-to-enclave archiving path. Text selected for the "Sovereign Seal" is moved internally without ever touching the Android OS Clipboard.</span><span lang="de">Um sensible Texte vor Clipboard-Sniffing-Anwendungen zu schützen, bietet SecureMessenger einen direkten Archivierungsweg in die Enklave. Texte, die für das „Sovereign Seal“ ausgewählt wurden, werden intern verschoben, ohne jemals das Android OS Clipboard zu berühren.</span></li>
+            <li><strong><span lang="en">Immutable Transcripts:</span><span lang="de">Unveränderliche Transkripte:</span></strong> <span lang="en">Sealed transcripts include a forensic header that cryptographically links the text to its original sender and timestamp. This creates a verifiable, tamper-proof record for journalists and legal professionals.</span><span lang="de">Versiegelte Transkripte enthalten einen forensischen Header, der den Text kryptografisch mit seinem ursprünglichen Absender und Zeitstempel verknüpft. Dies erstellt eine verifizierbare, manipulationssichere Aufzeichnung für Journalisten und Juristen.</span></li>
+        </ul>
+
+        <h2>12. <span lang="en">Data Processing Inventory</span><span lang="de">Inventar der Datenverarbeitung</span></h2>
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9em;">
             <thead>
                 <tr style="background-color: #1a1a1a; color: #fff;">
@@ -219,9 +244,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Routing ID (HMAC-SHA256)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Blinded Recipient (SHA-256 + Pepper)</td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Relay Database</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Permanent (until user delete)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">72 Hours (Mandatory Purge)</td>
                 </tr>
                 <tr>
                     <td style="padding: 10px; border: 1px solid #ddd;">Hardware Hash (Salted TEE)</td>
@@ -229,14 +254,19 @@
                     <td style="padding: 10px; border: 1px solid #ddd;">Permanent (Single-Seat constraint)</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Encrypted Messages</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Encrypted Messages & VoIP Signals</td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Relay Database</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">3 Days (Auto-Purge)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">72 Hours (Auto-Purge)</td>
                 </tr>
                 <tr>
                     <td style="padding: 10px; border: 1px solid #ddd;">Encrypted Media Blobs</td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Cloudinary (Blind Bucket)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">7 Days / Post-Delivery</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">72 Hours / Post-Delivery</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Persistent Invite Codes (v25.0.25)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Relay Database (Isolated)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">24 Hours (Physical Purge)</td>
                 </tr>
                 <tr>
                     <td style="padding: 10px; border: 1px solid #ddd;">12-Word Recovery Seed</td>
@@ -248,26 +278,35 @@
 
         <div class="compliance-footer">
             <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br>
-            <strong>Verification Date:</strong> July 10, 2026.<br><br>
-            <strong lang="en">Status: GHOST PROTOCOL v10.8 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
-            <strong lang="de">Status: GHOST-PROTOKOLL v10.8 AKTIV. dQuantumBear 🛡️🚀🐻❤️M</strong>
+            <strong>Verification Date:</strong> July 22, 2026.<br><br>
+            <strong lang="en">Status: GHOST PROTOCOL v13.1.2 ACTIVE. dQuantumBear 🛡️🚀🐻❤️ (v25.1.2)</strong>
+            <strong lang="de">Status: GHOST-PROTOKOLL v13.1.2 AKTIV. dQuantumBear 🛡️🚀🐻❤️ (v25.1.2)</strong>
         </div>
     </div>
 
     <script>
         function setLang(lang) {
-            document.documentElement.lang = lang;
-            localStorage.setItem('preferred-lang', lang);
-            updateButtons(lang);
+            const supportedLangs = ['en', 'de'];
+            const targetLang = supportedLangs.includes(lang) ? lang : 'en';
+            document.documentElement.lang = targetLang;
+            localStorage.setItem('preferred-lang', targetLang);
+            updateButtons(targetLang);
         }
 
         function updateButtons(lang) {
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+            const btnEn = document.getElementById('btn-en');
+            const btnDe = document.getElementById('btn-de');
+            if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+            if (btnDe) btnDe.classList.toggle('active', lang === 'de');
         }
 
-        // Initialize from storage or default to DE (given the jurisdiction)
-        const savedLang = localStorage.getItem('preferred-lang') || 'de';
+        // AI-FIX: Automatic Language Detection (v1.5.0)
+        // Priority: 1. URL Param (?lang=) | 2. LocalStorage | 3. Browser Navigator | 4. Default (de)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const browserLang = navigator.language.split('-')[0];
+
+        const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'de';
         setLang(savedLang);
     </script>
 </body>
