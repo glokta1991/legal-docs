@@ -73,6 +73,7 @@
 
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; }
+            h1 + p { font-size: 0.75em !important; line-height: 1.4; }
             .document-container { padding: 30px 20px; }
             body { padding: 10px; }
         }
@@ -99,13 +100,17 @@
             <span lang="en">Terms of Service & Usage Agreement</span>
             <span lang="de">Nutzungsbedingungen & Nutzungsvereinbarung</span>
         </h1>
+        <p style="text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: -10px; font-size: 0.9em;">
+            <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
+            <span lang="de">SecureMessenger: Eine White-Label Encrypted Zero-Knowledge Kommunikationsplattform</span>
+        </p>
 
         <p style="text-align: center;">
-            <strong lang="en">Status: SOVEREIGN PROTOCOL ACTIVE</strong>
-            <strong lang="de">Status: SOUVERÄNES PROTOKOLL AKTIV</strong><br>
+            <strong lang="en">Status: SOVEREIGN PROTOCOL ACTIVE (v25.1.2)</strong>
+            <strong lang="de">Status: SOUVERÄNES PROTOKOLL AKTIV (v25.1.2)</strong><br>
 
-            <span lang="en">Effective Date: July 10, 2026</span>
-            <span lang="de">Gültigkeitsdatum: 10. Juli 2026</span>
+            <span lang="en">Effective Date: July 22, 2026</span>
+            <span lang="de">Gültigkeitsdatum: 22. Juli 2026</span>
         </p>
 
         <div class="nuclear-notice">
@@ -125,10 +130,10 @@
             <span lang="de">Gemäß <b>Art. 4 des EU Digital Services Act (DSA)</b> agiert dieser Dienst ausschließlich als neutraler „Mere Conduit“. Wir überwachen, moderieren oder verändern Ihre Kommunikation nicht. Durch die Nutzung dieses Tools erkennen Sie an, dass der Entwickler keine technischen Möglichkeiten hat, in Ihre verschlüsselten Übermittlungen einzugreifen oder darauf zuzugreifen.</span>
         </p>
 
-        <h2>3. <span lang="en">Zero Possession Principle</span><span lang="de">Prinzip des Null-Besitzes</span></h2>
+        <h2>3. <span lang="en">Zero-Visibility & Transit Ephemerality</span><span lang="de">Zero-Visibility & Transit-Ephemerität</span></h2>
         <p>
-            <span lang="en">Under the "Ghost Protocol," the provider maintains zero possession of your content. All messages are End-to-End Encrypted (E2EE) using the Signal Protocol. We do not store phone numbers, email addresses, or IP logs. You are the sole controller of your data.</span>
-            <span lang="de">Unter dem „Ghost-Protokoll“ hat der Anbieter keinerlei Besitz an Ihren Inhalten. Alle Nachrichten werden über das Signal-Protokoll Ende-zu-Ende-verschlüsselt (E2EE). Wir speichern keine Telefonnummern, E-Mail-Adressen oder IP-Protokolle. Sie sind der alleinige Verwalter Ihrer Daten.</span>
+            <span lang="en">Under the "Ghost Protocol," the provider maintains zero possession of your content and zero visibility into your network patterns. All messages are End-to-End Encrypted (E2EE) and recipients are masked via <b>Blinded Routing</b>. To fulfill the Zero-Knowledge mandate, all communications (Text and Media) are physically shredded from the relay 72 hours after delivery. Local chat history remains under your exclusive control and is not subject to automated server deletion.</span>
+            <span lang="de">Unter dem „Ghost-Protokoll“ hat der Anbieter keinerlei Besitz an Ihren Inhalten und keinerlei Einblick in Ihre Netzwerkmuster. Alle Nachrichten sind Ende-zu-Ende-verschlüsselt (E2EE) und Empfänger werden über <b>Blinded Routing</b> maskiert. Um das Zero-Knowledge-Mandat zu erfüllen, werden alle Kommunikationen (Text und Medien) 72 Stunden nach der Zustellung physisch vom Relay geschreddert. Die lokale Chathistorie bleibt unter Ihrer ausschließlichen Kontrolle und unterliegt keiner automatisierten Serverlöschung.</span>
         </p>
 
         <h2>4. <span lang="en">Prohibited Use & Indemnity</span><span lang="de">Verbotene Nutzung & Haftungsfreistellung</span></h2>
@@ -145,8 +150,8 @@
 
         <h2>6. <span lang="en">Hardware Scarcity & Device Anchoring</span><span lang="de">Hardware-Knappheit & Geräte-Verankerung</span></h2>
         <p>
-            <span lang="en">SecureMessenger enforces a strict <b>One-Account-Per-Device</b> policy. By registering, you agree that a unique, privacy-preserving cryptographic hash will be anchored to your hardware's Secure Element (TEE). In the event of a local data wipe or uninstallation, this device remains "Occupied." Access can only be restored via your <b>12-word recovery seed</b>. Attempts to bypass this hardware lock to create multiple identities are prohibited and may result in device-level network exclusion.</span>
-            <span lang="de">SecureMessenger setzt eine strikte <b>Ein-Konto-pro-Gerät</b>-Richtlinie um. Mit der Registrierung erklären Sie sich damit einverstanden, dass ein eindeutiger, datenschutzfreundlicher kryptographischer Hash im Secure Element (TEE) Ihrer Hardware verankert wird. Im Falle einer lokalen Datenlöschung oder Deinstallation bleibt dieses Gerät „belegt“. Der Zugriff kann nur über Ihren <b>12-Wörter-Wiederherstellungs-Seed</b> wiederhergestellt werden. Versuche, diese Hardware-Sperre zu umgehen, um mehrere Identitäten zu erstellen, sind untersagt und können zum netzwerkweiten Ausschluss auf Geräteebene führen.</span>
+            <span lang="en">SecureMessenger enforces a strict <b>One-Account-Per-Device</b> policy. By registering, you agree that a unique, privacy-preserving cryptographic hash will be anchored to your hardware's Secure Element (TEE). In the event of a local data wipe or uninstallation, this device remains "Occupied." Access can only be restored via your <b>12-word recovery seed</b>. Attempts to bypass this hardware lock to create multiple identities are prohibited and may result in device-level network exclusion. You further acknowledge that multi-attachment enclaves (albums) are bundled atomically to preserve this metadata scarcity.</span>
+            <span lang="de">SecureMessenger setzt eine strikte <b>Ein-Konto-pro-Gerät</b>-Richtlinie um. Mit der Registrierung erklären Sie sich damit einverstanden, dass ein eindeutiger, datenschutzfreundlicher kryptographischer Hash im Secure Element (TEE) Ihrer Hardware verankert wird. Im Falle einer lokalen Datenlöschung oder Deinstallation bleibt dieses Gerät „belegt“. Der Zugriff kann nur über Ihren <b>12-Wörter-Wiederherstellungs-Seed</b> wiederhergestellt werden. Versuche, diese Hardware-Sperre zu umgehen, um mehrere Identitäten zu erstellen, sind untersagt und können zum netzwerkweiten Ausschluss auf Geräteebene führen. Sie erkennen ferner an, dass Multi-Attachment-Enklaven (Alben) atomar gebündelt werden, um diese Metadaten-Knappheit zu bewahren.</span>
         </p>
 
         <h2>7. <span lang="en">Single-Seat Migration & Data Handoff</span><span lang="de">Single-Seat Migration & Datenübergabe</span></h2>
@@ -155,26 +160,48 @@
             <span lang="de">SecureMessenger unterstützt ein direktes Peer-to-Peer (P2P)-Migrationsmodell. Sie können Ihr Konto über einen lokalen verschlüsselten Wi-Fi-Tunnel auf neue Hardware umziehen. Durch das Initiieren einer Migration erklären Sie sich damit einverstanden, dass: (a) Ihre Sitzung auf dem alten Gerät sofort widerrufen wird; und (b) das alte Gerät nach erfolgreicher Übertragung ein <b>forensisches Schredder-Protokoll</b> auslöst, um Konto-Kloning und Datenrückstände zu verhindern.</span>
         </p>
 
+        <h2>8. <span lang="en">The Sovereign Vault & Forensic Sanitization</span><span lang="de">Der Sovereign Vault & Forensische Bereinigung</span></h2>
+        <p>
+            <span lang="en">SecureMessenger includes the "Sovereign Vault" feature for localized, encrypted media management. By utilizing the Vault, you acknowledge that: (a) all media undergoes mandatory <b>Forensic Metadata Sanitization</b>, where GPS coordinates, camera signatures, and timestamps are physically purged; (b) viewing occurs strictly in volatile RAM; and (c) file deletion is executed via a 3-pass forensic shredding protocol. Furthermore, the <b>Zero-Knowledge Reshare</b> protocol allows you to share vaulted assets directly with contacts; this process preserves forensic integrity by transmitting existing encrypted blobs without redundant decryption cycles. You further acknowledge that while server-side media is purged after 72 hours, items moved to the Sovereign Vault are persistent until manually deleted.</span>
+            <span lang="de">SecureMessenger enthält die Funktion „Sovereign Vault“ zur lokalen, verschlüsselten Medienverwaltung. Durch die Nutzung des Vaults erkennen Sie an, dass: (a) alle Medien einer obligatorischen <b>forensischen Metadaten-Bereinigung</b> unterliegen, bei der GPS-Koordinaten, Kamerasignaturen und Zeitstempel physisch gelöscht werden; (b) das Ansehen ausschließlich im flüchtigen RAM erfolgt; und (c) das Löschen von Dateien über ein 3-Pass-forensisches Schredderprotokoll erfolgt. Darüber hinaus ermöglicht das <b>Zero-Knowledge Reshare</b>-Protokoll das direkte Teilen von Vault-Assets mit Kontakten; dieser Prozess bewahrt die forensische Integrität, indem bestehende verschlüsselte Blobs ohne redundante Entschlüsselungszyklen übertragen werden. Sie erkennen ferner an, dass serverseitige Medien zwar nach 72 Stunden gelöscht werden, in den Sovereign Vault verschobene Elemente jedoch bis zur manuellen Löschung persistent bleiben.</span>
+        </p>
+
+        <h2>9. <span lang="en">Sovereign Transcript Sealing</span><span lang="de">Souveräne Transkript-Versiegelung</span></h2>
+        <p>
+            <span lang="en">The "Sovereign Seal" feature allows for the direct internal archiving of text messages into the Vault. You agree that: (a) this process bypasses the OS clipboard to prevent third-party sniffing; (b) the resulting transcript is an immutable forensic asset cryptographically linked to the original session; and (c) once sealed and moved to the Vault, the management of the transcript is governed by the same non-recoverable shredding standards as Vault media assets.</span>
+            <span lang="de">Die Funktion „Sovereign Seal“ ermöglicht die direkte interne Archivierung von Textnachrichten im Vault. Sie erklären sich damit einverstanden, dass: (a) dieser Prozess die Zwischenablage des Betriebssystems umgeht, um Sniffing durch Drittanbieter zu verhindern; (b) das resultierende Transkript ein unveränderliches forensisches Asset ist, das kryptografisch mit der ursprünglichen Sitzung verknüpft ist; und (c) nach der Versiegelung und Verschiebung in den Vault die Verwaltung des Transkripts denselben nicht wiederherstellbaren Schredder-Standards unterliegt wie Medien-Assets im Vault.</span>
+        </p>
+
         <div class="compliance-footer">
             <strong>Legal Audit Status:</strong> BGB, DDG & EU DSA Compliant.<br>
-            <strong>Verification Date:</strong> July 10, 2026.<br><br>
-            <strong>Status: GHOST PROTOCOL v10.8 ACTIVE. dQuantumBear 🛡️🚀🐻❤️M</strong>
+            <strong>Verification Date:</strong> July 22, 2026.<br><br>
+            <strong>Status: GHOST PROTOCOL v13.1.2 ACTIVE. dQuantumBear 🛡️🚀🐻❤️ (v25.1.2)</strong>
         </div>
     </div>
 
     <script>
         function setLang(lang) {
-            document.documentElement.lang = lang;
-            localStorage.setItem('preferred-lang', lang);
-            updateButtons(lang);
+            const supportedLangs = ['en', 'de'];
+            const targetLang = supportedLangs.includes(lang) ? lang : 'en';
+            document.documentElement.lang = targetLang;
+            localStorage.setItem('preferred-lang', targetLang);
+            updateButtons(targetLang);
         }
 
         function updateButtons(lang) {
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+            const btnEn = document.getElementById('btn-en');
+            const btnDe = document.getElementById('btn-de');
+            if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+            if (btnDe) btnDe.classList.toggle('active', lang === 'de');
         }
 
-        const savedLang = localStorage.getItem('preferred-lang') || 'de';
+        // AI-FIX: Automatic Language Detection (v1.5.0)
+        // Priority: 1. URL Param (?lang=) | 2. LocalStorage | 3. Browser Navigator | 4. Default (de)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const browserLang = navigator.language.split('-')[0];
+
+        const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'de';
         setLang(savedLang);
     </script>
 </body>
