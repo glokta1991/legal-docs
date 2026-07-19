@@ -54,8 +54,31 @@
         ul { list-style-type: square; padding-left: 20px; }
         li { margin-bottom: 12px; }
 
+        /* TRANSLATION TOGGLE STYLING */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .lang-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #1a1a1a;
+            background: #fff;
+            transition: 0.2s;
+        }
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        html[lang="de"] [lang="en"] { display: none; }
+        html[lang="en"] [lang="de"] { display: none; }
+
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; }
+            h1 + p { font-size: 0.75em !important; line-height: 1.4; }
             .document-container { padding: 30px 20px; }
             body { padding: 10px; }
         }
@@ -63,6 +86,10 @@
 </head>
 <body>
     <div class="document-container">
+        <div class="lang-switch">
+            <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+            <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
+        </div>
         <!-- Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="SecureMessenger Logo">
@@ -72,55 +99,138 @@
             <div class="header-divider"></div>
         </div>
 
-        <h1>Transparency Report</h1>
-        <p style="text-align: center;"><strong>Reporting Period: January 1, 2026 – July 10, 2026</strong></p>
+        <h1>
+            <span lang="en">Transparency Report</span>
+            <span lang="de">Transparenzbericht</span>
+        </h1>
+        <p style="text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: -10px; font-size: 0.9em; color: #27ae60;">
+            <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
+            <span lang="de">SecureMessenger: Eine White-Label Encrypted Zero-Knowledge Kommunikationsplattform</span>
+        </p>
+        <p style="text-align: center;">
+            <strong lang="en">Reporting Period: January 1, 2024 – July 22, 2026</strong>
+            <strong lang="de">Berichtszeitraum: 1. Januar 2024 – 22. Juli 2026</strong>
+        </p>
 
         <div class="nuclear-notice">
-            Service Type: Mere Conduit (Art. 4 DSA) | Status: Forensically Silent
+            <span lang="en">Service Type: Mere Conduit (Art. 4 DSA) | Status: v25.1.2-ZERO-VISIBILITY</span>
+            <span lang="de">Diensttyp: Mere Conduit (Art. 4 DSA) | Status: v25.1.2-ZERO-VISIBILITY</span><br>
+            <span lang="en" style="font-size: 0.8em; color: #f39c12;">AUDIT EVIDENCE: ZERO-VISIBILITY STORAGE (PHASES 1-8) COMPLETED.</span>
+            <span lang="de" style="font-size: 0.8em; color: #f39c12;">AUDIT-BEWEIS: ZERO-VISIBILITY SPEICHERUNG (PHASEN 1-8) ABGESCHLOSSEN.</span>
         </div>
 
-        <h2>1. Requests from Law Enforcement</h2>
+        <h2>1. <span lang="en">Requests from Law Enforcement</span><span lang="de">Anfragen von Strafverfolgungsbehörden</span></h2>
         <div class="data-block">
             <ul>
-                <li><strong>Total Requests for User Data:</strong> 0</li>
-                <li><strong>Requests Complied With:</strong> 0</li>
-                <li><strong>Reason for Non-Compliance:</strong> SecureMessenger is a Zero-Knowledge architecture. No user identities, IP logs, or unencrypted message contents are stored or retrievable.</li>
+                <li>
+                    <strong><span lang="en">Total Requests for User Data:</span><span lang="de">Gesamtzahl der Anfragen nach Benutzerdaten:</span></strong> 0
+                </li>
+                <li>
+                    <strong><span lang="en">Requests Complied With:</span><span lang="de">Erfüllte Anfragen:</span></strong> 0
+                </li>
+                <li>
+                    <strong><span lang="en">Reason for Non-Compliance:</span><span lang="de">Grund für die Nichterfüllung:</span></strong>
+                    <span lang="en">SecureMessenger is a Zero-Knowledge architecture. No user identities, IP logs, or unencrypted message contents are stored or retrievable.</span>
+                    <span lang="de">SecureMessenger ist eine Zero-Knowledge-Architektur. Es werden keine Benutzeridentitäten, IP-Protokolle oder unverschlüsselten Nachrichteninhalte gespeichert oder sind abrufbar.</span>
+                </li>
             </ul>
         </div>
 
-        <h2>2. Content Moderation (DSA Art. 15)</h2>
+        <h2>2. <span lang="en">Content Moderation (DSA Art. 15)</span><span lang="de">Inhaltsmoderation (DSA Art. 15)</span></h2>
         <ul>
-            <li><strong>Automated Moderation Actions:</strong> 0 (No automated scanning performed).</li>
-            <li><strong>Manual Content Removals:</strong> 0 (Developer has no access to unencrypted content).</li>
-            <li><strong>Notices of Illegal Content received:</strong> 0</li>
+            <li>
+                <strong><span lang="en">Automated Moderation Actions:</span><span lang="de">Automatisierte Moderationsmaßnahmen:</span></strong> 0
+                (<span lang="en">No automated scanning performed</span><span lang="de">Kein automatisiertes Scanning durchgeführt</span>).
+            </li>
+            <li>
+                <strong><span lang="en">Manual Content Removals:</span><span lang="de">Manuelle Inhaltsentfernungen:</span></strong> 0
+                (<span lang="en">Developer has no access to unencrypted content</span><span lang="de">Entwickler hat keinen Zugriff auf unverschlüsselte Inhalte</span>).
+            </li>
+            <li>
+                <strong><span lang="en">Notices of Illegal Content received:</span><span lang="de">Erhaltener Meldungen über illegale Inhalte:</span></strong> 0
+            </li>
         </ul>
 
-        <h2>3. System Integrity & Governance</h2>
+        <h2>3. <span lang="en">System Integrity & Governance</span><span lang="de">Systemintegrität & Governance</span></h2>
         <ul>
-            <li><strong>Scorched Earth Executions:</strong> [Data not tracked - User local only].</li>
-            <li><strong>Infrastructure:</strong> Relays operate on volatile RAM-only instances to ensure zero persistence.</li>
-            <li><strong>Audit Status:</strong> All systems operating under Ghost Protocol parameters.</li>
+            <li>
+                <strong><span lang="en">Scorched Earth Executions:</span><span lang="de">Scorched-Earth-Ausführungen:</span></strong>
+                [<span lang="en">Data not tracked - User local only</span><span lang="de">Daten nicht verfolgt – nur lokal beim Benutzer</span>].
+            </li>
+            <li>
+                <strong><span lang="en">Zero-Visibility Infrastructure:</span><span lang="de">Zero-Visibility-Infrastruktur:</span></strong>
+                <span lang="en">Relays operate with <b>Metadata Blinding</b>. All stored recipient identifiers are one-way hashes (SHA-256), and sender IDs are physically stripped from the database ledger. Communication patterns are technically invisible to the provider.</span>
+                <span lang="de">Relays arbeiten mit <b>Metadaten-Verblindung</b>. Alle gespeicherten Empfängerkennungen sind Einweg-Hashes (SHA-256), und Absender-IDs werden physisch aus dem Datenbank-Ledger entfernt. Kommunikationsmuster sind für den Anbieter technisch unsichtbar.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Audit Status:</span><span lang="de">Audit-Status:</span></strong>
+                <span lang="en">All systems operating under Zero-Visibility storage parameters (v25.1.2).</span>
+                <span lang="de">Alle Systeme arbeiten gemäß den Zero-Visibility-Speicherparametern (v25.1.2).</span>
+            </li>
         </ul>
 
-        <h2>4. Fraud Prevention & Scarcity</h2>
+        <h2>4. <span lang="en">Fraud Prevention & Scarcity</span><span lang="de">Betrugsprävention & Knappheit</span></h2>
         <ul>
-            <li><strong>Account Farming Blocked:</strong> Integration with <b>Play Integrity API</b> and <b>TEE-Hardware Anchoring</b> successfully prevents bot-driven account creation.</li>
-            <li><strong>Privacy Preservation:</strong> Scarcity is enforced via salted SHA-256 hardware hashes. No raw device IDs (IMEI/Serial) have been processed or stored.</li>
+            <li>
+                <strong><span lang="en">Account Farming Blocked:</span><span lang="de">Konto-Farming blockiert:</span></strong>
+                <span lang="en">Integration with <b>Play Integrity API</b> and <b>TEE-Hardware Anchoring</b> successfully prevents bot-driven account creation. During this reporting period, a temporary exception (v25.0.20) was maintained for 12 authorized testers to enable hardware-bound identity re-rolling. This exception will be permanently revoked upon commercial transition.</span>
+                <span lang="de">Integration mit der <b>Play Integrity API</b> und <b>TEE-Hardware-Verankerung</b> verhindert erfolgreich die Bot-gesteuerte Kontoerstellung. Während dieses Berichtszeitraums wurde eine temporäre Ausnahme (v25.0.20) für 12 autorisierte Tester beibehalten, um hardwaregebundenes Identitäts-Re-rolling zu ermöglichen. Diese Ausnahme wird beim kommerziellen Übergang dauerhaft aufgehoben.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Privacy Preservation:</span><span lang="de">Wahrung der Privatsphäre:</span></strong>
+                <span lang="en">Scarcity is enforced via salted SHA-256 hardware hashes. No raw device IDs (IMEI/Serial) have been processed or stored.</span>
+                <span lang="de">Knappheit wird über gesalzene SHA-256-Hardware-Hashes erzwungen. Es wurden keine physischen Rohkennungen (IMEI/Seriennummer) verarbeitet oder gespeichert.</span>
+            </li>
         </ul>
 
-        <h2>5. Identity Exclusivity (Single-Seat)</h2>
+        <h2>5. <span lang="en">Identity Exclusivity (Single-Seat)</span><span lang="de">Identitätsexklusivität (Single-Seat)</span></h2>
         <ul>
-            <li><strong>Remote Revocations:</strong> All legacy sessions were automatically terminated upon successful device migration. This enforces the "One-Device" policy and prevents identity cloning.</li>
-            <li><strong>Zero-Visibility Migration:</strong> 100% of account migrations occurred via local P2P encrypted tunnels. No user databases, profiles, or messages were processed, stored, or visible to the relay during these transfers.</li>
+            <li>
+                <strong><span lang="en">Remote Revocations:</span><span lang="de">Fern-Widerrufe:</span></strong>
+                <span lang="en">All legacy sessions were automatically terminated upon successful device migration. This enforces the "One-Device" policy and prevents identity cloning.</span>
+                <span lang="de">Alle alten Sitzungen wurden nach erfolgreicher Gerätemigration automatisch beendet. Dies erzwingt die „Ein-Gerät“-Richtlinie und verhindert Identitätskloning.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Zero-Visibility Migration:</span><span lang="de">Zero-Visibility-Migration:</span></strong>
+                <span lang="en">100% of account migrations occurred via local P2P encrypted tunnels. No user databases, profiles, or messages were processed, stored, or visible to the relay during these transfers.</span>
+                <span lang="de">100 % der Kontomigrationen erfolgten über lokale verschlüsselte P2P-Tunnel. Es wurden keine Benutzerdatenbanken, Profile oder Nachrichten während dieser Übertragungen verarbeitet, gespeichert oder waren für das Relay sichtbar.</span>
+            </li>
         </ul>
 
         <p style="text-align: center; margin-top: 40px; font-style: italic;">
-            "Transparency is the byproduct of technical inability."
+            <span lang="en">"Transparency is the byproduct of technical inability."</span>
+            <span lang="de">„Transparenz ist das Nebenprodukt technischer Unfähigkeit.“</span>
         </p>
 
         <div style="margin-top: 80px; text-align: center; font-size: 1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px;">
-            Status: GHOST PROTOCOL ACTIVE. 🐻💖M
+            <span lang="en">Status: GHOST PROTOCOL ACTIVE (v25.1.2-ZERO-VISIBILITY). 🛡️🚀🐻🏁</span>
+            <span lang="de">Status: GHOST-PROTOKOLL AKTIV (v25.1.2-ZERO-VISIBILITY). 🛡️🚀🐻🏁</span>
         </div>
     </div>
+
+    <script>
+        function setLang(lang) {
+            const supportedLangs = ['en', 'de'];
+            const targetLang = supportedLangs.includes(lang) ? lang : 'en';
+            document.documentElement.lang = targetLang;
+            localStorage.setItem('preferred-lang', targetLang);
+            updateButtons(targetLang);
+        }
+
+        function updateButtons(lang) {
+            const btnEn = document.getElementById('btn-en');
+            const btnDe = document.getElementById('btn-de');
+            if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+            if (btnDe) btnDe.classList.toggle('active', lang === 'de');
+        }
+
+        // AI-FIX: Automatic Language Detection (v1.5.0)
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const browserLang = navigator.language.split('-')[0];
+
+        const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'en';
+        setLang(savedLang);
+    </script>
 </body>
 </html>
