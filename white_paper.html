@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureMessenger | Technical White Paper (v25.1.2)</title>
+    <title>SecureMessenger | Technical White Paper & Architectural Audit (v25.1.8)</title>
     <style>
-        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
+        /* MOBILE-FIRST LAYOUT FIX */
         * { box-sizing: border-box; }
 
         body {
@@ -95,8 +95,8 @@
         </div>
 
         <h1>
-            <span lang="en">Technical White Paper & Architectural Audit (v25.1.2-FORENSIC-SANITIZATION)</span>
-            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.1.2-FORENSISCHE-BEREINIGUNG)</span>
+            <span lang="en">Technical White Paper & Architectural Audit (v25.2.0-GHOST-PHOENIX)</span>
+            <span lang="de">Technisches Whitepaper & Architektur-Audit (v25.2.0-GHOST-PHOENIX)</span>
         </h1>
         <div class="subtitle">
             <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
@@ -106,16 +106,16 @@
         <div class="warning-box">
             <span lang="en">Date: July 22, 2026 | Project: SecureMessenger</span>
             <span lang="de">Datum: 22. Juli 2026 | Projekt: SecureMessenger</span><br>
-            <span lang="en" style="color: #2ecc71;">[AUDIT CYCLE 25.1.2-STABLE]: Relay Shield Reshare Protocol & Forensic Enclave Integrity Active (Phases 1-8)</span>
-            <span lang="de" style="color: #2ecc71;">[AUDIT-ZYKLUS 25.1.2-STABLE]: Relay-Shield Reshare Protokoll & Forensische Enklaven-Integrität aktiv (Phasen 1-8)</span>
+            <span lang="en" style="color: #2ecc71;">[AUDIT CYCLE 25.2.0-STABLE]: Ghost Phoenix Identity Recovery & TEE-Anchoring Active (v25.2.0)</span>
+            <span lang="de" style="color: #2ecc71;">[AUDIT-ZYKLUS 25.2.0-STABLE]: Ghost Phoenix Identitäts-Wiederherstellung & TEE-Verankerung aktiv (v25.2.0)</span>
         </div>
 
         <h2><span lang="en">I. Executive Summary & Market Value Proposition</span><span lang="de">I. Management-Zusammenfassung & Markt-Nutzenversprechen</span></h2>
 
         <h3>1.1 <span lang="en">Overview</span><span lang="de">Überblick</span></h3>
         <p>
-            <span lang="en">SecureMessenger is a forensic-grade, decentralized communications platform engineered under the doctrine of Technical Surrender. Unlike market incumbents (e.g., WhatsApp, Telegram) that retain the administrative power to compromise user data through central metadata indexing or key escrow, SecureMessenger is structurally designed to be "Blind by Default." The platform achieves an absolute Encrypted Zero-Knowledge Zero-Visibility Transportation Layer, insulating the operating entity from data liability and metadata subpoenae.</span>
-            <span lang="de">SecureMessenger ist eine forensische, dezentrale Kommunikationsplattform, die nach der Doktrin des „Technical Surrender“ entwickelt wurde. Im Gegensatz zu etablierten Marktteilnehmern (z. B. WhatsApp, Telegram), die die administrative Macht behalten, Benutzerdaten durch zentrale Metadaten-Indizierung oder Key-Escrow zu kompromittieren, ist SecureMessenger strukturell darauf ausgelegt, „blind by default“ zu sein. Die Plattform realisiert eine absolut verschlüsselte Zero-Knowledge Zero-Visibility Transportschicht, die das betreibende Unternehmen von Datenhaftung und Metadaten-Vorladungen isoliert.</span>
+            <span lang="en">SecureMessenger is a forensic-grade, decentralized communications platform engineered under the doctrine of Blind by Default. Unlike market incumbents (e.g., WhatsApp, Telegram) that retain the administrative power to compromise user data through central metadata indexing or key escrow, SecureMessenger is structurally designed to be "Blind by Default." The platform achieves an absolute Encrypted Zero-Knowledge Zero-Visibility Transportation Layer, insulating the platform from data liability and metadata subpoenae.</span>
+            <span lang="de">SecureMessenger ist eine forensische, dezentrale Kommunikationsplattform, die nach der Doktrin des „Blind by Default“ entwickelt wurde. Im Gegensatz zu etablierten Marktteilnehmern (z. B. WhatsApp, Telegram), die die administrative Macht behalten, Benutzerdaten durch zentrale Metadaten-Indizierung oder Key-Escrow zu kompromittieren, ist SecureMessenger strukturell darauf ausgelegt, „blind by default“ zu sein. Die Plattform realisiert eine absolut verschlüsselte Zero-Knowledge Zero-Visibility Transportschicht, die das System von Datenhaftung und Metadaten-Vorladungen isoliert.</span>
         </p>
 
         <h3>1.2 <span lang="en">Core Value Drivers</span><span lang="de">Kern-Werttreiber</span></h3>
@@ -143,8 +143,12 @@
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Blinded Recipient IDs:</b> Recipient identifiers are gehashed via SHA-256 and salted with a server-side pepper before database insertion. The relay delivers messages to these blinded pointers without knowledge of the true user identity.</span>
-                <span lang="de"><b>Blinded Recipient IDs:</b> Empfängerkennungen werden vor der Datenbankeinfügung über SHA-256 gehasht und mit einem serverseitigen Pepper gesalzen. Das Relay stellt Nachrichten an diese verblindeten Pointer zu, ohne Kenntnis der wahren Benutzeridentität.</span>
+                <span lang="en"><b>Blinded Routing (v25.1.7):</b> Recipient identifiers are encapsulated via <b>HMAC-SHA256 Routing IDs</b>. These are client-side generated hashes combined with a high-entropy application salt. The relay delivers messages and manages sessions strictly using these blind hashes, ensuring true account identifiers are never exposed or stored.</span>
+                <span lang="de"><b>Blinded Routing (v25.1.7):</b> Empfängerkennungen werden über <b>HMAC-SHA256-Routing-IDs</b> gekapselt. Dies sind clientseitig generierte Hashes in Kombination mit einem hoch-entropischen Applikations-Salt. Das Relay stellt Nachrichten zu und verwaltet Sitzungen ausschließlich über diese verblindeten Hashes, wodurch sichergestellt wird, dass echte Kontokennungen niemals offengelegt oder gespeichert werden.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Discovery Policy Enforcement (v25.1.4):</b> The relay record includes an <i>isSearchable</i> flag. If disabled, the relay physically filters the identity from search results, ensuring infrastructure-level respect for user privacy settings.</span>
+                <span lang="de"><b>Discovery Policy Durchsetzung (v25.1.4):</b> Der Relay-Datensatz enthält ein <i>isSearchable</i>-Flag. Wenn dieses deaktiviert ist, filtert das Relay die Identität physisch aus den Suchergebnissen heraus, wodurch die datenschutzrechtlichen Einstellungen des Benutzers auf Infrastrukturebene respektiert werden.</span>
             </li>
             <li>
                 <span lang="en"><b>Sender ID Stripping:</b> Sender identifiers are physically purged from all persistent message records. Every stored message is attributed to a generic "GHOST" sender at the database layer, permanently breaking the link between the sender and the message.</span>
@@ -166,12 +170,28 @@
             <span lang="de">Während TLS die Daten während der Übertragung vor externen Interzeptoren schützt, betrachtet SecureMessenger das Relay selbst als potenziellen Angreifer. Das Signal-Protokoll (Double Ratchet) wird verwendet, um jede Payload zu umhüllen, wodurch sichergestellt wird, dass die Daten selbst bei einer Kompromittierung des Relays kryptografisch unzugänglich bleiben.</span>
         </p>
 
-        <h3>2.3 <span lang="en">Scalable Handshake Resolution (v25.0.25)</span><span lang="de">2.3 Skalierbare Handshake-Auflösung (v25.0.25)</span></h3>
+        <h3>2.3 <span lang="en">Scalable Handshake Resolution (v25.1.4)</span><span lang="de">2.3 Skalierbare Handshake-Auflösung (v25.1.4)</span></h3>
         <p>
             <span lang="en">SecureMessenger utilizes a persistent, database-backed invite system and encrypted VoIP signaling capable of handling 5,000+ concurrent users.</span>
             <span lang="de">SecureMessenger nutzt ein persistentes, datenbankgestütztes Einladungssystem und verschlüsselte VoIP-Signalisierung, die für über 5.000 gleichzeitige Benutzer ausgelegt ist.</span>
         </p>
         <ul>
+            <li>
+                <span lang="en"><b>Sovereign QR Discovery (v25.1.5):</b> Implementation of a localized peer-to-peer discovery model. QR codes and <i>ghost://connect</i> URIs are generated and parsed locally, ensuring the relay remains blind to the discovery event. Visual payloads include the Public Identity Key (IK) for <b>Identity Pinning</b>, enabling bit-perfect out-of-band fingerprint verification and MITM prevention.</span>
+                <span lang="de"><b>Souveräne QR-Entdeckung (v25.1.5):</b> Implementierung eines lokalisierten Peer-to-Peer-Entdeckungsmodells. QR-Codes und <i>ghost://connect</i>-URIs werden lokal erzeugt und analysiert, wodurch sichergestellt wird, dass das Relay gegenüber dem Entdeckungsereignis blind bleibt. Visuelle Payloads enthalten den öffentlichen Identitätsschlüssel (IK) für <b>Identitäts-Pinning</b>, was eine bitgenaue Out-of-Band-Fingerabdruck-Verifizierung und MITM-Prävention ermöglicht.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Identity Healing & Restoration (v25.1.8):</b> To ensure bidirectional synchronicity after data wipes, the platform implements an autonomous <b>Identity Healing</b> mechanic. The client surgically scrubs legacy username-based records and migrates them to the unified HMAC-SHA256 Routing ID received in protocol signals. This eliminates "Messages to Air" and handshake deadlocks while maintaining zero-visibility.</span>
+                <span lang="de"><b>Identitäts-Heilung & Wiederherstellung (v25.1.8):</b> Um eine bidirektionale Synchronität nach Datenlöschungen zu gewährleisten, implementiert die Plattform eine autonome <b>Identitäts-Heilung</b>. Der Client bereinigt chirurgisch legacy benutzerbasierte Datensätze und migriert diese auf die vereinheitlichte HMAC-SHA256-Routing-ID, die in Protokollsignalen empfangen wurde. Dies eliminiert „Nachrichten ins Leere“ und Handshake-Deadlocks unter Beibehaltung der Zero-Visibility.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Forensic IDE Stabilization (v25.1.5):</b> To satisfy the highest standards of professional auditing, the codebase has undergone a **Non-Destructive Sanitization** pass. This includes the elimination of IDE-level "red-line" errors, modernization of deprecated persistence APIs (Room 2.7+), and full alignment with the latest Google Play Store lint policies. This ensures bit-perfect code hygiene and platform stability.</span>
+                <span lang="de"><b>Forensische IDE-Stabilisierung (v25.1.5):</b> Um den höchsten Standards professioneller Audits gerecht zu werden, wurde die Codebasis einer **nicht-destruktiven Sanierung** unterzogen. Dies umfasst die Beseitigung von „Red-Line“-Fehlern auf IDE-Ebene, die Modernisierung veralteter Persistenz-APIs (Room 2.7+) und die vollständige Ausrichtung an den neuesten Lint-Richtlinien des Google Play Store. Dies gewährleistet eine bitgenaue Code-Hygiene und Plattformstabilität.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Adaptive Status Throttling (v25.1.4):</b> To preserve terminal battery and reduce infrastructure jitter, the client implements a Foreground-Aware Polling Engine. Refresh intervals are dynamically cooled to 60 seconds when in the background.</span>
+                <span lang="de"><b>Adaptive Status-Drosselung (v25.1.4):</b> Um die Akkulaufzeit des Endgeräts zu verlängern und Infrastruktur-Jitter zu reduzieren, implementiert der Client eine Foreground-Aware-Polling-Engine. Die Aktualisierungsintervalle werden im Hintergrund dynamisch auf 60 Sekunden abgekühlt.</span>
+            </li>
             <li>
                 <span lang="en"><b>Sovereign Short-Codes:</b> Replaced high-friction UUIDs with 6-character alphanumeric codes (Base32). This restores commercial ergonomics while maintaining $1.07 \times 10^9$ combinations to prevent brute-force discovery.</span>
                 <span lang="de"><b>Sovereign Short-Codes:</b> Hochreaktive UUIDs wurden durch 6-stellige alphanumerische Codes (Base32) ersetzt. Dies stellt die kommerzielle Ergonomie wieder her und behält gleichzeitig $1,07 \times 10^9$ Kombinationen bei, um Brute-Force-Entdeckungen zu verhindern.</span>
@@ -247,7 +267,7 @@
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Perfect Forward Secrecy (PFS):</b> Every message is encrypted with a unique key derived from the rolling ratchet. Compromising one key yields no access to previous messages.</span>
+                <span lang="en"><b>Perfect Forward Secrecy (PFS):</b> Every message is encrypted with a unique key derived from the rolling ratchet. Compromising one key enables no access to previous messages.</span>
                 <span lang="de"><b>Perfect Forward Secrecy (PFS):</b> Jede Nachricht wird mit einem eindeutigen Schlüssel verschlüsselt, der aus dem rotierenden Ratchet abgeleitet wird. Die Kompromittierung eines Schlüssels ermöglicht keinen Zugriff auf vorherige Nachrichten.</span>
             </li>
             <li>
@@ -304,7 +324,7 @@
             </li>
         </ul>
 
-        <h2>IV. Sovereign Vault & Zero-Visibility Media Pipeline</h2>
+        <h2><span lang="en">IV. Sovereign Vault & Zero-Visibility Media Pipeline</span><span lang="de">IV. Sovereign Vault & Zero-Visibility Media Pipeline</span></h2>
 
         <h3>4.1 <span lang="en">The Sovereign Vault (Encrypted Archive Management)</span><span lang="de">Der Sovereign Vault (Verschlüsselte Archivverwaltung)</span></h3>
         <p>
@@ -468,11 +488,31 @@
             </li>
         </ul>
 
-        <h3>5.2 <span lang="en">Anti-Ghosting UI Guard</span><span lang="de">5.2 Anti-Ghosting UI Guard</span></h3>
+        <h3>5.2 <span lang="en">Anti-Ghosting UI Guard & Mutual Consent (v25.1.5)</span><span lang="de">5.2 Anti-Ghosting UI Guard & Gegenseitige Zustimmung (v25.1.5)</span></h3>
         <p>
-            <span lang="en">The system explicitly prevents "Ghost Users" by quarantining unverified incoming signals until a successful ratchet handshake is completed. This ensures the user's contact list remains a "Sovereign Social Graph," unpolluted by unencrypted profile data.</span>
-            <span lang="de">Das System verhindert explizit „Ghost User“, indem es unverifizierte eingehende Signale unter Quarantäne stellt, bis ein erfolgreicher Ratchet-Handshake abgeschlossen ist. Dies stellt sicher, dass die Kontaktliste des Benutzers ein „souveräner sozialer Graph“ bleibt, der nicht durch unverschlüsselte Profildaten verunreinigt wird.</span>
+            <span lang="en">The system explicitly prevents "Ghost Users" by quarantining unverified incoming signals from unknown IDs until explicit user consent is granted. SecureMessenger implements <b>Real-Time Handshake Notifications</b> via a global event bus, triggering forensic UI dialogs upon request receipt. No reciprocal ratchet handshake is initiated automatically, ensuring that the user's contact list remains a "Sovereign Social Graph," unpolluted by unsolicited profile data. This prevents senders from verifying Routing ID activity without authorization.</span>
+            <span lang="de">Das System verhindert explizit „Ghost User“, indem es unverifizierte eingehende Signale von unbekannten IDs unter Quarantäne stellt, bis die explizite Zustimmung des Benutzers erteilt wurde. SecureMessenger implementiert <b>Echtzeit-Handshake-Benachrichtigungen</b> über einen globalen Event-Bus, der bei Anfrageeingang forensische UI-Dialoge auslöst. Es wird kein automatischer Ratchet-Handshake eingeleitet, wodurch sichergestellt wird, dass die Kontaktliste des Benutzers ein „souveräner sozialer Graph“ bleibt, der nicht durch ungebetene Profildaten verunreinigt wird. Dies verhindert, dass Absender die Aktivität einer Routing-ID ohne Autorisierung verifizieren können.</span>
         </p>
+
+        <h3>5.3 <span lang="en">GHOST_PHOENIX: TEE-Anchored Identity Restoration (v25.2.0)</span><span lang="de">5.3 GHOST_PHOENIX: TEE-verankerte Identitäts-Wiederherstellung (v25.2.0)</span></h3>
+        <p>
+            <span lang="en">To address the "Identity Zombie" failure following a total storage wipe (e.g., Android "Clear Data"), SecureMessenger implements the <b>GHOST_PHOENIX</b> protocol. This mechanism enables a device to cryptographically prove its identity to the relay using its surviving TEE-bound hardware anchor.</span>
+            <span lang="de">Um den „Identitäts-Zombie“-Fehler nach einer vollständigen Speicherlöschung (z. B. Android „Daten löschen“) zu beheben, implementiert SecureMessenger das <b>GHOST_PHOENIX</b>-Protokoll. Dieser Mechanismus ermöglicht es einem Gerät, seine Identität gegenüber dem Relay kryptografisch unter Verwendung seines überlebenden TEE-gebundenen Hardware-Ankers zu beweisen.</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en"><b>Asymmetric Proof-of-Possession (PoP):</b> The client requests an ephemeral nonce from the relay. Using the non-exportable <b>GHOST_HARDWARE_ANCHOR_V1</b> RSA key, the device signs the nonce (RSA-PSS) and submits the signature along with its public key.</span>
+                <span lang="de"><b>Asymmetrischer Proof-of-Possession (PoP):</b> Der Client fordert eine ephemere Nonce vom Relay an. Unter Verwendung des nicht exportierbaren <b>GHOST_HARDWARE_ANCHOR_V1</b> RSA-Schlüssels signiert das Gerät die Nonce (RSA-PSS) und übermittelt die Signatur zusammen mit seinem öffentlichen Schlüssel.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Blind Re-identification:</b> The relay verifies the PoP signature against the stored hardware hash. If valid, the relay returns the associated <b>userId</b> (Username) to the device. This identifies *who* the device belongs to without exposing keys or message history.</span>
+                <span lang="de"><b>Blinde Re-Identifizierung:</b> Das Relay verifiziert die PoP-Signatur gegen den gespeicherten Hardware-Hash. Falls gültig, gibt das Relay die zugehörige <b>userId</b> (Benutzername) an das Gerät zurück. Dies identifiziert, wem das Gerät gehört, ohne Schlüssel oder Nachrichtenverlauf preiszugeben.</span>
+            </li>
+            <li>
+                <span lang="en"><b>Autonomous Hydration:</b> Upon re-identification, the app automatically triggers the 12-word recovery seed prompt, allowing the user to re-derive their cryptographic identity and restore the secure delivery pipeline immediately.</span>
+                <span lang="de"><b>Autonome Hydrierung:</b> Nach der Re-Identifizierung löst die App automatisch die Abfrage des 12-Wörter-Recovery-Seeds aus, was es dem Benutzer ermöglicht, seine kryptografische Identität neu abzuleiten und die sichere Zustellungspipeline sofort wiederherzustellen.</span>
+            </li>
+        </ul>
 
         <h2><span lang="en">VI. Sovereign Multi-Device Migration Model</span><span lang="de">VI. Souveränes Multi-Device-Migrationsmodell</span></h2>
 
@@ -558,7 +598,7 @@
 
         <div class="status-footer">
             Legal Compliance: EU DSGVO, GDPR Art. 11, German TDDDG § 25.<br>
-            System Integrity: GHOST PROTOCOL v25.1.2-FORENSIC-SANITIZATION ACTIVE. dQuantumBear 🛡️🚀🐻❤️
+            System Integrity: GHOST PROTOCOL v25.2.0-GHOST-PHOENIX ACTIVE. dQuantumBear 🛡️🚀🐻❤️
         </div>
     </div>
 
