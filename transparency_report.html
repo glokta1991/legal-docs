@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureMessenger | Transparency Report (Q1 2026)</title>
-
-    <!-- Open Graph / Social Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://glokta1991.github.io/legal-docs/transparency_report.html">
-    <meta property="og:title" content="SecureMessenger | Transparency Report (Q1 2026)">
-    <meta property="og:description" content="Official Transparency Report. Documenting Zero-Visibility and technical surrender.">
-    <meta property="og:image" content="https://glokta1991.github.io/legal-docs/logo.png">
+    <title>StateZer0 | Transparency Report (Q4 2026)</title>
 
     <style>
         /* MOBILE-FIRST LAYOUT FIX */
@@ -92,9 +85,9 @@
         </div>
         <!-- Branding Header -->
         <div class="header-branding">
-            <img src="logo.png" alt="SecureMessenger Logo">
+            <img src="logo.png" alt="StateZer0 Logo">
             <div class="contact-line">
-                OFFICIAL CONTACT: <a href="mailto:securemessenger4U@proton.me" style="color: #1a1a1a;">securemessenger4U@proton.me</a>
+                OFFICIAL CONTACT: <a href="mailto:StateZer04U@proton.me" style="color: #1a1a1a;">StateZer04U@proton.me</a>
             </div>
             <div class="header-divider"></div>
         </div>
@@ -104,19 +97,17 @@
             <span lang="de">Transparenzbericht</span>
         </h1>
         <p style="text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: -10px; font-size: 0.9em; color: #27ae60;">
-            <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
-            <span lang="de">SecureMessenger: Eine White-Label Encrypted Zero-Knowledge Kommunikationsplattform</span>
+            <span lang="en">StateZer0: Encrypted Messaging &amp; Calling</span>
+            <span lang="de">StateZer0: Verschlüsselte Nachrichten- und Sprachkommunikation</span>
         </p>
         <p style="text-align: center;">
-            <strong lang="en">Reporting Period: January 1, 2024 – July 22, 2026</strong>
-            <strong lang="de">Berichtszeitraum: 1. Januar 2024 – 22. Juli 2026</strong>
+            <strong lang="en">Reporting Period: January 1, 2024 – November 6, 2026</strong>
+            <strong lang="de">Berichtszeitraum: 1. Januar 2024 – 6. November 2026</strong>
         </p>
 
         <div class="nuclear-notice">
-            <span lang="en">Service Type: Mere Conduit (Art. 4 DSA) | Status: v25.1.2-ZERO-VISIBILITY</span>
-            <span lang="de">Diensttyp: Mere Conduit (Art. 4 DSA) | Status: v25.1.2-ZERO-VISIBILITY</span><br>
-            <span lang="en" style="font-size: 0.8em; color: #f39c12;">AUDIT EVIDENCE: ZERO-VISIBILITY STORAGE (PHASES 1-8) COMPLETED.</span>
-            <span lang="de" style="font-size: 0.8em; color: #f39c12;">AUDIT-BEWEIS: ZERO-VISIBILITY SPEICHERUNG (PHASEN 1-8) ABGESCHLOSSEN.</span>
+            <span lang="en">Service Type: Relay (Art. 4 DSA) | Developer has no access to message or attachment content</span>
+            <span lang="de">Diensttyp: Relay (Art. 4 DSA) | Der Entwickler hat keinen Zugriff auf Nachrichten- oder Anhangsinhalte</span>
         </div>
 
         <h2>1. <span lang="en">Requests from Law Enforcement</span><span lang="de">Anfragen von Strafverfolgungsbehörden</span></h2>
@@ -130,8 +121,8 @@
                 </li>
                 <li>
                     <strong><span lang="en">Reason for Non-Compliance:</span><span lang="de">Grund für die Nichterfüllung:</span></strong>
-                    <span lang="en">SecureMessenger is a Zero-Knowledge architecture. No user identities, IP logs, or unencrypted message contents are stored or retrievable.</span>
-                    <span lang="de">SecureMessenger ist eine Zero-Knowledge-Architektur. Es werden keine Benutzeridentitäten, IP-Protokolle oder unverschlüsselten Nachrichteninhalte gespeichert oder sind abrufbar.</span>
+                    <span lang="en">The server acts only as a relay for encrypted message and attachment blobs. The developer has no visibility into message or attachment content, contact names, or conversation graphs. Sender and recipient identifiers visible to the relay are minimized (HMAC-SHA256 Routing IDs and stripped sender fields) and are not used to build a social graph. Some server logs are retained for up to 30 days for abuse prevention and legal compliance.</span>
+                    <span lang="de">Der Server fungiert ausschließlich als Relay für verschlüsselte Nachrichten- und Anhangs-Blobs. Der Entwickler hat keinerlei Sichtbarkeit auf Inhalte von Nachrichten oder Anhängen, Kontaktnamen oder Gesprächsgraphen. Für das Relay sichtbare Absender- und Empfängerkennungen werden auf ein Minimum reduziert (HMAC-SHA256-Routing-IDs und entfernte Absenderfelder) und nicht zur Erstellung eines sozialen Graphen verwendet. Server-Logs werden bis zu 30 Tage zur Missbrauchsbekämpfung und zur Erfüllung rechtlicher Verpflichtungen aufbewahrt.</span>
                 </li>
             </ul>
         </div>
@@ -154,18 +145,84 @@
         <h2>3. <span lang="en">System Integrity & Governance</span><span lang="de">Systemintegrität & Governance</span></h2>
         <ul>
             <li>
-                <strong><span lang="en">Scorched Earth Executions:</span><span lang="de">Scorched-Earth-Ausführungen:</span></strong>
-                [<span lang="en">Data not tracked - User local only</span><span lang="de">Daten nicht verfolgt – nur lokal beim Benutzer</span>].
+                <strong><span lang="en">Sender-Side Performance (Phase 1 Completed - v76.0.0):</span><span lang="de">Senderseitige Performance (Phase 1 Abgeschlossen - v76.0.0):</span></strong>
+                <span lang="en">Implemented Unified Processor Handoff to reduce redundant media decodes. Added scaled extraction and single-pass compression to lower memory pressure. Raw plaintext artifacts created during optimization are deleted after use.</span>
+                <span lang="de">Implementierung von Unified Processor Handoff zur Reduzierung redundanter Medien-Decodierungen. Hinzufügung von skalierter Extraktion und Single-Pass-Komprimierung zur Verringerung des Speicherdrucks. Klartext-Artefakte, die während der Optimierung erstellt werden, werden nach der Verwendung gelöscht.</span>
             </li>
             <li>
-                <strong><span lang="en">Zero-Visibility Infrastructure:</span><span lang="de">Zero-Visibility-Infrastruktur:</span></strong>
-                <span lang="en">Relays operate with <b>Metadata Blinding</b>. All stored recipient identifiers are one-way hashes (SHA-256), and sender IDs are physically stripped from the database ledger. Communication patterns are technically invisible to the provider.</span>
-                <span lang="de">Relays arbeiten mit <b>Metadaten-Verblindung</b>. Alle gespeicherten Empfängerkennungen sind Einweg-Hashes (SHA-256), und Absender-IDs werden physisch aus dem Datenbank-Ledger entfernt. Kommunikationsmuster sind für den Anbieter technisch unsichtbar.</span>
+                <strong><span lang="en">RecyclerView Stability (v64.0.0):</span><span lang="de">RecyclerView-Stabilität (v64.0.0):</span></strong>
+                <span lang="en">Added <code>ImageViewTarget</code> guarding to ignore stale media loads during rapid view recycling. UI identity is anchored to <code>attachmentUuid</code> to reduce flickering during server-side ID finalization.</span>
+                <span lang="de">Hinzufügung von <code>ImageViewTarget</code>-Guarding, um veraltete Medien-Loads bei schnellem View-Recycling zu ignorieren. Die UI-Identität ist an <code>attachmentUuid</code> verankert, um Flimmern während der serverseitigen ID-Finalisierung zu reduzieren.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Pre-resolved Media Mapping (v60.4.0):</span><span lang="de">Vorab-aufgelöstes Medien-Mapping (v60.4.0):</span></strong>
+                <span lang="en">Media and thumbnail paths are resolved at the repository layer so the UI receives verified URIs and avoids main-thread disk checks.</span>
+                <span lang="de">Medien- und Thumbnail-Pfade werden in der Repository-Ebene aufgelöst, damit die UI verifizierte URIs erhält und keine Disk-Checks auf dem Main-Thread durchführt.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Handshake & Transport Stability (v55.0.0):</span><span lang="de">Handshake- & Transportstabilität (v55.0.0):</span></strong>
+                <span lang="en">Added debouncing and idempotent transport initiation to reduce handshake deadlocks and WebSocket thrashing.</span>
+                <span lang="de">Hinzufügung von Debouncing und idempotenter Transportinitiierung, um Handshake-Deadlocks und WebSocket-Thrashing zu reduzieren.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Identity Integrity Lockdown (v55.0.0):</span><span lang="de">Identitätsintegritäts-Lockdown (v55.0.0):</span></strong>
+                <span lang="en">Removed random identity fallbacks. The app waits for device-bound identity hydration from the Android Keystore or mnemonic entry to prevent identity pinning corruption.</span>
+                <span lang="de">Entfernung zufälliger Identitäts-Fallbacks. Die App wartet auf gerätegebundene Identitätshydrierung aus dem Android Keystore oder mnemonische Eingabe, um Identitäts-Pinning-Korruption zu verhindern.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Thumbnail Flickering Fix (v53.0.0):</span><span lang="de">Behebung von Thumbnail-Flimmern (v53.0.0):</span></strong>
+                <span lang="en">Reduced visual flickering in media adapters through payload-based binding and stable identity anchors.</span>
+                <span lang="de">Reduzierung visuellen Flimmerns in Medienadaptern durch payload-basierte Bindung und stabile Identitätsanker.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Multi-Document Pipeline (v52.2.0):</span><span lang="de">Multi-Dokument-Pipeline (v52.2.0):</span></strong>
+                <span lang="en">Resolved metadata resolution failures in the multi-attachment engine. Expanded document format support and added cleanup of transient encrypted blobs when batch operations fail.</span>
+                <span lang="de">Behebung fehlgeschlagener Metadatenauflösung in der Multi-Attachment-Engine. Erweiterung der Dokumentenformatunterstützung und Bereinigung transienter verschlüsselter Blobs bei Batch-Fehlern.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Media Pipeline Hardening (v52.1.0):</span><span lang="de">Media-Pipeline-Hardening (v52.1.0):</span></strong>
+                <span lang="en">Fixed file descriptor leaks in the attachment pipeline. Enforced 100MB size limits for videos and 500-frame caps for GIFs to improve device stability.</span>
+                <span lang="de">Behebung von Dateideskriptor-Leaks in der Attachment-Pipeline. Durchsetzung von 100MB-Größenlimits für Videos und 500-Frame-Caps für GIFs zur Verbesserung der Gerätestabilität.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Account Deletion &amp; Scorched Earth / Panic PIN:</span><span lang="de">Kontolöschung &amp; Scorched Earth / Panic PIN:</span></strong>
+                <span lang="en">The client calls <code>DELETE /users/me</code>, which removes the user row, Signal pre-keys, sessions, push tokens, active invites, and any undelivered messages and attachments. Local wipe removes the app database, SharedPreferences, caches, stored files, and cancels running workers and notifications. During Phase 1 the Android Keystore identity key is left intact, but encrypted data and wrapped passphrase files are destroyed. The R2 reaper runs approximately every 10 minutes; delivered messages and attachments are erased within 24 hours of delivery acknowledgement, and undelivered content within 72 hours. Minimal server logs may be retained for up to 30 days for abuse prevention and legal compliance.</span>
+                <span lang="de">Der Client ruft <code>DELETE /users/me</code> auf, wodurch die Benutzerzeile, Signal-Pre-Keys, Sitzungen, Push-Tokens, aktive Einladungen sowie nicht zugestellte Nachrichten und Anhänge entfernt werden. Die lokale Löschung entfernt die App-Datenbank, SharedPreferences, Caches, gespeicherte Dateien und bricht laufende Worker und Benachrichtigungen ab. In Phase 1 bleibt der Android-Keystore-Identitätsschlüssel erhalten, aber verschlüsselte Daten und umhüllte Passphrasen-Dateien werden zerstört. Der R2-Reaper läuft etwa alle 10 Minuten; zugestellte Nachrichten und Anhänge werden innerhalb von 24 Stunden nach Zustellbestätigung gelöscht, nicht zugestellte Inhalte innerhalb von 72 Stunden. Minimale Server-Logs können bis zu 30 Tage zur Missbrauchsbekämpfung und rechtlichen Compliance aufbewahrt werden.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Relay &amp; Storage Architecture:</span><span lang="de">Relay- &amp; Speicherarchitektur:</span></strong>
+                <span lang="en">The server acts only as a relay. MongoDB fields are encrypted at rest with AES-256-GCM using <code>GHOST_FIELD_KEY</code>. Message and attachment payloads are opaque encrypted blobs; the relay cannot decrypt them. Stored recipient identifiers are client-side generated HMAC-SHA256 Routing IDs, and sender IDs are not kept in the message ledger. Metadata is minimized, but not zero: timestamps, routing IDs, and delivery state are visible to the relay for transport purposes.</span>
+                <span lang="de">Der Server fungiert ausschließlich als Relay. MongoDB-Felder werden im Ruhezustand mit AES-256-GCM unter Verwendung von <code>GHOST_FIELD_KEY</code> verschlüsselt. Nachrichten- und Anhangs-Payloads sind undurchsichtige verschlüsselte Blobs; das Relay kann sie nicht entschlüsseln. Gespeicherte Empfängerkennungen sind clientseitig generierte HMAC-SHA256-Routing-IDs, und Absender-IDs werden nicht im Nachrichten-Ledger gespeichert. Metadaten werden minimiert, sind aber nicht null: Zeitstempel, Routing-IDs und Zustellstatus sind dem Relay zum Transport sichtbar.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Transactional Relay Mutex (v25.1.2):</span><span lang="de">Transaktionales Relay-Mutex (v25.1.2):</span></strong>
+                <span lang="en">Implemented a localized <i>relayMutex</i> to enforce registration atomicity for multi-attachment bundles and prevent redundant network submissions during parallel background uploads.</span>
+                <span lang="de">Implementierung eines lokalisierten <i>relayMutex</i>, um Registrierungs-Atomizität für Multi-Attachment-Bundles zu erzwingen und redundante Netzwerkübermittlungen während paralleler Hintergrund-Uploads zu verhindern.</span>
             </li>
             <li>
                 <strong><span lang="en">Audit Status:</span><span lang="de">Audit-Status:</span></strong>
-                <span lang="en">All systems operating under Zero-Visibility storage parameters (v25.1.2).</span>
-                <span lang="de">Alle Systeme arbeiten gemäß den Zero-Visibility-Speicherparametern (v25.1.2).</span>
+                <span lang="en">The developer has zero visibility into message and attachment content and contacts. Users are hidden from search by default. Adding contacts requires a mutual-consent invite request that the recipient can Accept or Reject. The relay does not maintain a social graph.</span>
+                <span lang="de">Der Entwickler hat keinerlei Sichtbarkeit in Inhalte von Nachrichten und Anhängen sowie in Kontakte. Benutzer sind standardmäßig nicht über die Suche auffindbar. Das Hinzufügen von Kontakten erfordert eine Einladungsanfrage mit gegenseitiger Zustimmung, die der Empfänger annehmen oder ablehnen kann. Das Relay pflegt keinen sozialen Graphen.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Voice / Video Calls (VoIP):</span><span lang="de">Sprach-/Videoanrufe (VoIP):</span></strong>
+                <span lang="en">Calls use WebRTC. Native components are disposed and released when a call ends. Calls can be forced through TURN to hide peer IP addresses; this adds latency and may reduce media quality. The relay sees only call-setup signalling metadata.</span>
+                <span lang="de">Anrufe nutzen WebRTC. Native Komponenten werden nach Ende eines Anrufs freigegeben und entsorgt. Anrufe können zwangsweise über TURN geleitet werden, um Peer-IP-Adressen zu verbergen; dies erhöht die Latenz und kann die Medienqualität verringern. Das Relay sieht nur Signalisierungs-Metadaten für die Anrufeinrichtung.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Link Previews:</span><span lang="de">Link-Vorschauen:</span></strong>
+                <span lang="en">Previews are fetched locally on the device using rotating user-agent strings. The linked site sees the device’s IP address and may receive cookies or require login. Rich previews are not guaranteed for every URL.</span>
+                <span lang="de">Vorschauen werden lokal auf dem Gerät mit rotierenden User-Agent-Strings abgerufen. Die verlinkte Seite sieht die IP-Adresse des Geräts und kann Cookies erhalten oder eine Anmeldung verlangen. Umfangreiche Vorschauen sind nicht für jede URL garantiert.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Vault Files:</span><span lang="de">Vault-Dateien:</span></strong>
+                <span lang="en">Files placed in the Vault are encrypted before storage. EXIF and other metadata are stripped before encryption. Files are decrypted into app memory for viewing; temporary cache files are overwritten as a best-effort measure before deletion. Secure reshare reuses the original encryption keys rather than re-encrypting the file.</span>
+                <span lang="de">Dateien im Vault werden vor der Speicherung verschlüsselt. EXIF- und andere Metadaten werden vor der Verschlüsselung entfernt. Dateien werden für die Anzeige in den App-Speicher entschlüsselt; temporäre Cache-Dateien werden vor dem Löschen nach besten Kräften überschrieben. Sicheres Teilen wiederverwendet die ursprünglichen Verschlüsselungsschlüssel, anstatt die Datei neu zu verschlüsseln.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Media Playback:</span><span lang="de">Medienwiedergabe:</span></strong>
+                <span lang="en">Media is decrypted into app memory for playback. No unencrypted persistent copy is kept. Temporary buffers are released when playback ends.</span>
+                <span lang="de">Medien werden für die Wiedergabe in den App-Speicher entschlüsselt. Es wird keine unverschlüsselte dauerhafte Kopie gespeichert. Temporäre Puffer werden nach Beenden der Wiedergabe freigegeben.</span>
             </li>
         </ul>
 
@@ -173,13 +230,18 @@
         <ul>
             <li>
                 <strong><span lang="en">Account Farming Blocked:</span><span lang="de">Konto-Farming blockiert:</span></strong>
-                <span lang="en">Integration with <b>Play Integrity API</b> and <b>TEE-Hardware Anchoring</b> successfully prevents bot-driven account creation. During this reporting period, a temporary exception (v25.0.20) was maintained for 12 authorized testers to enable hardware-bound identity re-rolling. This exception will be permanently revoked upon commercial transition.</span>
-                <span lang="de">Integration mit der <b>Play Integrity API</b> und <b>TEE-Hardware-Verankerung</b> verhindert erfolgreich die Bot-gesteuerte Kontoerstellung. Während dieses Berichtszeitraums wurde eine temporäre Ausnahme (v25.0.20) für 12 autorisierte Tester beibehalten, um hardwaregebundenes Identitäts-Re-rolling zu ermöglichen. Diese Ausnahme wird beim kommerziellen Übergang dauerhaft aufgehoben.</span>
+                <span lang="en">Integration with the Play Integrity API and Android Keystore-bound identity keys limits bot-driven account creation. During this reporting period, a temporary exception was maintained for 12 authorized testers to enable device-bound identity re-rolling. This exception will be revoked upon commercial transition.</span>
+                <span lang="de">Die Integration mit der Play Integrity API und Android-Keystore-gebundenen Identitätsschlüsseln begrenzt Bot-gesteuerte Kontoerstellung. Während dieses Berichtszeitraums wurde eine temporäre Ausnahme für 12 autorisierte Tester beibehalten, um gerätegebundenes Identitäts-Re-rolling zu ermöglichen. Diese Ausnahme wird beim kommerziellen Übergang aufgehoben.</span>
+            </li>
+            <li>
+                <strong><span lang="en">GHOST_PHOENIX Persistence:</span><span lang="de">GHOST_PHOENIX Persistenz:</span></strong>
+                <span lang="en">Implemented Android Keystore-backed re-identification to reduce identity loss following storage wipes. The system uses cryptographic Proof-of-Possession to let legitimate users re-claim their Routing ID without exposing plaintext metadata to the relay.</span>
+                <span lang="de">Implementierung einer Android-Keystore-gestützten Re-Identifizierung, um Identitätsverlust nach Speicherlöschungen zu reduzieren. Das System nutzt kryptographischen Proof-of-Possession, um legitimen Benutzern die erneute Beanspruchung ihrer Routing-ID zu ermöglichen, ohne Klartext-Metadaten gegenüber dem Relay offenzulegen.</span>
             </li>
             <li>
                 <strong><span lang="en">Privacy Preservation:</span><span lang="de">Wahrung der Privatsphäre:</span></strong>
-                <span lang="en">Scarcity is enforced via salted SHA-256 hardware hashes. No raw device IDs (IMEI/Serial) have been processed or stored.</span>
-                <span lang="de">Knappheit wird über gesalzene SHA-256-Hardware-Hashes erzwungen. Es wurden keine physischen Rohkennungen (IMEI/Seriennummer) verarbeitet oder gespeichert.</span>
+                <span lang="en">Scarcity is enforced via salted SHA-256 hardware hashes. No raw device IDs (IMEI/Serial) are processed or stored.</span>
+                <span lang="de">Knappheit wird über gesalzene SHA-256-Hardware-Hashes erzwungen. Es werden keine physischen Rohkennungen (IMEI/Seriennummer) verarbeitet oder gespeichert.</span>
             </li>
         </ul>
 
@@ -187,24 +249,24 @@
         <ul>
             <li>
                 <strong><span lang="en">Remote Revocations:</span><span lang="de">Fern-Widerrufe:</span></strong>
-                <span lang="en">All legacy sessions were automatically terminated upon successful device migration. This enforces the "One-Device" policy and prevents identity cloning.</span>
-                <span lang="de">Alle alten Sitzungen wurden nach erfolgreicher Gerätemigration automatisch beendet. Dies erzwingt die „Ein-Gerät“-Richtlinie und verhindert Identitätskloning.</span>
+                <span lang="en">Legacy sessions are terminated upon successful device migration. This enforces the One-Device policy and limits identity cloning.</span>
+                <span lang="de">Alte Sitzungen werden nach erfolgreicher Gerätemigration beendet. Dies erzwingt die Ein-Gerät-Richtlinie und begrenzt Identitätskloning.</span>
             </li>
             <li>
-                <strong><span lang="en">Zero-Visibility Migration:</span><span lang="de">Zero-Visibility-Migration:</span></strong>
-                <span lang="en">100% of account migrations occurred via local P2P encrypted tunnels. No user databases, profiles, or messages were processed, stored, or visible to the relay during these transfers.</span>
-                <span lang="de">100 % der Kontomigrationen erfolgten über lokale verschlüsselte P2P-Tunnel. Es wurden keine Benutzerdatenbanken, Profile oder Nachrichten während dieser Übertragungen verarbeitet, gespeichert oder waren für das Relay sichtbar.</span>
+                <strong><span lang="en">Device-to-Device Migration:</span><span lang="de">Gerät-zu-Gerät-Migration:</span></strong>
+                <span lang="en">Account migrations occur via local P2P encrypted tunnels. No user databases, profiles, or messages are processed, stored, or visible to the relay during these transfers.</span>
+                <span lang="de">Kontomigrationen erfolgen über lokale verschlüsselte P2P-Tunnel. Es werden keine Benutzerdatenbanken, Profile oder Nachrichten während dieser Übertragungen verarbeitet, gespeichert oder sind für das Relay sichtbar.</span>
             </li>
         </ul>
 
         <p style="text-align: center; margin-top: 40px; font-style: italic;">
-            <span lang="en">"Transparency is the byproduct of technical inability."</span>
-            <span lang="de">„Transparenz ist das Nebenprodukt technischer Unfähigkeit.“</span>
+            <span lang="en">This report reflects the implementation as of the reporting period and is subject to future updates.</span>
+            <span lang="de">Dieser Bericht spiegelt den Implementierungsstand zum Berichtszeitraum wider und kann zukünftig aktualisiert werden.</span>
         </p>
 
         <div style="margin-top: 80px; text-align: center; font-size: 1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px;">
-            <span lang="en">Status: GHOST PROTOCOL ACTIVE (v25.1.2-ZERO-VISIBILITY). 🛡️🚀🐻🏁</span>
-            <span lang="de">Status: GHOST-PROTOKOLL AKTIV (v25.1.2-ZERO-VISIBILITY). 🛡️🚀🐻🏁</span>
+            <span lang="en">Official Contact: StateZer04U@proton.me</span>
+            <span lang="de">Offizieller Kontakt: StateZer04U@proton.me</span>
         </div>
     </div>
 
@@ -224,12 +286,7 @@
             if (btnDe) btnDe.classList.toggle('active', lang === 'de');
         }
 
-        // AI-FIX: Automatic Language Detection (v1.5.0)
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        const browserLang = navigator.language.split('-')[0];
-
-        const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'en';
+        const savedLang = localStorage.getItem('preferred-lang') || 'en';
         setLang(savedLang);
     </script>
 </body>
