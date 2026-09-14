@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureMessenger | The Technical Manifesto</title>
+    <title>StateZer0 | The Technical Manifesto</title>
     <style>
         body {
             background-color: #EDE6D6;
@@ -93,8 +93,8 @@
             <span lang="de">Das Ghost-Protokoll</span>
         </h1>
         <p style="text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: -20px; font-size: 0.9em; color: #27ae60;">
-            <span lang="en">SecureMessenger: A White Label Encrypted Zero Knowledge Communications Platform</span>
-            <span lang="de">SecureMessenger: Eine White-Label Encrypted Zero-Knowledge Kommunikationsplattform</span>
+            <span lang="en">StateZer0: A White Label Encrypted Zero Knowledge Communications Platform</span>
+            <span lang="de">StateZer0: Eine White-Label Encrypted Zero-Knowledge Kommunikationsplattform</span>
         </p>
         <p style="text-align: center; font-style: italic;">
             <span lang="en">"Power is not found in what you can see, but in what you can choose to surrender."</span>
@@ -102,22 +102,66 @@
         </p>
 
         <div class="warning">
-            <span lang="en">GHOST PROTOCOL v25.1.0 ACTIVE: PANDA-HARDENED</span>
-            <span lang="de">GHOST-PROTOKOLL v25.1.0 AKTIV: PANDA-HARDENED</span><br>
-            <span lang="en" style="font-size: 0.8em; color: #f39c12;">AUDIT CYCLE: FORENSIC METADATA SANITIZATION (PHASES 1-5)</span>
-            <span lang="de" style="font-size: 0.8em; color: #f39c12;">AUDIT-ZYKLUS: FORENSISCHE METADATEN-BEREINIGUNG (PHASEN 1-5)</span>
+            <span lang="en">GHOST PROTOCOL v74.0.0-STABLE: FORENSIC-HARDENED</span>
+            <span lang="de">GHOST-PROTOKOLL v74.0.0-STABLE: FORENSISCH-GEHÄRTET</span><br>
+            <span lang="en" style="font-size: 0.8em; color: #f39c12;">AUDIT CYCLE: END-USER UI DELIVERY (v74.0.0)</span>
+            <span lang="de">AUDIT-ZYKLUS: END-USER UI AUSLIEFERUNG (v74.0.0)</span>
         </div>
+
+        <h2>0. <span lang="en">The Steel Firewall (v74.0.0)</span><span lang="de">Die stählerne Firewall (v74.0.0)</span></h2>
+        <p>
+            <span lang="en"><b>End-User UI Delivery & Isolated Grid (v74.0.0 - Phase 4)</b>: Successfully validated dual-rendering pathways for sender and receiver across all UI containers. Implemented <b>Isolated Grid Architecture</b> to hermetically seal multi-attachment bundles, ensuring bit-perfect index mapping (0-3) and zero-flicker visual continuity. Hardened the <code>MediaMessageBinder</code> with a <b>Visual Continuity Routine</b> that eliminates white flashes during view recycling, fulfilling the "Instant-On" Ghost mandate.</span>
+            <span lang="de"><b>End-User UI Auslieferung & Isolierter Raster (v74.0.0 - Phase 4)</b>: Erfolgreiche Validierung der dualen Rendering-Pfade für Sender und Empfänger über alle UI-Container hinweg. Implementierung der <b>Isolierten Raster-Architektur</b> zur hermetischen Versiegelung von Multi-Attachment-Bundles, wodurch bitgenaues Index-Mapping (0-3) und flimmerfreie visuelle Kontinuität gewährleistet werden. Härtung des <code>MediaMessageBinder</code> mit einer <b>visuellen Kontinuitätsroutine</b>, die weiße Blitze während des View-Recyclings eliminiert und das „Instant-On“-Ghost-Mandat erfüllt.</span>
+        </p>
+
+        <h2>0. <span lang="en">The Steel Firewall (v73.0.0)</span><span lang="de">Die stählerne Firewall (v73.0.0)</span></h2>
+        <p>
+            <span lang="en"><b>HKDF Cryptographic Key Derivation (v69.0.0 - Phase 2)</b>: Hardened the sidecar security model by implementing deterministic key derivation. AES keys and IVs for attachment thumbnails are now derived from the primary <code>mediaKey</code> via <b>HKDF-Expand (HMAC-SHA256)</b>. This physically eliminates the need to transmit or store explicit thumbnail keys, reducing the cryptographic metadata footprint and pruning the attack surface for metadata analysis.</span>
+            <span lang="de"><b>HKDF Kryptografische Schlüsselableitung (v69.0.0 - Phase 2)</b>: Härtung des Sidecar-Sicherheitsmodells durch Implementierung einer deterministischen Schlüsselableitung. AES-Keys und IVs für Anhang-Thumbnails werden nun über <b>HKDF-Expand (HMAC-SHA256)</b> aus dem primären <code>mediaKey</code> abgeleitet. Dies eliminiert physisch die Notwendigkeit, explizite Thumbnail-Keys zu übertragen oder zu speichern, reduziert den kryptografischen Metadaten-Fußabdruck und verkleinert die Angriffsfläche für Metadatenanalysen.</span>
+        </p>
+
+        <h2>0. <span lang="en">The Steel Firewall (v68.0.0)</span><span lang="de">Die stählerne Firewall (v68.0.0)</span></h2>
+        <p>
+            <span lang="en"><b>In-Band Inline Previews (v68.0.0 - Phase 1)</b>: Achieved a major privacy milestone by physically eliminating the out-of-band sidecar thumbnail pipeline. Previews no longer transit as separate encrypted files with dedicated HTTPS URLs; instead, they are embedded strictly <b>inside</b> the Signal Double Ratchet as <code>inlineThumbnail</code> metadata. This eradicates the risk of metadata correlation by network adversaries and ensures instant, memory-only rendering upon message decryption.</span>
+            <span lang="de"><b>In-Band Inline-Vorschauen (v68.0.0 - Phase 1)</b>: Erreichen eines wichtigen Meilensteins im Datenschutz durch die physische Eliminierung der Out-of-Band-Sidecar-Thumbnail-Pipeline. Vorschauen werden nicht mehr als separate verschlüsselte Dateien mit dedizierten HTTPS-URLs übertragen; stattdessen werden sie strikt <b>innerhalb</b> des Signal-Double-Ratchet als <code>inlineThumbnail</code>-Metadaten eingebettet. Dies eliminiert das Risiko der Metadaten-Korrelation durch Netzwerkgegner und gewährleistet ein sofortiges Rendering nur im Arbeitsspeicher nach der Nachrichtenentschlüsselung.</span>
+        </p>
+
+        <h2>0. <span lang="en">The Steel Firewall (v64.0.0)</span><span lang="de">Die stählerne Firewall (v64.0.0)</span></h2>
+        <p>
+            <span lang="en"><b>Hardened Phase 3 Isolation & Stable Identity (v64.0.0)</b>: Integrated <b>Strict Callback Guarding</b> via <code>ImageViewTarget</code> to physically block stale media loads during rapid view recycling. Refactored UI diffing to utilize <b>Stable Identity Anchors</b> (<code>attachmentUuid</code>), ensuring bit-perfect visual continuity during message state transitions and server-side finalization.</span>
+            <span lang="de"><b>Gehärtete Phase-3-Isolierung & Stabile Identität (v64.0.0)</b>: Integration von <b>striktem Callback-Guarding</b> über <code>ImageViewTarget</code>, um veraltete Medien-Loads während schnellen View-Recyclings physisch zu blockieren. Refactoring des UI-Diffings zur Nutzung von <b>stabilen Identitätsankern</b> (<code>attachmentUuid</code>), was eine bitgenaue visuelle Kontinuität während Nachrichtenstatusübergängen und der serverseitigen Finalisierung gewährleistet.</span>
+        </p>
+
+        <p>
+            <span lang="en"><b>Synchronous Sidecar Hook & Selection Handling (Phase 2)</b>: Integrated <b>ThumbnailExtractorEngine</b> directly into the attachment selection handler. High-quality 512px sidecars are now generated synchronously at selection time and mapped to <code>AttachmentEntity.localThumbnailUri</code>. This ensures that forensic previews are ready *before* background encryption or upload cycles begin, eliminating visual jitter and latency.</span>
+            <span lang="de"><b>Synchroner Sidecar-Hook & Auswahl-Handling (Phase 2)</b>: Integration der <b>ThumbnailExtractorEngine</b> direkt in den Auswahl-Handler für Anhänge. Hochwertige 512px-Sidecars werden nun synchron zum Zeitpunkt der Auswahl generiert und <code>AttachmentEntity.localThumbnailUri</code> zugeordnet. Dies stellt sicher, dass forensische Vorschauen bereit sind, *bevor* Hintergrundverschlüsselungs- oder Upload-Zyklen beginnen, wodurch visuelles Flackern und Latenz eliminiert werden.</span>
+        </p>
+
+        <p>
+            <span lang="en"><b>Isolated Grid View Holder & Stable Tagging (Phase 3)</b>: Successfully decoupled multi-attachment grid rendering from the primary message binding loop. Introduced <b>GridAttachmentViewHolder</b> to manage high-complexity grids in dedicated pools, preventing state-bleed and visual artifacts. Enforced <b>Strict Immutable Tagging</b> via <code>attachmentUuid</code> to eradicate UI flickering during server-side ID finalization, ensuring bit-perfect visual continuity.</span>
+            <span lang="de"><b>Isolierter Grid View Holder & Stabiles Tagging (Phase 3)</b>: Multi-Attachment-Raster-Rendering erfolgreich vom primären Nachrichtenbindungs-Loop entkoppelt. Einführung des <b>GridAttachmentViewHolder</b>, um hochkomplexe Raster in dedizierten Pools zu verwalten und State-Bleed sowie visuelle Artefakte zu verhindern. Durchsetzung von <b>striktem unveränderlichem Tagging</b> über <code>attachmentUuid</code>, um UI-Flimmern während der serverseitigen ID-Finalisierung zu eliminieren und eine bitgenaue visuelle Kontinuität zu gewährleisten.</span>
+        </p>
+
+        <p>
+            <span lang="en"><b>Thumbnail Flickering & UI Jitter Forensic Fix (v53.0.0)</b>: Successfully resolved systemic visual instability in media thumbnails across chat, grid, and gallery views. Implemented <b>Visual Continuity Anchors</b> and <b>Surgical Payload Binding</b>, ensuring that status updates and video state changes occur with zero-flicker transitions. This complements the existing <b>Multi-Document Hardening</b> (v52.2.0) and <b>Netty v6.0 Transport Alignment</b> (v27.1.0).</span>
+            <span lang="de"><b>Forensische Behebung von Thumbnail-Flimmern und UI-Jitter (v53.0.0)</b>: Systembedingte visuelle Instabilitäten bei Medien-Thumbnails in Chat-, Raster- und Galerieansichten erfolgreich behoben. Implementierung von <b>visuellen Kontinuitätsankern</b> und <b>chirurgischer Payload-Bindung</b>, die sicherstellt, dass Statusaktualisierungen und Videostatusänderungen mit flimmerfreien Übergängen erfolgen. Dies ergänzt das bestehende <b>Multi-Dokument-Hardening</b> (v52.2.0) und die <b>Netty-v6.0-Transport-Anpassung</b> (v27.1.0).</span>
+        </p>
+
+            <span lang="en">GHOST PROTOCOL v50.1.0-STABLE: FORENSIC-HARDENED</span>
+            <span lang="de">GHOST-PROTOKOLL v50.1.0-STABLE: FORENSISCH-GEHÄRTET</span><br>
+            <span lang="en" style="font-size: 0.8em; color: #f39c12;">AUDIT CYCLE: RESILIENCE LAYER MODULARIZATION (v50.1.0)</span>
+            <span lang="de">AUDIT-ZYKLUS: RESILIENZ-SCHICHT-MODULARISIERUNG (v50.1.0)</span>
 
         <h2>1. <span lang="en">The Blind Relay (Zero-Visibility Storage)</span><span lang="de">Das Blind-Relay (Zero-Visibility Speicherung)</span></h2>
         <p>
-            <span lang="en">Our relay is a stateless, blind pass-through. We have implemented <b>Metadata Blinding</b>: message recipients are hashed via SHA-256 before storage, and sender IDs are physically stripped from the database ledger. The relay transmits data but retains ZERO knowledge of your social graph or communication patterns. All data remains on the relay for a maximum of 72 hours before mandatory physical destruction.</span>
-            <span lang="de">Unser Relay ist ein zustandsloser, blinder Durchgang. Wir haben <b>Metadaten-Verblindung</b> implementiert: Empfänger von Nachrichten werden vor der Speicherung über SHA-256 gehasht, und Absender-IDs werden physisch aus dem Datenbank-Ledger entfernt. Das Relay überträgt Daten, behält aber NULL Kenntnisse über Ihren sozialen Graphen oder Ihre Kommunikationsmuster. Alle Daten verbleiben maximal 72 Stunden auf dem Relay, bevor sie zwingend physisch vernichtet werden.</span>
+            <span lang="en">Our relay is a stateless, blind pass-through. We have implemented <b>Metadata Blinding</b>: message recipients are hashed via SHA-256 before storage, and sender IDs are physically stripped from the database ledger. Handshakes utilize anonymous Routing IDs to ensure the Relay cannot link names to traffic. The relay has ZERO knowledge of your social graph; the <i>contacts</i> collection has been physically purged from the backend infrastructure. All data remains on the relay for a maximum of 72 hours before mandatory physical destruction.</span>
+            <span lang="de">Unser Relay ist ein zustandsloser, blinder Durchgang. Wir haben <b>Metadaten-Verblindung</b> implementiert: Empfänger von Nachrichten werden vor der Speicherung über SHA-256 gehasht, und Absender-IDs werden physisch aus dem Datenbank-Ledger entfernt. Handshakes verwenden anonyme Routing-IDs, um sicherzustellen, dass das Relay keine Namen mit dem Datenverkehr verknüpfen kann. Das Relay hat NULL Kenntnisse über Ihren sozialen Graphen; die <i>contacts</i>-Sammlung wurde physisch aus der Backend-Infrastruktur gelöscht. Alle Daten verbleiben maximal 72 Stunden auf dem Relay, bevor sie zwingend physisch vernichtet werden.</span>
         </p>
 
         <h2>2. <span lang="en">Active Decay (The Ghost Tombstone)</span><span lang="de">Aktiver Zerfall (Das Ghost-Tombstone)</span></h2>
         <p>
-            <span lang="en">SecureMessenger doesn't just "delete" data; it destroys it. Communication transit data is subject to an automatic **72-hour decay protocol**. Furthermore, the <b>Ghost Tombstone</b> command triggers a cascaded physical destruction of all messages, invites, and cryptographic keys on the relay. While your activity is permanently incinerated, the hardware anchor remains "occupied" by your Routing ID to prevent scarcity abuse, while your 12-word seed remains the sovereign key to re-hydrating your identity locally.</span>
-            <span lang="de">SecureMessenger „löscht“ Daten nicht nur; es zerstört sie. Transitdaten der Kommunikation unterliegen einem automatischen **72-Stunden-Zerfallsprotokoll**. Darüber hinaus löst der <b>Ghost Tombstone</b>-Befehl eine kaskadierte physische Vernichtung aller Nachrichten, Einladungen und kryptografischen Schlüssel auf dem Relay aus. Während Ihre Aktivitäten dauerhaft verbrannt werden, bleibt der Hardware-Anker durch Ihre Routing-ID „belegt“, um Knappheitsmissbrauch zu verhindern, während Ihr 12-Wörter-Seed der souveräne Schlüssel zur lokalen Re-Hydrierung Ihrer Identität bleibt.</span>
+            <span lang="en">StateZer0 doesn't just "delete" data; it destroys it. Communication transit data is subject to an automatic **72-hour decay protocol**. Furthermore, the <b>Ghost Tombstone</b> command triggers a cascaded physical destruction of all messages, invites, and cryptographic keys on the relay. While your activity is permanently incinerated, the hardware anchor remains "occupied" by your Routing ID to prevent scarcity abuse, while your 12-word seed remains the sovereign key to re-hydrating your identity locally.</span>
+            <span lang="de">StateZer0 „löscht“ Daten nicht nur; es zerstört sie. Transitdaten der Kommunikation unterliegen einem automatischen **72-Stunden-Zerfallsprotokoll**. Darüber hinaus löst der <b>Ghost Tombstone</b>-Befehl eine kaskadierte physische Vernichtung aller Nachrichten, Einladungen und kryptografischen Schlüssel auf dem Relay aus. Während Ihre Aktivitäten dauerhaft verbrannt werden, bleibt der Hardware-Anker durch Ihre Routing-ID „belegt“, um Knappheitsmissbrauch zu verhindern, während Ihr 12-Wörter-Seed der souveräne Schlüssel zur lokalen Re-Hydrierung Ihrer Identität bleibt.</span>
         </p>
 
         <h2>3. <span lang="en">Deniable Sovereignty (Duress)</span><span lang="de">Leugnbare Souveränität (Nötigung)</span></h2>
@@ -128,14 +172,20 @@
 
         <h2>4. <span lang="en">Zero-Knowledge Identity & Propagation</span><span lang="de">Zero-Knowledge-Identität & Ausbreitung</span></h2>
         <p>
-            <span lang="en">BIP39 Mnemonic seeds ensure that your identity is sovereign. We do not hold your keys. All identity updates (Avatars, Usernames) are transmitted <b>inside</b> the Signal Double Ratchet. The relay cannot "see" or scrape your profile changes, ensuring total privacy even during synchronization.</span>
-            <span lang="de">BIP39-Mnemonic-Seeds stellen sicher, dass Ihre Identität souverän ist. Wir besitzen Ihre Schlüssel nicht. Alle Identitätsaktualisierungen (Avatare, Benutzernamen) werden <b>innerhalb</b> des Signal-Double-Ratchet übertragen. Das Relay kann Ihre Profiländerungen nicht „sehen“ oder extrahieren, was absolute Privatsphäre auch während der Synchronisierung gewährleistet.</span>
+            <span lang="en">BIP39 Mnemonic seeds ensure that your identity is sovereign. I do not hold your keys. All identity updates (Avatars, Usernames) are transmitted <b>inside</b> the Signal Double Ratchet. The relay cannot "see" or scrape your profile changes, ensuring total privacy even during synchronization.</span>
+            <span lang="de">BIP39-Mnemonic-Seeds stellen sicher, dass Ihre Identität souverän ist. Ich besitze Ihre Schlüssel nicht. Alle Identitätsaktualisierungen (Avatare, Benutzernamen) werden <b>innerhalb</b> des Signal-Double-Ratchet übertragen. Das Relay kann Ihre Profiländerungen nicht „sehen“ oder extrahieren, was absolute Privatsphäre auch während der Synchronisierung gewährleistet.</span>
         </p>
 
-        <h2>5. <span lang="en">Platform Sovereignty & Scarcity</span><span lang="de">Plattform-Souveränität & Knappheit</span></h2>
+        <h2>5. <span lang="en">Sovereign Discovery & Mutual Consent (v25.3.1)</span><span lang="de">Souveräne Entdeckung & Gegenseitige Zustimmung (v25.3.1)</span></h2>
         <p>
-            <span lang="en">We utilize the <b>Google Play Integrity API</b> and the Android <b>Hardware Secure Element (TEE)</b> to ensure that only genuine, untampered devices can access the network. By anchoring a unique cryptographic hash to your hardware, we enforce a strict "One-Account-Per-Device" scarcity model while maintaining 100% user anonymity. <b>NOTE:</b> During the current beta audit (v25.0.20), a temporary <b>GHOST_BETA_TESTER</b> bypass is active to allow 12 authorized testers to re-roll identities on their primary hardware. This exception is time-limited and will be purged upon commercial launch.</span>
-            <span lang="de">Wir nutzen die <b>Google Play Integrity API</b> und das Android <b>Hardware Secure Element (TEE)</b>, um sicherzustellen, dass nur echte, unmanipulierte Geräte auf das Netzwerk zugreifen können. Durch die Verankerung eines eindeutigen kryptografischen Hashs in Ihrer Hardware setzen wir ein striktes „Ein-Konto-pro-Gerät“-Knappheitsmodell durch, während die 100%ige Anonymität der Benutzer gewahrt bleibt. <b>HINWEIS:</b> Während des aktuellen Beta-Audits (v25.0.20) ist ein temporärer <b>GHOST_BETA_TESTER</b>-Bypass aktiv, um 12 autorisierten Testern das Re-Rolling von Identitäten auf ihrer primären Hardware zu ermöglichen. Diese Ausnahme ist zeitlich begrenzt und wird beim kommerziellen Start entfernt.</span>
+            <span lang="en">I have abolished "Contact Probing." In StateZer0, discovery is not a right—it is a privilege granted by the user. Accounts are <b>Hidden by Default</b> upon registration; users must explicitly opt-in to discoverability via local device settings. All inbound requests are quarantined locally until explicit authorization is received. Alphabetical endonym collation in settings ensures global accessibility, while infrastructure-level filtering guarantees that if you choose to be invisible, the server physically withholds your identity.</span>
+            <span lang="de">Ich habe das „Kontakt-Probing“ abgeschafft. In StateZer0 ist das Entdecktwerden kein Recht – es ist ein Privileg, das vom Benutzer gewährt wird. Konten werden bei der Registrierung <b>standardmäßig verborgen</b>; Benutzer müssen sich explizit über ihre lokalen Geräteeinstellungen für die Auffindbarkeit anmelden. Alle eingehenden Anfragen werden lokal unter Quarantäne gestellt, bis eine explizite Autorisierung vorliegt. Die alphabetische Endonym-Sortierung in den Einstellungen gewährleistet globale Barrierefreiheit, während die Filterung auf Infrastrukturebene garantiert, dass der Server Ihre Identität physisch verbirgt, wenn Sie sich entscheiden, unsichtbar zu sein.</span>
+        </p>
+
+        <h2>6. <span lang="en">Platform Sovereignty & Scarcity</span><span lang="de">Plattform-Souveränität & Knappheit</span></h2>
+        <p>
+            <span lang="en">I utilize the <b>Google Play Integrity API</b> and the Android <b>Hardware Secure Element (TEE)</b> to ensure that only genuine, untampered devices can access the network. By anchoring a unique cryptographic hash to your hardware, I enforce a strict "One-Account-Per-Device" scarcity model while maintaining 100% user anonymity. <b>GHOST_PHOENIX II (v25.2.1):</b> In the event of a total storage wipe, the TEE anchor now acts as a sovereign root-of-trust, allowing the device to cryptographically prove its identity to the relay and re-identify its username and Routing ID. This triggers an autonomous restoration path where identity is re-hydrated from the 12-word seed, while the relay restores authorized context to synced messages to ensure bit-perfect signature verification. <b>NOTE:</b> During the current beta audit, a temporary <b>GHOST_BETA_TESTER</b> bypass is active to allow 12 authorized testers to re-roll identities on their primary hardware. This exception is time-limited and will be purged upon commercial launch.</span>
+            <span lang="de">Ich nutze die <b>Google Play Integrity API</b> und das Android <b>Hardware Secure Element (TEE)</b>, um sicherzustellen, dass nur echte, unmanipulierte Geräte auf das Netzwerk zugreifen können. Durch die Verankerung eines eindeutigen kryptografischen Hashs in Ihrer Hardware setze ich ein striktes „Ein-Konto-pro-Gerät“-Knappheitsmodell durch, während die 100%ige Anonymität der Benutzer gewahrt bleibt. <b>GHOST_PHOENIX II (v25.2.1):</b> Im Falle einer vollständigen Speicherlöschung fungiert der TEE-Anker nun als souveräner Root-of-Trust, der es dem Gerät ermöglicht, seine Identität gegenüber dem Relay kryptografisch zu beweisen und seinen Benutzernamen sowie seine Routing-ID zu re-identifizieren. Dies löst einen autonomen Wiederherstellungsweg aus, bei dem die Identität aus dem 12-Wörter-Seed neu hydriert wird, während das Relay den autorisierten Kontext für synchronisierte Nachrichten wiederherstellt, um eine bitgenaue Signaturprüfung zu gewährleisten. <b>HINWEIS:</b> Während des aktuellen Beta-Audits ist ein temporärer <b>GHOST_BETA_TESTER</b>-Bypass aktiv, um 12 autorisierten Testern das Re-Rolling von Identitäten auf ihrer primären Hardware zu ermöglichen. Diese Ausnahme ist zeitlich begrenzt und wird beim kommerziellen Start entfernt.</span>
         </p>
 
         <h2>6. <span lang="en">Single-Seat Handoff</span><span lang="de">Single-Seat-Übergabe</span></h2>
@@ -146,18 +196,24 @@
 
         <h2>7. <span lang="en">The Sovereign Vault & Forensic Sanitization</span><span lang="de">Der Sovereign Vault & Forensische Bereinigung</span></h2>
         <p>
-            <span lang="en">SecureMessenger introduces the Sovereign Vault—a high-security repository for encrypted media. A core pillar of this enclave is <b>Forensic Metadata Sanitization</b>: every file is automatically scrubbed of tracking data (GPS, EXIF, Device Signatures) before encryption. The Vault enforces <b>Secure Viewing</b> and <b>3-Pass Forensic Shredding</b>, ensuring that unencrypted data never leaves the volatile memory space.</span>
-            <span lang="de">SecureMessenger führt den Sovereign Vault ein – ein hochsicheres Repository für verschlüsselte Medien. Eine Kernsäule dieser Enklave ist die <b>forensische Metadaten-Bereinigung</b>: Jede Datei wird vor der Verschlüsselung automatisch von Tracking-Daten (GPS, EXIF, Gerätesignaturen) bereinigt. Der Vault erzwingt <b>sicheres Ansehen</b> und <b>3-Pass-forensisches Schreddern</b>, um sicherzustellen, dass unverschlüsselte Daten niemals den flüchtigen Speicherbereich verlassen.</span>
+            <span lang="en">StateZer0 introduces the Sovereign Vault—a high-security repository for encrypted media. A core pillar of this enclave is <b>Forensic Metadata Sanitization</b>: every file is automatically scrubbed of tracking data (GPS, EXIF, Device Signatures) before encryption. The Vault enforces <b>Volatile RAM-Only Decryption</b> and <b>3-Pass Forensic Shredding</b>, ensuring that unencrypted data never leaves the volatile memory space and never touches the physical storage as plaintext.</span>
+            <span lang="de">StateZer0 führt den Sovereign Vault ein – ein hochsicheres Repository für verschlüsselte Medien. Eine Kernsäule dieser Enklave ist die <b>forensische Metadaten-Bereinigung</b>: Jede Datei wird vor der Verschlüsselung automatisch von Tracking-Daten (GPS, EXIF, Gerätesignaturen) bereinigt. Der Vault erzwingt eine <b>flüchtige RAM-only Entschlüsselung</b> und <b>3-Pass-forensisches Schreddern</b>, um sicherzustellen, dass unverschlüsselte Daten niemals den flüchtigen Speicherbereich verlassen und niemals den physischen Speicher als Klartext berühren.</span>
+        </p>
+
+        <h2>8. <span lang="en">The Doctrine of Blind by Default</span><span lang="de">Die Doktrin des Blind by Default</span></h2>
+        <p>
+            <span lang="en">I operate under the <b>Doctrine of Blind by Default</b>: I have architected the system to be technically incapable of complying with data requests. By surrendering the power to see, I protect the user's right to speak. This includes the implementation of the <b>Relay Shield</b> protocol for resharing vaulted items, ensuring that even during peer-to-peer distribution, the provider remains blind to the assets being exchanged.</span>
+            <span lang="de">Ich arbeite nach der <b>Doktrin des Blind by Default</b>: Ich habe das System so konstruiert, dass es technisch nicht in der Lage ist, Datenanfragen nachzukommen. Indem ich die Macht aufgebe, zu sehen, schütze ich das Recht des Benutzers, zu sprechen. Dies beinhaltet die Implementierung des <b>Relay-Shield</b>-Protokolls zum Teilen von Vault-Elementen, was sicherstellt, dass der Anbieter selbst während der Peer-to-Peer-Verteilung blind für die ausgetauschten Assets bleibt.</span>
         </p>
 
         <h2>8. <span lang="en">The Sovereign Transcript Seal (Zero-Clipboard)</span><span lang="de">Der Sovereign Transcript Seal (Zero-Clipboard)</span></h2>
         <p>
-            <span lang="en">To mitigate "Side-Channel Data Leakage," SecureMessenger implements the <b>Transcript Seal</b> protocol. This allows users to move sensitive text conversations directly from the active database to the Sovereign Vault enclave without utilizing the system clipboard. Each seal generates a unique AES-256-GCM media key and injects a <b>Forensic Provenance Header</b> (Sender ID, Timestamp, Signature Verification), transforming ephemeral messages into immutable, verifiable forensic assets.</span>
-            <span lang="de">Zur Minderung von „Side-Channel Data Leakage“ implementiert SecureMessenger das <b>Transcript Seal</b>-Protokoll. Dies ermöglicht es Benutzern, sensible Textkonversationen direkt aus der aktiven Datenbank in die Sovereign Vault-Enklave zu verschieben, ohne die Systemzwischenablage zu nutzen. Jedes Siegel generiert einen eindeutigen AES-256-GCM-Medien-Key und injiziert einen <b>Forensic Provenance Header</b> (Sender-ID, Zeitstempel, Signaturprüfung), wodurch flüchtige Nachrichten in unveränderliche, verifizierbare forensische Assets transformiert werden.</span>
+            <span lang="en">To mitigate "Side-Channel Data Leakage," StateZer0 implements the <b>Transcript Seal</b> protocol. This allows users to move sensitive text conversations directly from the active database to the Sovereign Vault enclave without utilizing the system clipboard. Each seal generates a unique AES-256-GCM media key and injects a <b>Forensic Provenance Header</b> (Sender ID, Timestamp, Signature Verification), transforming ephemeral messages into immutable, verifiable forensic assets.</span>
+            <span lang="de">Zur Minderung von „Side-Channel Data Leakage“ implementiert StateZer0 das <b>Transcript Seal</b>-Protokoll. Dies ermöglicht es Benutzern, sensible Textkonversationen direkt aus der aktiven Datenbank in die Sovereign Vault-Enklave zu verschieben, ohne die Systemzwischenablage zu nutzen. Jedes Siegel generiert einen eindeutigen AES-256-GCM-Medien-Key und injiziert einen <b>Forensic Provenance Header</b> (Sender-ID, Zeitstempel, Signaturprüfung), wodurch flüchtige Nachrichten in unveränderliche, verifizierbare forensische Assets transformiert werden.</span>
         </p>
 
         <div class="footer">
-            SECUREMESSENGER v25.1.0-FORENSIC-WIPE | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
+            StateZer0 v74.0.0-STABLE | dQuantumBear | GHOST PROTOCOL ACTIVE 🛡️🚀🐻‍❄️🏁
         </div>
     </div>
 
