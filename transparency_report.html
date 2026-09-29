@@ -101,13 +101,13 @@
             <span lang="de">StateZer0: Verschlüsselte Nachrichten- und Sprachkommunikation</span>
         </p>
         <p style="text-align: center;">
-            <strong lang="en">Reporting Period: January 1, 2024 – November 6, 2026</strong>
-            <strong lang="de">Berichtszeitraum: 1. Januar 2024 – 6. November 2026</strong>
+            <strong lang="en">Reporting Period: January 1, 2024 – September 29, 2026</strong>
+            <strong lang="de">Berichtszeitraum: 1. Januar 2024 – 29. September 2026</strong>
         </p>
 
         <div class="nuclear-notice">
-            <span lang="en">Service Type: Relay (Art. 4 DSA) | Developer has no access to message or attachment content</span>
-            <span lang="de">Diensttyp: Relay (Art. 4 DSA) | Der Entwickler hat keinen Zugriff auf Nachrichten- oder Anhangsinhalte</span>
+            <span lang="en">Service Type: Encrypted Relay with Minimized Metadata (Art. 4 DSA) | I have no access to message or attachment content</span>
+            <span lang="de">Diensttyp: Verschlüsseltes Relay mit minimierten Metadaten (Art. 4 DSA) | Ich habe keinen Zugriff auf Nachrichten- oder Anhangsinhalte</span>
         </div>
 
         <h2>1. <span lang="en">Requests from Law Enforcement</span><span lang="de">Anfragen von Strafverfolgungsbehörden</span></h2>
@@ -121,8 +121,8 @@
                 </li>
                 <li>
                     <strong><span lang="en">Reason for Non-Compliance:</span><span lang="de">Grund für die Nichterfüllung:</span></strong>
-                    <span lang="en">The server acts only as a relay for encrypted message and attachment blobs. The developer has no visibility into message or attachment content, contact names, or conversation graphs. Sender and recipient identifiers visible to the relay are minimized (HMAC-SHA256 Routing IDs and stripped sender fields) and are not used to build a social graph. Some server logs are retained for up to 30 days for abuse prevention and legal compliance.</span>
-                    <span lang="de">Der Server fungiert ausschließlich als Relay für verschlüsselte Nachrichten- und Anhangs-Blobs. Der Entwickler hat keinerlei Sichtbarkeit auf Inhalte von Nachrichten oder Anhängen, Kontaktnamen oder Gesprächsgraphen. Für das Relay sichtbare Absender- und Empfängerkennungen werden auf ein Minimum reduziert (HMAC-SHA256-Routing-IDs und entfernte Absenderfelder) und nicht zur Erstellung eines sozialen Graphen verwendet. Server-Logs werden bis zu 30 Tage zur Missbrauchsbekämpfung und zur Erfüllung rechtlicher Verpflichtungen aufbewahrt.</span>
+                    <span lang="en">The server acts only as a relay for encrypted message and attachment blobs. I have no visibility into message or attachment content, contact names, or conversation contents. Sender and recipient identifiers visible to the relay are minimized (pseudonymous Routing IDs). The relay does not maintain a public social graph or searchable contact directory; only minimal routing and delivery records necessary for operation are retained. Some server logs are retained for 14 days for abuse prevention and legal compliance.</span>
+                    <span lang="de">Der Server fungiert ausschließlich als Relay für verschlüsselte Nachrichten- und Anhangs-Blobs. Ich habe keinerlei Sichtbarkeit auf Inhalte von Nachrichten oder Anhängen, Kontaktnamen oder Gesprächsinhalte. Für das Relay sichtbare Absender- und Empfängerkennungen werden auf ein Minimum reduziert (pseudonyme Routing-IDs). Das Relay pflegt keinen öffentlichen sozialen Graphen oder durchsuchbares Kontaktverzeichnis; es werden nur die für den Betrieb erforderlichen minimalen Routing- und Zustellprotokolle gespeichert. Server-Logs werden 14 Tage zur Missbrauchsbekämpfung und zur Erfüllung rechtlicher Verpflichtungen aufbewahrt.</span>
                 </li>
             </ul>
         </div>
@@ -135,10 +135,15 @@
             </li>
             <li>
                 <strong><span lang="en">Manual Content Removals:</span><span lang="de">Manuelle Inhaltsentfernungen:</span></strong> 0
-                (<span lang="en">Developer has no access to unencrypted content</span><span lang="de">Entwickler hat keinen Zugriff auf unverschlüsselte Inhalte</span>).
+                (<span lang="en">I have no access to unencrypted content</span><span lang="de">Ich habe keinen Zugriff auf unverschlüsselte Inhalte</span>).
             </li>
             <li>
                 <strong><span lang="en">Notices of Illegal Content received:</span><span lang="de">Erhaltener Meldungen über illegale Inhalte:</span></strong> 0
+            </li>
+            <li>
+                <strong><span lang="en">Illegal Content Reporting:</span><span lang="de">Meldung illegaler Inhalte:</span></strong>
+                <span lang="en">Reports of illegal content can be sent to <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a>. Because payloads are end-to-end encrypted, I cannot decrypt or view message or attachment content. I will comply with binding legal orders within the scope of what is technically possible.</span>
+                <span lang="de">Meldungen illegaler Inhalte können an <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a> gesendet werden. Da Payloads Ende-zu-Ende verschlüsselt sind, kann ich Nachrichten- oder Anhangsinhalte nicht entschlüsseln oder einsehen. Ich werde verbindlichen rechtlichen Anordnungen im Rahmen des technisch Möglichen nachkommen.</span>
             </li>
         </ul>
 
@@ -185,14 +190,14 @@
                 <span lang="de">Behebung von Dateideskriptor-Leaks in der Attachment-Pipeline. Durchsetzung von 100MB-Größenlimits für Videos und 500-Frame-Caps für GIFs zur Verbesserung der Gerätestabilität.</span>
             </li>
             <li>
-                <strong><span lang="en">Account Deletion &amp; Scorched Earth / Panic PIN:</span><span lang="de">Kontolöschung &amp; Scorched Earth / Panic PIN:</span></strong>
-                <span lang="en">The client calls <code>DELETE /users/me</code>, which removes the user row, Signal pre-keys, sessions, push tokens, active invites, and any undelivered messages and attachments. Local wipe removes the app database, SharedPreferences, caches, stored files, and cancels running workers and notifications. During Phase 1 the Android Keystore identity key is left intact, but encrypted data and wrapped passphrase files are destroyed. The R2 reaper runs approximately every 10 minutes; delivered messages and attachments are erased within 24 hours of delivery acknowledgement, and undelivered content within 72 hours. Minimal server logs may be retained for up to 30 days for abuse prevention and legal compliance.</span>
-                <span lang="de">Der Client ruft <code>DELETE /users/me</code> auf, wodurch die Benutzerzeile, Signal-Pre-Keys, Sitzungen, Push-Tokens, aktive Einladungen sowie nicht zugestellte Nachrichten und Anhänge entfernt werden. Die lokale Löschung entfernt die App-Datenbank, SharedPreferences, Caches, gespeicherte Dateien und bricht laufende Worker und Benachrichtigungen ab. In Phase 1 bleibt der Android-Keystore-Identitätsschlüssel erhalten, aber verschlüsselte Daten und umhüllte Passphrasen-Dateien werden zerstört. Der R2-Reaper läuft etwa alle 10 Minuten; zugestellte Nachrichten und Anhänge werden innerhalb von 24 Stunden nach Zustellbestätigung gelöscht, nicht zugestellte Inhalte innerhalb von 72 Stunden. Minimale Server-Logs können bis zu 30 Tage zur Missbrauchsbekämpfung und rechtlichen Compliance aufbewahrt werden.</span>
+                <strong><span lang="en">Account Deletion &amp; Emergency Account Deletion PIN:</span><span lang="de">Kontolöschung &amp; Emergency Account Deletion PIN:</span></strong>
+                <span lang="en">The client calls <code>DELETE /users/me</code>, which removes the user row, Olm keys, sessions, push tokens, active invites, and any undelivered messages and attachments. Local wipe stops services, cancels workers, dismisses notifications, releases media players, clears caches, shreds the database, vault/enclave/cache/avatar directories, SharedPreferences, sentinel anchors and the clipboard, and clears session state. "Terminate Contract" leaves the Android Keystore identity key intact as a hardware tombstone; the Emergency Account Deletion PIN additionally purges application-specific Keystore keys. The R2 reaper runs approximately every minute; delivered messages and attachments are erased within 24 hours of delivery, acknowledged content is erased immediately, and undelivered content within 72 hours. Minimal server logs may be retained for 14 days for abuse prevention and legal compliance.</span>
+                <span lang="de">Der Client ruft <code>DELETE /users/me</code> auf, wodurch die Benutzerzeile, Olm one-time keys, Sitzungen, Push-Tokens, aktive Einladungen sowie nicht zugestellte Nachrichten und Anhänge entfernt werden. Die lokale Löschung entfernt die App-Datenbank, SharedPreferences, Caches, gespeicherte Dateien und bricht laufende Worker und Benachrichtigungen ab. Bei Standard-Löschung bleibt der Android-Keystore-Identitätsschlüssel erhalten, aber verschlüsselte Daten und umhüllte Passphrasen-Dateien werden zerstört. Die Emergency Account Deletion PIN entfernt zusätzlich anwendungsspezifische Keystore-Schlüssel. Der R2-Reaper läuft etwa jede Minute; zugestellte Nachrichten und Anhänge werden innerhalb von 24 Stunden nach Zustellung gelöscht, bestätigte Inhalte sofort und nicht zugestellte Inhalte innerhalb von 72 Stunden. Minimale Server-Logs können 14 Tage zur Missbrauchsbekämpfung und rechtlichen Compliance aufbewahrt werden.</span>
             </li>
             <li>
                 <strong><span lang="en">Relay &amp; Storage Architecture:</span><span lang="de">Relay- &amp; Speicherarchitektur:</span></strong>
-                <span lang="en">The server acts only as a relay. MongoDB fields are encrypted at rest with AES-256-GCM using <code>GHOST_FIELD_KEY</code>. Message and attachment payloads are opaque encrypted blobs; the relay cannot decrypt them. Stored recipient identifiers are client-side generated HMAC-SHA256 Routing IDs, and sender IDs are not kept in the message ledger. Metadata is minimized, but not zero: timestamps, routing IDs, and delivery state are visible to the relay for transport purposes.</span>
-                <span lang="de">Der Server fungiert ausschließlich als Relay. MongoDB-Felder werden im Ruhezustand mit AES-256-GCM unter Verwendung von <code>GHOST_FIELD_KEY</code> verschlüsselt. Nachrichten- und Anhangs-Payloads sind undurchsichtige verschlüsselte Blobs; das Relay kann sie nicht entschlüsseln. Gespeicherte Empfängerkennungen sind clientseitig generierte HMAC-SHA256-Routing-IDs, und Absender-IDs werden nicht im Nachrichten-Ledger gespeichert. Metadaten werden minimiert, sind aber nicht null: Zeitstempel, Routing-IDs und Zustellstatus sind dem Relay zum Transport sichtbar.</span>
+                <span lang="en">The server acts as an encrypted relay with minimized metadata. MongoDB fields are encrypted at rest with AES-256-GCM using <code>GHOST_FIELD_KEY</code>. Message and attachment payloads are opaque encrypted blobs; the relay cannot decrypt them. Stored recipient identifiers are client-side generated pseudonymous Routing IDs, and sender identifiers are retained only as needed for routing and delivery. The relay does not maintain a public social graph or searchable contact directory. Metadata is minimized, but not zero: timestamps, routing IDs, delivery state, and sender/recipient identifiers are visible to the relay for transport purposes.</span>
+                <span lang="de">Der Server fungiert als verschlüsseltes Relay mit minimierten Metadaten. MongoDB-Felder werden im Ruhezustand mit AES-256-GCM unter Verwendung von <code>GHOST_FIELD_KEY</code> verschlüsselt. Nachrichten- und Anhangs-Payloads sind undurchsichtige verschlüsselte Blobs; das Relay kann sie nicht entschlüsseln. Gespeicherte Empfängerkennungen sind clientseitig generierte pseudonyme Routing-IDs, und Absenderkennungen werden nur soweit für Routing und Zustellung erforderlich gespeichert. Das Relay pflegt keinen öffentlichen sozialen Graphen oder durchsuchbares Kontaktverzeichnis. Metadaten werden minimiert, sind aber nicht null: Zeitstempel, Routing-IDs, Zustellstatus sowie Absender- und Empfängerkennungen sind dem Relay zum Transport sichtbar.</span>
             </li>
             <li>
                 <strong><span lang="en">Transactional Relay Mutex (v25.1.2):</span><span lang="de">Transaktionales Relay-Mutex (v25.1.2):</span></strong>
@@ -201,28 +206,40 @@
             </li>
             <li>
                 <strong><span lang="en">Audit Status:</span><span lang="de">Audit-Status:</span></strong>
-                <span lang="en">The developer has zero visibility into message and attachment content and contacts. Users are hidden from search by default. Adding contacts requires a mutual-consent invite request that the recipient can Accept or Reject. The relay does not maintain a social graph.</span>
-                <span lang="de">Der Entwickler hat keinerlei Sichtbarkeit in Inhalte von Nachrichten und Anhängen sowie in Kontakte. Benutzer sind standardmäßig nicht über die Suche auffindbar. Das Hinzufügen von Kontakten erfordert eine Einladungsanfrage mit gegenseitiger Zustimmung, die der Empfänger annehmen oder ablehnen kann. Das Relay pflegt keinen sozialen Graphen.</span>
+                <span lang="en">I have zero visibility into message and attachment content. Users are hidden from search by default. The Add Contact dialog offers 6-character invite codes, QR/deep links, and a secondary "Search by username" option that only surfaces users who have opted in. Adding contacts requires a mutual-consent invite request that the recipient can Accept or Reject. The relay does not maintain a public social graph or searchable contact directory; only minimal routing and delivery records necessary for operation are retained.</span>
+                <span lang="de">Ich habe keinerlei Sichtbarkeit in Inhalte von Nachrichten und Anhängen. Benutzer sind standardmäßig nicht über die Suche auffindbar. Das Hinzufügen von Kontakten erfordert eine Einladungsanfrage mit gegenseitiger Zustimmung, die der Empfänger annehmen oder ablehnen kann. Das Relay pflegt keinen öffentlichen sozialen Graphen oder durchsuchbares Kontaktverzeichnis; es werden nur die für den Betrieb erforderlichen minimalen Routing- und Zustellprotokolle gespeichert.</span>
             </li>
             <li>
                 <strong><span lang="en">Voice / Video Calls (VoIP):</span><span lang="de">Sprach-/Videoanrufe (VoIP):</span></strong>
                 <span lang="en">Calls use WebRTC. Native components are disposed and released when a call ends. Calls can be forced through TURN to hide peer IP addresses; this adds latency and may reduce media quality. The relay sees only call-setup signalling metadata.</span>
-                <span lang="de">Anrufe nutzen WebRTC. Native Komponenten werden nach Ende eines Anrufs freigegeben und entsorgt. Anrufe können zwangsweise über TURN geleitet werden, um Peer-IP-Adressen zu verbergen; dies erhöht die Latenz und kann die Medienqualität verringern. Das Relay sieht nur Signalisierungs-Metadaten für die Anrufeinrichtung.</span>
+                <span lang="de">Anrufe nutzen WebRTC. Native Komponenten werden nach Ende eines Anrufs freigegeben und entsorgt. Anrufe können zwangsweise über TURN geleitet werden, um Peer-IP-Adressen zu verbergen; dies erhöht die Latenz und kann die Medienqualität verringern. Das Relay sieht nur Anrufsignalisierungs-Metadaten für die Anrufeinrichtung.</span>
             </li>
             <li>
                 <strong><span lang="en">Link Previews:</span><span lang="de">Link-Vorschauen:</span></strong>
-                <span lang="en">Previews are fetched locally on the device using rotating user-agent strings. The linked site sees the device’s IP address and may receive cookies or require login. Rich previews are not guaranteed for every URL.</span>
-                <span lang="de">Vorschauen werden lokal auf dem Gerät mit rotierenden User-Agent-Strings abgerufen. Die verlinkte Seite sieht die IP-Adresse des Geräts und kann Cookies erhalten oder eine Anmeldung verlangen. Umfangreiche Vorschauen sind nicht für jede URL garantiert.</span>
+                <span lang="en">Previews are fetched locally on the device using rotating user-agent strings. The linked site sees the device’s IP address and may receive cookies or require login. Previews are disabled by default; the first paste of a URL triggers an in-app consent notice explaining the IP exposure. Rich previews are not guaranteed for every URL. Preview metadata is stored inside the encrypted message payload.</span>
+                <span lang="de">Vorschauen werden lokal auf dem Gerät mit rotierenden User-Agent-Strings abgerufen. Die verlinkte Seite sieht die IP-Adresse des Geräts und kann Cookies erhalten oder eine Anmeldung verlangen. Vorschauen sind standardmäßig deaktiviert; beim ersten Einfügen einer URL erscheint eine Einwilligungsmitteilung in der App, die die IP-Offenlegung erklärt. Umfangreiche Vorschauen sind nicht für jede URL garantiert. Vorschau-Metadaten werden innerhalb der verschlüsselten Nachrichten-Payload gespeichert.</span>
             </li>
             <li>
                 <strong><span lang="en">Vault Files:</span><span lang="de">Vault-Dateien:</span></strong>
-                <span lang="en">Files placed in the Vault are encrypted before storage. EXIF and other metadata are stripped before encryption. Files are decrypted into app memory for viewing; temporary cache files are overwritten as a best-effort measure before deletion. Secure reshare reuses the original encryption keys rather than re-encrypting the file.</span>
+                <span lang="en">Files placed in the Vault are encrypted before storage. EXIF and other metadata are stripped before encryption. Files are decrypted into app memory for viewing; temporary cache files are overwritten as a best-effort measure before deletion. In addition to imports, individual chat attachments, voice notes, and sealed text transcripts can be saved directly from the chat context menu. Secure reshare reuses the original encryption keys rather than re-encrypting the file; it is intended for individual files and large bundled reshares may be size-limited.</span>
                 <span lang="de">Dateien im Vault werden vor der Speicherung verschlüsselt. EXIF- und andere Metadaten werden vor der Verschlüsselung entfernt. Dateien werden für die Anzeige in den App-Speicher entschlüsselt; temporäre Cache-Dateien werden vor dem Löschen nach besten Kräften überschrieben. Sicheres Teilen wiederverwendet die ursprünglichen Verschlüsselungsschlüssel, anstatt die Datei neu zu verschlüsseln.</span>
             </li>
             <li>
                 <strong><span lang="en">Media Playback:</span><span lang="de">Medienwiedergabe:</span></strong>
                 <span lang="en">Media is decrypted into app memory for playback. No unencrypted persistent copy is kept. Temporary buffers are released when playback ends.</span>
                 <span lang="de">Medien werden für die Wiedergabe in den App-Speicher entschlüsselt. Es wird keine unverschlüsselte dauerhafte Kopie gespeichert. Temporäre Puffer werden nach Beenden der Wiedergabe freigegeben.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Local Security Controls:</span></strong>
+                <span lang="en">Privacy Settings provide an optional biometric app lock and a screen-security toggle that blocks screenshots and screen recording. Enabling the app lock automatically enables screen security, and the lock re-prompts if the app has been in the background for more than 2 seconds.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Encrypted Backup &amp; Restore:</span></strong>
+                <span lang="en">Users can export an encrypted archive of the local database, Vault files, chat payload enclave, and non-sensitive settings, protected by the 12-word mnemonic or a backup password. Restoring replaces the local database and files and triggers a server re-sync.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Export My Data (Art. 20):</span></strong>
+                <span lang="en">Settings -> Export My Data produces a JSON bundle containing profile, contacts, message metadata, vault index, and app settings. Message and attachment contents remain end-to-end encrypted and are not exported in plaintext.</span>
             </li>
         </ul>
 
@@ -265,8 +282,8 @@
         </p>
 
         <div style="margin-top: 80px; text-align: center; font-size: 1em; font-weight: bold; border-top: 1px solid #1a1a1a; padding-top: 20px;">
-            <span lang="en">Official Contact: statezer0@proton.me</span>
-            <span lang="de">Offizieller Kontakt: statezer0@proton.me</span>
+            <span lang="en">Official Contact: statezer0@proton.me | Illegal Content: legal.StateZer0@proton.me</span>
+            <span lang="de">Offizieller Kontakt: statezer0@proton.me | Illegale Inhalte: legal.StateZer0@proton.me</span>
         </div>
     </div>
 
