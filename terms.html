@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - StateZer0</title>
     <style>
-        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
 
         body {
@@ -31,7 +30,6 @@
             margin: 0 auto;
         }
 
-        /* TRANSLATION TOGGLE STYLING */
         .lang-switch {
             text-align: right;
             margin-bottom: 20px;
@@ -50,7 +48,6 @@
             color: #fff;
         }
 
-        /* Hiding logic based on html lang attribute */
         html[lang="de"] [lang="en"] { display: none; }
         html[lang="en"] [lang="de"] { display: none; }
 
@@ -64,6 +61,7 @@
 
         .nuclear-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #990000; }
         .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
+        .warning-box { background: #fff8e1; border-left: 5px solid #f39c12; padding: 15px; margin: 20px 0; }
 
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
         ul { padding-left: 20px; }
@@ -87,7 +85,6 @@
             <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
         </div>
 
-        <!-- Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="StateZer0 Logo">
             <div class="contact-line">
@@ -97,98 +94,188 @@
         </div>
 
         <h1>
-            <span lang="en">Terms of Service & Usage Agreement</span>
-            <span lang="de">Nutzungsbedingungen & Nutzungsvereinbarung</span>
+            <span lang="en">Terms of Service</span>
+            <span lang="de">Nutzungsbedingungen</span>
         </h1>
         <p style="text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: -10px; font-size: 0.9em;">
-            <span lang="en">StateZer0: Encrypted Communications Platform with Minimized Server Metadata</span>
-            <span lang="de">StateZer0: Verschlüsselte Kommunikationsplattform mit minimierten Server-Metadaten</span>
+            <span lang="en">StateZer0: End-to-End Encrypted Communications Platform</span>
+            <span lang="de">StateZer0: Ende-zu-Ende-verschlüsselte Kommunikationsplattform</span>
         </p>
 
-                <p style="text-align: center;">
-            <strong lang="en">Status: ENCRYPTED RELAY SERVICE</strong>
-            <strong lang="de">Status: VERSCHLÜSSELTES RELAY</strong><br>
-
-            <span lang="en">Effective Date: November 10, 2026</span>
-            <span lang="de">Gültigkeitsdatum: 10. November 2026</span>
+        <p style="text-align: center;">
+            <strong lang="en">Effective Date: September 29, 2026</strong>
+            <strong lang="de">Gültigkeitsdatum: 29. September 2026</strong><br>
+            <span lang="en">Jurisdiction: Federal Republic of Germany</span>
+            <span lang="de">Gerichtsstand: Bundesrepublik Deutschland</span>
         </p>
 
         <div class="nuclear-notice">
-            <span lang="en">USER DATA SOVEREIGNTY | LIABILITY LIMITED BY LAW</span>
-            <span lang="de">DATENSOUVERÄNITÄT | HAFTUNG NACH GESETZLICHER BESCHRÄNKUNG</span>
+            <span lang="en">READ CAREFULLY — THIS IS A LEGALLY BINDING AGREEMENT</span>
+            <span lang="de">SORGFÄLTIG LESEN — DIES IST EIN RECHTSVERBINDLICHER VERTRAG</span>
         </div>
 
-        <h2>1. <span lang="en">Sovereign Identity</span><span lang="de">Souveräne Identität</span></h2>
+        <h2>1. <span lang="en">Scope and Definitions</span><span lang="de">Geltungsbereich und Begriffsbestimmungen</span></h2>
         <p>
-            <span lang="en">StateZer0 is a tool for encrypted communication. Upon registration, you are issued a <b>12-word recovery seed</b>. This seed is your exclusive master key. The provider does not store, backup, or possess the means to recover your account or password. If you lose this phrase, your data is permanently lost.</span>
-            <span lang="de">StateZer0 ist ein Werkzeug für verschlüsselte Kommunikation. Bei der Registrierung erhalten Sie einen <b>Seed aus 12 Wörtern</b> zur Wiederherstellung. Dieser Seed ist Ihr exklusiver Hauptschlüssel. Der Anbieter speichert oder sichert Ihr Konto oder Passwort nicht und hat keine Möglichkeit, diese wiederherzustellen. Wenn Sie diese Phrase verlieren, sind Ihre Daten dauerhaft verloren.</span>
+            <span lang="en">These Terms of Service govern your use of StateZer0, an end-to-end encrypted messaging and voice-call application operated by me as an individual entrepreneur. By registering or using the service, you agree to these terms.</span>
+            <span lang="de">Diese Nutzungsbedingungen regeln Ihre Nutzung von StateZer0, einer Ende-zu-Ende-verschlüsselten Nachrichten- und Sprachanruf-App, die von mir als Einzelunternehmer betrieben wird. Mit der Registrierung oder Nutzung des Dienstes stimmen Sie diesen Bedingungen zu.</span>
+        </p>
+        <p>
+            <span lang="en">"I", "me", "my" refers to the individual operator of StateZer0. "You" refers to the registered user. "Service" refers to the StateZer0 relay, apps, and related infrastructure.</span>
+            <span lang="de">„Ich", „mich", „mein" bezieht sich auf den Einzelbetreiber von StateZer0. „Sie" bezieht sich auf den registrierten Nutzer. „Dienst" bezieht sich auf das StateZer0-Relay, die Apps und die zugehörige Infrastruktur.</span>
         </p>
 
-        <h2>2. <span lang="en">Neutral Intermediary (DSA)</span><span lang="de">Neutraler Mittler (DSA)</span></h2>
+        <h2>2. <span lang="en">Service Description</span><span lang="de">Dienstbeschreibung</span></h2>
         <p>
-            <span lang="en">Pursuant to <b>Art. 4 of the EU Digital Services Act (DSA)</b>, this service acts strictly as a neutral "Mere Conduit." We do not monitor, moderate, or modify your communications. By using this tool, you acknowledge that the developer has no technical means to interfere with or access your encrypted transmissions.</span>
-            <span lang="de">Gemäß <b>Art. 4 des EU Digital Services Act (DSA)</b> agiert dieser Dienst ausschließlich als neutraler „Mere Conduit". Wir überwachen, moderieren oder verändern Ihre Kommunikation nicht. Durch die Nutzung dieses Tools erkennen Sie an, dass der Entwickler keine technischen Möglichkeiten hat, in Ihre verschlüsselten Übermittlungen einzugreifen oder darauf zuzugreifen.</span>
+            <span lang="en">StateZer0 provides an encrypted relay for messages, attachments, and voice calls. Message and attachment content is encrypted on your device and can only be decrypted by the intended recipient. The relay forwards encrypted payloads but cannot read their content.</span>
+            <span lang="de">StateZer0 bietet ein verschlüsseltes Relay für Nachrichten, Anhänge und Sprachanrufe. Nachrichten- und Anhangsinhalte werden auf Ihrem Gerät verschlüsselt und können nur vom vorgesehenen Empfänger entschlüsselt werden. Das Relay leitet verschlüsselte Payloads weiter, kann deren Inhalt jedoch nicht lesen.</span>
+        </p>
+        <p>
+            <span lang="en">To make delivery possible, the relay processes minimized metadata such as pseudonymous routing IDs, contact relationship records, timestamps, push tokens, and delivery status. I do not maintain a public directory or social graph.</span>
+            <span lang="de">Um die Zustellung zu ermöglichen, verarbeitet das Relay minimierte Metadaten wie pseudonyme Routing-IDs, Kontaktbeziehungsdatensätze, Zeitstempel, Push-Tokens und Zustellstatus. Ich führe kein öffentliches Verzeichnis oder sozialen Graphen.</span>
         </p>
 
-        <h2>3. <span lang="en">Protocol Guard & Discovery Policy (v54.0.0)</span><span lang="de">Protocol Guard & Entdeckungsrichtlinie (v54.0.0)</span></h2>
+        <h2>3. <span lang="en">Registration and Account Security</span><span lang="de">Registrierung und Kontosicherheit</span></h2>
+        <ul>
+            <li>
+                <span lang="en">You must be at least 16 years old to use the service.</span>
+                <span lang="de">Sie müssen mindestens 16 Jahre alt sein, um den Dienst zu nutzen.</span>
+            </li>
+            <li>
+                <span lang="en">Your account is secured by a 12-word recovery seed generated on your device. I do not store this seed and cannot recover your account if you lose it.</span>
+                <span lang="de">Ihr Konto ist durch einen auf Ihrem Gerät generierten 12-Wörter-Wiederherstellungs-Seed gesichert. Ich speichere diesen Seed nicht und kann Ihr Konto nicht wiederherstellen, wenn Sie ihn verlieren.</span>
+            </li>
+            <li>
+                <span lang="en">I enforce a one-account-per-device policy using a privacy-preserving hardware hash and the Android Keystore. You may not attempt to bypass this restriction.</span>
+                <span lang="de">Ich setze eine Ein-Konto-pro-Gerät-Richtlinie durch, die einen datenschutzfreundlichen Hardware-Hash und den Android Keystore verwendet. Sie dürfen nicht versuchen, diese Einschränkung zu umgehen.</span>
+            </li>
+            <li>
+                <span lang="en">During the closed beta, authorized testers may use a temporary re-registration token. This exception is internal and will be removed at commercial launch.</span>
+                <span lang="de">Während der geschlossenen Beta können autorisierte Tester ein temporäres Re-Registrierungs-Token verwenden. Diese Ausnahme ist intern und wird beim kommerziellen Start entfernt.</span>
+            </li>
+        </ul>
+
+        <h2>4. <span lang="en">Your Responsibility for Content</span><span lang="de">Ihre Verantwortung für Inhalte</span></h2>
         <p>
-            <span lang="en">Messages are End-to-End Encrypted (E2EE). The developer has zero visibility into message and attachment content and contacts; the server acts only as a relay for encrypted blobs. Metadata is minimized, not eliminated. StateZer0 stores the identity key in the <b>Android Keystore</b> as a device-bound key; it is non-exportable by normal means. On the server, MongoDB fields are encrypted at rest with AES-256-GCM using GHOST_FIELD_KEY; message and attachment payloads are opaque encrypted blobs to the relay. Accounts are hidden from search by default. Adding contacts requires mutual-consent invite requests with Accept/Reject; the relay does not maintain a social graph. Delivered messages and media are erased from the relay within 24 hours (or 24 hours after acknowledgment); undelivered content is erased within 72 hours.</span>
-            <span lang="de">Nachrichten sind Ende-zu-Ende-verschlüsselt (E2EE). Der Entwickler hat keinerlei Einblick in Inhalte von Nachrichten und Anhängen sowie in Kontakte; der Server dient ausschließlich als Relay für verschlüsselte Blobs. Metadaten werden minimiert, nicht eliminiert. StateZer0 speichert den Identitätsschlüssel im <b>Android-Keystore</b> als gerätegebundenen Schlüssel; er ist unter normalen Umständen nicht exportierbar. Auf dem Server werden MongoDB-Felder mit AES-256-GCM unter Verwendung von GHOST_FIELD_KEY verschlüsselt aufbewahrt; Nachrichten- und Anhang-Payloads sind für das Relay undurchsichtige verschlüsselte Blobs. Konten sind standardmäßig vor der Suche verborgen. Das Hinzufügen von Kontakten erfordert gegenseitige Zustimmung durch Einladungsanfragen mit Annehmen/Ablehnen; das Relay pflegt keinen sozialen Graphen. Zugestellte Nachrichten und Medien werden innerhalb von 24 Stunden (oder 24 Stunden nach Empfangsbestätigung) vom Relay gelöscht; nicht zugestellte Inhalte innerhalb von 72 Stunden.</span>
+            <span lang="en">You are solely responsible for the content you send, receive, store, or share through StateZer0. Because the service is end-to-end encrypted, I cannot see, moderate, or control your communications.</span>
+            <span lang="de">Sie sind allein verantwortlich für die Inhalte, die Sie über StateZer0 senden, empfangen, speichern oder teilen. Da der Dienst Ende-zu-Ende-verschlüsselt ist, kann ich Ihre Kommunikation weder sehen, moderieren noch kontrollieren.</span>
+        </p>
+        <p>
+            <span lang="en">You agree not to use StateZer0 for any unlawful purpose, including but not limited to:</span>
+            <span lang="de">Sie erklären sich damit einverstanden, StateZer0 nicht für rechtswidrige Zwecke zu nutzen, einschließlich, aber nicht beschränkt auf:</span>
+        </p>
+        <ul>
+            <li><span lang="en">Sharing illegal content under German, EU, or applicable local law</span><span lang="de">Das Teilen illegaler Inhalte nach deutschem, EU- oder anwendbarem lokalem Recht</span></li>
+            <li><span lang="en">Harassment, threats, incitement to violence, or hate speech</span><span lang="de">Belästigung, Drohungen, Gewaltaufrufe oder Hassrede</span></li>
+            <li><span lang="en">Distribution of child sexual abuse material</span><span lang="de">Die Verbreitung von sexuellem Missbrauch von Kindern darstellendem Material</span></li>
+            <li><span lang="en">Fraud, phishing, malware distribution, or spam</span><span lang="de">Betrug, Phishing, Malware-Verbreitung oder Spam</span></li>
+            <li><span lang="en">Automated mass-messaging, contact probing, or network abuse</span><span lang="de">Automatisierte Massen-Nachrichten, Kontakt-Probing oder Netzwerkmissbrauch</span></li>
+            <li><span lang="en">Any activity that violates another person's rights</span><span lang="de">Jede Aktivität, die die Rechte einer anderen Person verletzt</span></li>
+        </ul>
+
+        <h2>5. <span lang="en">Illegal Content Reporting and My Limited Role</span><span lang="de">Meldung illegaler Inhalte und meine begrenzte Rolle</span></h2>
+        <p>
+            <span lang="en">I cannot decrypt or monitor message content. I do not proactively scan communications. If I receive a credible report of illegal use, I will review the available metadata and may:</span>
+            <span lang="de">Ich kann Nachrichteninhalte nicht entschlüsseln oder überwachen. Ich scanne Kommunikationen nicht proaktiv. Wenn ich einen glaubhaften Bericht über rechtswidrige Nutzung erhalte, werde ich die verfügbaren Metadaten prüfen und kann:</span>
+        </p>
+        <ul>
+            <li><span lang="en">Suspend or terminate the account if the metadata supports the report</span><span lang="de">Das Konto sperren oder kündigen, wenn die Metadaten den Bericht stützen</span></li>
+            <li><span lang="en">Preserve relevant metadata beyond standard retention if required by law</span><span lang="de">Relevante Metadaten über die Standardaufbewahrung hinaus aufbewahren, wenn dies gesetzlich erforderlich ist</span></li>
+            <li><span lang="en">Report the matter to the appropriate German or EU authorities</span><span lang="de">Die Angelegenheit den zuständigen deutschen oder EU-Behörden melden</span></li>
+        </ul>
+        <p>
+            <span lang="en">Reports can be sent to <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a>. I will respond to credible reports as promptly as practicable.</span>
+            <span lang="de">Meldungen können an <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a> gesendet werden. Ich werde auf glaubhafte Meldungen so zeitnah wie praktikabel reagieren.</span>
         </p>
 
-        <h2>4. <span lang="en">Mutual Consent & Spam Protection</span><span lang="de">Gegenseitige Zustimmung & Spamschutz</span></h2>
+        <h2>6. <span lang="en">Liability Shield</span><span lang="de">Haftungsausschluss</span></h2>
         <p>
-            <span lang="en">To protect the network from unsolicited metadata exposure, StateZer0 enforces a <b>Mutual Consent Quarantine</b>. By using this service, you acknowledge that: (a) inbound connection requests from unknown IDs are held in a local quarantine; (b) no reciprocal data or handshake signals will be sent until you explicitly authorize the connection; and (c) you have the right to ignore or delete any connection request without notifying the sender. Attempting to use the platform for automated "Contact Probing" or mass-unsolicited communication is a violation of these terms.</span>
-            <span lang="de">Um das Netzwerk vor ungebetener Exponierung von Metadaten zu schützen, erzwingt StateZer0 eine <b>Gegenseitige Zustimmungs-Quarantäne</b>. Durch die Nutzung dieses Dienstes erkennen Sie an, dass: (a) eingehende Verbindungsanfragen von unbekannten IDs in einer lokalen Quarantäne gehalten werden; (b) keine gegenseitigen Daten oder Handshake-Signale gesendet werden, bis Sie die Verbindung explizit autorisieren; und (c) Sie das Recht haben, jede Verbindungsanfrage zu ignorieren oder zu löschen, ohne den Absender zu benachrichtigen. Der Versuch, die Plattform für automatisiertes „Kontakt-Probing" oder massenhafte ungebetene Kommunikation zu nutzen, stellt einen Verstoß gegen diese Bedingungen dar.</span>
+            <span lang="en">To the maximum extent permitted by German and EU law:</span>
+            <span lang="de">Soweit nach deutschem und EU-Recht zulässig:</span>
+        </p>
+        <ul>
+            <li>
+                <span lang="en">I am not liable for the content of user communications, because I do not have the technical ability to decrypt, view, or moderate that content.</span>
+                <span lang="de">Ich hafte nicht für den Inhalt von Nutzerkommunikationen, da ich nicht technisch in der Lage bin, diesen Inhalt zu entschlüsseln, anzusehen oder zu moderieren.</span>
+            </li>
+            <li>
+                <span lang="en">I am not liable for the actions of other users, including the sharing of illegal content by them.</span>
+                <span lang="de">Ich hafte nicht für das Handeln anderer Nutzer, einschließlich deren Weitergabe illegaler Inhalte.</span>
+            </li>
+            <li>
+                <span lang="en">I provide the service "as is" during the beta period. I do not guarantee uninterrupted availability, delivery, or error-free operation.</span>
+                <span lang="de">Ich stelle den Dienst während der Beta-Phase „wie besehen" zur Verfügung. Ich garantiere keine unterbrechungsfreie Verfügbarkeit, Zustellung oder fehlerfreie Funktion.</span>
+            </li>
+        </ul>
+        <p>
+            <span lang="en">This liability shield does not apply to my own intentional misconduct, gross negligence, or statutory non-waivable obligations.</span>
+            <span lang="de">Dieser Haftungsausschluss gilt nicht für mein eigenes vorsätzliches Fehlverhalten, grobe Fahrlässigkeit oder gesetzlich unabdingbare Pflichten.</span>
         </p>
 
-        <h2>5. <span lang="en">Prohibited Use & Indemnity</span><span lang="de">Verbotene Nutzung & Haftungsfreistellung</span></h2>
+        <h2>7. <span lang="en">Indemnity</span><span lang="de">Freistellung</span></h2>
         <p>
-            <span lang="en">The use of StateZer0 for any illegal activity is strictly prohibited. You agree to indemnify and hold harmless the developer from any and all legal claims, damages, or liabilities arising from your conduct or the content of your communications.</span>
-            <span lang="de">Die Nutzung von StateZer0 für rechtswidrige Aktivitäten ist strengstens untersagt. Sie erklären sich damit einverstanden, den Entwickler von sämtlichen Rechtsansprüchen, Schäden oder Haftungen freizustellen, die sich aus Ihrem Verhalten oder dem Inhalt Ihrer Kommunikation ergeben.</span>
+            <span lang="en">You agree to indemnify and hold me harmless from claims, damages, or liabilities arising from your breach of these terms, your misuse of the service, or the content of your communications, to the extent permitted by German law. This does not apply where I am independently at fault.</span>
+            <span lang="de">Sie erklären sich damit einverstanden, mich von Ansprüchen, Schäden oder Haftungen freizustellen, die sich aus Ihrem Verstoß gegen diese Bedingungen, Ihrem Missbrauch des Dienstes oder dem Inhalt Ihrer Kommunikation ergeben, soweit nach deutschem Recht zulässig. Dies gilt nicht, wenn ich selbstständig fehlerhaft gehandelt habe.</span>
         </p>
 
-        <h2>6. <span lang="en">Right to Termination (BGB § 312k)</span><span lang="de">Kündigungsrecht (BGB § 312k)</span></h2>
+        <h2>8. <span lang="en">Account Termination and Data Deletion</span><span lang="de">Kontokündigung und Datenlöschung</span></h2>
         <p>
-            <span lang="en">You may terminate your usage and delete your account at any time via the in-app <b>Delete Account</b>, <b>Scorched Earth</b>, or <b>Panic PIN</b> flows. Server-side <span class="legal-ref">DELETE /users/me</span> removes the user row, pre-keys, sessions, push tokens, active invites, undelivered messages, and attachments. The local wipe deletes the database, SharedPreferences, caches, files, and cancels workers and notifications. Phase 1 leaves Android Keystore keys intact, but encrypted data and wrapped passphrase files are destroyed. Delivered content is erased within 24 hours, undelivered content within 72 hours, the R2 attachment reaper runs approximately every 10 minutes, and minimal server logs may be retained for up to 30 days for abuse prevention and legal compliance. This fulfills the provider's obligations under <b>§ 312k BGB</b> and the GDPR's <b>Right to Erasure</b>.</span>
-            <span lang="de">Sie können die Nutzung jederzeit beenden und Ihr Konto über die In-App-Flows <b>Konto löschen</b>, <b>Scorched Earth</b> oder <b>Panic PIN</b> löschen. Serverseitig entfernt <span class="legal-ref">DELETE /users/me</span> die Benutzerzeile, Pre-Keys, Sitzungen, Push-Tokens, aktive Einladungen, nicht zugestellte Nachrichten und Anhänge. Die lokale Löschung entfernt Datenbank, SharedPreferences, Caches und Dateien und bricht Worker sowie Benachrichtigungen ab. In Phase 1 bleiben Android-Keystore-Schlüssel erhalten, verschlüsselte Daten und wrapped-passphrase-Dateien werden jedoch zerstört. Zugestellte Inhalte werden innerhalb von 24 Stunden gelöscht, nicht zugestellte Inhalte innerhalb von 72 Stunden; der R2-Anhang-Reaper läuft etwa alle 10 Minuten. Minimale Server-Logs können zur Missbrauchsbekämpfung und zur Erfüllung rechtlicher Verpflichtungen bis zu 30 Tage aufbewahrt werden. Dies erfüllt die Verpflichtungen des Anbieters gemäß <b>§ 312k BGB</b> und das <b>Recht auf Löschung</b> der DSGVO.</span>
+            <span lang="en">You may terminate your account at any time through the in-app account deletion flow or the Emergency Account Deletion PIN. Upon termination:</span>
+            <span lang="de">Sie können Ihr Konto jederzeit über den In-App-Kontolöschungsablauf oder die Emergency Account Deletion PIN kündigen. Bei Kündigung:</span>
+        </p>
+        <ul>
+            <li><span lang="en">I delete your user row, Olm keys, sessions, push tokens, active invites, undelivered messages, and undelivered attachments from the relay.</span><span lang="de">Ich lösche Ihre Benutzerzeile, Olm-Keys, Sitzungen, Push-Tokens, aktiven Einladungen, nicht zugestellten Nachrichten und nicht zugestellten Anhänge vom Relay.</span></li>
+            <li><span lang="en">Delivered messages and attachments are already subject to automatic deletion within 24 hours of delivery (or immediately upon acknowledgment).</span><span lang="de">Zugestellte Nachrichten und Anhänge unterliegen bereits der automatischen Löschung innerhalb von 24 Stunden nach Zustellung (oder sofort bei Bestätigung).</span></li>
+            <li><span lang="en">The local app deletes your database, vault, cache, and settings from your device.</span><span lang="de">Die lokale App löscht Ihre Datenbank, Ihren Vault, Cache und Einstellungen von Ihrem Gerät.</span></li>
+        </ul>
+        <div class="warning-box">
+            <strong><span lang="en">Emergency Account Deletion PIN:</span><span lang="de">Emergency Account Deletion PIN:</span></strong>
+            <span lang="en">This feature must not be used to destroy evidence, evade legal process, or harm another person's lawful interests.</span>
+            <span lang="de">Diese Funktion darf nicht verwendet werden, um Beweise zu vernichten, rechtliche Verfahren zu umgehen oder rechtliche Interessen Dritter zu schädigen.</span>
+        </div>
+
+        <h2>9. <span lang="en">Beta Status and Disclaimers</span><span lang="de">Beta-Status und Haftungsausschlüsse</span></h2>
+        <p>
+            <span lang="en">StateZer0 is currently in a closed beta with a limited number of testers. The service may contain bugs, experience downtime, or lose data. You use it at your own risk. I recommend keeping independent backups of any critical data.</span>
+            <span lang="de">StateZer0 befindet sich derzeit in einer geschlossenen Beta mit einer begrenzten Anzahl von Testern. Der Dienst kann Fehler enthalten, Ausfallzeiten haben oder Daten verlieren. Sie nutzen ihn auf eigenes Risiko. Ich empfehle, unabhängige Backups kritischer Daten zu führen.</span>
         </p>
 
-        <h2>7. <span lang="en">Hardware Scarcity & Device Anchoring</span><span lang="de">Hardware-Knappheit & Geräte-Verankerung</span></h2>
+        <h2>10. <span lang="en">Intellectual Property</span><span lang="de">Geistiges Eigentum</span></h2>
         <p>
-            <span lang="en">StateZer0 enforces a strict <b>One-Account-Per-Device</b> policy. By registering, you agree that a privacy-preserving cryptographic hash will be anchored to the device. Identity keys are managed within the <b>Android Keystore</b> as device-bound keys. In the event of a local data wipe or uninstallation, this device remains "Occupied." Access can only be restored via your <b>12-word recovery seed</b>. Attempts to bypass this device lock to create multiple identities are prohibited and may result in device-level network exclusion.</span>
-            <span lang="de">StateZer0 setzt eine strikte <b>Ein-Konto-pro-Gerät</b>-Richtlinie um. Mit der Registrierung erklären Sie sich damit einverstanden, dass ein datenschutzfreundlicher kryptographischer Hash am Gerät verankert wird. Identitätsschlüssel werden im <b>Android-Keystore</b> als gerätegebundene Schlüssel verwaltet. Im Falle einer lokalen Datenlöschung oder Deinstallation bleibt dieses Gerät „belegt". Der Zugriff kann nur über Ihren <b>12-Wörter-Wiederherstellungs-Seed</b> wiederhergestellt werden. Versuche, diese Geräte-Sperre zu umgehen, um mehrere Identitäten zu erstellen, sind untersagt und können zum netzwerkweiten Ausschluss auf Geräteebene führen.</span>
+            <span lang="en">The StateZer0 name, logo, and software are my intellectual property. You receive a limited, non-exclusive, non-transferable license to use the app for its intended purpose. You may not reverse-engineer, decompile, or redistribute the app without my prior written consent.</span>
+            <span lang="de">Der Name StateZer0, das Logo und die Software sind mein geistiges Eigentum. Sie erhalten eine eingeschränkte, nicht ausschließliche, nicht übertragbare Lizenz zur Nutzung der App für den vorgesehenen Zweck. Sie dürfen die App nicht reverse-engineeren, dekompilieren oder ohne meine vorherige schriftliche Zustimmung weiterverbreiten.</span>
         </p>
 
-        <h2>8. <span lang="en">Single-Seat Migration & Data Handoff</span><span lang="de">Single-Seat Migration & Datenübergabe</span></h2>
+        <h2>11. <span lang="en">Governing Law and Dispute Resolution</span><span lang="de">Geltendes Recht und Streitbeilegung</span></h2>
         <p>
-            <span lang="en">StateZer0 supports a direct Peer-to-Peer (P2P) migration model. You may move your account to new hardware via a local encrypted Wi-Fi tunnel. By initiating a migration, you agree that: (a) your session on the old device will be instantly revoked; and (b) the old device will wipe its local data upon successful transfer to prevent account cloning and data residue.</span>
-            <span lang="de">StateZer0 unterstützt ein direktes Peer-to-Peer (P2P)-Migrationsmodell. Sie können Ihr Konto über einen lokalen verschlüsselten Wi-Fi-Tunnel auf neue Hardware umziehen. Durch das Initiieren einer Migration erklären Sie sich damit einverstanden, dass: (a) Ihre Sitzung auf dem alten Gerät sofort widerrufen wird; und (b) das alte Gerät nach erfolgreicher Übertragung seine lokalen Daten löscht, um Konto-Kloning und Datenrückstände zu verhindern.</span>
+            <span lang="en">These terms are governed by the laws of the Federal Republic of Germany. Any disputes arising from these terms or your use of the service shall be subject to the exclusive jurisdiction of the courts of Hamburg, Germany, to the extent permitted by law.</span>
+            <span lang="de">Diese Bedingungen unterliegen dem Recht der Bundesrepublik Deutschland. Alle Streitigkeiten aus diesen Bedingungen oder Ihrer Nutzung des Dienstes unterliegen der ausschließlichen Zuständigkeit der Gerichte in Hamburg, Deutschland, soweit gesetzlich zulässig.</span>
         </p>
 
-        <h2>9. <span lang="en">Out-of-Band Discovery & Identity Pinning (v25.1.4)</span><span lang="de">Out-of-Band Entdeckung & Identitäts-Pinning (v25.1.4)</span></h2>
+        <h2>12. <span lang="en">Severability</span><span lang="de">Salvatorische Klausel</span></h2>
         <p>
-            <span lang="en">Discovery via QR codes and deep links is a sovereign <b>Peer-to-Peer</b> process. By utilizing these features, you acknowledge that: (a) the generation and parsing of QR codes and <i>ghost://connect</i> URIs occur on your local hardware; (b) the visual QR payload includes your Public Identity Key (IK) to enable out-of-band verification; and (c) the relay is not involved in the discovery event. You are solely responsible for verifying the authenticity of scanned identity keys in high-stakes environments.</span>
-            <span lang="de">Die Entdeckung über QR-Codes und Deep-Links ist ein souveräner <b>Peer-to-Peer</b>-Prozess. Durch die Nutzung dieser Funktionen erkennen Sie an, dass: (a) die Erzeugung und Analyse von QR-Codes und <i>ghost://connect</i> URIs auf Ihrer lokalen Hardware erfolgt; (b) die visuelle QR-Payload Ihren öffentlichen Identitätsschlüssel (IK) enthält, um eine Out-of-Band-Verifizierung zu ermöglichen; und (c) das Relay nicht am Entdeckungsereignis beteiligt ist. Sie sind allein verantwortlich für die Verifizierung der Echtheit gescannter Identitätsschlüssel in sicherheitskritischen Umgebungen.</span>
+            <span lang="en">If any provision of these terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</span>
+            <span lang="de">Sollte eine Bestimmung dieser Bedingungen unwirksam oder undurchsetzbar sein, bleiben die übrigen Bestimmungen in vollem Umfang wirksam.</span>
         </p>
 
-        <h2>10. <span lang="en">The Sovereign Vault & Forensic Sanitization</span><span lang="de">Der Sovereign Vault & Forensische Bereinigung</span></h2>
+        <h2>13. <span lang="en">Changes to These Terms</span><span lang="de">Änderungen dieser Bedingungen</span></h2>
         <p>
-            <span lang="en">StateZer0 includes the "Sovereign Vault" feature for localized, encrypted media management. By utilizing the Vault, you acknowledge that: (a) files are encrypted and EXIF/metadata is stripped before encryption; (b) files are decrypted into device memory for viewing; and (c) temporary cache files are cleared and overwritten as a best-effort measure when no longer needed. Secure reshare reuses the original encryption keys to share vaulted assets directly with contacts. You further acknowledge that while server-side delivered media is deleted within 24 hours and undelivered media within 72 hours, items moved to the Sovereign Vault are persistent until manually deleted.</span>
-            <span lang="de">StateZer0 enthält die Funktion „Sovereign Vault" zur lokalen, verschlüsselten Medienverwaltung. Durch die Nutzung des Vaults erkennen Sie an, dass: (a) Dateien verschlüsselt werden und EXIF/Metadaten vor der Verschlüsselung entfernt werden; (b) Dateien zur Anzeige in den Gerätespeicher entschlüsselt werden; und (c) temporäre Cache-Dateien nach Gebrauch gelöscht und soweit technisch möglich überschrieben werden. Secure Reshare verwendet die ursprünglichen Verschlüsselungsschlüssel wieder, um Vault-Assets direkt mit Kontakten zu teilen. Sie erkennen ferner an, dass zugestellte serverseitige Medien innerhalb von 24 Stunden und nicht zugestellte Medien innerhalb von 72 Stunden gelöscht werden, in den Sovereign Vault verschobene Elemente jedoch bis zur manuellen Löschung persistent bleiben.</span>
+            <span lang="en">I may update these terms as the service evolves. Material changes will be announced through the app and on the website. Continued use after the effective date constitutes acceptance.</span>
+            <span lang="de">Ich kann diese Bedingungen im Laufe der Dienstentwicklung aktualisieren. Wesentliche Änderungen werden über die App und die Website angekündigt. Die weitere Nutzung nach dem Gültigkeitsdatum gilt als Akzeptanz.</span>
         </p>
 
-        <h2>11. <span lang="en">Sovereign Transcript Sealing</span><span lang="de">Souveräne Transkript-Versiegelung</span></h2>
+        <h2>14. <span lang="en">Contact</span><span lang="de">Kontakt</span></h2>
         <p>
-            <span lang="en">The "Sovereign Seal" feature allows for the direct internal archiving of text messages into the Vault. You agree that: (a) this process bypasses the OS clipboard to prevent third-party sniffing; (b) the resulting transcript is cryptographically linked to the original session; and (c) once sealed and moved to the Vault, the transcript is managed under the same deletion standards as Vault media assets.</span>
-            <span lang="de">Die Funktion „Sovereign Seal" ermöglicht die direkte interne Archivierung von Textnachrichten im Vault. Sie erklären sich damit einverstanden, dass: (a) dieser Prozess die Zwischenablage des Betriebssystems umgeht, um Sniffing durch Drittanbieter zu verhindern; (b) das resultierende Transkript kryptografisch mit der ursprünglichen Sitzung verknüpft ist; und (c) nach der Versiegelung und Verschiebung in den Vault das Transkript denselben Lösch-Standards unterliegt wie Medien-Assets im Vault.</span>
+            <span lang="en">For general questions: <a href="mailto:statezer0@proton.me">statezer0@proton.me</a></span>
+            <span lang="de">Für allgemeine Fragen: <a href="mailto:statezer0@proton.me">statezer0@proton.me</a></span><br>
+            <span lang="en">For legal or abuse reports: <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a></span>
+            <span lang="de">Für rechtliche Angelegenheiten oder Missbrauchsmeldungen: <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a></span><br>
+            <span lang="en">DSA single point of contact: <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a></span>
+            <span lang="de">DSA-Einzelkontaktstelle: <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a></span>
         </p>
 
         <div class="compliance-footer">
-            <strong>Legal Audit Status:</strong> BGB, DDG & EU DSA Compliant.<br>
-            <strong>Verification Date: November 10, 2026.</strong><br><br>
-            <strong lang="en">Status: Encrypted relay service.</strong>
-            <strong lang="de">Status: Verschlüsselter Relay-Dienst.</strong>
+            <strong><span lang="en">Legal basis:</span><span lang="de">Rechtsgrundlagen:</span></strong> GDPR / DSGVO, DDG, TDDDG, DSA, BGB.<br>
+            <strong><span lang="en">Effective:</span><span lang="de">Gültig ab:</span></strong> September 29, 2026.
         </div>
     </div>
 
@@ -211,7 +298,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const browserLang = navigator.language.split('-')[0];
-
         const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'de';
         setLang(savedLang);
     </script>
