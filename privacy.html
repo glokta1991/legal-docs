@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - StateZer0</title>
     <style>
-        /* MOBILE-FIRST LAYOUT FIX - PRESERVED */
         * { box-sizing: border-box; }
 
         body {
@@ -31,7 +30,6 @@
             margin: 0 auto;
         }
 
-        /* TRANSLATION TOGGLE STYLING */
         .lang-switch {
             text-align: right;
             margin-bottom: 20px;
@@ -50,7 +48,6 @@
             color: #fff;
         }
 
-        /* Hiding logic based on html lang attribute */
         html[lang="de"] [lang="en"] { display: none; }
         html[lang="en"] [lang="de"] { display: none; }
 
@@ -61,13 +58,19 @@
 
         h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
         h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
+        h3 { color: #1a1a1a; margin-top: 1.8rem; font-size: 1.05em; font-weight: bold; }
 
         .nuclear-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #990000; }
         .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
+        .warning-box { background: #fff8e1; border-left: 5px solid #f39c12; padding: 15px; margin: 20px 0; }
 
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
         ul { padding-left: 20px; }
         li { margin-bottom: 12px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9em; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; vertical-align: top; }
+        th { background-color: #1a1a1a; color: #fff; }
 
         .compliance-footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid #1a1a1a; text-align: center; font-size: 0.85em; }
 
@@ -76,6 +79,8 @@
             h1 + p { font-size: 0.75em !important; line-height: 1.4; }
             .document-container { padding: 30px 20px; }
             body { padding: 10px; }
+            table { font-size: 0.8em; }
+            th, td { padding: 6px; }
         }
     </style>
 </head>
@@ -87,7 +92,6 @@
             <span class="lang-btn" id="btn-de" onclick="setLang('de')">DE</span>
         </div>
 
-        <!-- Branding Header -->
         <div class="header-branding">
             <img src="logo.png" alt="StateZer0 Logo">
             <div class="contact-line">
@@ -96,216 +100,274 @@
             <div class="header-divider"></div>
         </div>
 
-                <h1>
-            <span lang="en">Privacy Policy & Legal Framework</span>
-            <span lang="de">Datenschutzerklärung & Rechtlicher Rahmen</span>
+        <h1>
+            <span lang="en">Privacy Policy</span>
+            <span lang="de">Datenschutzerklärung</span>
         </h1>
         <p style="text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: -10px; font-size: 0.9em;">
-            <span lang="en">StateZer0: Encrypted Messenger with Minimized Metadata</span>
-            <span lang="de">StateZer0: Verschlüsselter Messenger mit minimierten Metadaten</span>
+            <span lang="en">StateZer0: End-to-End Encrypted Messenger with Minimized Server Metadata</span>
+            <span lang="de">StateZer0: Ende-zu-Ende-verschlüsselter Messenger mit minimierten Server-Metadaten</span>
         </p>
 
         <p style="text-align: center;">
-            <strong lang="en">Status: GHOST PROTOCOL ACTIVE</strong>
-            <strong lang="de">Status: GHOST-PROTOKOLL AKTIV</strong><br>
-
-            <span lang="en">Effective Date: November 10, 2026</span>
-            <span lang="de">Gültigkeitsdatum: 10. November 2026</span><br>
-
-            <span lang="en">Jurisdiction: Federal Republic of Germany (BGB, DDG, TDDDG)</span>
-            <span lang="de">Gerichtsstand: Bundesrepublik Deutschland (BGB, DDG, TDDDG)</span>
+            <strong lang="en">Effective Date: September 29, 2026</strong>
+            <strong lang="de">Gültigkeitsdatum: 29. September 2026</strong><br>
+            <span lang="en">Last Updated: September 29, 2026</span>
+            <span lang="de">Zuletzt aktualisiert: 29. September 2026</span><br>
+            <span lang="en">Jurisdiction: Federal Republic of Germany</span>
+            <span lang="de">Gerichtsstand: Bundesrepublik Deutschland</span>
         </p>
 
         <div class="nuclear-notice">
-            <span lang="en">TECHNICAL NESCIENCE | MERE CONDUIT PROTECTION ACTIVE</span>
-            <span lang="de">TECHNISCHE UNKENNTNIS | MERE-CONDUIT-SCHUTZ AKTIV</span><br>
-            <span lang="en" style="font-size: 0.8em; color: #f39c12;">BETA EXCEPTION: AUTHORIZED HARDWARE RE-ROLLING (v25.3.1)</span>
-            <span lang="de" style="font-size: 0.8em; color: #f39c12;">BETA-AUSNAHME: AUTORISIERTES HARDWARE-RE-ROLLING (v25.3.1)</span>
+            <span lang="en">END-TO-END ENCRYPTED CONTENT | MINIMIZED SERVER METADATA</span>
+            <span lang="de">ENDE-ZU-ENDE-VERSCHLÜSSELTE INHALTE | MINIMIERTE SERVER-METADATEN</span>
         </div>
 
-        <h2>1. Impressum</h2>
+        <h2>1. <span lang="en">Controller and Contact</span><span lang="de">Verantwortlicher und Kontakt</span></h2>
         <p>
-            <span lang="en">Pursuant to <span class="legal-ref">§ 5 DDG</span> (Digitale-Dienste-Gesetz):</span>
-            <span lang="de">Gemäß <span class="legal-ref">§ 5 DDG</span> (Digitale-Dienste-Gesetz):</span>
+            <span lang="en">The controller responsible for this service under the GDPR and the German Digital Services Act (<span class="legal-ref">DDG</span>) is:</span>
+            <span lang="de">Verantwortlicher für diesen Dienst im Sinne der DSGVO und des deutschen Digitale-Dienste-Gesetzes (<span class="legal-ref">DDG</span>) ist:</span>
         </p>
         <ul>
-            <li><strong><span lang="en">Service Provider:</span><span lang="de">Diensteanbieter:</span></strong> Individual Entrepreneur</li>
-            <li><strong><span lang="en">c/o Address:</span><span lang="de">c/o Anschrift:</span></strong> IP-Management #9966, Ludwig-Erhard-Straße 18, 20459 Hamburg</li>
-            <li><strong><span lang="en">Official Contact:</span><span lang="de">Kontaktdaten:</span></strong> statezer0@proton.me | +49 174 9385199</li>
-            <li>
-                <span lang="en"><strong>Legal Nature:</strong> The Service Provider acts strictly as a Technical Intermediary (Mere Conduit) under <span class="legal-ref">§ 7 DDG</span> and <span class="legal-ref">Art. 4 DSA</span>. The service does not initiate transmissions, select receivers, or modify information.</span>
-                <span lang="de"><strong>Rechtliche Einordnung:</strong> Der Diensteanbieter agiert ausschließlich als technischer Mittler (Mere Conduit) gemäß <span class="legal-ref">§ 7 DDG</span> und <span class="legal-ref">Art. 4 DSA</span>. Der Dienst veranlasst die Übermittlung nicht, wählt den Empfänger nicht aus und verändert die Informationen nicht.</span>
-            </li>
+            <li><strong><span lang="en">Provider:</span><span lang="de">Anbieter:</span></strong> <span lang="en">Individual Entrepreneur</span><span lang="de">Einzelunternehmer</span></li>
+            <li><strong><span lang="en">c/o Address:</span><span lang="de">c/o Anschrift:</span></strong> IP-Management #9966, Ludwig-Erhard-Straße 18, 20459 Hamburg, Germany</li>
+            <li><strong><span lang="en">Email:</span><span lang="de">E-Mail:</span></strong> <a href="mailto:statezer0@proton.me">statezer0@proton.me</a></li>
+            <li><strong><span lang="en">Legal / Abuse Contact:</span><span lang="de">Rechtlicher / Missbrauchs-Kontakt:</span></strong> <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a></li>
+            <li><strong><span lang="en">DSA Single Point of Contact:</span><span lang="de">DSA-Einzelkontaktstelle:</span></strong> <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a> <span lang="en">(for authorities and users under the Digital Services Act)</span><span lang="de">(für Behörden und Nutzer gemäß Digital Services Act)</span></li>
+            <li><strong><span lang="en">Phone:</span><span lang="de">Telefon:</span></strong> +49 174 9385199</li>
         </ul>
-
-        <h2>2. <span lang="en">Minimized-Visibility Storage</span><span lang="de">Speicherung mit minimierter Sichtbarkeit</span></h2>
         <p>
-            <span lang="en">StateZer0 is designed so the developer has no visibility into message or attachment content and cannot access your contacts. The server acts only as a relay for encrypted blobs. Metadata is minimized, not eliminated.</span>
-            <span lang="de">StateZer0 ist so konzipiert, dass der Entwickler keinen Einblick in Nachrichten- oder Anhangsinhalte hat und nicht auf Ihre Kontakte zugreifen kann. Der Server dient nur als Relay für verschlüsselte Blobs. Metadaten werden minimiert, nicht eliminiert.</span>
+            <span lang="en">I do not have a data protection officer. As an individual operator, I am directly reachable at the contact details above.</span>
+            <span lang="de">Ich habe keinen Datenschutzbeauftragten bestellt. Als Einzelunternehmer bin ich direkt unter den oben genannten Kontaktdaten erreichbar.</span>
         </p>
-        <ul>
-            <li><strong><span lang="en">RecyclerView Stability (v64.0.0):</span><span lang="de">RecyclerView-Stabilität (v64.0.0):</span></strong> <span lang="en">Media and document thumbnails use stable attachment UUIDs. Load callbacks are ignored if the view has been recycled, which reduces stale-image flashes.</span><span lang="de">Medien- und Dokumenten-Thumbnails verwenden stabile Attachment-UUIDs. Lade-Callbacks werden ignoriert, wenn der View recycelt wurde, was veraltete Bildblitze reduziert.</span></li>
-            <li><strong><span lang="en">Selection-Time Thumbnails (v63.0.0):</span><span lang="de">Auswahlzeit-Vorschauen (v63.0.0):</span></strong> <span lang="en">512px previews are generated locally when you select a file, so you can verify content before encryption. This happens in memory and in the app's secure cache.</span><span lang="de">512px-Vorschauen werden lokal generiert, wenn Sie eine Datei auswählen, damit Sie Inhalte vor der Verschlüsselung überprüfen können. Dies geschieht im Arbeitsspeicher und im sicheren Cache der App.</span></li>
-            <li><strong><span lang="en">Identity Promotion (v50.0.0):</span><span lang="de">Identitäts-Promotion (v50.0.0):</span></strong> <span lang="en">Temporary Routing IDs are promoted to permanent UUIDs in a single database transaction that also re-binds Signal sessions and re-anchors message history, preventing identity fragmentation.</span><span lang="de">Temporäre Routing-IDs werden in einer einzigen Datenbanktransaktion zu permanenten UUIDs heraufgestuft, die auch Signal-Sitzungen neu bindet und den Nachrichtenverlauf neu verankert, um Identitätsfragmentierung zu vermeiden.</span></li>
-            <li><strong><span lang="en">Alias Continuity (v50.0.0):</span><span lang="de">Alias-Kontinuität (v50.0.0):</span></strong> <span lang="en">A local <code>contact_aliases</code> table maps temporary "Ghost" IDs to verified users so message history stays continuous after a contact is promoted.</span><span lang="de">Eine lokale <code>contact_aliases</code>-Tabelle ordnet temporäre „Ghost"-IDs verifizierten Benutzern zu, damit der Nachrichtenverlauf nach einer Promotion kontinuierlich bleibt.</span></li>
-            <li><strong><span lang="en">Blinded Routing (v25.1.7):</span><span lang="de">Verblindetes Routing (v25.1.7):</span></strong> <span lang="en">The relay delivers messages using HMAC-SHA256 Routing IDs. These are client-side hashes of recipient identities combined with an application salt. The server uses these hashes for session management and delivery, so it cannot learn true account identifiers from the database.</span><span lang="de">Das Relay stellt Nachrichten über HMAC-SHA256-Routing-IDs zu. Dies sind clientseitige Hashes von Empfängeridentitäten in Kombination mit einem Applikations-Salt. Der Server verwendet diese Hashes für Sitzungsmanagement und Zustellung und kann so keine echten Kontokennungen aus der Datenbank lernen.</span></li>
-            <li><strong><span lang="en">Layer Isolation (v41.2.0):</span><span lang="de">Schicht-Isolation (v41.2.0):</span></strong> <span lang="en">Media preparation, hardware orchestration, permission management, and vault transactions are handled by separate controllers (<code>VaultInteractionController</code>, <code>ChatMediaInfrastructure</code>) so the protocol engine stays isolated from UI changes.</span><span lang="de">Medienvorbereitung, Hardware-Orchestrierung, Berechtigungsmanagement und Vault-Transaktionen werden von separaten Controllern (<code>VaultInteractionController</code>, <code>ChatMediaInfrastructure</code>) gehandhabt, damit die Protokoll-Engine von UI-Änderungen isoliert bleibt.</span></li>
-            <li><strong><span lang="en">Link Preview Isolation (v51.0.0):</span><span lang="de">Link-Vorschau-Isolation (v51.0.0):</span></strong> <span lang="en">Link previews run in isolated strategy classes behind a shared scraper utility. The preview pipeline cannot access Signal keys or the database.</span><span lang="de">Link-Vorschauen laufen in isolierten Strategieklassen hinter einem gemeinsamen Scraper-Utility. Die Vorschau-Pipeline kann nicht auf Signal-Schlüssel oder die Datenbank zugreifen.</span></li>
-            <li><strong><span lang="en">VoIP Isolation (v52.0.0):</span><span lang="de">VoIP-Isolation (v52.0.0):</span></strong> <span lang="en">The VoIP engine is decoupled from messaging, storage, and Signal protocol domains. WebRTC components are released when a call ends to prevent resource leaks.</span><span lang="de">Die VoIP-Engine ist von Messaging, Speicherung und Signal-Protokoll entkoppelt. WebRTC-Komponenten werden nach Gesprächsende freigegeben, um Ressourcenlecks zu vermeiden.</span></li>
-            <li><strong><span lang="en">Handshake Isolation (v54.0.0):</span><span lang="de">Handshake-Isolation (v54.0.0):</span></strong> <span lang="en">Connection signals use a separate protocol path. Handshake signals are stored as blinded relationship pointers so roster sync and recovery work, while the server cannot identify the participants or content.</span><span lang="de">Verbindungssignale verwenden einen separaten Protokoll-Pfad. Handshake-Signale werden als verblendete Beziehungs-Pointer gespeichert, damit Roster-Sync und Wiederherstellung funktionieren, während der Server Teilnehmer oder Inhalt nicht identifizieren kann.</span></li>
-            <li><strong><span lang="en">Relay Signer (v54.0.0):</span><span lang="de">Relay-Signer (v54.0.0):</span></strong> <span lang="en">The relay signer requires a production cryptographic key. Ephemeral key fallbacks have been removed so the server cannot operate with an insecure signing key.</span><span lang="de">Der Relay-Signer erfordert einen kryptografischen Produktionsschlüssel. Ephemere Schlüssel-Fallbacks wurden entfernt, damit der Server nicht mit einem unsicheren Signierschlüssel betreiben kann.</span></li>
-            <li><strong><span lang="en">Privacy by Default (v25.4.0):</span><span lang="de">Privacy by Default (v25.4.0):</span></strong> <span lang="en">Accounts are hidden from search upon registration. Users must explicitly opt-in via local settings to generate a <i>searchHash</i>.</span><span lang="de">Konten sind bei der Registrierung vor der Suche verborgen. Benutzer müssen sich explizit über die lokalen Einstellungen anmelden, um einen <i>searchHash</i> zu generieren.</span></li>
-            <li><strong><span lang="en">Sender Stripping:</span><span lang="de">Absender-Stripping:</span></strong> <span lang="en">Sender IDs are stripped from persistent message records. Stored messages are attributed to a generic "GHOST" sender at the database layer, breaking the link between sender and message.</span><span lang="de">Absender-IDs werden aus persistenten Nachrichtendatensätzen entfernt. Gespeicherte Nachrichten werden auf der Datenbankebene einem generischen „GHOST"-Absender zugeordnet, wodurch die Verbindung zwischen Absender und Nachricht unterbrochen wird.</span></li>
-            <li><strong><span lang="en">No IP Logging:</span><span lang="de">Keine IP-Protokollierung:</span></strong> <span lang="en">Our relay is configured to discard IP addresses. We do not store, log, or link your location to your identity.</span><span lang="de">Unser Relay ist so konfiguriert, dass IP-Adressen verworfen werden. Wir speichern, protokollieren oder verknüpfen Ihren Standort nicht mit Ihrer Identität.</span></li>
-            <li><strong><span lang="en">Zero Tracking:</span><span lang="de">Null Tracking:</span></strong> <span lang="en">We use no cookies, no analytics scripts, and no third-party marketing SDKs.</span><span lang="de">Wir verwenden keine Cookies, keine Analyse-Skripte und keine Marketing-SDKs von Drittanbietern.</span></li>
-            <li><strong><span lang="en">Backend Storage:</span><span lang="de">Backend-Speicherung:</span></strong> <span lang="en">Relay database fields are encrypted at rest with AES-256-GCM using <code>GHOST_FIELD_KEY</code>. Message and attachment payloads are opaque encrypted blobs that the relay cannot decrypt.</span><span lang="de">Relay-Datenbankfelder sind im Ruhezustand mit AES-256-GCM unter Verwendung von <code>GHOST_FIELD_KEY</code> verschlüsselt. Nachrichten- und Anhangs-Payloads sind undurchsichtige verschlüsselte Blobs, die das Relay nicht entschlüsseln kann.</span></li>
-            <li><strong><span lang="en">Contact Discovery:</span><span lang="de">Kontaktentdeckung:</span></strong> <span lang="en">Users are hidden from search by default. Adding contacts requires a mutual-consent invite request that the recipient can Accept or Reject. The relay does not maintain a social graph.</span><span lang="de">Benutzer sind standardmäßig vor der Suche verborgen. Das Hinzufügen von Kontakten erfordert eine Einladungsanfrage mit gegenseitiger Zustimmung, die der Empfänger annehmen oder ablehnen kann. Das Relay pflegt keinen sozialen Graphen.</span></li>
-            <li><strong><span lang="en">Link Previews:</span><span lang="de">Link-Vorschauen:</span></strong> <span lang="en">Previews are fetched locally on the device using rotating user-agents. The linked site sees the device's IP address. StateZer0 cannot bypass login walls or paywalls, and rich previews are not guaranteed.</span><span lang="de">Vorschauen werden lokal auf dem Gerät mit rotierenden User-Agents abgerufen. Die verlinkte Website sieht die IP-Adresse des Geräts. StateZer0 kann keine Login- oder Bezahlschranken umgehen, und umfangreiche Vorschauen sind nicht garantiert.</span></li>
-            <li><strong><span lang="en">VoIP Privacy:</span><span lang="de">VoIP-Datenschutz:</span></strong> <span lang="en">WebRTC native components are disposed and released when a call ends. Calls are forced through TURN relays as a privacy choice, which adds latency.</span><span lang="de">Native WebRTC-Komponenten werden nach Gesprächsende freigegeben und entsorgt. Anrufe werden als Datenschutzmaßnahme über TURN-Relays geleitet, was die Latenz erhöht.</span></li>
-        </ul>
 
-        <h2>3. <span lang="en">Hardware Anchoring & Scarcity</span><span lang="de">Hardware-Verankerung & Knappheit</span></h2>
+        <h2>2. <span lang="en">What StateZer0 Is and Is Not</span><span lang="de">Was StateZer0 ist und was nicht</span></h2>
         <p>
-            <span lang="en">To prevent network abuse and Sybil attacks (spam bots), we enforce a strict "One-Account-Per-Device" policy under <span class="legal-ref">GDPR Art. 6(1)(f)</span> (Legitimate Interest).</span>
-            <span lang="de">Um Netzwerkmissbrauch und Sybil-Angriffe (Spambots) zu verhindern, setzen wir eine strikte „Ein-Konto-pro-Gerät"-Richtlinie gemäß <span class="legal-ref">Art. 6(1)(f) DSGVO</span> (Berechtigtes Interesse) um.</span>
+            <span lang="en">StateZer0 is an end-to-end encrypted messaging and voice-call relay. The server stores and forwards encrypted message and attachment payloads that I cannot decrypt. I do not have access to your message content, attachment content, contact names, or conversation history.</span>
+            <span lang="de">StateZer0 ist ein Ende-zu-Ende-verschlüsselter Nachrichten- und Sprachanruf-Relay. Der Server speichert und leitet verschlüsselte Nachrichten- und Anhangs-Payloads weiter, die ich nicht entschlüsseln kann. Ich habe keinen Zugriff auf Ihre Nachrichteninhalte, Anhangsinhalte, Kontaktnamen oder Gesprächshistorie.</span>
         </p>
-        <ul>
-            <li><strong><span lang="en">Device Attestation:</span><span lang="de">Geräte-Attestierung:</span></strong> <span lang="en">We use the Google Play Integrity API to verify device authenticity. The client obtains a hardware-backed token proving the environment is genuine.</span><span lang="de">Wir nutzen die Google Play Integrity API zur Verifizierung der Gerätechtheit. Der Client erhält ein hardwaregestütztes Token, das beweist, dass die Umgebung echt ist.</span></li>
-            <li><strong><span lang="en">BETA BYPASS (Temporary):</span><span lang="de">BETA-BYPASS (Temporär):</span></strong> <span lang="en">During the commercial audit phase, 12 authorized testers may use the <b>GHOST_BETA_TESTER</b> token. This lets the relay clear hardware occupancy records for frictionless testing without hardware replacement. This exception is internal and will be removed at commercial launch.</span><span lang="de">Während der kommerziellen Audit-Phase dürfen 12 autorisierte Tester das <b>GHOST_BETA_TESTER</b>-Token verwenden. Dies erlaubt dem Relay, Hardware-Belegungsdatensätze zu löschen, um reibungsloses Testen ohne Hardware-Austausch zu ermöglichen. Diese Ausnahme ist intern und wird beim kommerziellen Start entfernt.</span></li>
-            <li><strong><span lang="en">Android Keystore Anchoring:</span><span lang="de">Android-Keystore-Verankerung:</span></strong> <span lang="en">Primary identity keys are generated and managed via the Android Keystore as a device-bound identity key. These keys are non-exportable from the app. We store only a salted SHA-256 hash of the public hardware key to mark hardware as "Occupied."</span><span lang="de">Primäre Identitätsschlüssel werden über den Android-Keystore als gerätegebundener Identitätsschlüssel generiert und verwaltet. Diese Schlüssel sind aus der App nicht exportierbar. Wir speichern nur einen salted SHA-256-Hash des öffentlichen Hardware-Schlüssels, um die Hardware als „belegt" zu markieren.</span></li>
-            <li><strong><span lang="en">Sovereign Persistence Anchor:</span><span lang="de">Souveräner Persistenz-Anker:</span></strong> <span lang="en">A hidden anchor is stored in shared scoped storage and the user's private Google Cloud configuration space (1KB). These anchors survive uninstalls to detect existing hardware occupancy and route returning users to the 12-word recovery flow.</span><span lang="de">Ein versteckter Anker wird im gemeinsamen Speicher und im privaten Google Cloud-Konfigurationsraum (1KB) des Benutzers gespeichert. Diese Anker überdauern Deinstallationen, um bestehende Hardware-Belegungen zu erkennen und wiederkehrende Benutzer zum 12-Wörter-Wiederherstellungsablauf zu leiten.</span></li>
-        </ul>
-
-        <h2>4. <span lang="en">Sovereign Self-Healing & Mutual Consent</span><span lang="de">Souveräne Selbstheilung & Gegenseitige Zustimmung</span></h2>
         <p>
-            <span lang="en">To ensure recoverability without centralized backups, StateZer0 uses decentralized self-healing and mutual consent protocols.</span>
-            <span lang="de">Um Wiederherstellbarkeit ohne zentralisierte Backups zu gewährleisten, verwendet StateZer0 dezentrale Selbstheilungs- und Konsensprotokolle.</span>
+            <span lang="en">However, the relay is not invisible. To deliver traffic, I must process a minimum set of metadata: pseudonymous routing identifiers, contact relationship records, timestamps, push tokens, delivery status, and encrypted message envelopes. This metadata is minimized, not eliminated.</span>
+            <span lang="de">Das Relay ist jedoch nicht unsichtbar. Um Verkehr zuzustellen, muss ich einen Mindestsatz an Metadaten verarbeiten: pseudonyme Routing-Kennungen, Kontaktbeziehungsdatensätze, Zeitstempel, Push-Tokens, Zustellstatus und verschlüsselte Nachrichtenumschläge. Diese Metadaten werden minimiert, nicht eliminiert.</span>
         </p>
-        <ul>
-            <li><strong><span lang="en">Deterministic Hydration:</span><span lang="de">Deterministische Hydrierung:</span></strong> <span lang="en">Your 12-word recovery phrase re-derives your cryptographic identity. Your contacts can recognize you after a data wipe.</span><span lang="de">Ihre 12-Wörter-Wiederherstellungsphrase leitet Ihre kryptographische Identität neu ab. Ihre Kontakte können Sie nach einer Datenlöschung wiedererkennen.</span></li>
-            <li><strong><span lang="en">Shadow Resolution:</span><span lang="de">Shadow Resolution:</span></strong> <span lang="en">Upon restoration, the app sends an encrypted IDENTITY_PROBE to your authorized contacts to restore profile metadata without server visibility.</span><span lang="de">Nach der Wiederherstellung sendet die App einen verschlüsselten IDENTITY_PROBE an Ihre autorisierten Kontakte, um Profil-Metadaten ohne Sichtbarkeit für den Server wiederherzustellen.</span></li>
-            <li><strong><span lang="en">Mutual Consent Quarantine (v25.1.4):</span><span lang="de">Gegenseitige Zustimmungs-Quarantäne (v25.1.4):</span></strong> <span lang="en">Inbound connection requests from unknown IDs are held in a local encrypted quarantine. Reciprocal signals are suppressed until the user explicitly accepts the request.</span><span lang="de">Eingehende Verbindungsanfragen von unbekannten IDs werden in einer lokalen verschlüsselten Quarantäne gehalten. Gegenseitige Signale werden unterdrückt, bis der Benutzer die Anfrage explizit akzeptiert.</span></li>
-            <li><strong><span lang="en">Out-of-Band Discovery (v25.1.4):</span><span lang="de">Out-of-Band Discovery (v25.1.4):</span></strong> <span lang="en">Discovery via QR codes and deep links happens peer-to-peer. The relay is not involved in generating, transmitting, or scanning them. Public Identity Keys are exchanged out-of-band for peer verification and MITM prevention.</span><span lang="de">Die Entdeckung über QR-Codes und Deep-Links erfolgt Peer-to-Peer. Das Relay ist nicht an der Erzeugung, Übertragung oder dem Scannen beteiligt. Öffentliche Identitätsschlüssel werden out-of-band ausgetauscht, um Peer-Verifizierung und MITM-Prävention zu ermöglichen.</span></li>
-        </ul>
 
-        <h2>5. <span lang="en">Decentralized Device Migration</span><span lang="de">Dezentrale Gerätemigration</span></h2>
+        <h2>3. <span lang="en">Data I Process</span><span lang="de">Daten, die ich verarbeite</span></h2>
         <p>
-            <span lang="en">StateZer0 uses a "Single-Seat" identity model via an encrypted peer-to-peer migration engine.</span>
-            <span lang="de">StateZer0 verwendet ein „Single-Seat"-Identitätsmodell über eine verschlüsselte Peer-to-Peer-Migrations-Engine.</span>
+            <span lang="en">The following table describes what data is processed, where it is stored, and why it is necessary.</span>
+            <span lang="de">Die folgende Tabelle beschreibt, welche Daten verarbeitet werden, wo sie gespeichert werden und warum sie erforderlich sind.</span>
         </p>
-        <ul>
-            <li><strong><span lang="en">Cloud-Free Handoff:</span><span lang="de">Cloud-freier Handoff:</span></strong> <span lang="en">Migration happens over a local encrypted Wi-Fi tunnel. No user data touches the cloud or central servers.</span><span lang="de">Die Migration erfolgt über einen lokalen verschlüsselten Wi-Fi-Tunnel. Keine Benutzerdaten berühren die Cloud oder zentrale Server.</span></li>
-            <li><strong><span lang="en">Remote Revocation:</span><span lang="de">Fern-Widerruf:</span></strong> <span lang="en">Activating a new device revokes the session and push capabilities of the old hardware.</span><span lang="de">Die Aktivierung eines neuen Geräts widerruft die Sitzungs- und Push-Funktionen der alten Hardware.</span></li>
-            <li><strong><span lang="en">Scorched Earth Handoff:</span><span lang="de">Scorched Earth Handoff:</span></strong> <span lang="en">The source device wipes its local data only after the target device confirms a successful mount of the database. This prevents data loss while removing data from the old device.</span><span lang="de">Das Quellgerät löscht seine lokalen Daten erst, wenn das Zielgerät ein erfolgreiches Mounten der Datenbank bestätigt. Dies verhindert Datenverlust und entfernt gleichzeitig Daten vom alten Gerät.</span></li>
-        </ul>
-
-        <h2>6. <span lang="en">Liability Shield</span><span lang="de">Haftungsausschluss</span></h2>
-        <p>
-            <span lang="en">Under <span class="legal-ref">Art. 4 EU Digital Services Act (DSA)</span>:</span>
-            <span lang="de">Gemäß <span class="legal-ref">Art. 4 EU Digital Services Act (DSA)</span>:</span>
-        </p>
-        <ul>
-            <li><strong><span lang="en">Technical Nescience:</span><span lang="de">Technische Unkenntnis:</span></strong> <span lang="en">The provider cannot access the content of transmissions. All data is End-to-End Encrypted (E2EE) via the Signal Protocol.</span><span lang="de">Der Anbieter kann nicht auf die Inhalte der Übermittlungen zugreifen. Alle Daten sind über das Signal-Protokoll Ende-zu-Ende verschlüsselt (E2EE).</span></li>
-            <li><strong><span lang="en">Liability Exemption:</span><span lang="de">Haftungsfreistellung:</span></strong> <span lang="en">As a neutral technical tool, the provider has no actual knowledge of illegal activity and assumes no liability for user-generated actions.</span><span lang="de">Als neutrales technisches Werkzeug hat der Anbieter keine tatsächliche Kenntnis von rechtswidrigen Aktivitäten und übernimmt keine Haftung für Nutzerhandlungen.</span></li>
-        </ul>
-
-        <h2>7. <span lang="en">Data Minimization</span><span lang="de">Datenminimierung</span></h2>
-        <ul>
-            <li><strong><span lang="en">Multi-Document & Archive Integrity (v52.2.0):</span><span lang="de">Multi-Dokument- & Archiv-Integrität (v52.2.0):</span></strong> <span lang="en">Bulk document transfers preserve original filenames and extensions for developer (<code>.py</code>, <code>.kt</code>) and archive (<code>.tar</code>, <code>.gz</code>) formats. If a batch operation fails, transient encrypted blobs are deleted.</span><span lang="de">Massen-Dokumententransfers bewahren Originaldateinamen und -erweiterungen für Entwickler- (<code>.py</code>, <code>.kt</code>) und Archivformate (<code>.tar</code>, <code>.gz</code>). Wenn eine Batch-Operation fehlschlägt, werden flüchtige verschlüsselte Blobs gelöscht.</span></li>
-            <li><strong><span lang="en">Encrypted Metadata:</span><span lang="de">Verschlüsselte Metadaten:</span></strong> <span lang="en">Filenames, media keys, and captions are encrypted inside the message envelope. The server cannot read your media metadata.</span><span lang="de">Dateinamen, Media-Keys und Bildunterschriften werden innerhalb des Nachrichtenumschlags verschlüsselt. Der Server kann Ihre Medien-Metadaten nicht lesen.</span></li>
-            <li><strong><span lang="en">Atomic Bundling (v25.1.2):</span><span lang="de">Atomares Bundling (v25.1.2):</span></strong> <span lang="en">Multi-attachment enclaves are transmitted as a single manifest inside the Signal message envelope. Individual assets are addressed via composite IDs resolved in memory.</span><span lang="de">Multi-Attachment-Enklaven werden als ein einziges Manifest innerhalb des Signal-Nachrichtenumschlags übertragen. Einzelne Assets werden über zusammengesetzte IDs im Speicher adressiert.</span></li>
-            <li><strong><span lang="en">Staging Isolation (v40.6.2):</span><span lang="de">Staging-Isolation (v40.6.2):</span></strong> <span lang="en">External document handoffs are restricted to an isolated <code>shared_staging</code> subfolder. The staging area is cleared on app startup, before a new viewing session, and when you exit the chat.</span><span lang="de">Externe Dokumentenübergaben sind auf einen isolierten <code>shared_staging</code>-Unterordner beschränkt. Der Staging-Bereich wird beim App-Start, vor einer neuen Anzeigesitzung und beim Verlassen des Chats geleert.</span></li>
-            <li><strong><span lang="en">Metadata Sterilization:</span><span lang="de">Metadaten-Sterilisierung:</span></strong> <span lang="en">The Ghost Capture pipeline scrubs EXIF data (GPS, hardware signatures) locally before encryption.</span><span lang="de">Die Ghost Capture-Pipeline bereinigt EXIF-Daten (GPS, Hardware-Signaturen) lokal vor der Verschlüsselung.</span></li>
-            <li><strong><span lang="en">Ephemeral Transit:</span><span lang="de">Ephemerer Transit:</span></strong> <span lang="en">Communication data is subject to a 24-hour window after delivery and a 72-hour window if undelivered. After that window, data is deleted from the relay. Local chat history on your device remains under your control.</span><span lang="de">Kommunikationsdaten unterliegen einem 24-Stunden-Fenster nach Zustellung bzw. einem 72-Stunden-Fenster bei Nichtzustellung. Danach werden die Daten vom Relay gelöscht. Die lokale Chathistorie auf Ihrem Gerät bleibt unter Ihrer Kontrolle.</span></li>
-            <li><strong><span lang="en">Persistent Invite Isolation (v25.0.0):</span><span lang="de">Persistente Einladungs-Isolation (v25.0.0):</span></strong> <span lang="en">Invite codes are stored persistently for reliable handshakes. These records contain only the invite hash and the sender's anonymous routing ID. Usernames and metadata are excluded.</span><span lang="de">Einladungscodes werden persistent gespeichert, um zuverlässige Handshakes zu gewährleisten. Diese Datensätze enthalten nur den Einladungs-Hash und die anonyme Routing-ID des Senders. Benutzernamen und Metadaten sind ausgeschlossen.</span></li>
-            <li><strong><span lang="en">Pipeline Decoupling (v28.0.2):</span><span lang="de">Pipeline-Entkopplung (v28.0.2):</span></strong> <span lang="en">Single-item media and multi-item bundles use separate execution paths. Single media items use the -1 sentinel to bypass bundle-specific database logic.</span><span lang="de">Einzelmedien und Multi-Element-Bundles verwenden separate Ausführungspfade. Einzelmedien verwenden den -1-Sentinel, um Bundle-spezifische Datenbanklogik zu umgehen.</span></li>
-            <li><strong><span lang="en">Unified Player Keying (v28.0.2):</span><span lang="de">Einheitliche Player-Indizierung (v28.0.2):</span></strong> <span lang="en">ExoPlayer instances are indexed with composite keys (msg_ vs att_) to prevent decoder contention during navigation.</span><span lang="de">ExoPlayer-Instanzen werden mit Verbundschlüsseln (msg_ vs. att_) indiziert, um Decoder-Konflikte bei der Navigation zu vermeiden.</span></li>
-            <li><strong><span lang="en">Iterative Bundle Router (v29.1.0):</span><span lang="de">Iterativer Bundle-Router (v29.1.0):</span></strong> <span lang="en">Multi-attachment bundles are processed by an iterative routing engine. Mixed types are classified and encrypted before transmission. The parent message inherits the shortest expiry from its children.</span><span lang="de">Multi-Attachment-Bundles werden von einer iterativen Routing-Engine verarbeitet. Gemischte Typen werden vor der Übertragung klassifiziert und verschlüsselt. Die übergeordnete Nachricht erbt das kürzeste Ablaufdatum von ihren untergeordneten Elementen.</span></li>
-        </ul>
-
-        <h2>8. TDDDG & <span lang="en">Terminal Sovereignty</span><span lang="de">Endgeräte-Souveränität</span></h2>
-        <p>
-            <span lang="en">Pursuant to <span class="legal-ref">§ 25 TDDDG</span>:</span>
-            <span lang="de">Gemäß <span class="legal-ref">§ 25 TDDDG</span>:</span>
-        </p>
-        <ul>
-            <li><strong><span lang="en">Infrastructure & Storage:</span><span lang="de">Infrastruktur & Speicherung:</span></strong> <span lang="en">StateZer0 uses Cloudflare R2 for encrypted media storage. Assets are encrypted with AES-256-GCM before transmission. The infrastructure provider cannot read the content, filenames, or purpose of the data.</span><span lang="de">StateZer0 nutzt Cloudflare R2 für verschlüsselte Medienspeicherung. Assets werden vor der Übertragung mit AES-256-GCM verschlüsselt. Der Infrastrukturanbieter kann Inhalt, Dateinamen oder Zweck der Daten nicht lesen.</span></li>
-            <li><strong><span lang="en">Volatile Isolation:</span><span lang="de">Flüchtige Isolation:</span></strong> <span lang="en">Decrypted media is processed in the app's memory during active use. No plaintext is synchronized with system galleries or unencrypted cloud backups.</span><span lang="de">Entschlüsselte Medien werden während der aktiven Nutzung im Arbeitsspeicher der App verarbeitet. Es wird kein Klartext mit Systemgalerien oder unverschlüsselten Cloud-Backups synchronisiert.</span></li>
-            <li><strong><span lang="en">Device-Bound Keys:</span><span lang="de">Gerätegebundene Schlüssel:</span></strong> <span lang="en">Encryption keys are stored via the Android Keystore as device-bound keys. They remain under your exclusive control within the app.</span><span lang="de">Verschlüsselungsschlüssel werden über den Android-Keystore als gerätegebundene Schlüssel gespeichert. Sie bleiben innerhalb der App unter Ihrer exklusiven Kontrolle.</span></li>
-        </ul>
-
-        <h2>9. <span lang="en">Sovereign Vault & Media Handling</span><span lang="de">Souveräner Tresor & Medienhandhabung</span></h2>
-        <ul>
-            <li><strong><span lang="en">Metadata Stripping:</span><span lang="de">Metadaten-Entfernung:</span></strong> <span lang="en">StateZer0 strips EXIF data (GPS, device identifiers, capture timestamps) from images and documents locally before encryption.</span><span lang="de">StateZer0 entfernt EXIF-Daten (GPS, Gerätekennungen, Aufnahmezeitstempel) von Bildern und Dokumenten lokal vor der Verschlüsselung.</span></li>
-            <li><strong><span lang="en">Encrypted Vault Files:</span><span lang="de">Verschlüsselte Vault-Dateien:</span></strong> <span lang="en">Vault files are encrypted at rest. When viewed, they are decrypted into app memory. Temporary cache files are cleared and overwritten as a best-effort measure when no longer needed.</span><span lang="de">Vault-Dateien sind im Ruhezustand verschlüsselt. Bei der Anzeige werden sie in den App-Speicher entschlüsselt. Temporäre Cache-Dateien werden bei Nichtgebrauch gelöscht und als bestmögliche Maßnahme überschrieben.</span></li>
-            <li><strong><span lang="en">Secure Reshare:</span><span lang="de">Sicheres Weitergeben:</span></strong> <span lang="en">Secure reshare reuses the original encryption keys for the file; the file content is not re-encrypted with a new key during reshare.</span><span lang="de">Sicheres Weitergeben verwendet die ursprünglichen Verschlüsselungsschlüssel der Datei neu; der Dateiinhalt wird beim Weitergeben nicht mit einem neuen Schlüssel neu verschlüsselt.</span></li>
-            <li><strong><span lang="en">Media Playback:</span><span lang="de">Medienwiedergabe:</span></strong> <span lang="en">Media is decrypted into memory for playback. No unencrypted persistent copy is kept; temporary buffers are released when playback ends.</span><span lang="de">Medien werden für die Wiedergabe in den Speicher entschlüsselt. Es wird keine unverschlüsselte dauerhafte Kopie aufbewahrt; temporäre Puffer werden nach Beendigung der Wiedergabe freigegeben.</span></li>
-            <li><strong><span lang="en">Best-Effort Deletion:</span><span lang="de">Löschung nach besten Kräften:</span></strong> <span lang="en">Deleting from the Vault overwrites the file with random bytes before deletion as a best-effort measure against simple recovery tools.</span><span lang="de">Das Löschen aus dem Vault überschreibt die Datei vor dem Löschen mit zufälligen Bytes als bestmögliche Maßnahme gegen einfache Wiederherstellungstools.</span></li>
-        </ul>
-
-        <h2>10. <span lang="en">Account Deletion &amp; Panic PIN</span><span lang="de">Kontolöschung &amp; Panic PIN</span></h2>
-        <ul>
-            <li><strong><span lang="en">In-App Deletion:</span><span lang="de">Löschung in der App:</span></strong> <span lang="en">You can delete your account from Account Settings, Privacy Settings, or by entering your Panic PIN at login. The app sends a server-side <code>DELETE /users/me</code> request to the relay and then performs a local wipe.</span><span lang="de">Sie können Ihr Konto in den Kontoeinstellungen, Datenschutzeinstellungen oder durch Eingabe Ihrer Panic PIN beim Login löschen. Die App sendet eine serverseitige <code>DELETE /users/me</code>-Anfrage an das Relay und führt anschließend eine lokale Löschung durch.</span></li>
-            <li><strong><span lang="en">Server-Side Erasure:</span><span lang="de">Serverseitige Löschung:</span></strong> <span lang="en">When deletion is requested, the relay removes the user row, Signal pre-keys, sessions, push tokens, active invites, undelivered messages, and undelivered attachments. Delivered content is deleted within 24 hours; undelivered content is deleted within 72 hours. R2 file objects are removed by a background reaper that runs approximately every 10 minutes.</span><span lang="de">Bei einer Löschanfrage entfernt das Relay die Benutzerzeile, Signal-Pre-Keys, Sitzungen, Push-Tokens, aktive Einladungen, nicht zugestellte Nachrichten und nicht zugestellte Anhänge. Zugestellte Inhalte werden innerhalb von 24 Stunden gelöscht, nicht zugestellte innerhalb von 72 Stunden. R2-Dateiobjekte werden von einem Hintergrund-Reaper entfernt, der etwa alle 10 Minuten läuft.</span></li>
-            <li><strong><span lang="en">Local Wipe:</span><span lang="de">Lokale Löschung:</span></strong> <span lang="en">The app closes and deletes the encrypted database, deletes vault/enclave/cache files using a best-effort overwrite before deletion, clears SharedPreferences and local settings, cancels background workers, dismisses notifications, and clears the clipboard. In Phase 1, the Android Keystore keys remain intact, but encrypted data and wrapped passphrase files are destroyed.</span><span lang="de">Die App schließt und löscht die verschlüsselte Datenbank, löscht Vault-/Enklaven-/Cache-Dateien mit einer Überschreibung nach besten Kräften vor der Löschung, leert SharedPreferences und lokale Einstellungen, bricht Hintergrund-Worker ab, entfernt Benachrichtigungen und leert die Zwischenablage. In Phase 1 bleiben die Android-Keystore-Schlüssel erhalten, aber verschlüsselte Daten und umschlossene Passphrasen-Dateien werden zerstört.</span></li>
-            <li><strong><span lang="en">Retention for Legal Compliance:</span><span lang="de">Aufbewahrung aus rechtlichen Gründen:</span></strong> <span lang="en">Minimal server logs (timestamps, blinded routing IDs, and deletion audit records) may be retained for up to 30 days to prevent abuse and comply with legal obligations. No message content is retained after the deletion periods above.</span><span lang="de">Minimale Server-Logs (Zeitstempel, verblendete Routing-IDs und Lösch-Audit-Einträge) können zur Missbrauchsbekämpfung und zur Erfüllung rechtlicher Verpflichtungen bis zu 30 Tage aufbewahrt werden. Nach den oben genannten Löschfristen wird kein Nachrichteninhalt aufbewahrt.</span></li>
-            <li><strong><span lang="en">Panic PIN:</span><span lang="de">Panic PIN:</span></strong> <span lang="en">A secondary password that triggers the same deletion and local wipe while showing a connection-error screen for physical safety.</span><span lang="de">Ein sekundäres Passwort, das dieselbe Löschung und lokale Bereinigung auslöst, während zur physischen Sicherheit ein Verbindungsfehler-Bildschirm angezeigt wird.</span></li>
-        </ul>
-
-        <h2>11. <span lang="en">Zero-Clipboard Sovereign Archiving</span><span lang="de">Zero-Clipboard Souveräne Archivierung</span></h2>
-        <ul>
-            <li><strong><span lang="en">Side-Channel Mitigation:</span><span lang="de">Side-Channel-Minderung:</span></strong> <span lang="en">Text selected for the "Sovereign Seal" is moved internally without touching the Android OS Clipboard, protecting it from clipboard-sniffing apps.</span><span lang="de">Texte, die für das „Sovereign Seal" ausgewählt wurden, werden intern verschoben, ohne das Android OS Clipboard zu berühren, was sie vor Clipboard-Sniffing-Apps schützt.</span></li>
-            <li><strong><span lang="en">Immutable Transcripts:</span><span lang="de">Unveränderliche Transkripte:</span></strong> <span lang="en">Sealed transcripts include a header that cryptographically links the text to its original sender and timestamp, creating a verifiable record.</span><span lang="de">Versiegelte Transkripte enthalten einen Header, der den Text kryptografisch mit seinem ursprünglichen Absender und Zeitstempel verknüpft und so eine verifizierbare Aufzeichnung erstellt.</span></li>
-        </ul>
-
-        <h2>12. <span lang="en">Data Processing Inventory</span><span lang="de">Inventar der Datenverarbeitung</span></h2>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9em;">
+        <table>
             <thead>
-                <tr style="background-color: #1a1a1a; color: #fff;">
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Data Type</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Storage Location</th>
-                    <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Retention Policy</th>
+                <tr>
+                    <th><span lang="en">Data</span><span lang="de">Daten</span></th>
+                    <th><span lang="en">Location</span><span lang="de">Speicherort</span></th>
+                    <th><span lang="en">Purpose</span><span lang="de">Zweck</span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">User Record, Pre-Keys, Sessions, Push Tokens</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Relay Database</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Deleted immediately on account deletion</td>
+                    <td><span lang="en">Username, routing ID, hardware hash, push token</span><span lang="de">Benutzername, Routing-ID, Hardware-Hash, Push-Token</span></td>
+                    <td><span lang="en">Relay database (MongoDB), encrypted at rest</span><span lang="de">Relay-Datenbank (MongoDB), im Ruhezustand verschlüsselt</span></td>
+                    <td><span lang="en">Account identity, device-scarcity enforcement, offline push delivery</span><span lang="de">Konto-Identität, Geräte-Knappheitsdurchsetzung, Offline-Push-Zustellung</span></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Delivered Messages & Attachments</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Relay Database / Cloudflare R2</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">24 hours after delivery; deleted immediately on account deletion</td>
+                    <td><span lang="en">Olm identity key, pre-keys, fallback keys</span><span lang="de">Olm-Identitätsschlüssel, Pre-Keys, Fallback-Keys</span></td>
+                    <td><span lang="en">Relay database (MongoDB), encrypted at rest</span><span lang="de">Relay-Datenbank (MongoDB), im Ruhezustand verschlüsselt</span></td>
+                    <td><span lang="en">End-to-end encryption setup for new contacts</span><span lang="de">Ende-zu-Ende-Verschlüsselungsaufbau für neue Kontakte</span></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Undelivered Messages & Attachments</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Relay Database / Cloudflare R2</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">72 hours or until account deletion</td>
+                    <td><span lang="en">Contact relationship records</span><span lang="de">Kontaktbeziehungsdatensätze</span></td>
+                    <td><span lang="en">Relay database (MongoDB), encrypted at rest</span><span lang="de">Relay-Datenbank (MongoDB), im Ruhezustand verschlüsselt</span></td>
+                    <td><span lang="en">Roster sync and contact discovery; I do not use these to build a social graph</span><span lang="de">Roster-Sync und Kontaktentdeckung; ich verwende diese nicht zum Aufbau eines sozialen Graphen</span></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Hardware Hash (Single-Seat Sentinel)</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Relay Database</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Deleted on account deletion; retained only while account is active</td>
+                    <td><span lang="en">Encrypted message payloads (sender ID, receiver routing ID, timestamp, type, delivery/ack status)</span><span lang="de">Verschlüsselte Nachrichten-Payloads (Absender-ID, Empfänger-Routing-ID, Zeitstempel, Typ, Zustell-/ACK-Status)</span></td>
+                    <td><span lang="en">Relay database (MongoDB), encrypted at rest</span><span lang="de">Relay-Datenbank (MongoDB), im Ruhezustand verschlüsselt</span></td>
+                    <td><span lang="en">Store-and-forward delivery; I cannot decrypt the content</span><span lang="de">Store-and-Forward-Zustellung; ich kann den Inhalt nicht entschlüsseln</span></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Local Vault, Messages, Settings, Avatars</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Device Storage</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Deleted during in-app account deletion / Panic PIN wipe</td>
+                    <td><span lang="en">Encrypted attachment blobs</span><span lang="de">Verschlüsselte Anhangs-Blobs</span></td>
+                    <td><span lang="en">Cloudflare R2 object storage</span><span lang="de">Cloudflare R2 Object Storage</span></td>
+                    <td><span lang="en">Temporary storage until delivery; I cannot decrypt the content</span><span lang="de">Temporäre Speicherung bis zur Zustellung; ich kann den Inhalt nicht entschlüsseln</span></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Minimal Server Logs</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Relay Logs</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Up to 30 days for abuse prevention and legal compliance</td>
+                    <td><span lang="en">Server logs (method, path, status, timestamp, security events, errors)</span><span lang="de">Server-Logs (Methode, Pfad, Status, Zeitstempel, Sicherheitsereignisse, Fehler)</span></td>
+                    <td><span lang="en">Render hosting logs</span><span lang="de">Render-Hosting-Logs</span></td>
+                    <td><span lang="en">Abuse prevention, security, debugging</span><span lang="de">Missbrauchsprävention, Sicherheit, Fehlerbehebung</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">VoIP signaling metadata</span><span lang="de">VoIP-Signalisierungs-Metadaten</span></td>
+                    <td><span lang="en">Relay memory and database during call setup</span><span lang="de">Relay-Arbeitsspeicher und Datenbank während des Anrufaufbaus</span></td>
+                    <td><span lang="en">Call routing; call media is peer-to-peer and not stored</span><span lang="de">Anruf-Routing; Anrufmedien sind Peer-to-Peer und werden nicht gespeichert</span></td>
                 </tr>
             </tbody>
         </table>
 
+        <h2>4. <span lang="en">What I Cannot Access</span><span lang="de">Auf was ich keinen Zugriff habe</span></h2>
+        <p>
+            <span lang="en">Because messages and attachments are encrypted on your device before transmission using the Olm Double Ratchet protocol and per-file AES-256-GCM keys, I cannot access:</span>
+            <span lang="de">Da Nachrichten und Anhänge vor der Übertragung auf Ihrem Gerät mit dem Olm-Double-Ratchet-Protokoll und pro Datei AES-256-GCM-Schlüsseln verschlüsselt werden, kann ich nicht darauf zugreifen:</span>
+        </p>
+        <ul>
+            <li><span lang="en">The plaintext content of your messages or voice notes</span><span lang="de">Den Klartextinhalt Ihrer Nachrichten oder Sprachnotizen</span></li>
+            <li><span lang="en">The content of photos, videos, documents, or GIFs you send</span><span lang="de">Den Inhalt von Fotos, Videos, Dokumenten oder GIFs, die Sie senden</span></li>
+            <li><span lang="en">Your contact names as they appear in your address book</span><span lang="de">Ihre Kontaktnamen, wie sie in Ihrem Adressbuch erscheinen</span></li>
+            <li><span lang="en">The display names and avatars you share with your contacts after the handshake</span><span lang="de">Die Anzeigenamen und Avatare, die Sie nach dem Handshake mit Ihren Kontakten teilen</span></li>
+            <li><span lang="en">Link preview metadata (title, description, preview image) when included in a message</span><span lang="de">Link-Vorschau-Metadaten (Titel, Beschreibung, Vorschaubild), wenn sie in einer Nachricht enthalten sind</span></li>
+            <li><span lang="en">Your 12-word recovery seed or local database passphrase</span><span lang="de">Ihren 12-Wörter-Wiederherstellungs-Seed oder Ihre lokale Datenbank-Passphrase</span></li>
+            <li><span lang="en">The content of your Sovereign Vault</span><span lang="de">Den Inhalt Ihres Sovereign Vault</span></li>
+        </ul>
+
+        <h2>5. <span lang="en">Legal Basis for Processing</span><span lang="de">Rechtsgrundlagen der Verarbeitung</span></h2>
+        <p>
+            <span lang="en">I process data on the following legal bases under the GDPR:</span>
+            <span lang="de">Ich verarbeite Daten auf folgenden Rechtsgrundlagen nach der DSGVO:</span>
+        </p>
+        <ul>
+            <li>
+                <strong><span lang="en">Art. 6(1)(b) GDPR — Contract performance:</span><span lang="de">Art. 6 Abs. 1 lit. b DSGVO — Vertragserfüllung:</span></strong>
+                <span lang="en">Account registration, message routing, delivery, and account deletion.</span>
+                <span lang="de">Kontoregistrierung, Nachrichten-Routing, Zustellung und Kontolöschung.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Art. 6(1)(f) GDPR — Legitimate interest:</span><span lang="de">Art. 6 Abs. 1 lit. f DSGVO — Berechtigtes Interesse:</span></strong>
+                <span lang="en">One-account-per-device enforcement, abuse prevention, security logging, and network integrity. I have balanced this against your privacy rights by minimizing data and retention.</span>
+                <span lang="de">Durchsetzung von einem Konto pro Gerät, Missbrauchsprävention, Sicherheits-Logging und Netzwerkintegrität. Ich habe dies gegen Ihre Datenschutzrechte abgewogen, indem ich Daten und Aufbewahrung minimiere.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Art. 6(1)(a) GDPR — Consent:</span><span lang="de">Art. 6 Abs. 1 lit. a DSGVO — Einwilligung:</span></strong>
+                <span lang="en">Optional features such as username searchability, push notifications, and link previews. You can withdraw consent at any time in the app settings.</span>
+                <span lang="de">Optionale Funktionen wie Benutzernamen-Suchbarkeit, Push-Benachrichtigungen und Link-Vorschauen. Sie können die Einwilligung jederzeit in den App-Einstellungen widerrufen.</span>
+            </li>
+        </ul>
+
+        <h2>6. <span lang="en">Retention Periods</span><span lang="de">Aufbewahrungsfristen</span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th><span lang="en">Data</span><span lang="de">Daten</span></th>
+                    <th><span lang="en">Retention</span><span lang="de">Aufbewahrung</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span lang="en">Undelivered messages and attachments</span><span lang="de">Nicht zugestellte Nachrichten und Anhänge</span></td>
+                    <td><span lang="en">72 hours or until delivered/deleted</span><span lang="de">72 Stunden oder bis zur Zustellung/Löschung</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Delivered but not acknowledged messages</span><span lang="de">Zugestellte, aber nicht bestätigte Nachrichten</span></td>
+                    <td><span lang="en">24 hours after delivery</span><span lang="de">24 Stunden nach Zustellung</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Acknowledged messages</span><span lang="de">Bestätigte Nachrichten</span></td>
+                    <td><span lang="en">Deleted immediately on acknowledgment</span><span lang="de">Sofortige Löschung bei Bestätigung</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Orphaned attachment uploads (abandoned presigned uploads)</span><span lang="de">Verwaiste Anhangs-Uploads (aufgegebene Presigned-Uploads)</span></td>
+                    <td><span lang="en">72 hours after upload URL generation</span><span lang="de">72 Stunden nach Generierung der Upload-URL</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Account data, Olm keys, contact records, push tokens</span><span lang="de">Kontodaten, Olm-Keys, Kontaktdatensätze, Push-Tokens</span></td>
+                    <td><span lang="en">Until account deletion</span><span lang="de">Bis zur Kontolöschung</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Server logs</span><span lang="de">Server-Logs</span></td>
+                    <td><span lang="en">14 days, unless a legal hold applies</span><span lang="de">14 Tage, sofern keine rechtliche Aufbewahrungspflicht besteht</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>7. <span lang="en">Sub-Processors and Infrastructure</span><span lang="de">Auftragsverarbeiter und Infrastruktur</span></h2>
+        <p>
+            <span lang="en">I use the following infrastructure providers. Each processes only the data necessary to provide their service and cannot decrypt your message or attachment content.</span>
+            <span lang="de">Ich nutze die folgenden Infrastrukturanbieter. Jeder verarbeitet nur die für seine Dienstleistung erforderlichen Daten und kann Ihre Nachrichten- oder Anhangsinhalte nicht entschlüsseln.</span>
+        </p>
+        <ul>
+            <li><strong>Render</strong> — hosting of the relay backend.</li>
+            <li><strong>MongoDB Cloud</strong> — encrypted database storage.</li>
+            <li><strong>Cloudflare R2</strong> — encrypted attachment object storage and DDoS protection.</li>
+            <li><strong>Google Firebase Cloud Messaging</strong> — encrypted push-token handling for offline wakeup.</li>
+            <li><strong>Metered.ca</strong> — TURN server credentials for VoIP calls.</li>
+            <li><strong>Google Play Integrity API</strong> — device-integrity signals during registration.</li>
+        </ul>
+        <p>
+            <span lang="en">These providers may process connection metadata such as IP addresses under their own privacy policies. I do not receive or log your IP address from the relay.</span>
+            <span lang="de">Diese Anbieter können Verbindungsmetadaten wie IP-Adressen unter ihren eigenen Datenschutzrichtlinien verarbeiten. Ich empfange oder protokolliere Ihre IP-Adresse vom Relay nicht.</span>
+        </p>
+        <p>
+            <span lang="en">Message and attachment content remains end-to-end encrypted and is not readable by these providers. Where limited account metadata (such as routing IDs, push tokens, device-integrity signals, or server logs) is processed outside the European Economic Area, I rely on the <b>EU Standard Contractual Clauses (2021/914/EU)</b> concluded with those providers to ensure an adequate level of data protection.</span>
+            <span lang="de">Nachrichten- und Anhangsinhalte bleiben Ende-zu-Ende-verschlüsselt und sind für diese Anbieter nicht lesbar. Soweit begrenzte Kontometadaten (wie Routing-IDs, Push-Tokens, Geräte-Integritätssignale oder Server-Logs) außerhalb des Europäischen Wirtschaftsraums verarbeitet werden, stütze ich mich auf die <b>EU-Standarddatenschutzklauseln (2021/914/EU)</b>, die ich mit diesen Anbietern geschlossen habe, um ein angemessenes Datenschutzniveau zu gewährleisten.</span>
+        </p>
+
+        <h2>8. <span lang="en">Security Measures</span><span lang="de">Sicherheitsmaßnahmen</span></h2>
+        <ul>
+            <li><span lang="en">End-to-end encryption of all message and attachment content using the Olm Double Ratchet and AES-256-GCM.</span><span lang="de">Ende-zu-Ende-Verschlüsselung aller Nachrichten- und Anhangsinhalte mit Olm-Double-Ratchet und AES-256-GCM.</span></li>
+            <li><span lang="en">AES-256-GCM encryption at rest for relay database fields using GHOST_FIELD_KEY.</span><span lang="de">AES-256-GCM-Verschlüsselung im Ruhezustand für Relay-Datenbankfelder mit GHOST_FIELD_KEY.</span></li>
+            <li><span lang="en">Device-bound identity keys stored in Android Keystore.</span><span lang="de">Gerätegebundene Identitätsschlüssel im Android Keystore gespeichert.</span></li>
+            <li><span lang="en">Optional biometric app lock and screenshot/screen-recording blocking.</span><span lang="de">Optionaler biometrischer App-Sperre und Blockierung von Screenshots/Bildschirmaufnahmen.</span></li>
+            <li><span lang="en">No third-party analytics, marketing SDKs, or behavioral tracking.</span><span lang="de">Keine Drittanbieter-Analytik, Marketing-SDKs oder Verhaltens-Tracking.</span></li>
+        </ul>
+
+        <h2>9. <span lang="en">Emergency Account Deletion PIN</span><span lang="de">Emergency Account Deletion PIN</span></h2>
+        <p>
+            <span lang="en">The app offers an optional Emergency Account Deletion PIN. Entering this PIN triggers the same server-side account deletion and local data wipe as the standard account-deletion flow, while displaying a generic error screen.</span>
+            <span lang="de">Die App bietet eine optionale Emergency Account Deletion PIN an. Die Eingabe dieser PIN löst dieselbe serverseitige Kontolöschung und lokale Datenlöschung aus wie der standardmäßige Kontolöschungsablauf, während ein generischer Fehlerbildschirm angezeigt wird.</span>
+        </p>
+        <div class="warning-box">
+            <strong><span lang="en">Lawful use only:</span><span lang="de">Nur rechtmäßige Verwendung:</span></strong>
+            <span lang="en">This feature must not be used to destroy evidence, evade legal process, or harm another person's lawful interests.</span>
+            <span lang="de">Diese Funktion darf nicht verwendet werden, um Beweise zu vernichten, rechtliche Verfahren zu umgehen oder rechtliche Interessen Dritter zu schädigen.</span>
+        </div>
+
+        <h2>10. <span lang="en">Illegal Content and Reporting</span><span lang="de">Illegale Inhalte und Meldung</span></h2>
+        <p>
+            <span lang="en">Because all message and attachment content is end-to-end encrypted, I cannot see, monitor, or moderate the content of your communications. I do not proactively scan messages.</span>
+            <span lang="de">Da alle Nachrichten- und Anhangsinhalte Ende-zu-Ende-verschlüsselt sind, kann ich den Inhalt Ihrer Kommunikation weder sehen, überwachen noch moderieren. Ich scanne Nachrichten nicht proaktiv.</span>
+        </p>
+        <p>
+            <span lang="en">If you become aware of illegal content being shared through StateZer0, you can report it to me at <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a>. I will review the report and take action to the extent technically possible, which is limited to account-level measures based on metadata. I will also comply with valid court orders and lawful requests from German or EU authorities.</span>
+            <span lang="de">Wenn Sie Kenntnis davon erlangen, dass über StateZer0 illegale Inhalte geteilt werden, können Sie dies unter <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a> melden. Ich werde die Meldung prüfen und soweit technisch möglich Maßnahmen ergreifen, die auf Metadaten beschränkte kontobezogene Maßnahmen umfassen. Ich werde auch gültigen Gerichtsbeschlüssen und rechtmäßigen Anfragen deutscher oder EU-Behörden nachkommen.</span>
+        </p>
+
+        <h2>11. <span lang="en">Your Rights</span><span lang="de">Ihre Rechte</span></h2>
+        <p>
+            <span lang="en">Under the GDPR, you have the right to:</span>
+            <span lang="de">Nach der DSGVO haben Sie das Recht auf:</span>
+        </p>
+        <ul>
+            <li><span lang="en">Access the data I hold about you (Art. 15)</span><span lang="de">Auskunft über die mich betreffenden Daten (Art. 15)</span></li>
+            <li><span lang="en">Rectification of inaccurate data (Art. 16)</span><span lang="de">Berichtigung unrichtiger Daten (Art. 16)</span></li>
+            <li><span lang="en">Erasure of your account and associated data (Art. 17)</span><span lang="de">Löschung Ihres Kontos und zugehöriger Daten (Art. 17)</span></li>
+            <li><span lang="en">Restriction of processing (Art. 18)</span><span lang="de">Einschränkung der Verarbeitung (Art. 18)</span></li>
+            <li><span lang="en">Data portability for data you provided (Art. 20)</span><span lang="de">Datenübertragbarkeit für von Ihnen bereitgestellte Daten (Art. 20)</span></li>
+            <li><span lang="en">Object to processing based on legitimate interest (Art. 21)</span><span lang="de">Widerspruch gegen Verarbeitungen auf Grundlage berechtigten Interesses (Art. 21)</span></li>
+            <li><span lang="en">Lodge a complaint with a supervisory authority</span><span lang="de">Beschwerde bei einer Aufsichtsbehörde</span></li>
+        </ul>
+        <p>
+            <span lang="en">You have the right to lodge a complaint with the supervisory authority responsible for my place of business: the <b>Hamburg Commissioner for Data Protection and Freedom of Information (Hamburgischer Beauftragter für Datenschutz und Informationsfreiheit, HmbBfDI)</b>.</span>
+            <span lang="de">Sie haben das Recht, bei der für meinen Geschäftssitz zuständigen Aufsichtsbehörde Beschwerde einzulegen: dem <b>Hamburgischen Beauftragten für Datenschutz und Informationsfreiheit (HmbBfDI)</b>.</span>
+        </p>
+        <p>
+            <span lang="en">Because message content is encrypted and I do not hold the keys, I cannot export the plaintext content of your messages or attachments. The "Export My Data" function produces a JSON bundle of your profile, contacts, message metadata, vault index, and settings; message and attachment contents remain encrypted.</span>
+            <span lang="de">Da Nachrichteninhalte verschlüsselt sind und ich die Schlüssel nicht besitze, kann ich den Klartextinhalt Ihrer Nachrichten oder Anhänge nicht exportieren. Die Funktion „Meine Daten exportieren" erzeugt ein JSON-Bündel mit Ihrem Profil, Kontakten, Nachrichten-Metadaten, Vault-Index und Einstellungen; Nachrichten- und Anhangsinhalte bleiben verschlüsselt.</span>
+        </p>
+
+        <h2>12. <span lang="en">Cookies and Tracking</span><span lang="de">Cookies und Tracking</span></h2>
+        <p>
+            <span lang="en">StateZer0 does not use tracking cookies, analytics scripts, or marketing pixels. Cloudflare may set a strictly necessary security cookie for bot protection, which is exempt from consent under <span class="legal-ref">§ 25 para. 2 TDDDG</span>.</span>
+            <span lang="de">StateZer0 verwendet keine Tracking-Cookies, Analyse-Skripte oder Marketing-Pixel. Cloudflare kann ein unbedingt erforderliches Sicherheits-Cookie zum Schutz vor Bots setzen, das gemäß <span class="legal-ref">§ 25 Abs. 2 TDDDG</span> von der Einwilligung befreit ist.</span>
+        </p>
+
+        <h2>13. <span lang="en">Changes to This Policy</span><span lang="de">Änderungen dieser Richtlinie</span></h2>
+        <p>
+            <span lang="en">I may update this policy as the service evolves. Material changes will be announced through the app and on the website. Continued use after the effective date constitutes acceptance.</span>
+            <span lang="de">Ich kann diese Richtlinie im Laufe der Dienstentwicklung aktualisieren. Wesentliche Änderungen werden über die App und die Website angekündigt. Die weitere Nutzung nach dem Gültigkeitsdatum gilt als Akzeptanz.</span>
+        </p>
+
         <div class="compliance-footer">
-            <strong>Legal Audit Status:</strong> 2026 EU Digital Services Act (DSA) Compliant.<br>
-            <strong>Verification Date: November 10, 2026.</strong><br><br>
-            <strong lang="en">Status: GHOST PROTOCOL ACTIVE. dQuantumBear 🛡️🚀🐻‍❄️🏁</strong>
-            <strong lang="de">Status: GHOST-PROTOKOLL AKTIV. dQuantumBear 🛡️🚀🐻‍❄️🏁</strong>
+            <strong><span lang="en">Legal basis:</span><span lang="de">Rechtsgrundlagen:</span></strong> GDPR / DSGVO, DDG, TDDDG, DSA, BGB.<br>
+            <strong><span lang="en">Contact:</span><span lang="de">Kontakt:</span></strong> <a href="mailto:statezer0@proton.me">statezer0@proton.me</a> | <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a><br>
+            <strong><span lang="en">Effective:</span><span lang="de">Gültig ab:</span></strong> September 29, 2026.
         </div>
     </div>
 
@@ -328,7 +390,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const browserLang = navigator.language.split('-')[0];
-
         const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'de';
         setLang(savedLang);
     </script>
