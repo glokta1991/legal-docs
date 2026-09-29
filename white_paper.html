@@ -114,8 +114,8 @@
 
         <h3>1.1 <span lang="en">Overview</span><span lang="de">Überblick</span></h3>
         <p>
-            <span lang="en">StateZer0 is a hardened communications platform that minimizes server-side data exposure. The server acts only as a relay for encrypted blobs: the operator has no visibility into message or attachment content and no access to the user's contact list. Metadata is reduced to the minimum needed for routing and is never zero. This design limits, but does not eliminate, the operator's exposure to data requests.</span>
-            <span lang="de">StateZer0 ist eine gehärtete Kommunikationsplattform, die die serverseitige Datenpreisgabe minimiert. Der Server fungiert ausschließlich als Relay für verschlüsselte Blobs: Der Betreiber hat weder Einblick in Nachrichten- oder Anhangsinhalte noch Zugriff auf die Kontaktliste des Nutzers. Metadaten werden auf das für das Routing erforderliche Minimum reduziert und sind nie gleich null. Dieses Design begrenzt, beseitigt aber nicht, die Exposition des Betreibers gegenüber Datenanfragen.</span>
+            <span lang="en">StateZer0 is a hardened communications platform that minimizes server-side data exposure. The server acts only as a relay for encrypted blobs: I have no visibility into message or attachment content. Metadata is reduced to the minimum needed for routing and is never zero. This design limits, but does not eliminate, exposure to data requests.</span>
+            <span lang="de">StateZer0 ist eine gehärtete Kommunikationsplattform, die die serverseitige Datenpreisgabe minimiert. Der Server fungiert ausschließlich als Relay für verschlüsselte Blobs: Ich habe weder Einblick in Nachrichten- oder Anhangsinhalte. Metadaten werden auf das für das Routing erforderliche Minimum reduziert und sind nie gleich null. Dieses Design begrenzt, beseitigt aber nicht, die Exposition gegenüber Datenanfragen.</span>
         </p>
 
         <h3>1.2 <span lang="en">Core Value Drivers</span><span lang="de">Kern-Werttreiber</span></h3>
@@ -125,12 +125,12 @@
                 <span lang="de"><b>Senderseitige Performance & Sicherheitshärtung (v76.0.0 - Phase 1):</b> Implementierung der <b>Direct RAM Pipeline</b> für Bilder und Audio, die unverschlüsselte Bytes nach Möglichkeit im flüchtigen Speicher hält. Bei ressourcenintensiver Videotranskodierung werden temporäre Klartext-Artefakte vor der Löschung nach bestem Bemühen überschrieben, um wiederherstellbare Rückstände zu reduzieren.</span>
             </li>
             <li>
-                <span lang="en"><b>Non-Blocking Netty Engine (v73.0.0 - Phase 3):</b> Heavy media extraction and Signal envelope hydration are offloaded to background worker pools. <code>ThumbnailExtractorEngine</code> was converted to an asynchronous service anchored to <code>Dispatchers.IO</code>, improving Main Thread responsiveness and reducing starvation risk for Netty IO selector loops during high-resolution ingestion.</span>
-                <span lang="de"><b>Non-Blocking Netty-Engine (v73.0.0 - Phase 3):</b> Ressourcenintensive Medienextraktion und Signal-Envelope-Hydrierung werden in Hintergrund-Worker-Pools ausgelagert. Die <code>ThumbnailExtractorEngine</code> wurde in einen asynchronen Dienst umgewandelt, der an <code>Dispatchers.IO</code> verankert ist, um die Reaktionsfähigkeit des Android Main Threads zu verbessern und das Starvation-Risiko der Netty-IO-Selector-Loops während der hochauflösenden Ingestion zu verringern.</span>
+                <span lang="en"><b>Non-Blocking Netty Engine (v73.0.0 - Phase 3):</b> Heavy media extraction and Olm envelope hydration are offloaded to background worker pools. <code>ThumbnailExtractorEngine</code> was converted to an asynchronous service anchored to <code>Dispatchers.IO</code>, improving Main Thread responsiveness and reducing starvation risk for Netty IO selector loops during high-resolution ingestion.</span>
+                <span lang="de"><b>Non-Blocking Netty-Engine (v73.0.0 - Phase 3):</b> Ressourcenintensive Medienextraktion und Olm-Envelope-Hydrierung werden in Hintergrund-Worker-Pools ausgelagert. Die <code>ThumbnailExtractorEngine</code> wurde in einen asynchronen Dienst umgewandelt, der an <code>Dispatchers.IO</code> verankert ist, um die Reaktionsfähigkeit des Android Main Threads zu verbessern und das Starvation-Risiko der Netty-IO-Selector-Loops während der hochauflösenden Ingestion zu verringern.</span>
             </li>
             <li>
-                <span lang="en"><b>Sovereign Blinding (v25.2.7):</b> Sensitive identifiers are pre-blinded on the Android client before they reach the relay. The relay acts as an encrypted-blob relay: it routes opaque pointers but does not have access to message or attachment content and does not maintain a social graph.</span>
-                <span lang="de"><b>Souveräne Verblindung (v25.2.7):</b> Sensitive Identifikatoren werden auf dem Android-Client vorverblindet, bevor sie das Relay erreichen. Das Relay fungiert als verschlüsselter-Blob-Relay: Es leitet opake Pointer weiter, hat aber keinen Zugriff auf Nachrichten- oder Anhangsinhalte und pflegt keinen sozialen Graphen.</span>
+                <span lang="en"><b>Encrypted Relay with Minimized Metadata (v25.2.7):</b> Sensitive identifiers are pre-blinded on the Android client before they reach the relay. The relay routes opaque pointers but does not have access to message or attachment content. It does not maintain a public social graph or searchable contact directory; only the minimal routing and delivery records necessary for operation are retained.</span>
+                <span lang="de"><b>Verschlüsseltes Relay mit minimierten Metadaten (v25.2.7):</b> Sensitive Identifikatoren werden auf dem Android-Client vorverblindet, bevor sie das Relay erreichen. Das Relay leitet opake Pointer weiter, hat aber keinen Zugriff auf Nachrichten- oder Anhangsinhalte. Es pflegt keinen öffentlichen sozialen Graphen oder durchsuchbares Kontaktverzeichnis; es werden nur die für den Betrieb erforderlichen minimalen Routing- und Zustellprotokolle gespeichert.</span>
             </li>
             <li>
                 <span lang="en"><b>Metadata Minimization (v25.2.7):</b> Identifying metadata (e.g., <i>legacyId</i>) is hashed or removed before it leaves the client and is stored only in encrypted form where the server needs it for routing. MongoDB fields are encrypted at rest with AES-256-GCM using <code>GHOST_FIELD_KEY</code>.</span>
@@ -145,8 +145,8 @@
                 <span lang="de"><b>Automatische Status-Promotierung (v25.2.7):</b> Löst Verbindungs-Deadlocks, indem Kontakte bei kryptografischem Identitätsnachweis über Trial Decryption automatisch auf <b>ACCEPTED</b> hochgestuft werden.</span>
             </li>
             <li>
-                <span lang="en"><b>Backend Storage (v53.2.0):</b> The backend (Ktor/Netty/MongoDB) stores message and attachment payloads as opaque encrypted blobs. Persistent fields are encrypted at rest with AES-256-GCM using <code>GHOST_FIELD_KEY</code>. The relay does not maintain a <i>contacts</i> collection or social graph; it only keeps the minimal routing data required to deliver encrypted blobs.</span>
-                <span lang="de"><b>Backend-Speicher (v53.2.0):</b> Das Backend (Ktor/Netty/MongoDB) speichert Nachrichten- und Anhangs-Payloads als opake verschlüsselte Blobs. Persistente Felder sind mit AES-256-GCM unter Verwendung von <code>GHOST_FIELD_KEY</code> verschlüsselt. Das Relay pflegt keine <i>contacts</i>-Sammlung und keinen sozialen Graphen; es hält nur die für die Zustellung verschlüsselter Blobs erforderlichen Mindest-Routingdaten.</span>
+                <span lang="en"><b>Backend Storage (v53.2.0):</b> The backend (Ktor/Netty/MongoDB) stores message and attachment payloads as opaque encrypted blobs. Persistent fields are encrypted at rest with AES-256-GCM using <code>GHOST_FIELD_KEY</code>. The relay does not maintain a public social graph or searchable contact directory; it only keeps the minimal routing data required to deliver encrypted blobs.</span>
+                <span lang="de"><b>Backend-Speicher (v53.2.0):</b> Das Backend (Ktor/Netty/MongoDB) speichert Nachrichten- und Anhangs-Payloads als opake verschlüsselte Blobs. Persistente Felder sind mit AES-256-GCM unter Verwendung von <code>GHOST_FIELD_KEY</code> verschlüsselt. Das Relay pflegt keinen öffentlichen sozialen Graphen oder durchsuchbares Kontaktverzeichnis; es hält nur die für die Zustellung verschlüsselter Blobs erforderlichen Mindest-Routingdaten.</span>
             </li>
             <li>
                 <span lang="en"><b>Client-Side Identity Autonomy:</b> Identity is established via 256-bit local entropy (BIP39), removing the need for phone numbers or email addresses—the primary vectors for state-level deanonymization.</span>
@@ -154,7 +154,7 @@
             </li>
             <li>
                 <span lang="en"><b>Modular Outbound Media (v29.0.0):</b> Specialized processors handle domain-specific security logic (e.g., StaticImageProcessor for EXIF scrubbing, VideoProcessor for reliable poster extraction). This modularity prevents logic bleed and keeps cryptographic handling isolated for each media type.</span>
-                <span lang="de"><b>Modulare Outbound-Medien (v29.0.0):</b> Spezialisierte Prozessoren verarbeiten domänenspezifische Sicherheitslogik (z. B. StaticImageProcessor für EXIF-Bereinigung, VideoProcessor für zuverlässige Poster-Extraktion). Diese Modularität verhindert „Logic Bleed“ und hält die kryptografische Verarbeitung für jeden Medientyp isoliert.</span>
+                <span lang="de"><b>Modulare Outbound-Medien (v29.0.0):</b> Spezialisierte Prozessoren verarbeiten domänenspezifische Sicherheitslogik (z. B. StaticImageProcessor für EXIF-Bereinigung, VideoProcessor für zuverlässige Poster-Extraktion). Diese Modularität verhindert „Logic Bleed" und hält die kryptografische Verarbeitung für jeden Medientyp isoliert.</span>
             </li>
             <li>
                 <span lang="en"><b>MIME & Lifecycle Stabilization (v28.0.2):</b> Hardened the media pipeline against system-level misclassification. Videos now utilize extension-priority sniffing to ensure reliable container resolution and bypass incorrect optimization paths.</span>
@@ -186,7 +186,7 @@
             </li>
             <li>
                 <span lang="en"><b>UI Surface Safety & Composite Keying (v40.0.2):</b> Implemented mandatory hardware surface resets, composite player keying (`msg_` vs `att_`), and <b>Metadata-Aware IV Hydration</b> to eliminate EGL surface contention and "black screen" decoder failures. The playback engine now supports reliable CTR-mode seeking in multi-attachment bundles, ensuring rendering integrity in high-density chat streams.</span>
-                <span lang="de"><b>UI Surface Safety & Composite Keying (v40.0.2):</b> Implementierung von obligatorischen Hardware-Surface-Resets, Composite-Player-Keying (`msg_` vs `att_`) und <b>metadatengesteuerter IV-Hydrierung</b>, um EGL-Oberflächenkonflikte und „Black Screen“-Decoder-Fehler zu eliminieren. Die Playback-Engine unterstützt nun zuverlässiges CTR-Modus-Seeking in Multi-Attachment-Bundles und gewährleistet so die Rendering-Integrität in hochdichten Chat-Streams.</span>
+                <span lang="de"><b>UI Surface Safety & Composite Keying (v40.0.2):</b> Implementierung von obligatorischen Hardware-Surface-Resets, Composite-Player-Keying (`msg_` vs `att_`) und <b>metadatengesteuerter IV-Hydrierung</b>, um EGL-Oberflächenkonflikte und „Black Screen"-Decoder-Fehler zu eliminieren. Die Playback-Engine unterstützt nun zuverlässiges CTR-Modus-Seeking in Multi-Attachment-Bundles und gewährleistet so die Rendering-Integrität in hochdichten Chat-Streams.</span>
             </li>
 
             <li>
@@ -194,45 +194,48 @@
                 <span lang="de"><b>VoIP-Engine-Entkopplung (v52.0.0):</b> Der VoIP-Medienstack ist von den Standard-Messaging- und Speicherdomänen isoliert. Handshake und Medienaufbau werden von einem dedizierten <code>VoipEngineController</code> verwaltet. Native WebRTC-Komponenten (AudioSource, AudioTrack, PeerConnection) werden beim Beenden eines Anrufs explizit freigegeben und released. Anrufe werden als datenschutzorientierte Entscheidung über TURN geleitet, was die Latenz erhöht.</span>
             </li>
             <li>
-                <span lang="en"><b>Limited Data Collection:</b> The relay does not store message or attachment content in plaintext and does not maintain a social graph. Minimal server logs (e.g., for abuse prevention and legal compliance) are retained for up to 30 days. Whether a particular processing activity complies with GDPR, DSA, or TDDDG depends on the specific deployment and must be assessed by the operator.</span>
-                <span lang="de"><b>Begrenzte Datenerhebung:</b> Das Relay speichert keine Nachrichten- oder Anhangsinhalte im Klartext und pflegt keinen sozialen Graphen. Minimale Server-Logs (z. B. zur Missbrauchsprävention und Rechts compliance) werden bis zu 30 Tage aufbewahrt. Ob eine bestimmte Verarbeitung mit DSGVO, DSA oder TDDDG konform ist, hängt vom konkreten Betrieb ab und muss vom Betreiber geprüft werden.</span>
+                <span lang="en"><b>Local Security &amp; Data Portability:</b> Privacy Settings provide an optional biometric app lock and screen-security toggle (blocks screenshots/screen recording). Enabling the app lock auto-enables screen security and re-prompts after 2 seconds in the background. Users can export an encrypted backup of the database, Vault, enclave, and non-sensitive settings, or generate a plaintext JSON portability export (profile, contacts, message metadata, vault index, settings) under "Export My Data".</span>
+            </li>
+            <li>
+                <span lang="en"><b>Limited Data Collection:</b> The relay does not store message or attachment content in plaintext and does not maintain a public social graph or searchable contact directory. Minimal server logs (e.g., for abuse prevention and legal compliance) are retained for 14 days. Whether a particular processing activity complies with GDPR, DSA, or TDDDG depends on the specific deployment and must be assessed by the operator.</span>
+                <span lang="de"><b>Begrenzte Datenerhebung:</b> Das Relay speichert keine Nachrichten- oder Anhangsinhalte im Klartext und pflegt keinen öffentlichen sozialen Graphen oder durchsuchbares Kontaktverzeichnis. Minimale Server-Logs (z. B. zur Missbrauchsprävention und Rechts compliance) werden 14 Tage aufbewahrt. Ob eine bestimmte Verarbeitung mit DSGVO, DSA oder TDDDG konform ist, hängt vom konkreten Betrieb ab und muss vom Betreiber geprüft werden.</span>
             </li>
         </ul>
 
         <h2><span lang="en">II. Encrypted Message Relay & Metadata Minimization</span><span lang="de">II. Verschlüsselter Nachrichten-Relay & Metadatenminimierung</span></h2>
 
-        <h3>2.1 <span lang="en">Blinded Routing & Metadata Isolation</span><span lang="de">2.1 Blinded Routing & Metadaten-Isolation</span></h3>
+        <h3>2.1 <span lang="en">Minimized Routing & Metadata Isolation</span><span lang="de">2.1 Minimiertes Routing & Metadaten-Isolation</span></h3>
         <p>
-            <span lang="en">The StateZer0 server operates as a relay for encrypted data. Message and attachment payloads pass through the pipeline as opaque cryptographic blobs; the operator has no visibility into their content. Routing metadata is minimized, not eliminated, because delivery requires some addressing information.</span>
-            <span lang="de">Der StateZer0-Server fungiert als Relay für verschlüsselte Daten. Nachrichten- und Anhangs-Payloads passieren die Pipeline als opake kryptografische Blobs; der Betreiber hat keinen Einblick in deren Inhalt. Routing-Metadaten werden minimiert, nicht eliminiert, da die Zustellung einige Adressierungsinformationen erfordert.</span>
+            <span lang="en">The StateZer0 server operates as a relay for encrypted data. Message and attachment payloads pass through the pipeline as opaque cryptographic blobs; I have no visibility into their content. Routing metadata is minimized, not eliminated, because delivery requires some addressing information.</span>
+            <span lang="de">Der StateZer0-Server fungiert als Relay für verschlüsselte Daten. Nachrichten- und Anhangs-Payloads passieren die Pipeline als opake kryptografische Blobs; ich habe keinen Einblick in deren Inhalt. Routing-Metadaten werden minimiert, nicht eliminiert, da die Zustellung einige Adressierungsinformationen erfordert.</span>
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Blinded Recipient IDs:</b> Recipient identifiers are gehashed via SHA-256 and salted with a server-side pepper before database insertion. The relay delivers messages to these blinded pointers without knowledge of the true user identity.</span>
+                <span lang="en"><b>Blinded Recipient IDs:</b> Recipient identifiers are hashed via SHA-256 and salted with a server-side pepper before database insertion. The relay delivers messages to these blinded pointers without knowledge of the true user identity.</span>
                 <span lang="de"><b>Blinded Recipient IDs:</b> Empfängerkennungen werden vor der Datenbankeinfügung über SHA-256 gehasht und mit einem serverseitigen Pepper gesalzen. Das Relay stellt Nachrichten an diese verblindeten Pointer zu, ohne Kenntnis der wahren Benutzeridentität.</span>
             </li>
             <li>
-                <span lang="en"><b>Discovery Policy Enforcement (v25.3.1):</b> Accounts are hidden from search by default. Adding a contact requires a mutual-consent invite request that the recipient can Accept or Reject. The relay does not maintain a social graph and cannot facilitate unsolicited discovery.</span>
-                <span lang="de"><b>Discovery-Policy-Durchsetzung (v25.3.1):</b> Konten sind standardmäßig in der Suche verborgen. Das Hinzufügen eines Kontakts erfordert eine Einladungsanfrage mit gegenseitiger Zustimmung, die der Empfänger annehmen oder ablehnen kann. Das Relay pflegt keinen sozialen Graphen und kann keine ungebetene Entdeckung ermöglichen.</span>
+                <span lang="en"><b>Discovery Policy Enforcement (v25.3.1):</b> Accounts are hidden from search by default. The Add Contact dialog offers 6-character invite codes and QR/deep links as the primary flows, plus a secondary "Search by username" option that only queries users who have opted in. Adding a contact requires a mutual-consent invite request that the recipient can Accept or Reject. The relay does not maintain a public social graph or searchable contact directory; only minimal routing and delivery records necessary for operation are retained.</span>
+                <span lang="de"><b>Discovery-Policy-Durchsetzung (v25.3.1):</b> Konten sind standardmäßig in der Suche verborgen. Das Hinzufügen eines Kontakts erfordert eine Einladungsanfrage mit gegenseitiger Zustimmung, die der Empfänger annehmen oder ablehnen kann. Das Relay pflegt keinen öffentlichen sozialen Graphen oder durchsuchbares Kontaktverzeichnis; es werden nur die für den Betrieb erforderlichen minimalen Routing- und Zustellprotokolle gespeichert.</span>
             </li>
             <li>
                 <span lang="en"><b>Payload Opacity:</b> Message and attachment payloads are encrypted end-to-end; the relay cannot decrypt them. Server-side fields needed for routing are encrypted at rest with AES-256-GCM using <code>GHOST_FIELD_KEY</code>. The relay is not given plaintext sender or recipient content.</span>
                 <span lang="de"><b>Payload-Opazität:</b> Nachrichten- und Anhangs-Payloads sind Ende-zu-Ende-verschlüsselt; das Relay kann sie nicht entschlüsseln. Serverseitige Felder, die für das Routing benötigt werden, sind mit AES-256-GCM unter Verwendung von <code>GHOST_FIELD_KEY</code> verschlüsselt. Dem Relay werden keine Klartext-Inhalte von Absender oder Empfänger übermittelt.</span>
             </li>
             <li>
-                <span lang="en"><b>Identity Propagation (Inside-Ratchet):</b> Identity updates (avatars, usernames) are transmitted inside the Signal Double Ratchet. Because they are encrypted like other payloads, the relay cannot read them.</span>
-                <span lang="de"><b>Identitäts-Propagation (Inside-Ratchet):</b> Identitätsaktualisierungen (Avatare, Benutzernamen) werden innerhalb des Signal-Double-Ratchet übertragen. Da sie wie andere Payloads verschlüsselt sind, kann das Relay sie nicht lesen.</span>
+                <span lang="en"><b>Identity Propagation (Inside-Ratchet):</b> Identity updates (avatars, usernames) are transmitted inside the Olm Double Ratchet. Because they are encrypted like other payloads, the relay cannot read them.</span>
+                <span lang="de"><b>Identitäts-Propagation (Inside-Ratchet):</b> Identitätsaktualisierungen (Avatare, Benutzernamen) werden innerhalb des Olm-Double-Ratchet übertragen. Da sie wie andere Payloads verschlüsselt sind, kann das Relay sie nicht lesen.</span>
             </li>
             <li>
-                <span lang="en"><b>Volatile Handshaking:</b> Signal "Noise" and heartbeat packets are handled in-memory and are not written to persistent storage, reducing the data footprint of connection attempts.</span>
-                <span lang="de"><b>Flüchtiges Handshaking:</b> Signal-„Noise“- und Herzschlag-Pakete werden im Speicher verarbeitet und nicht in den persistenten Speicher geschrieben, was die Datenrückstände von Verbindungsversuchen verringert.</span>
+                <span lang="en"><b>Volatile Handshaking:</b> Olm "Noise" and heartbeat packets are handled in-memory and are not written to persistent storage, reducing the data footprint of connection attempts.</span>
+                <span lang="de"><b>Flüchtiges Handshaking:</b> Olm-„Noise"- und Herzschlag-Pakete werden im Speicher verarbeitet und nicht in den persistenten Speicher geschrieben, was die Datenrückstände von Verbindungsversuchen verringert.</span>
             </li>
         </ul>
 
         <h3>2.2 <span lang="en">Transport-Layer Security (TLS) vs. E2EE</span><span lang="de">2.2 Transport-Layer Security (TLS) vs. E2EE</span></h3>
         <p>
-            <span lang="en">While TLS protects the data in transit from external interceptors, StateZer0 treats the relay itself as a potential adversary. The Signal Protocol (Double Ratchet) is used to wrap every payload, ensuring that even if the relay were compromised, the data remains cryptographically inaccessible.</span>
-            <span lang="de">Während TLS die Daten während der Übertragung vor externen Interzeptoren schützt, betrachtet StateZer0 das Relay selbst als potenziellen Angreifer. Das Signal-Protokoll (Double Ratchet) wird verwendet, um jede Payload zu umhüllen, wodurch sichergestellt wird, dass die Daten selbst bei einer Kompromittierung des Relays kryptografisch unzugänglich bleiben.</span>
+            <span lang="en">While TLS protects the data in transit from external interceptors, StateZer0 treats the relay itself as a potential adversary. The Olm Protocol (Double Ratchet) is used to wrap every payload, ensuring that even if the relay were compromised, the data remains cryptographically inaccessible.</span>
+            <span lang="de">Während TLS die Daten während der Übertragung vor externen Interzeptoren schützt, betrachtet StateZer0 das Relay selbst als potenziellen Angreifer. Das Olm-Protokoll (Double Ratchet) wird verwendet, um jede Payload zu umhüllen, wodurch sichergestellt wird, dass die Daten selbst bei einer Kompromittierung des Relays kryptografisch unzugänglich bleiben.</span>
         </p>
 
         <h3>2.3 <span lang="en">Sovereign Identity Bridge (v53.2.0)</span><span lang="de">2.3 Souveräne Identitätsbrücke (v53.2.0)</span></h3>
@@ -242,8 +245,8 @@
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Atomic Promotion Orchestration:</b> Database ID swaps, Signal ratchet re-binding, and message re-anchoring are executed as an indivisible unit. Any failure triggers an automatic state rollback.</span>
-                <span lang="de"><b>Atomare Promotion-Orchestrierung:</b> Datenbank-ID-Swaps, Signal-Ratchet-Re-Binding und Nachrichten-Re-Anchoring werden als unteilbare Einheit ausgeführt. Jeder Fehler löst einen automatischen Status-Rollback aus.</span>
+                <span lang="en"><b>Atomic Promotion Orchestration:</b> Database ID swaps, Olm ratchet re-binding, and message re-anchoring are executed as an indivisible unit. Any failure triggers an automatic state rollback.</span>
+                <span lang="de"><b>Atomare Promotion-Orchestrierung:</b> Datenbank-ID-Swaps, Olm-Ratchet-Re-Binding und Nachrichten-Re-Anchoring werden als unteilbare Einheit ausgeführt. Jeder Fehler löst einen automatischen Status-Rollback aus.</span>
             </li>
             <li>
                 <span lang="en"><b>Deterministic Tie-Breaking:</b> Handshake collisions (simultaneous adds) are resolved via Identity Key comparisons, converging both clients to the same session state without additional round-trips.</span>
@@ -267,15 +270,11 @@
             </li>
             <li>
                 <span lang="en"><b>Sovereign Short-Codes:</b> UUIDs are replaced with 6-character alphanumeric codes (Base32), offering about $1.07 \times 10^9$ combinations. This makes guessing a specific code practically infeasible.</span>
-                <span lang="de"><b>Sovereign Short-Codes:</b> UUIDs werden durch 6-stellige alphanumerische Codes (Base32) mit etwa $1,07 \times 10^9$ Kombinationen ersetzt. Damit ist das Erraten eines bestimmten Codes praktisch unmöglich.</span>
+                <span lang="de"><b>Souveräne Short-Codes:</b> UUIDs werden durch 6-stellige alphanumerische Codes (Base32) mit etwa $1,07 \times 10^9$ Kombinationen ersetzt. Damit ist das Erraten eines bestimmten Codes praktisch unmöglich.</span>
             </li>
             <li>
                 <span lang="en"><b>Large Payload Support:</b> Encrypted attachments (videos/documents) are limited to 100 MB, with a 25 MB optimization trigger.</span>
                 <span lang="de"><b>Große Payload-Unterstützung:</b> Verschlüsselte Anhänge (Videos/Dokumente) sind auf 100 MB begrenzt, mit einem Optimierungstrigger bei 25 MB.</span>
-            </li>
-            <li>
-                <span lang="en"><b>Autonomous Key Recovery:</b> The signature engine automatically fail-overs to an ephemeral <b>secp256r1</b> key pair if environment variables are mangled, ensuring compatibility across restricted OpenJDK/Render environments.</span>
-                <span lang="de"><b>Autonome Schlüsselwiederherstellung:</b> Die Signatur-Engine führt automatisch ein Failover auf ein ephemeres <b>secp256r1</b>-Schlüsselpaar durch, falls Umgebungsvariablen beschädigt sind, um die Kompatibilität in eingeschränkten OpenJDK/Render-Umgebungen zu gewährleisten.</span>
             </li>
             <li>
                 <span lang="en"><b>Beta Identity Re-rolling:</b> Authorized testers can re-register new identities on previously occupied hardware using a <b>GHOST_BETA_TESTER</b> token. The server purges the previous device-bound record automatically, avoiding manual database edits.</span>
@@ -283,7 +282,7 @@
             </li>
             <li>
                 <span lang="en"><b>Transactional Relay Mutex (v25.1.2):</b> Implemented a localized <i>relayMutex</i> to enforce strict registration atomicity for multi-attachment bundles. This prevents race conditions and redundant network submissions (Triple-Delivery Mitigation) during parallel background uploads.</span>
-                <span lang="de"><b>Transaktionales Relay-Mutex (v25.1.2):</b> Implementierung eines lokalisierten <i>relayMutex</i>, um eine strikte Registrierungs-Atomizität für Multi-Attachment-Bundles zu erzwenen. Dies verhindert Race-Conditions und redundante Netzwerkübermittlungen (Triple-Delivery Mitigation) während paralleler Hintergrund-Uploads.</span>
+                <span lang="de"><b>Transaktionales Relay-Mutex (v25.1.2):</b> Implementierung eines lokalisierten <i>relayMutex</i>, um eine strikte Registrierungs-Atomizität für Multi-Attachment-Bundles zu erzwingen. Dies verhindert Race-Conditions und redundante Netzwerkübermittlungen (Triple-Delivery Mitigation) während paralleler Hintergrund-Uploads.</span>
             </li>
         </ul>
 
@@ -324,8 +323,8 @@
                 <span lang="de"><b>Identity Keys (IK):</b> Langfristiges Curve25519-Schlüsselpaar.</span>
             </li>
             <li>
-                <span lang="en"><b>Signed PreKeys (SPK):</b> Rotated every 48 hours (via SignalKeyManager.performKeyMaintenance()) to ensure forward secrecy.</span>
-                <span lang="de"><b>Signed PreKeys (SPK):</b> Werden alle 48 Stunden rotiert (via SignalKeyManager.performKeyMaintenance()), um Forward Secrecy zu gewährleisten.</span>
+                <span lang="en"><b>Fallback Keys:</b> Rotated every 48 hours (via OlmKeyManager.performKeyMaintenance()) to ensure forward secrecy.</span>
+                <span lang="de"><b>Fallback Keys:</b> Werden alle 48 Stunden rotiert (via OlmKeyManager.performKeyMaintenance()), um Forward Secrecy zu gewährleisten.</span>
             </li>
             <li>
                 <span lang="en"><b>One-Time PreKeys (OPK):</b> A batch of 80 ephemeral keys is replenished automatically, allowing E2EE initialization for offline recipients once they come back online.</span>
@@ -345,19 +344,19 @@
             </li>
             <li>
                 <span lang="en"><b>Break-in Recovery (Future Secrecy):</b> If an adversary compromises a device's current state, the DH ratchet ensures the session "heals" as soon as the next message exchange occurs, locking the adversary out of future communications.</span>
-                <span lang="de"><b>Break-in Recovery (Future Secrecy):</b> Wenn ein Angreifer den aktuellen Zustand eines Geräts kompromittiert, stellt der DH-Ratchet sicher, dass die Sitzung „heilt“, sobald der nächste Nachrichtenaustausch stattfindet, wodurch der Angreifer von der zukünftigen Kommunikation ausgeschlossen wird.</span>
+                <span lang="de"><b>Break-in Recovery (Future Secrecy):</b> Wenn ein Angreifer den aktuellen Zustand eines Geräts kompromittiert, stellt der DH-Ratchet sicher, dass die Sitzung „heilt", sobald der nächste Nachrichtenaustausch stattfindet, wodurch der Angreifer von der zukünftigen Kommunikation ausgeschlossen wird.</span>
             </li>
         </ul>
 
         <h3>3.3 <span lang="en">Deterministic Identity & BIP39 Restorations</span><span lang="de">3.3 Deterministische Identität & BIP39-Wiederherstellungen</span></h3>
         <p>
             <span lang="en">StateZer0 derives the master identity keypair from the 12-word BIP39 mnemonic. This avoids "Identity Changed" warnings when the same mnemonic is restored on a new device.</span>
-            <span lang="de">StateZer0 leitet das Master-Identitätsschlüsselpaar aus dem 12-Wörter-BIP39-Mnemonic ab. Dadurch werden Warnungen über eine „geänderte Identität“ vermieden, wenn derselbe Mnemonic auf einem neuen Gerät wiederhergestellt wird.</span>
+            <span lang="de">StateZer0 leitet das Master-Identitätsschlüsselpaar aus dem 12-Wörter-BIP39-Mnemonic ab. Dadurch werden Warnungen über eine „geänderte Identität" vermieden, wenn derselbe Mnemonic auf einem neuen Gerät wiederhergestellt wird.</span>
         </p>
         <ul>
             <li>
                 <span lang="en"><b>Derivation Formula:</b> PBKDF2(HMAC-SHA256, Username + Mnemonic, Salt="GHOST_IDENTITY...", Iterations=4096).</span>
-                <span lang="de"><b>Ableitungsformel:</b> PBKDF2(HMAC-SHA256, Username + Mnemonic, Salt=„GHOST_IDENTITY...“, Iterationen=4096).</span>
+                <span lang="de"><b>Ableitungsformel:</b> PBKDF2(HMAC-SHA256, Username + Mnemonic, Salt=„GHOST_IDENTITY...", Iterationen=4096).</span>
             </li>
             <li>
                 <span lang="en"><b>Security Impact:</b> This allows a user to restore their cryptographic identity or reset a forgotten password on any hardware without a cloud-based backup, maintaining sovereignty over their private keys.</span>
@@ -384,7 +383,7 @@
         <h3>3.5 <span lang="en">Memory Space Hardening (RAM Sanitization)</span><span lang="de">3.5 Speicherhärtung (RAM-Sanitisation)</span></h3>
         <p>
             <span lang="en">To mitigate "Heap Allocation Leaks," StateZer0 enforces strict RAM hygiene:</span>
-            <span lang="de">Um „Heap Allocation Leaks“ zu minimieren, erzwingt StateZer0 eine strikte RAM-Hygiene:</span>
+            <span lang="de">Um „Heap Allocation Leaks" zu minimieren, erzwingt StateZer0 eine strikte RAM-Hygiene:</span>
         </p>
         <ul>
             <li>
@@ -401,8 +400,8 @@
 
         <h3>4.1 <span lang="en">The Sovereign Vault (Encrypted Archive Management)</span><span lang="de">Der Sovereign Vault (Verschlüsselte Archivverwaltung)</span></h3>
         <p>
-            <span lang="en">StateZer0 introduces the Sovereign Vault, a localized, encrypted repository for long-term storage of sensitive media and text. Unlike standard galleries, the Vault operates strictly within the "Ghost Protocol" parameters.</span>
-            <span lang="de">StateZer0 führt den Sovereign Vault ein, ein lokales, verschlüsseltes Repository für die langfristige Speicherung sensibler Medien und Texte. Im Gegensatz zu Standardgalerien arbeitet der Vault streng innerhalb der „Ghost-Protokoll“-Parameter.</span>
+            <span lang="en">StateZer0 introduces the Sovereign Vault, a localized, encrypted repository for long-term storage of sensitive media, documents, audio, and sealed chat transcripts. You can save individual chat attachments, voice notes, and sealed text transcripts directly from the chat context menu, as well as import files from outside the app. Unlike standard galleries, the Vault operates strictly within the "Ghost Protocol" parameters.</span>
+            <span lang="de">StateZer0 führt den Sovereign Vault ein, ein lokales, verschlüsseltes Repository für die langfristige Speicherung sensibler Medien und Texte. Im Gegensatz zu Standardgalerien arbeitet der Vault streng innerhalb der „Ghost-Protokoll"-Parameter.</span>
         </p>
         <ul>
             <li>
@@ -446,6 +445,9 @@
                 <span lang="de"><b>Bundle-Auswahlmenü:</b> Die Anwendung bietet ein kontextsensitives Menü für Bundles. Benutzer können einzelne Elemente gezielt im Vault oder in der Galerie speichern.</span>
             </li>
             <li>
+                <span lang="en"><b>Chat-to-Vault Archive:</b> Individual attachments, voice notes, and sealed text transcripts can be saved directly from the chat context menu into the Vault, keeping them encrypted and isolating them from the transient chat enclave.</span>
+            </li>
+            <li>
                 <span lang="en"><b>Forced Player Release:</b> Active media players are released before a delete or account-wipe command runs, so file locks do not block deletion.</span>
                 <span lang="de"><b>Forced Player Release:</b> Aktive Medienplayer werden freigegeben, bevor ein Lösch- oder Konto-Lösch-Befehl ausgeführt wird, damit Dateisperren die Löschung nicht blockieren.</span>
             </li>
@@ -482,8 +484,8 @@
                 <span lang="de">3. Das verschlüsselte Binary wird zu einem nicht vertrauenswürdigen Speicheranbieter (Cloudflare R2) hochgeladen.</span>
             </li>
             <li>
-                <span lang="en">4. The symmetric key and URL are sealed inside the Signal E2EE envelope and sent to the recipient.</span>
-                <span lang="de">4. Der symmetrische Schlüssel und die URL werden im Signal-E2EE-Umschlag versiegelt und an den Empfänger gesendet.</span>
+                <span lang="en">4. The symmetric key and URL are sealed inside the Olm E2EE envelope and sent to the recipient.</span>
+                <span lang="de">4. Der symmetrische Schlüssel und die URL werden im Olm-E2EE-Umschlag versiegelt und an den Empfänger gesendet.</span>
             </li>
         </ul>
 
@@ -529,10 +531,10 @@
 
         <h2><span lang="en">V. Fault-Tolerant Self-Healing Mechanics (The Stability Engine)</span><span lang="de">V. Fehlertolerante Self-Healing-Mechanik (Die Stabilitäts-Engine)</span></h2>
 
-        <h3>5.1 <span lang="en">Account Deletion (Scorched Earth / Panic PIN)</span><span lang="de">5.1 Kontolöschung (Scorched Earth / Panic PIN)</span></h3>
+        <h3>5.1 <span lang="en">Account Deletion (Complete Account Deletion / Emergency Account Deletion PIN)</span><span lang="de">5.1 Kontolöschung (Complete Account Deletion / Emergency Account Deletion PIN)</span></h3>
         <p>
-            <span lang="en">Account deletion can be triggered through the Scorched Earth or Panic PIN flow. It removes server-side account data and performs a local wipe.</span>
-            <span lang="de">Die Kontolöschung kann über den Scorched-Earth- oder Panic-PIN-Flow ausgelöst werden. Sie entfernt serverseitige Kontodaten und führt einen lokalen Wipe durch.</span>
+            <span lang="en">Account deletion can be triggered through the "Terminate Contract and Wipe Data" or Emergency Account Deletion PIN flows. Both call server-side <code>DELETE /users/me</code> and perform a local forensic wipe. The Emergency Account Deletion PIN additionally purges application-specific Android Keystore keys, while standard termination leaves the Keystore keys intact as a hardware tombstone.</span>
+            <span lang="de">Die Kontolöschung kann über den "Vertrag beenden und Daten löschen"-Flow oder die Emergency Account Deletion PIN ausgelöst werden. Beide rufen serverseitig <code>DELETE /users/me</code> auf und führen einen lokalen Wipe durch. Die Emergency Account Deletion PIN entfernt zusätzlich anwendungsspezifische Android-Keystore-Schlüssel, während die Standard-Löschung die Keystore-Schlüssel als Hardware-Tombstone belässt.</span>
         </p>
         <ul>
             <li>
@@ -540,14 +542,18 @@
                 <span lang="de"><b>Serverseitige Löschung:</b> <code>DELETE /users/me</code> entfernt die Benutzerzeile, Pre-Keys, Sitzungen, Push-Tokens, aktive Einladungen sowie unzugestellte Nachrichten und Anhänge.</span>
             </li>
             <li>
-                <span lang="en"><b>Local wipe:</b> The local database, SharedPreferences, caches, and files are deleted, and running workers and notifications are cancelled. In Phase 1, the Android Keystore keys are left intact, but the encrypted database and wrapped passphrase files are destroyed, so the data is no longer recoverable through the app.</span>
-                <span lang="de"><b>Lokaler Wipe:</b> Die lokale Datenbank, SharedPreferences, Caches und Dateien werden gelöscht und laufende Worker sowie Benachrichtigungen abgebrochen. In Phase 1 bleiben die Android-Keystore-Schlüssel erhalten, aber die verschlüsselte Datenbank und die umhüllten Passphrase-Dateien werden zerstört, sodass die Daten über die App nicht mehr wiederherstellbar sind.</span>
+                <span lang="en"><b>Local wipe:</b> The wipe stops services, cancels workers, dismisses notifications, releases media players, clears caches, shreds the database, vault/enclave/cache/avatar directories, SharedPreferences, sentinel anchors and the clipboard, and clears session state. Standard termination leaves Android Keystore keys intact as a hardware tombstone; the Emergency Account Deletion PIN additionally purges application-specific Keystore keys, so the data is no longer recoverable through the app.</span>
+                <span lang="de"><b>Lokaler Wipe:</b> Die lokale Datenbank, SharedPreferences, Caches und Dateien werden gelöscht und laufende Worker sowie Benachrichtigungen abgebrochen. Bei der Standard-Löschung bleiben die Android-Keystore-Schlüssel erhalten, aber die verschlüsselte Datenbank und die umhüllten Passphrase-Dateien werden zerstört, sodass die Daten über die App nicht mehr wiederherstellbar sind.</span>
             </li>
             <li>
                 <span lang="en"><b>Recovery note:</b> Because identity is derived from the 12-word BIP39 mnemonic, the same cryptographic identity can be restored later from the mnemonic. Prior local data will not be recoverable.</span>
                 <span lang="de"><b>Wiederherstellungs-Hinweis:</b> Da die Identität vom 12-Wörter-BIP39-Mnemonic abgeleitet wird, kann dieselbe kryptografische Identität später aus dem Mnemonic wiederhergestellt werden. Vorherige lokale Daten sind nicht wiederherstellbar.</span>
             </li>
         </ul>
+        <p style="font-weight: bold; color: #990000; border: 1px dashed #990000; padding: 15px;">
+            <span lang="en">The Emergency Account Deletion PIN must not be used to destroy evidence, evade legal process, or harm another person's lawful interests.</span>
+            <span lang="de">Die Emergency Account Deletion PIN darf nicht verwendet werden, um Beweise zu vernichten, rechtliche Verfahren zu umgehen oder rechtliche Interessen Dritter zu schädigen.</span>
+        </p>
 
         <h3>5.2 <span lang="en">Hybrid AEC & Telecom Integration (VoIP)</span><span lang="de">5.2 Hybrid-AEC & Telecom-Integration (VoIP)</span></h3>
         <p>
@@ -575,8 +581,8 @@
 
         <h3>5.2 <span lang="en">Silent Decryption Recovery</span><span lang="de">5.2 Stille Entschlüsselungs-Wiederherstellung</span></h3>
         <p>
-            <span lang="en">SignalMessageManager implements a silent recovery path for ratchet desynchronizations (e.g., after long inactivity or storage corruption).</span>
-            <span lang="de">Der SignalMessageManager implementiert einen stillen Wiederherstellungspfad für Ratchet-Desynchronisationen (z. B. nach langer Inaktivität oder Speicherbeschädigung).</span>
+            <span lang="en">OlmMessageManager implements a silent recovery path for ratchet desynchronizations (e.g., after long inactivity or storage corruption).</span>
+            <span lang="de">Der OlmMessageManager implementiert einen stillen Wiederherstellungspfad für Ratchet-Desynchronisationen (z. B. nach langer Inaktivität oder Speicherbeschädigung).</span>
         </p>
         <ul>
             <li>
@@ -587,8 +593,8 @@
 
         <h3>5.2 <span lang="en">Protocol Guard & Mutual Consent (v36.0.0)</span><span lang="de">5.2 Protocol Guard & Gegenseitige Zustimmung (v36.0.0)</span></h3>
         <p>
-            <span lang="en">Incoming signals from unknown IDs are quarantined until the recipient explicitly accepts the invite request. Adding a contact requires a mutual-consent invite with Accept/Reject options; no ratchet handshake is committed automatically. The relay does not maintain a social graph.</span>
-            <span lang="de">Eingehende Signale unbekannter IDs werden unter Quarantäne gestellt, bis der Empfänger die Einladungsanfrage explizit annimmt. Das Hinzufügen eines Kontakts erfordert eine Einladung mit gegenseitiger Zustimmung und den Optionen Annehmen/Ablehnen; kein Ratchet-Handshake wird automatisch festgeschrieben. Das Relay pflegt keinen sozialen Graphen.</span>
+            <span lang="en">Incoming signals from unknown IDs are quarantined until the recipient explicitly accepts the invite request. Adding a contact requires a mutual-consent invite with Accept/Reject options; no ratchet handshake is committed automatically. The relay does not maintain a public social graph or searchable contact directory; only minimal routing and delivery records necessary for operation are retained.</span>
+            <span lang="de">Eingehende Signale unbekannter IDs werden unter Quarantäne gestellt, bis der Empfänger die Einladungsanfrage explizit annimmt. Das Hinzufügen eines Kontakts erfordert eine Einladung mit gegenseitiger Zustimmung und den Optionen Annehmen/Ablehnen; kein Ratchet-Handshake wird automatisch festgeschrieben. Das Relay pflegt keinen öffentlichen sozialen Graphen oder durchsuchbares Kontaktverzeichnis; es werden nur die für den Betrieb erforderlichen minimalen Routing- und Zustellprotokolle gespeichert.</span>
         </p>
 
         <h2><span lang="en">VI. Sovereign Multi-Device Migration Model</span><span lang="de">VI. Souveränes Multi-Device-Migrationsmodell</span></h2>
@@ -608,8 +614,8 @@
                 <span lang="de"><b>Lokale P2P-Wi-Fi-Brücke:</b> Die Datenbankmigration (Nachrichten, Einstellungen, Profile) erfolgt über einen direkten lokalen verschlüsselten Tunnel, ohne Cloud-Speicher Dritter. Der Tunnel ist verschlüsselt, lokale Wi-Fi-Metadaten (z. B. MAC-Adressen, SSID) unterliegen jedoch nicht der Kontrolle der App.</span>
             </li>
             <li>
-                <span lang="en"><b>Best-Effort Deletion on the Old Device:</b> Device A triggers the <b>Scorched Earth</b> protocol only after device B confirms the migrated vault is usable. The wipe deletes local data as a best-effort measure; it does not guarantee that no recoverable traces remain.</span>
-                <span lang="de"><b>Löschung auf dem alten Gerät nach bestem Bemühen:</b> Gerät A löst das <b>Scorched Earth</b>-Protokoll erst aus, nachdem Gerät B bestätigt hat, dass der migrierte Tresor nutzbar ist. Der Wipe entfernt lokale Daten nach bestem Bemühen; er garantiert nicht, dass keine wiederherstellbaren Rückstände verbleiben.</span>
+                <span lang="en"><b>Best-Effort Deletion on the Old Device:</b> Device A triggers the <b>Complete Account Deletion</b> protocol only after device B confirms the migrated vault is usable. The wipe deletes local data as a best-effort measure; it does not guarantee that no recoverable traces remain.</span>
+                <span lang="de"><b>Löschung auf dem alten Gerät nach bestem Bemühen:</b> Gerät A löst das <b>Complete Account Deletion</b>-Protokoll erst aus, nachdem Gerät B bestätigt hat, dass der migrierte Tresor nutzbar ist. Der Wipe entfernt lokale Daten nach bestem Bemühen; er garantiert nicht, dass keine wiederherstellbaren Rückstände verbleiben.</span>
             </li>
         </ul>
 
@@ -622,8 +628,8 @@
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Signal Protocol:</b> libsignal-android (GPLv3/kommerzielle kompatible Implementierung).</span>
-                <span lang="de"><b>Signal-Protokoll:</b> libsignal-android (GPLv3/kommerzielle kompatible Implementierung).</span>
+                <span lang="en"><b>Olm Protocol:</b> libolm-android (GPLv3/kommerzielle kompatible Implementierung).</span>
+                <span lang="de"><b>Olm-Protokoll:</b> libolm-android (GPLv3/kommerzielle kompatible Implementierung).</span>
             </li>
             <li>
                 <span lang="en"><b>Persistence:</b> Room + SQLCipher (BSD/Apache 2.0).</span>
@@ -637,8 +643,8 @@
 
         <h3>7.2 <span lang="en">Retention & Time-to-Live (TTL)</span><span lang="de">7.2 Aufbewahrung & Time-to-Live (TTL)</span></h3>
         <p>
-            <span lang="en">StateZer0 applies the following retention rules on the relay: delivered messages and attachments are erased within 24 hours (or 24 hours after acknowledgement); undelivered content is erased within 72 hours. The R2 reaper runs approximately every 10 minutes. Minimal server logs are retained for up to 30 days for abuse prevention and legal compliance. Local chat history remains on the user's device until deleted by the user or by a wipe.</span>
-            <span lang="de">StateZer0 wendet folgende Aufbewahrungsregeln auf dem Relay an: Zugestellte Nachrichten und Anhänge werden innerhalb von 24 Stunden (oder 24 Stunden nach Bestätigung) gelöscht; unzugestellte Inhalte werden innerhalb von 72 Stunden gelöscht. Der R2-Reaper läuft etwa alle 10 Minuten. Minimale Server-Logs werden bis zu 30 Tage zur Missbrauchsprävention und Rechts compliance aufbewahrt. Die lokale Chathistorie verbleibt auf dem Gerät des Benutzers, bis der Benutzer sie löscht oder ein Wipe erfolgt.</span>
+            <span lang="en">StateZer0 applies the following retention rules on the relay: delivered messages and attachments are erased within 24 hours of delivery; acknowledged content is erased immediately. Undelivered content is erased within 72 hours. The R2 reaper runs approximately every minute. Minimal server logs are retained for 14 days for abuse prevention and legal compliance. Local chat history remains on the user's device until deleted by the user or by a wipe.</span>
+            <span lang="de">StateZer0 wendet folgende Aufbewahrungsregeln auf dem Relay an: Zugestellte Nachrichten und Anhänge werden innerhalb von 24 Stunden nach Zustellung gelöscht; bestätigte Inhalte werden sofort gelöscht. Unzugestellte Inhalte werden innerhalb von 72 Stunden gelöscht. Der R2-Reaper läuft etwa jede Minute. Minimale Server-Logs werden 14 Tage zur Missbrauchsprävention und Rechts compliance aufbewahrt. Die lokale Chathistorie verbleibt auf dem Gerät des Benutzers, bis der Benutzer sie löscht oder ein Wipe erfolgt.</span>
         </p>
 
         <h3>7.3 <span lang="en">Universal I18N & UX Standards (v25.4.0)</span><span lang="de">Universelle I18N & UX-Standards (v25.4.0)</span></h3>
@@ -660,8 +666,8 @@
         <h3>7.4 <span lang="en">Security Audit Results</span><span lang="de">Ergebnisse des Sicherheits-Audits</span></h3>
         <ul>
             <li>
-                <span lang="en"><b>Data Leakage:</b> Message and attachment payloads are encrypted end-to-end; the relay does not receive plaintext content. Profile data sent inside the Signal ratchet is also unreadable to the relay.</span>
-                <span lang="de"><b>Datenabfluss:</b> Nachrichten- und Anhangs-Payloads sind Ende-zu-Ende-verschlüsselt; das Relay erhält keine Klartextinhalte. Profildaten, die innerhalb des Signal-Ratchets gesendet werden, sind für das Relay ebenfalls nicht lesbar.</span>
+                <span lang="en"><b>Data Leakage:</b> Message and attachment payloads are encrypted end-to-end; the relay does not receive plaintext content. Profile data sent inside the Olm ratchet is also unreadable to the relay.</span>
+                <span lang="de"><b>Datenabfluss:</b> Nachrichten- und Anhangs-Payloads sind Ende-zu-Ende-verschlüsselt; das Relay erhält keine Klartextinhalte. Profildaten, die innerhalb des Olm-Ratchets gesendet werden, sind für das Relay ebenfalls nicht lesbar.</span>
             </li>
             <li>
                 <span lang="en"><b>Data Remnants:</b> Server-side content is deleted according to the retention TTLs above. Local remnants depend on the device storage controller and file system; deletion is performed as a best-effort measure.</span>
