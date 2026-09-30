@@ -110,10 +110,10 @@
         </p>
 
         <p style="text-align: center;">
-            <strong lang="en">Effective Date: September 29, 2026</strong>
-            <strong lang="de">Gültigkeitsdatum: 29. September 2026</strong><br>
-            <span lang="en">Last Updated: September 29, 2026</span>
-            <span lang="de">Zuletzt aktualisiert: 29. September 2026</span><br>
+            <strong lang="en">Effective Date: September 30, 2026</strong>
+            <strong lang="de">Gültigkeitsdatum: 30. September 2026</strong><br>
+            <span lang="en">Last Updated: September 30, 2026</span>
+            <span lang="de">Zuletzt aktualisiert: 30. September 2026</span><br>
             <span lang="en">Jurisdiction: Federal Republic of Germany</span>
             <span lang="de">Gerichtsstand: Bundesrepublik Deutschland</span>
         </p>
@@ -199,6 +199,11 @@
                     <td><span lang="en">VoIP signaling metadata</span><span lang="de">VoIP-Signalisierungs-Metadaten</span></td>
                     <td><span lang="en">Relay memory and database during call setup</span><span lang="de">Relay-Arbeitsspeicher und Datenbank während des Anrufaufbaus</span></td>
                     <td><span lang="en">Call routing; call media is peer-to-peer and not stored</span><span lang="de">Anruf-Routing; Anrufmedien sind Peer-to-Peer und werden nicht gespeichert</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Plaintext cryptographic key-sync recovery frames</span><span lang="de">Klartext-Kryptografie-Key-Sync-Wiederherstellungsrahmen</span></td>
+                    <td><span lang="en">Relay transit only; never stored</span><span lang="de">Nur Relay-Transit; niemals gespeichert</span></td>
+                    <td><span lang="en">Rare recovery when the Olm ratchet is broken and an encrypted repair handshake cannot be decrypted. These frames contain only public keys (identity key, pre-keys, fallback key) and never contain message content, attachments, or conversation metadata.</span><span lang="de">Seltene Wiederherstellung, wenn der Olm-Ratchet defekt ist und ein verschlüsselter Repair-Handshake nicht entschlüsselt werden kann. Diese Rahmen enthalten nur öffentliche Schlüssel (Identitätsschlüssel, Pre-Keys, Fallback-Key) und niemals Nachrichteninhalte, Anhänge oder Gesprächsmetadaten.</span></td>
                 </tr>
             </tbody>
         </table>
@@ -306,6 +311,7 @@
             <li><span lang="en">Device-bound identity keys stored in Android Keystore.</span><span lang="de">Gerätegebundene Identitätsschlüssel im Android Keystore gespeichert.</span></li>
             <li><span lang="en">Optional biometric app lock and screenshot/screen-recording blocking.</span><span lang="de">Optionaler biometrischer App-Sperre und Blockierung von Screenshots/Bildschirmaufnahmen.</span></li>
             <li><span lang="en">No third-party analytics, marketing SDKs, or behavioral tracking.</span><span lang="de">Keine Drittanbieter-Analytik, Marketing-SDKs oder Verhaltens-Tracking.</span></li>
+            <li><span lang="en">A hybrid session-repair mechanism that first attempts encrypted repair and, only when the Olm ratchet is unrecoverable, falls back to a plaintext frame containing public keys only. No message content, attachments, or conversation metadata are ever transmitted in plaintext.</span><span lang="de">Ein hybrider Session-Reparatur-Mechanismus, der zuerst eine verschlüsselte Reparatur versucht und nur dann, wenn der Olm-Ratchet nicht wiederherstellbar ist, auf einen Klartext-Rahmen mit ausschließlich öffentlichen Schlüsseln zurückgreift. Nachrichteninhalte, Anhänge oder Gesprächsmetadaten werden niemals im Klartext übertragen.</span></li>
         </ul>
 
         <h2>9. <span lang="en">Emergency Account Deletion PIN</span><span lang="de">Emergency Account Deletion PIN</span></h2>
@@ -367,7 +373,7 @@
         <div class="compliance-footer">
             <strong><span lang="en">Legal basis:</span><span lang="de">Rechtsgrundlagen:</span></strong> GDPR / DSGVO, DDG, TDDDG, DSA, BGB.<br>
             <strong><span lang="en">Contact:</span><span lang="de">Kontakt:</span></strong> <a href="mailto:statezer0@proton.me">statezer0@proton.me</a> | <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a><br>
-            <strong><span lang="en">Effective:</span><span lang="de">Gültig ab:</span></strong> September 29, 2026.
+            <strong><span lang="en">Effective:</span><span lang="de">Gültig ab:</span></strong> September 30, 2026.
         </div>
     </div>
 
