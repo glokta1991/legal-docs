@@ -217,6 +217,34 @@
             <span lang="de">Sie erklären sich damit einverstanden, mich von Ansprüchen, Schäden oder Haftungen freizustellen, die sich aus Ihrem Verstoß gegen diese Bedingungen, Ihrem Missbrauch des Dienstes oder dem Inhalt Ihrer Kommunikation ergeben, soweit nach deutschem Recht zulässig. Dies gilt nicht, wenn ich selbstständig fehlerhaft gehandelt habe.</span>
         </p>
 
+        <h2>7.1 <span lang="en">Automatic Cleanup System (v3.0.0)</span><span lang="de">Automatisches Bereinigungssystem (v3.0.0)</span></h2>
+        <p>
+            <span lang="en">To prevent storage bloat and protect your privacy, StateZer0 includes an automatic cleanup system that runs daily on your device. This system deletes temporary files and metadata that are no longer needed. For a full explanation, see the Cleanup Privacy Addendum (<span class="legal-ref">cleanup_addendum.html</span>).</span>
+            <span lang="de">Um Speicherverschwendung zu verhindern und Ihren Datenschutz zu schützen, enthält StateZer0 ein automatisches Bereinigungssystem, das täglich auf Ihrem Gerät ausgeführt wird. Dieses System löscht temporäre Dateien und Metadaten, die nicht mehr benötigt werden. Für eine vollständige Erklärung siehe Datenlöschungs- und Bereinigungsrichtlinie (<span class="legal-ref">cleanup_addendum.html</span>).</span>
+        </p>
+        <p>
+            <span lang="en"><b>What is cleaned:</b> Media processing buffers, old cached downloads (>7 days), obsolete sync metadata, and failed upload staging files (>24 hours). Your messages, contacts, vault, and account keys are never deleted.</span>
+            <span lang="de"><b>Was wird bereinigt:</b> Media-Verarbeitungspuffer, alte gecachte Downloads (>7 Tage), veraltete Synchronisierungsmetadaten und fehlgeschlagene Upload-Staging-Dateien (>24 Stunden). Ihre Nachrichten, Kontakte, Ihr Vault und Ihre Kontoschlüssel werden niemals gelöscht.</span>
+        </p>
+        <p>
+            <span lang="en"><b>Liability for cleanup failures:</b> To the maximum extent permitted by German and EU law, I am not liable for:</span>
+            <span lang="de"><b>Haftung für Bereinigungsfehler:</b> Soweit nach deutschem und EU-Recht zulässig, hafte ich nicht für:</span>
+        </p>
+        <ul>
+            <li><span lang="en">Failures or delays in the cleanup process</span><span lang="de">Fehler oder Verzögerungen bei dem Bereinigungsprozess</span></li>
+            <li><span lang="en">Inability to delete a file due to OS permissions, file locks, or system limitations</span><span lang="de">Unmöglichkeit, eine Datei aufgrund von OS-Berechtigungen, Dateisperren oder Systembeschränkungen zu löschen</span></li>
+            <li><span lang="en">Data loss resulting from cleanup operations, provided the system acted in accordance with this policy</span><span lang="de">Datenverlust durch Bereinigungsvorgänge, sofern das System dieser Richtlinie entsprechend handelte</span></li>
+            <li><span lang="en">Cleanup task not running due to device offline state, battery optimization, or WorkManager system decisions</span><span lang="de">Bereinigungsaufgabe wird nicht ausgeführt, weil das Gerät offline ist, Batterieoptimierung aktiv ist oder WorkManager-Systementscheidungen dies verhindern</span></li>
+        </ul>
+        <p>
+            <span lang="en">Cached files are inherently temporary. By using StateZer0, you acknowledge that cached files may be deleted without warning.</span>
+            <span lang="de">Gecachte Dateien sind von Natur aus vorübergehend. Durch die Nutzung von StateZer0 erkennen Sie an, dass gecachte Dateien ohne Vorwarnung gelöscht werden können.</span>
+        </p>
+        <p>
+            <span lang="en">The app provides detailed documentation in <span class="legal-ref">cleanup_addendum.html</span> about what is cleaned, why, and how to contact me with concerns. Review this document to understand the cleanup system fully.</span>
+            <span lang="de">Die App enthält detaillierte Dokumentation in <span class="legal-ref">cleanup_addendum.html</span> darüber, was bereinigt wird, warum und wie Sie mich bei Bedenken kontaktieren können. Lesen Sie dieses Dokument, um das Bereinigungssystem vollständig zu verstehen.</span>
+        </p>
+
         <h2>8. <span lang="en">Account Termination and Data Deletion</span><span lang="de">Kontokündigung und Datenlöschung</span></h2>
         <p>
             <span lang="en">You may terminate your account at any time through the in-app account deletion flow or the Emergency Account Deletion PIN. Upon termination:</span>
@@ -227,37 +255,95 @@
             <li><span lang="en">Delivered messages and attachments are already subject to automatic deletion within 24 hours of delivery (or immediately upon acknowledgment).</span><span lang="de">Zugestellte Nachrichten und Anhänge unterliegen bereits der automatischen Löschung innerhalb von 24 Stunden nach Zustellung (oder sofort bei Bestätigung).</span></li>
             <li><span lang="en">The local app deletes your database, vault, cache, and settings from your device.</span><span lang="de">Die lokale App löscht Ihre Datenbank, Ihren Vault, Cache und Einstellungen von Ihrem Gerät.</span></li>
         </ul>
+        <p>
+            <span lang="en"><b>Important Clarification - Emergency Account Deletion PIN:</b> This feature is <b>NOT a tool to destroy evidence</b>. The Emergency Account Deletion PIN performs the identical account deletion as the standard in-app deletion process documented above. The only functional difference is that it can be triggered from the login screen when the app is locked, instead of from within the app. The deletion result is identical:</span>
+            <span lang="de"><b>Wichtige Klarstellung - Emergency Account Deletion PIN:</b> Dieses Feature ist <b>KEIN Werkzeug zur Vernichtung von Beweisen</b>. Die Emergency Account Deletion PIN führt die gleiche Kontolöschung wie der Standard-In-App-Löschungsprozess durch. Der einzige funktionale Unterschied besteht darin, dass er vom Anmeldebildschirm ausgelöst werden kann, wenn die App gesperrt ist, anstatt innerhalb der App. Das Löschergebnis ist identisch:</span>
+        </p>
+        <ul>
+            <li><span lang="en">Server-side: All user data, Olm keys, sessions, messages, and attachments are immediately deleted</span><span lang="de">Serverseite: Alle Benutzerdaten, Olm-Keys, Sitzungen, Nachrichten und Anhänge werden sofort gelöscht</span></li>
+            <li><span lang="en">Local device: Database, vault, cache, and all local application files are immediately deleted</span><span lang="de">Lokales Gerät: Datenbank, Vault, Cache und alle lokalen Anwendungsdateien werden sofort gelöscht</span></li>
+            <li><span lang="en">No data is preserved; no special hidden mode is activated; deletion is permanent and irreversible</span><span lang="de">Es werden keine Daten beibehalten; kein spezieller versteckter Modus wird aktiviert; die Löschung ist dauerhaft und irreversibel</span></li>
+        </ul>
+        <p>
+            <span lang="en"><b>Permitted Use:</b> The Emergency Account Deletion PIN is designed for scenarios where your device is physically locked and someone forces you to unlock it. Instead of unlocking your phone, you can enter the Emergency PIN to delete your account and all data before the device is accessed.</span>
+            <span lang="de"><b>Zulässige Nutzung:</b> Die Emergency Account Deletion PIN ist für Szenarien konzipiert, in denen Ihr Gerät physisch gesperrt ist und jemand Sie zwingt, es zu entsperren. Anstatt Ihr Telefon zu entsperren, können Sie die Emergency PIN eingeben, um Ihr Konto und alle Daten zu löschen, bevor auf das Gerät zugegriffen wird.</span>
+        </p>
         <div class="warning-box">
-            <strong><span lang="en">Emergency Account Deletion PIN:</span><span lang="de">Emergency Account Deletion PIN:</span></strong>
-            <span lang="en">This feature must not be used to destroy evidence, evade legal process, or harm another person's lawful interests.</span>
-            <span lang="de">Diese Funktion darf nicht verwendet werden, um Beweise zu vernichten, rechtliche Verfahren zu umgehen oder rechtliche Interessen Dritter zu schädigen.</span>
+            <strong><span lang="en">Prohibited Use - This Feature Must NOT Be Used For:</span><span lang="de">Verbotene Nutzung - Dieses Feature darf NICHT verwendet werden für:</span></strong>
+            <ul>
+                <li><span lang="en">Destruction of evidence in connection with legal proceedings</span><span lang="de">Vernichtung von Beweisen im Zusammenhang mit rechtlichen Verfahren</span></li>
+                <li><span lang="en">Evasion of legitimate law enforcement requests or court orders</span><span lang="de">Umgehung legitimer Anfragen von Strafverfolgungsbehörden oder Gerichtsbeschlüsse</span></li>
+                <li><span lang="en">Harming another person's lawful interests or rights</span><span lang="de">Schädigung der rechtmäßigen Interessen oder Rechte einer anderen Person</span></li>
+            </ul>
+            <span lang="en">Misuse of this feature may violate criminal law in your jurisdiction. The operator will cooperate with law enforcement investigations.</span>
+            <span lang="de">Der Missbrauch dieser Funktion kann gegen Strafgesetze in Ihrer Gerichtsbarkeit verstoßen. Der Betreiber wird mit Strafverfolgungsuntersuchungen kooperieren.</span>
         </div>
 
-        <h2>9. <span lang="en">Beta Status and Disclaimers</span><span lang="de">Beta-Status und Haftungsausschlüsse</span></h2>
+        <h2>9. <span lang="en">Age Restriction and Parental Consent</span><span lang="de">Altersbeschränkung und elterliche Zustimmung</span></h2>
+        <p>
+            <span lang="en">StateZer0 is designed for users aged 16 and above. By registering or using this service, you represent that you are at least 16 years old, and that you have the legal authority to enter into this agreement.</span>
+            <span lang="de">StateZer0 ist für Benutzer ab 16 Jahren konzipiert. Durch Registrierung oder Nutzung dieses Dienstes bestätigen Sie, dass Sie mindestens 16 Jahre alt sind und die rechtliche Befugnis haben, diese Vereinbarung einzugehen.</span>
+        </p>
+
+        <h3><span lang="en">For Users Under 16 (in the European Union)</span><span lang="de">Für Benutzer unter 16 Jahren (in der Europäischen Union)</span></h3>
+        <p>
+            <span lang="en">If you are between 13 and 15 years old and reside in the European Union, you may only use StateZer0 with the explicit, prior consent of your parent or guardian. Your parent or guardian should review this entire Terms of Service document before giving consent.</span>
+            <span lang="de">Wenn Sie zwischen 13 und 15 Jahren alt sind und in der Europäischen Union wohnen, dürfen Sie StateZer0 nur mit ausdrücklicher, vorheriger Zustimmung Ihrer Eltern oder Ihres Erziehungsberechtigten nutzen. Ihre Eltern oder Ihr Erziehungsberechtigter sollten diese gesamte Nutzungsbedingungen vor der Zustimmung überprüfen.</span>
+        </p>
+        <p>
+            <span lang="en">If you are under 13 years old, you are not permitted to use StateZer0 under any circumstances.</span>
+            <span lang="de">Wenn Sie unter 13 Jahren alt sind, dürfen Sie StateZer0 unter keinen Umständen nutzen.</span>
+        </p>
+
+        <h3><span lang="en">For Users Outside the European Union</span><span lang="de">Für Benutzer außerhalb der Europäischen Union</span></h3>
+        <p>
+            <span lang="en">If you reside outside the EU, you may use StateZer0 if you meet the minimum age requirement specified by the laws of your jurisdiction. In most regions, this is age 13 or higher. If you are unsure of your jurisdiction's minimum age requirement, consult your parents or guardians before using the service.</span>
+            <span lang="de">Wenn Sie außerhalb der EU wohnen, dürfen Sie StateZer0 nutzen, wenn Sie die Mindestalteranforderung erfüllen, die in Ihrer Gerichtsbarkeit festgelegt ist. In den meisten Regionen liegt dies bei 13 Jahren oder höher. Wenn Sie unsicher sind, welche Mindestalteranforderung in Ihrer Gerichtsbarkeit gilt, wenden Sie sich vor der Nutzung des Dienstes an Ihre Eltern oder Erziehungsberechtigten.</span>
+        </p>
+
+        <h3><span lang="en">Parental Responsibilities</span><span lang="de">Verantwortung der Eltern</span></h3>
+        <p>
+            <span lang="en">Parents and guardians are responsible for:</span>
+            <span lang="de">Eltern und Erziehungsberechtigte sind verantwortlich für:</span>
+        </p>
+        <ul>
+            <li><span lang="en">Providing prior, explicit consent before allowing their child to use StateZer0</span><span lang="de">Bereitstellung vorheriger, ausdrücklicher Zustimmung, bevor sie ihrem Kind die Nutzung von StateZer0 erlauben</span></li>
+            <li><span lang="en">Monitoring their child's use of StateZer0 and the content they share or receive</span><span lang="de">Überwachung der Nutzung von StateZer0 durch ihr Kind und der Inhalte, die es teilt oder empfängt</span></li>
+            <li><span lang="en">Ensuring their child understands the privacy, security, and legal implications of using an encrypted messaging application</span><span lang="de">Sicherstellung, dass ihr Kind die Datenschutz-, Sicherheits- und Rechtsauswirkungen der Nutzung einer verschlüsselten Messaging-Anwendung versteht</span></li>
+            <li><span lang="en">Ensuring their child does not use StateZer0 for any illegal, harmful, or inappropriate purposes</span><span lang="de">Sicherstellung, dass ihr Kind StateZer0 nicht für illegale, schädliche oder unangemessene Zwecke nutzt</span></li>
+        </ul>
+
+        <h3><span lang="en">Account Deletion by Minors</span><span lang="de">Kontolöschung durch Minderjährige</span></h3>
+        <p>
+            <span lang="en">If you are a parent or guardian of a minor using StateZer0, you may request account deletion by contacting <a href="mailto:statezer0@proton.me">statezer0@proton.me</a> with proof of the parent-child relationship (e.g., birth certificate or custody documentation). The account will be deleted within 30 days.</span>
+            <span lang="de">Wenn Sie Eltern oder Erziehungsberechtigte eines Minderjährigen sind, der StateZer0 nutzt, können Sie eine Kontolöschung anfordern, indem Sie sich unter <a href="mailto:statezer0@proton.me">statezer0@proton.me</a> mit Nachweis der Eltern-Kind-Beziehung (z. B. Geburtsurkunde oder Sorgerechtsunterlagen) in Verbindung setzen. Das Konto wird innerhalb von 30 Tagen gelöscht.</span>
+        </p>
+
+        <h2>10. <span lang="en">Beta Status and Disclaimers</span><span lang="de">Beta-Status und Haftungsausschlüsse</span></h2>
         <p>
             <span lang="en">StateZer0 is currently in a closed beta with a limited number of testers. The service may contain bugs, experience downtime, or lose data. You use it at your own risk. I recommend keeping independent backups of any critical data.</span>
             <span lang="de">StateZer0 befindet sich derzeit in einer geschlossenen Beta mit einer begrenzten Anzahl von Testern. Der Dienst kann Fehler enthalten, Ausfallzeiten haben oder Daten verlieren. Sie nutzen ihn auf eigenes Risiko. Ich empfehle, unabhängige Backups kritischer Daten zu führen.</span>
         </p>
 
-        <h2>10. <span lang="en">Intellectual Property</span><span lang="de">Geistiges Eigentum</span></h2>
+        <h2>11. <span lang="en">Intellectual Property</span><span lang="de">Geistiges Eigentum</span></h2>
         <p>
             <span lang="en">The StateZer0 name, logo, and software are my intellectual property. You receive a limited, non-exclusive, non-transferable license to use the app for its intended purpose. You may not reverse-engineer, decompile, or redistribute the app without my prior written consent.</span>
             <span lang="de">Der Name StateZer0, das Logo und die Software sind mein geistiges Eigentum. Sie erhalten eine eingeschränkte, nicht ausschließliche, nicht übertragbare Lizenz zur Nutzung der App für den vorgesehenen Zweck. Sie dürfen die App nicht reverse-engineeren, dekompilieren oder ohne meine vorherige schriftliche Zustimmung weiterverbreiten.</span>
         </p>
 
-        <h2>11. <span lang="en">Governing Law and Dispute Resolution</span><span lang="de">Geltendes Recht und Streitbeilegung</span></h2>
+        <h2>12. <span lang="en">Governing Law and Dispute Resolution</span><span lang="de">Geltendes Recht und Streitbeilegung</span></h2>
         <p>
             <span lang="en">These terms are governed by the laws of the Federal Republic of Germany. Any disputes arising from these terms or your use of the service shall be subject to the exclusive jurisdiction of the courts of Hamburg, Germany, to the extent permitted by law.</span>
             <span lang="de">Diese Bedingungen unterliegen dem Recht der Bundesrepublik Deutschland. Alle Streitigkeiten aus diesen Bedingungen oder Ihrer Nutzung des Dienstes unterliegen der ausschließlichen Zuständigkeit der Gerichte in Hamburg, Deutschland, soweit gesetzlich zulässig.</span>
         </p>
 
-        <h2>12. <span lang="en">Severability</span><span lang="de">Salvatorische Klausel</span></h2>
+        <h2>13. <span lang="en">Severability</span><span lang="de">Salvatorische Klausel</span></h2>
         <p>
             <span lang="en">If any provision of these terms is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.</span>
             <span lang="de">Sollte eine Bestimmung dieser Bedingungen unwirksam oder undurchsetzbar sein, bleiben die übrigen Bestimmungen in vollem Umfang wirksam.</span>
         </p>
 
-        <h2>13. <span lang="en">Changes to These Terms</span><span lang="de">Änderungen dieser Bedingungen</span></h2>
+        <h2>14. <span lang="en">Changes to These Terms</span><span lang="de">Änderungen dieser Bedingungen</span></h2>
         <p>
             <span lang="en">I may update these terms as the service evolves. Material changes will be announced through the app and on the website. Continued use after the effective date constitutes acceptance.</span>
             <span lang="de">Ich kann diese Bedingungen im Laufe der Dienstentwicklung aktualisieren. Wesentliche Änderungen werden über die App und die Website angekündigt. Die weitere Nutzung nach dem Gültigkeitsdatum gilt als Akzeptanz.</span>
