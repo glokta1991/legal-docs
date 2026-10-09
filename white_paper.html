@@ -710,5 +710,75 @@
         const savedLang = urlLang || localStorage.getItem('preferred-lang') || browserLang || 'en';
         setLang(savedLang);
     </script>
+
+        <h2>
+            <span lang="en">V. Compliance &amp; Audit Status</span>
+            <span lang="de">V. Compliance- und Audit-Status</span>
+        </h2>
+
+        <h3>
+            <span lang="en">Data Minimization Audit (v82.2.0)</span>
+            <span lang="de">Datenminimierungs-Audit (v82.2.0)</span>
+        </h3>
+        <p>
+            <span lang="en">StateZer0 has been architected to minimize server-side data retention. A comprehensive audit has confirmed:</span>
+            <span lang="de">StateZer0 wurde als Architektur entwickelt, um die serverseitige Datenspeicherung zu minimieren. Ein umfassendes Audit hat Bestätigt:</span>
+        </p>
+        <ul>
+            <li><span lang="en">All user message and attachment content is encrypted end-to-end and unreadable by the relay</span><span lang="de">Alle Benutzer-Nachrichten- und Anhangs-Inhalte sind Ende-zu-Ende-verschlüsselt und für das Relay unleserlich</span></li>
+            <li><span lang="en">Metadata (timestamps, routing IDs, delivery state) is minimized to the minimum necessary for routing</span><span lang="de">Metadaten (Zeitstempel, Routing-IDs, Zustellstatus) werden auf das Mindestnotwendige für das Routing minimiert</span></li>
+            <li><span lang="en">All delivered messages are deleted within 24 hours; acknowledged messages are deleted immediately</span><span lang="de">Alle zugestellten Nachrichten werden innerhalb von 24 Stunden gelöscht; bestätigte Nachrichten werden sofort gelöscht</span></li>
+            <li><span lang="en">User-local data cleanup runs daily, deleting temporary files and cached data older than 7 days</span><span lang="de">Die Benutzer-lokale Datenbereinigung läuft täglich und löscht temporäre Dateien und gecachte Daten älter als 7 Tage</span></li>
+            <li><span lang="en">No social graphs, public directories, or behavioral analytics are maintained</span><span lang="de">Keine sozialen Graphen, öffentliche Verzeichnisse oder Verhaltensanalysen werden gepflegt</span></li>
+        </ul>
+
+        <h3>
+            <span lang="en">Regulatory Compliance (GDPR, DSA, TDDDG)</span>
+            <span lang="de">Einhaltung von Vorschriften (GDPR, DSA, TDDDG)</span>
+        </h3>
+        <p>
+            <span lang="en">StateZer0 is operated in compliance with the following regulations:</span>
+            <span lang="de">StateZer0 wird in Einhaltung der folgenden Vorschriften betrieben:</span>
+        </p>
+        <ul>
+            <li>
+                <strong><span lang="en">General Data Protection Regulation (GDPR, EU 2016/679):</span><span lang="de">Datenschutz-Grundverordnung (GDPR, EU 2016/679):</span></strong>
+                <span lang="en">User data is processed only on legal bases specified in Art. 6 (contract performance, legitimate interest, consent). Data subject rights under Art. 15-21 are honored. The service is designed to minimize data retention and enable account deletion on request (Art. 17).</span>
+                <span lang="de">Benutzerdaten werden nur auf Rechtsgrundlagen verarbeitet, die in Art. 6 festgelegt sind (Vertragserfüllung, berechtigtes Interesse, Einwilligung). Betroffenenrechte unter Art. 15-21 werden beachtet. Der Dienst wurde entwickelt, um die Datenspeicherung zu minimieren und die Kontolöschung auf Anfrage zu ermöglichen (Art. 17).</span>
+            </li>
+            <li>
+                <strong><span lang="en">Digital Services Act (DSA, EU 2022/2065):</span><span lang="de">Digital Services Act (DSA, EU 2022/2065):</span></strong>
+                <span lang="en">As a regulated intermediary service provider, StateZer0 maintains a single point of contact for authorities (legal.StateZer0@proton.me), publishes transparency reports, and responds to illegal content reports within the limits of end-to-end encryption.</span>
+                <span lang="de">Als regulierter Vermittlungsdiensteanbieter unterhält StateZer0 eine Einzelkontaktstelle für Behörden (legal.StateZer0@proton.me), veröffentlicht Transparenzberichte und reagiert auf Meldungen illegaler Inhalte im Rahmen der End-zu-Ende-Verschlüsselung.</span>
+            </li>
+            <li>
+                <strong><span lang="en">Telecommunications Act (TDDDG) &amp; German Privacy Law:</span><span lang="de">Telekommunikationsgesetz (TDDDG) &amp; deutsches Datenschutzrecht:</span></strong>
+                <span lang="en">All user telecommunications are encrypted end-to-end. Call data records are minimized. Data minimization principles of §8 TDDDG and GDPR Art. 5 are implemented throughout the architecture.</span>
+                <span lang="de">Alle Benutzer-Telekommunikationen sind Ende-zu-Ende-verschlüsselt. Gebührenaufzeichnungen werden minimiert. Datenminimierungsgrundsätze des §8 TDDDG und GDPR Art. 5 sind in der gesamten Architektur implementiert.</span>
+            </li>
+        </ul>
+
+        <h3>
+            <span lang="en">Transparency &amp; Governance</span>
+            <span lang="de">Transparenz &amp; Governance</span>
+        </h3>
+        <p>
+            <span lang="en">StateZer0 is committed to operational transparency. The following documents are published in the app and on request:</span>
+            <span lang="de">StateZer0 verpflichtet sich zur operativen Transparenz. Die folgenden Dokumente werden in der App und auf Anfrage veröffentlicht:</span>
+        </p>
+        <ul>
+            <li><span lang="en"><b>Privacy Policy:</b> Full description of data processing, retention, and user rights (privacy.html)</span><span lang="de"><b>Datenschutzrichtlinie:</b> Vollständige Beschreibung der Datenverarbeitung, Aufbewahrung und Benutzerrechte (privacy.html)</span></li>
+            <li><span lang="en"><b>Terms of Service:</b> Legal terms, liability, content moderation, and age restrictions (terms.html)</span><span lang="de"><b>Nutzungsbedingungen:</b> Rechtliche Bedingungen, Haftung, Inhaltsmoderation und Altersbeschränkungen (terms.html)</span></li>
+            <li><span lang="en"><b>Transparency Report:</b> Detailed system integrity, audit findings, and incident logs (transparency_report.html)</span><span lang="de"><b>Transparenzbericht:</b> Detaillierte Systemintegrität, Audit-Ergebnisse und Incident Logs (transparency_report.html)</span></li>
+            <li><span lang="en"><b>Technical White Paper:</b> Architecture, encryption algorithms, and security design (this document)</span><span lang="de"><b>Technisches White Paper:</b> Architektur, Verschlüsselungsalgorithmen und Sicherheitsdesign (dieses Dokument)</span></li>
+            <li><span lang="en"><b>Survival Guide:</b> User-friendly guide to emergency procedures and data controls (survival_guide.html)</span><span lang="de"><b>Überlebensleitfaden:</b> Benutzerfreundlicher Leitfaden für Notfallverfahren und Datenkontrollen (survival_guide.html)</span></li>
+            <li><span lang="en"><b>Manifesto:</b> Privacy philosophy and design principles (manifesto.html)</span><span lang="de"><b>Manifest:</b> Datenschutzphilosophie und Designprinzipien (manifesto.html)</span></li>
+        </ul>
+        <p>
+            <span lang="en">For questions about compliance, privacy, or this white paper, contact <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a>.</span>
+            <span lang="de">Für Fragen zur Compliance, zum Datenschutz oder zu diesem White Paper kontaktieren Sie <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a>.</span>
+        </p>
+
+    </div>
 </body>
 </html>
