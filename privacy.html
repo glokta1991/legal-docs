@@ -110,10 +110,10 @@
         </p>
 
         <p style="text-align: center;">
-            <strong lang="en">Effective Date: September 30, 2026</strong>
-            <strong lang="de">Gültigkeitsdatum: 30. September 2026</strong><br>
-            <span lang="en">Last Updated: September 30, 2026</span>
-            <span lang="de">Zuletzt aktualisiert: 30. September 2026</span><br>
+            <strong lang="en">Effective Date: October 14, 2026</strong>
+            <strong lang="de">Gültigkeitsdatum: 14. Oktober 2026</strong><br>
+            <span lang="en">Last Updated: October 14, 2026</span>
+            <span lang="de">Zuletzt aktualisiert: 14. Oktober 2026</span><br>
             <span lang="en">Jurisdiction: Federal Republic of Germany</span>
             <span lang="de">Gerichtsstand: Bundesrepublik Deutschland</span>
         </p>
@@ -248,38 +248,50 @@
             </li>
         </ul>
 
-        <h2>6. <span lang="en">Retention Periods</span><span lang="de">Aufbewahrungsfristen</span></h2>
+        <h2>6. <span lang="en">Retention Periods & Automated TTL Garbage Collection</span><span lang="de">Aufbewahrungsfristen & Automatisierte TTL-Speicherbereinigung</span></h2>
+        <p>
+            <span lang="en">StateZer0 strictly enforces a "clean-by-default" zero-knowledge media and transit metadata policy. Server storage retention is minimized to ensure absolute privacy and zero steady-state data accumulation.</span>
+            <span lang="de">StateZer0 setzt eine strikte Zero-Knowledge-Medien- und Transit-Metadaten-Richtlinie durch. Die Speicherdauer auf dem Server ist minimiert, um absolute Privatsphäre und null dauerhafte Datenansammlung zu gewährleisten.</span>
+        </p>
         <table>
             <thead>
                 <tr>
-                    <th><span lang="en">Data</span><span lang="de">Daten</span></th>
-                    <th><span lang="en">Retention</span><span lang="de">Aufbewahrung</span></th>
+                    <th><span lang="en">Data / Payload Type</span><span lang="de">Daten- / Payload-Typ</span></th>
+                    <th><span lang="en">Retention & Deletion Policy</span><span lang="de">Aufbewahrungs- & Löschrichtlinie</span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><span lang="en">Undelivered messages and attachments</span><span lang="de">Nicht zugestellte Nachrichten und Anhänge</span></td>
-                    <td><span lang="en">72 hours or until delivered/deleted</span><span lang="de">72 Stunden oder bis zur Zustellung/Löschung</span></td>
+                    <td><span lang="en">Undelivered text messages (offline receiver)</span><span lang="de">Nicht zugestellte Textnachrichten (Offline-Empfänger)</span></td>
+                    <td><span lang="en">72 hours max transit window in MongoDB (`messages.expiresAt` TTL index), or deleted immediately upon delivery</span><span lang="de">Maximal 72 Stunden Transitfenster in MongoDB (`messages.expiresAt` TTL-Index) oder sofortige Löschung nach Zustellung</span></td>
                 </tr>
                 <tr>
-                    <td><span lang="en">Delivered but not acknowledged messages</span><span lang="de">Zugestellte, aber nicht bestätigte Nachrichten</span></td>
-                    <td><span lang="en">24 hours after delivery</span><span lang="de">24 Stunden nach Zustellung</span></td>
+                    <td><span lang="en">Acknowledged text messages</span><span lang="de">Bestätigte Textnachrichten</span></td>
+                    <td><span lang="en">Deleted immediately (0 seconds) from MongoDB upon receipt of `POST /ack`</span><span lang="de">Sofortige Löschung (0 Sekunden) aus MongoDB nach Eingang von `POST /ack`</span></td>
                 </tr>
                 <tr>
-                    <td><span lang="en">Acknowledged messages</span><span lang="de">Bestätigte Nachrichten</span></td>
-                    <td><span lang="en">Deleted immediately on acknowledgment</span><span lang="de">Sofortige Löschung bei Bestätigung</span></td>
+                    <td><span lang="en">Acknowledged media attachments (photos, GIFs, custom photos, audio, video, files, bundles)</span><span lang="de">Bestätigte Medienanhänge (Fotos, GIFs, benutzerdefinierte Fotos, Audio, Video, Dateien, Bündel)</span></td>
+                    <td><span lang="en">5-minute grace period after ACK to allow client local disk caching, then permanently purged from Cloudflare R2 by the `vault_reaper` background task</span><span lang="de">5 Minuten Karenzzeit nach ACK für das lokale Festplatten-Caching des Clients, danach dauerhafte Löschung aus Cloudflare R2 durch den `vault_reaper`-Hintergrundtask</span></td>
                 </tr>
                 <tr>
-                    <td><span lang="en">Orphaned attachment uploads (abandoned presigned uploads)</span><span lang="de">Verwaiste Anhangs-Uploads (aufgegebene Presigned-Uploads)</span></td>
-                    <td><span lang="en">72 hours after upload URL generation</span><span lang="de">72 Stunden nach Generierung der Upload-URL</span></td>
+                    <td><span lang="en">Undelivered offline media & orphaned presigned upload URLs</span><span lang="de">Nicht zugestellte Offline-Medien & verwaiste Presigned-Upload-URLs</span></td>
+                    <td><span lang="en">24 hours max retention enforced by Cloudflare R2 Object Lifecycle Rules (`cleanup-undelivered-24 hours`) and server orphan guards</span><span lang="de">Maximal 24 Stunden Aufbewahrung durch Cloudflare R2 Lifecycle-Regeln (`cleanup-undelivered-24 hours`) und Server-Orphan-Guards</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">Presence signals (Status & Avatar updates)</span><span lang="de">Präsenzsignale (Status- & Avatar-Updates)</span></td>
+                    <td><span lang="en">Ephemeral live WebSocket-only; never stored in MongoDB database</span><span lang="de">Flüchtige Live-WebSocket-Übertragung; niemals in der MongoDB-Datenbank gespeichert</span></td>
+                </tr>
+                <tr>
+                    <td><span lang="en">R2 Purge Task Records (`vault_reaper` collection)</span><span lang="de">R2-Löschauftragsdatensätze (`vault_reaper`-Sammlung)</span></td>
+                    <td><span lang="en">Processed every 60 seconds by server reaper; tracking records deleted immediately upon R2 object removal, backed by a 24-hour native MongoDB TTL index (`deleteAt`)</span><span lang="de">Verarbeitung alle 60 Sekunden durch Server-Reaper; Tracking-Datensätze werden sofort nach R2-Objektlöschung gelöscht, abgesichert durch 24-Stunden-MongoDB-TTL-Index (`deleteAt`)</span></td>
                 </tr>
                 <tr>
                     <td><span lang="en">Account data, Olm keys, contact records, push tokens</span><span lang="de">Kontodaten, Olm-Keys, Kontaktdatensätze, Push-Tokens</span></td>
-                    <td><span lang="en">Until account deletion</span><span lang="de">Bis zur Kontolöschung</span></td>
+                    <td><span lang="en">Until explicit account deletion or Emergency Account Deletion PIN activation</span><span lang="de">Bis zur expliziten Kontolöschung oder Aktivierung der Emergency Account Deletion PIN</span></td>
                 </tr>
                 <tr>
                     <td><span lang="en">Server logs</span><span lang="de">Server-Logs</span></td>
-                    <td><span lang="en">14 days, unless a legal hold applies</span><span lang="de">14 Tage, sofern keine rechtliche Aufbewahrungspflicht besteht</span></td>
+                    <td><span lang="en">14 days max, unless a legal hold applies</span><span lang="de">Maximal 14 Tage, sofern keine rechtliche Aufbewahrungspflicht besteht</span></td>
                 </tr>
             </tbody>
         </table>
@@ -375,7 +387,7 @@
         <div class="compliance-footer">
             <strong><span lang="en">Legal basis:</span><span lang="de">Rechtsgrundlagen:</span></strong> GDPR / DSGVO, DDG, TDDDG, DSA, BGB.<br>
             <strong><span lang="en">Contact:</span><span lang="de">Kontakt:</span></strong> <a href="mailto:statezer0@proton.me">statezer0@proton.me</a> | <a href="mailto:legal.StateZer0@proton.me">legal.StateZer0@proton.me</a><br>
-            <strong><span lang="en">Effective:</span><span lang="de">Gültig ab:</span></strong> September 30, 2026.
+            <strong><span lang="en">Effective:</span><span lang="de">Gültig ab:</span></strong> October 14, 2026.
         </div>
     </div>
 
