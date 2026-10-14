@@ -115,8 +115,8 @@
         </div>
 
         <div class="warning-box">
-            <span lang="en">Date: November 15, 2026 | Project: StateZer0 | Phases 1-4 Roadmap</span>
-            <span lang="de">Datum: 15. November 2026 | Projekt: StateZer0 | Phasen 1-4 Roadmap</span><br>
+            <span lang="en">Date: October 14, 2026 | Project: StateZer0 | Phases 1-4 Roadmap</span>
+            <span lang="de">Datum: 14. Oktober 2026 | Projekt: StateZer0 | Phasen 1-4 Roadmap</span><br>
             <span lang="en" style="color: #2ecc71;">[AUDIT CYCLE 76.0.0-STABLE]: Sender-Side Performance & Security Hardening (Phase 1 Complete)</span>
             <span lang="de" style="color: #2ecc71;">[AUDIT-ZYKLUS 76.0.0-STABLE]: Senderseitige Performance & Sicherheitshärtung (Phase 1 Abgeschlossen)</span><br>
             <span lang="en" style="color: #f39c12;">[PHASE 2-4]: Multimedia, Biometric, Ghost Mode (In Development)</span>
@@ -197,8 +197,8 @@
         </p>
         <ul>
             <li>
-                <span lang="en"><b>Server-Side TTL:</b> Delivered messages are deleted within 24 hours; acknowledged messages are deleted immediately. Undelivered messages are deleted within 72 hours. Attachment files expire after 72 hours in Cloudflare R2 object storage.</span>
-                <span lang="de"><b>Serverseitige TTL:</b> Zugestellte Nachrichten werden innerhalb von 24 Stunden gelöscht; bestätigte Nachrichten werden sofort gelöscht. Unzugestellte Nachrichten werden innerhalb von 72 Stunden gelöscht.</span>
+                <span lang="en"><b>Server-Side TTL & R2 Media Lifecycle:</b> Acknowledged text messages are purged from MongoDB immediately (0s). Acknowledged media attachments (photos, GIFs, custom photos, audio clips, video recordings, multi-attachment bundles) are purged from Cloudflare R2 within 5 minutes of acknowledgment (allowing client background workers to finalize local disk caching). Undelivered text messages are retained for a maximum 72-hour transit window in MongoDB (`messages.expiresAt` TTL index). Undelivered offline media attachments and orphaned upload URLs are auto-deleted from Cloudflare R2 after 24 hours max. Presence signals (Status and Avatar updates) are strictly ephemeral (live WebSocket-only, never stored in MongoDB).</span>
+                <span lang="de"><b>Serverseitige TTL & R2-Medien-Lifecycle:</b> Bestätigte Textnachrichten werden sofort (0s) aus MongoDB gelöscht. Bestätigte Medienanhänge (Fotos, GIFs, Audio, Video, Dateien, Bündel) werden innerhalb von 5 Minuten nach Bestätigung aus Cloudflare R2 gelöscht (für lokales Caching). Unzugestellte Textnachrichten verbleiben maximal 72 Stunden in MongoDB. Unzugestellte Offline-Medienanhänge und verwaiste Upload-URLs werden nach maximal 24 Stunden automatisch aus Cloudflare R2 gelöscht. Präsenzsignale (Status- und Avatar-Updates) sind flüchtig (nur Live-WebSocket) und werden niemals in MongoDB gespeichert.</span>
             </li>
             <li>
                 <span lang="en"><b>Local Message Cleanup (v3.0.0):</b> The app runs a daily cleanup task that deletes archived messages older than 90 days (configurable in Settings). Cached thumbnails and media previews older than 7 days are cleared. This prevents long-term local storage bloat.</span>
@@ -209,8 +209,8 @@
                 <span lang="de"><b>Ephemeral Message Mode (Phase 2.5 Vorschau):</b> Benutzer können einzelne Nachrichten oder ganze Unterhaltungen so einstellen, dass sie nach 1, 7, 30 oder 90 Tagen automatisch gelöscht werden.</span>
             </li>
             <li>
-                <span lang="en"><b>Reaper Task Performance:</b> The R2 reaper runs every minute to purge expired attachments. The cleanup task is bounded to Dispatchers.IO to avoid Main Thread blocking.</span>
-                <span lang="de"><b>Reaper Task Performance:</b> Der R2-Reaper läuft jede Minute, um abgelaufene Anhänge zu löschen. Die Bereinigungsaufgabe ist an Dispatchers.IO gebunden, um Main Thread-Blockierung zu vermeiden.</span>
+                <span lang="en"><b>Reaper Task Performance:</b> The server background reaper task runs every 60 seconds to process `vault_reaper` jobs and purge expired R2 objects. Tracking records are deleted immediately upon object removal, backed by a 24-hour native MongoDB TTL index (`deleteAt`).</span>
+                <span lang="de"><b>Reaper Task Performance:</b> Der Server-Hintergrundreaper läuft alle 60 Sekunden, um `vault_reaper`-Jobs zu verarbeiten und abgelaufene R2-Objekte zu löschen. Tracking-Datensätze werden sofort nach der Objektentfernung gelöscht, abgesichert durch einen 24-Stunden-MongoDB-TTL-Index (`deleteAt`).</span>
             </li>
         </ul>
 
@@ -516,8 +516,8 @@
 
         <h3>8.1 <span lang="en">Retention & Time-to-Live (TTL)</span><span lang="de">8.1 Aufbewahrung & Time-to-Live (TTL)</span></h3>
         <p>
-            <span lang="en">StateZer0 applies the following retention rules on the relay: delivered messages and attachments are erased within 24 hours of delivery; acknowledged content is erased immediately. Undelivered content is erased within 72 hours. Local chat history remains on the user's device until deleted by the user or by a wipe.</span>
-            <span lang="de">StateZer0 wendet folgende Aufbewahrungsregeln auf dem Relay an: Zugestellte Nachrichten und Anhänge werden innerhalb von 24 Stunden nach Zustellung gelöscht; bestätigte Inhalte werden sofort gelöscht. Unzugestellte Inhalte werden innerhalb von 72 Stunden gelöscht.</span>
+            <span lang="en">StateZer0 applies strict retention rules on the relay: acknowledged text messages are purged immediately (0s) from MongoDB; acknowledged media attachments are purged from Cloudflare R2 within 5 minutes of acknowledgment. Undelivered messages and offline media files expire after a maximum 24-hour window (backed by Cloudflare R2 Lifecycle Rules and MongoDB native TTL indices). Local chat history remains on the user's device until deleted by the user or by a wipe.</span>
+            <span lang="de">StateZer0 wendet folgende Aufbewahrungsregeln auf dem Relay an: Bestätigte Textnachrichten werden sofort (0s) aus MongoDB gelöscht; bestätigte Medienanhänge werden innerhalb von 5 Minuten nach Bestätigung aus Cloudflare R2 gelöscht. Unzugestellte Nachrichten und Offline-Medien verbleiben maximal 24 Stunden (abgesichert durch Cloudflare R2 Lifecycle-Regeln und MongoDB-TTL-Indizes).</span>
         </p>
 
         <h3>8.2 <span lang="en">Universal I18N & UX Standards (v25.4.0)</span><span lang="de">8.2 Universelle I18N & UX-Standards (v25.4.0)</span></h3>
@@ -536,10 +536,10 @@
         <ul>
             <li><span lang="en">✓ All user message and attachment content is encrypted end-to-end and unreadable by the relay</span><span lang="de">✓ Alle Benutzer-Nachrichten- und Anhangs-Inhalte sind Ende-zu-Ende-verschlüsselt und für das Relay unleserlich</span></li>
             <li><span lang="en">✓ Metadata (timestamps, routing IDs, delivery state) is minimized to the minimum necessary for routing</span><span lang="de">✓ Metadaten werden auf das Mindestnotwendige für das Routing minimiert</span></li>
-            <li><span lang="en">✓ All delivered messages are deleted within 24 hours; acknowledged messages are deleted immediately</span><span lang="de">✓ Alle zugestellten Nachrichten werden innerhalb von 24 Stunden gelöscht; bestätigte Nachrichten werden sofort gelöscht</span></li>
+            <li><span lang="en">✓ Acknowledged text messages are purged immediately (0s); acknowledged media files are purged from R2 within 5 minutes</span><span lang="de">✓ Bestätigte Textnachrichten werden sofort (0s) gelöscht; bestätigte Mediendateien werden innerhalb von 5 Minuten aus R2 gelöscht</span></li>
+            <li><span lang="en">✓ Undelivered offline media files and orphan upload URLs are auto-deleted after 24 hours max</span><span lang="de">✓ Unzugestellte Offline-Mediendateien und verwaiste Upload-URLs werden nach maximal 24 Stunden automatisch gelöscht</span></li>
             <li><span lang="en">✓ Local data cleanup runs daily, deleting temporary files and cached data older than 7 days</span><span lang="de">✓ Die Benutzer-lokale Datenbereinigung läuft täglich und löscht temporäre Dateien und gecachte Daten älter als 7 Tage</span></li>
             <li><span lang="en">✓ No social graphs, public directories, or behavioral analytics are maintained</span><span lang="de">✓ Keine sozialen Graphen, öffentliche Verzeichnisse oder Verhaltensanalysen werden gepflegt</span></li>
-            <li><span lang="en">✓ Phase 2-4 features (multimedia, biometric, Ghost Mode) extend privacy protection</span><span lang="de">✓ Phase 2-4 Features (Multimedia, Biometric, Ghost Mode) erweitern den Datenschutz</span></li>
         </ul>
 
         <h3><span lang="en">Regulatory Compliance (GDPR, DSA, TDDDG)</span><span lang="de">Einhaltung von Vorschriften (GDPR, DSA, TDDDG)</span></h3>
