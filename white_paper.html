@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StateZer0 | Technical White Paper (v124.0.0-BETA)</title>
+    <title>StateZer0 | Technical White Paper (Production Release v5.0)</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
         /* MOBILE-FIRST RESPONSIVE LAYOUT */
         * { box-sizing: border-box; }
 
         body {
             background-color: #EDE6D6;
             color: #1a1a1a;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             line-height: 1.7;
+            letter-spacing: -0.011em;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -35,7 +40,7 @@
         .lang-switch {
             text-align: right;
             margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
+            font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
             font-weight: bold;
         }
         .lang-btn {
@@ -106,8 +111,8 @@
         </div>
 
         <h1>
-            <span lang="en">Technical White Paper & Architectural Audit (v124.0.0-BETA)</span>
-            <span lang="de">Technisches Whitepaper & Architektur-Audit (v124.0.0-BETA)</span>
+            <span lang="en">Technical White Paper & Architectural Audit (Production Release)</span>
+            <span lang="de">Technisches Whitepaper & Architektur-Audit (Produktions-Release)</span>
         </h1>
         <div class="subtitle">
             <span lang="en">StateZer0: An End-to-End Encrypted Communications Platform</span>
@@ -115,12 +120,12 @@
         </div>
 
         <div class="warning-box">
-            <span lang="en">Date: November 4, 2026 | Project: StateZer0 | Version 124 (dQuantumBear Beta 2.4)</span>
-            <span lang="de">Datum: 4. November 2026 | Projekt: StateZer0 | Version 124 (dQuantumBear Beta 2.4)</span><br>
-            <span lang="en" style="color: #2ecc71;">[AUDIT CYCLE v124.0.0-BETA]: Full Production Hardening (Phases 1, 2, 3 & 4 Active)</span>
-            <span lang="de" style="color: #2ecc71;">[AUDIT-ZYKLUS v124.0.0-BETA]: Vollständige Produktionshärtung (Phasen 1, 2, 3 & 4 Aktiv)</span><br>
-            <span lang="en" style="color: #2ecc71;">[DEPLOYMENT STATUS]: Active Closed Beta Testing on Google Play (dQuantumBear Beta 2.4)</span>
-            <span lang="de" style="color: #2ecc71;">[DEPLOYMENT-STATUS]: Aktiver geschlossener Beta-Test auf Google Play (dQuantumBear Beta 2.4)</span>
+            <span lang="en">Date: November 26, 2026 | Project: StateZer0 | Production Version 5.0</span>
+            <span lang="de">Datum: 26. November 2026 | Projekt: StateZer0 | Produktions-Version 5.0</span><br>
+            <span lang="en" style="color: #2ecc71;">[AUDIT CYCLE]: Production Release & Google Play Store Audit Ready</span>
+            <span lang="de" style="color: #2ecc71;">[AUDIT-ZYKLUS]: Produktions-Release & Bereit für Google Play Store Audit</span><br>
+            <span lang="en" style="color: #2ecc71;">[DEPLOYMENT STATUS]: Production Access Active</span>
+            <span lang="de" style="color: #2ecc71;">[DEPLOYMENT-STATUS]: Produktions-Zugriff Aktiv</span>
         </div>
 
         <h2><span lang="en">I. Executive Summary & Market Value Proposition</span><span lang="de">I. Management-Zusammenfassung & Markt-Nutzenversprechen</span></h2>
@@ -516,8 +521,8 @@
 
         <h3>8.1 <span lang="en">Retention & Time-to-Live (TTL)</span><span lang="de">8.1 Aufbewahrung & Time-to-Live (TTL)</span></h3>
         <p>
-            <span lang="en">StateZer0 applies strict retention rules on the relay: acknowledged text messages are purged immediately (0s) from MongoDB; acknowledged media attachments are purged from Cloudflare R2 within 5 minutes of acknowledgment. Undelivered messages and offline media files expire after a maximum 24-hour window (backed by Cloudflare R2 Lifecycle Rules and MongoDB native TTL indices). Local chat history remains on the user's device until deleted by the user or by a wipe.</span>
-            <span lang="de">StateZer0 wendet folgende Aufbewahrungsregeln auf dem Relay an: Bestätigte Textnachrichten werden sofort (0s) aus MongoDB gelöscht; bestätigte Medienanhänge werden innerhalb von 5 Minuten nach Bestätigung aus Cloudflare R2 gelöscht. Unzugestellte Nachrichten und Offline-Medien verbleiben maximal 24 Stunden (abgesichert durch Cloudflare R2 Lifecycle-Regeln und MongoDB-TTL-Indizes).</span>
+            <span lang="en">StateZer0 applies strict retention rules on the relay: acknowledged text messages are purged immediately (0s) from MongoDB; acknowledged media attachments are purged from Cloudflare R2 within 5 minutes of acknowledgment. Undelivered messages and offline media files expire after a maximum 24-hour window (backed by Cloudflare R2 Lifecycle Rules and MongoDB native TTL indices). In addition, inactive accounts remaining unconnected for more than 90 consecutive days are automatically purged from MongoDB via a native TTL index (`lastSeenAt_1`). Local chat history remains on the user's device until deleted by the user or by a wipe.</span>
+            <span lang="de">StateZer0 wendet folgende Aufbewahrungsregeln auf dem Relay an: Bestätigte Textnachrichten werden sofort (0s) aus MongoDB gelöscht; bestätigte Medienanhänge werden innerhalb von 5 Minuten nach Bestätigung aus Cloudflare R2 gelöscht. Unzugestellte Nachrichten und Offline-Medien verbleiben maximal 24 Stunden (abgesichert durch Cloudflare R2 Lifecycle-Regeln und MongoDB-TTL-Indizes). Zusätzlich werden inaktive Konten, die länger als 90 aufeinanderfolgende Tage nicht verbunden sind, automatisch über einen nativen TTL-Index (`lastSeenAt_1`) aus MongoDB gelöscht.</span>
         </p>
 
         <h3>8.2 <span lang="en">Universal I18N & UX Standards (v25.4.0)</span><span lang="de">8.2 Universelle I18N & UX-Standards (v25.4.0)</span></h3>
@@ -567,11 +572,11 @@
 
         <div class="status-footer">
             <span lang="en">Legal Compliance: EU DSGVO, GDPR Art. 11, German TDDDG § 25.<br>
-            System Integrity: GHOST PROTOCOL v124.0.0-BETA (dQuantumBear Beta 2.4).<br>
-            Status: Phases 1, 2, 3 & 4 Active | Closed Beta Live 🛡️🚀🐻❤️</span>
+            System Integrity: GHOST PROTOCOL Production Release v5.0.<br>
+            Status: Phases 1, 2, 3 & 4 Active | Google Play Store Production Live 🛡️🚀🐻❤️</span>
             <span lang="de">Rechtskonformität: EU DSGVO, GDPR Art. 11, Deutsches TDDDG § 25.<br>
-            Systemintegrität: GHOST PROTOCOL v124.0.0-BETA (dQuantumBear Beta 2.4).<br>
-            Status: Phasen 1, 2, 3 & 4 Aktiv | Geschlossene Beta Live 🛡️🚀🐻❤️</span>
+            Systemintegrität: GHOST PROTOCOL Produktions-Release v5.0.<br>
+            Status: Phasen 1, 2, 3 & 4 Aktiv | Google Play Store Produktion Live 🛡️🚀🐻❤️</span>
         </div>
     </div>
 
