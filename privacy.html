@@ -13,9 +13,12 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             line-height: 1.7;
             color: #1a1a1a;
+            letter-spacing: -0.011em;
         }
 
         .document-container {
@@ -33,7 +36,7 @@
         .lang-switch {
             text-align: right;
             margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
             font-weight: bold;
         }
         .lang-btn {
@@ -53,7 +56,7 @@
 
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
-        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
+        .contact-line { margin-top: 15px; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
         .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
 
         h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
@@ -61,7 +64,7 @@
         h3 { color: #1a1a1a; margin-top: 1.8rem; font-size: 1.05em; font-weight: bold; }
 
         .nuclear-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #990000; }
-        .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
+        .legal-ref { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
         .warning-box { background: #fff8e1; border-left: 5px solid #f39c12; padding: 15px; margin: 20px 0; }
 
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
@@ -112,8 +115,8 @@
         <p style="text-align: center;">
             <strong lang="en">Effective Date: November 4, 2026</strong>
             <strong lang="de">Gültigkeitsdatum: 4. November 2026</strong><br>
-            <span lang="en">Last Updated: November 4, 2026</span>
-            <span lang="de">Zuletzt aktualisiert: 4. November 2026</span><br>
+            <span lang="en">Last Updated: November 26, 2026</span>
+            <span lang="de">Zuletzt aktualisiert: 26. November 2026</span><br>
             <span lang="en">Jurisdiction: Federal Republic of Germany</span>
             <span lang="de">Gerichtsstand: Bundesrepublik Deutschland</span>
         </p>
@@ -149,6 +152,16 @@
         <p>
             <span lang="en">However, the relay is not invisible. To deliver traffic, I must process a minimum set of metadata: pseudonymous routing identifiers, contact relationship records, timestamps, push tokens, delivery status, and encrypted message envelopes. This metadata is minimized, not eliminated.</span>
             <span lang="de">Das Relay ist jedoch nicht unsichtbar. Um Verkehr zuzustellen, muss ich einen Mindestsatz an Metadaten verarbeiten: pseudonyme Routing-Kennungen, Kontaktbeziehungsdatensätze, Zeitstempel, Push-Tokens, Zustellstatus und verschlüsselte Nachrichtenumschläge. Diese Metadaten werden minimiert, nicht eliminiert.</span>
+        </p>
+
+        <h3>2.1 <span lang="en">Cryptographic Blindness & EU DSA Pure Conduit Status</span><span lang="de">Kryptographische Blindheit & EU DSA Pure Conduit Status</span></h3>
+        <p>
+            <span lang="en"><b>Cryptographic Blindness:</b> StateZer0 operates as an end-to-end encrypted relay. All message and attachment payloads are encrypted locally on user devices before transmission. The operator (MARDIX APPS) possesses no technical means, master keys, or backdoors to decrypt, inspect, or monitor user communication content.</span>
+            <span lang="de"><b>Kryptographische Blindheit:</b> StateZer0 arbeitet als Ende-zu-Ende-verschlüsselter Relay. Alle Nachrichten- und Anhangsdaten werden vor der Übertragung lokal auf den Geräten der Nutzer verschlüsselt. Der Betreiber (MARDIX APPS) besitzt keine technischen Mittel, Hauptschlüssel oder Backdoors, um Kommunikationsinhalte zu entschlüsseln, zu prüfen oder zu überwachen.</span>
+        </p>
+        <p>
+            <span lang="en"><b>EU DSA Pure Conduit Safe Harbor (Art. 4 EU DSA / § 7 DDG):</b> The service operates strictly as a technical transmission conduit under Article 4 of the EU Digital Services Act (Regulation (EU) 2022/2065) and § 7 of the German Digital Services Act (DDG). The operator does not initiate data transmissions, select signal recipients, or modify transmitted payloads, and is statutorily protected under EU safe harbor provisions.</span>
+            <span lang="de"><b>EU DSA Pure Conduit Safe Harbor (Art. 4 EU DSA / § 7 DDG):</b> Der Dienst arbeitet ausschließlich als technisches Übertragungs-Conduit gemäß Artikel 4 des EU-Gesetzes über digitale Dienste (Verordnung (EU) 2022/2065) und § 7 des deutschen Digitale-Dienste-Gesetzes (DDG). Der Betreiber veranlasst keine Datenübertragungen, wählt keine Signalempfänger aus und verändert keine übertragenen Daten.</span>
         </p>
 
         <h2>3. <span lang="en">Data I Process</span><span lang="de">Daten, die ich verarbeite</span></h2>
@@ -287,7 +300,7 @@
                 </tr>
                 <tr>
                     <td><span lang="en">Account data, Olm keys, contact records, push tokens</span><span lang="de">Kontodaten, Olm-Keys, Kontaktdatensätze, Push-Tokens</span></td>
-                    <td><span lang="en">Until explicit account deletion or Emergency Account Deletion PIN activation</span><span lang="de">Bis zur expliziten Kontolöschung oder Aktivierung der Emergency Account Deletion PIN</span></td>
+                    <td><span lang="en">Until explicit account deletion, Emergency Account Deletion PIN activation, or automated 90-day inactive account TTL purge (`lastSeenAt_1` index)</span><span lang="de">Bis zur expliziten Kontolöschung, Aktivierung der Emergency Account Deletion PIN oder automatisierter 90-Tage-TTL-Löschung inaktiver Konten (`lastSeenAt_1`-Index)</span></td>
                 </tr>
                 <tr>
                     <td><span lang="en">Server logs</span><span lang="de">Server-Logs</span></td>
