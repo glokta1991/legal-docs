@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - StateZer0</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
         * { box-sizing: border-box; }
 
         body {
@@ -13,9 +15,12 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             line-height: 1.7;
             color: #1a1a1a;
+            letter-spacing: -0.011em;
         }
 
         .document-container {
@@ -33,7 +38,7 @@
         .lang-switch {
             text-align: right;
             margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
+            font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
             font-weight: bold;
         }
         .lang-btn {
@@ -53,14 +58,14 @@
 
         .header-branding { text-align: center; margin-bottom: 40px; }
         .header-branding img { max-width: 180px; height: auto; }
-        .contact-line { margin-top: 15px; font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
+        .contact-line { margin-top: 15px; font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-weight: bold; font-size: 0.9em; letter-spacing: 1px; }
         .header-divider { border-bottom: 2px solid #1a1a1a; width: 60%; margin: 20px auto; }
 
         h1 { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
         h2 { color: #27ae60; margin-top: 2.5rem; border-left: 5px solid #27ae60; padding-left: 15px; text-transform: uppercase; font-size: 1.2em; }
 
         .nuclear-notice { background: #1a1a1a; color: #fff; padding: 20px; margin: 30px 0; font-weight: bold; text-align: center; border: 2px solid #990000; }
-        .legal-ref { font-family: 'Courier New', monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
+        .legal-ref { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; font-size: 0.9em; background: #f4f4f4; padding: 2px 5px; }
         .warning-box { background: #fff8e1; border-left: 5px solid #f39c12; padding: 15px; margin: 20px 0; }
 
         p, li { font-size: 1.05em; color: #222; text-align: justify; }
@@ -105,6 +110,8 @@
         <p style="text-align: center;">
             <strong lang="en">Effective Date: November 4, 2026</strong>
             <strong lang="de">Gültigkeitsdatum: 4. November 2026</strong><br>
+            <span lang="en">Last Updated: November 26, 2026</span>
+            <span lang="de">Zuletzt aktualisiert: 26. November 2026</span><br>
             <span lang="en">Jurisdiction: Federal Republic of Germany</span>
             <span lang="de">Gerichtsstand: Bundesrepublik Deutschland</span>
         </p>
@@ -223,13 +230,25 @@
             <span lang="de">Dieser Haftungsausschluss gilt nicht für mein eigenes vorsätzliches Fehlverhalten, grobe Fahrlässigkeit oder gesetzlich unabdingbare Pflichten.</span>
         </p>
 
-        <h2>7. <span lang="en">Indemnity</span><span lang="de">Freistellung</span></h2>
+        <h2>7. <span lang="en">Indemnity and Legal Shield</span><span lang="de">Freistellung und rechtlicher Schutz</span></h2>
         <p>
             <span lang="en">You agree to indemnify and hold me harmless from claims, damages, or liabilities arising from your breach of these terms, your misuse of the service, or the content of your communications, to the extent permitted by German law. This does not apply where I am independently at fault.</span>
             <span lang="de">Sie erklären sich damit einverstanden, mich von Ansprüchen, Schäden oder Haftungen freizustellen, die sich aus Ihrem Verstoß gegen diese Bedingungen, Ihrem Missbrauch des Dienstes oder dem Inhalt Ihrer Kommunikation ergeben, soweit nach deutschem Recht zulässig. Dies gilt nicht, wenn ich selbstständig fehlerhaft gehandelt habe.</span>
         </p>
 
-        <h2>7.1 <span lang="en">Automatic Cleanup System (v3.0.0)</span><span lang="de">Automatisches Bereinigungssystem (v3.0.0)</span></h2>
+        <h2>7.1 <span lang="en">Cryptographic Blindness & Zero Content Liability</span><span lang="de">Kryptographische Blindheit und Haftungsausschluss</span></h2>
+        <p>
+            <span lang="en"><b>Cryptographic Blindness & Immunity:</b> StateZer0 is an end-to-end encrypted protocol. You acknowledge and agree that the operator has no technical ability, decryption keys, or master backdoors to read, decrypt, filter, or moderate user communications. You assume 100% sole, exclusive, and unmitigated legal, civil, and criminal responsibility for all text, media, files, or transmissions sent or received through your account. To the fullest extent permitted by law, MARDIX APPS disclaims all duty of care or liability for user-generated transmissions.</span>
+            <span lang="de"><b>Kryptographische Blindheit & Immunität:</b> StateZer0 ist ein Ende-zu-Ende-verschlüsseltes Protokoll. Sie erkennen an und stimmen zu, dass der Betreiber keine technische Möglichkeit, Hauptschlüssel oder Backdoors hat, um Nutzerkommunikationen zu lesen, zu entschlüsseln, zu filtern oder zu moderieren. Sie übernehmen die 100%ige alleinige, exklusive und uneingeschränkte rechtliche, zivil- und strafrechtliche Verantwortung für alle Texte, Medien, Dateien oder Übertragungen, die über Ihr Konto gesendet oder empfangen werden.</span>
+        </p>
+
+        <h2>7.2 <span lang="en">EU DSA Pure Conduit Safe Harbor (Art. 4 EU DSA / § 7 DDG)</span><span lang="de">EU DSA Pure Conduit Safe Harbor (Art. 4 EU DSA / § 7 DDG)</span></h2>
+        <p>
+            <span lang="en">The service operates strictly as a pure technical transmission conduit under Article 4 of the EU Digital Services Act (Regulation (EU) 2022/2065) and § 7 of the German Digital Services Act (DDG). The operator does not initiate data transmissions, select signal recipients, or modify transmitted payloads. Pursuant to statutory safe harbor provisions, the operator is immune from liability for transmitted user data.</span>
+            <span lang="de">Der Dienst arbeitet ausschließlich als technisches Übertragungs-Conduit gemäß Artikel 4 des EU-Gesetzes über digitale Dienste (Verordnung (EU) 2022/2065) und § 7 des deutschen Digitale-Dienste-Gesetzes (DDG). Der Betreiber veranlasst keine Datenübertragungen, wählt keine Signalempfänger aus und verändert keine übertragenen Daten.</span>
+        </p>
+
+        <h2>7.3 <span lang="en">Automatic Cleanup System (v3.0.0)</span><span lang="de">Automatisches Bereinigungssystem (v3.0.0)</span></h2>
         <p>
             <span lang="en">To prevent storage bloat and protect your privacy, StateZer0 includes an automatic cleanup system that runs daily on your device. This system deletes temporary files and metadata that are no longer needed. For a full explanation, see the Cleanup Privacy Addendum (<span class="legal-ref">cleanup_addendum.html</span>).</span>
             <span lang="de">Um Speicherverschwendung zu verhindern und Ihren Datenschutz zu schützen, enthält StateZer0 ein automatisches Bereinigungssystem, das täglich auf Ihrem Gerät ausgeführt wird. Dieses System löscht temporäre Dateien und Metadaten, die nicht mehr benötigt werden. Für eine vollständige Erklärung siehe Datenlöschungs- und Bereinigungsrichtlinie (<span class="legal-ref">cleanup_addendum.html</span>).</span>
@@ -266,6 +285,7 @@
             <li><span lang="en">I delete your user row, Olm keys, sessions, push tokens, active invites, and all messages and attachments (delivered and undelivered) from the relay database and Cloudflare R2 object storage.</span><span lang="de">Ich lösche Ihre Benutzerzeile, Olm-Keys, Sitzungen, Push-Tokens, aktiven Einladungen sowie alle Nachrichten und Anhänge (zugestellte und unzugestellte) aus der Relay-Datenbank und dem Cloudflare R2 Object Storage.</span></li>
             <li><span lang="en">Delivered text messages are deleted immediately (0 seconds) upon acknowledgment. Media attachments are purged from Cloudflare R2 within 5 minutes of acknowledgment, while undelivered offline media files are auto-purged after 24 hours.</span><span lang="de">Zugestellte Textnachrichten werden sofort (0 Sekunden) nach Bestätigung gelöscht. Medienanhänge werden innerhalb von 5 Minuten nach Bestätigung aus Cloudflare R2 gelöscht, während unzugestellte Offline-Medien nach 24 Stunden automatisch bereinigt werden.</span></li>
             <li><span lang="en">The local app deletes your database, vault, cache, and settings from your device.</span><span lang="de">Die lokale App löscht Ihre Datenbank, Ihren Vault, Cache und Einstellungen von Ihrem Gerät.</span></li>
+            <li><span lang="en"><b>Automated Inactive Account Expiration:</b> Accounts remaining inactive (unconnected) for more than 90 consecutive days are automatically expired and deleted from server databases via native MongoDB TTL cleanup (`lastSeenAt_1`).</span><span lang="de"><b>Automatische Inaktivitätslöschung:</b> Konten, die länger als 90 aufeinanderfolgende Tage inaktiv (nicht verbunden) bleiben, werden automatisch abgelaufen und über die native MongoDB-TTL-Bereinigung (`lastSeenAt_1`) aus den Server-Datenbanken gelöscht.</span></li>
         </ul>
         <p>
             <span lang="en"><b>Important Clarification - Emergency Account Deletion PIN:</b> This feature is <b>NOT a tool to destroy evidence</b>. The Emergency Account Deletion PIN performs the identical account deletion as the standard in-app deletion process documented above. The only functional difference is that it can be triggered from the login screen when the app is locked, instead of from within the app. The deletion result is identical:</span>
@@ -331,10 +351,18 @@
             <span lang="de">Wenn Sie Eltern oder Erziehungsberechtigte eines Minderjährigen sind, der StateZer0 nutzt, können Sie eine Kontolöschung anfordern, indem Sie sich unter <a href="mailto:statezer0@proton.me">statezer0@proton.me</a> mit Nachweis der Eltern-Kind-Beziehung (z. B. Geburtsurkunde oder Sorgerechtsunterlagen) in Verbindung setzen. Das Konto wird innerhalb von 30 Tagen gelöscht.</span>
         </p>
 
-        <h2>10. <span lang="en">Beta Status and Disclaimers</span><span lang="de">Beta-Status und Haftungsausschlüsse</span></h2>
+        <h2>10. <span lang="en">Production Release Status, Warranties, and Financial Liability Cap</span><span lang="de">Produktions-Release-Status, Gewährleistung und finanzielle Haftungsgrenze</span></h2>
         <p>
-            <span lang="en">StateZer0 is currently in a closed beta with a limited number of testers. The service may contain bugs, experience downtime, or lose data. You use it at your own risk. I recommend keeping independent backups of any critical data.</span>
-            <span lang="de">StateZer0 befindet sich derzeit in einer geschlossenen Beta mit einer begrenzten Anzahl von Testern. Der Dienst kann Fehler enthalten, Ausfallzeiten haben oder Daten verlieren. Sie nutzen ihn auf eigenes Risiko. Ich empfehle, unabhängige Backups kritischer Daten zu führen.</span>
+            <span lang="en">StateZer0 is an official production release communications service. While architected with military-grade zero-knowledge encryption, you use the service in accordance with these Terms. I recommend keeping independent backups of any critical data.</span>
+            <span lang="de">StateZer0 ist ein offizieller Kommunikationsdienst der Produktionsversion. Obwohl mit Zero-Knowledge-Verschlüsselung nach Militärstandard entwickelt, nutzen Sie den Dienst in Übereinstimmung mit diesen Bedingungen. Ich empfehle, unabhängige Backups kritischer Daten zu führen.</span>
+        </p>
+        <p>
+            <span lang="en"><b>Disclaimer of Warranties:</b> The service is provided strictly on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose, uninterrupted operation, or error-free transmission.</span>
+            <span lang="de"><b>Gewährleistungsausschluss:</b> Der Dienst wird ausschließlich auf Basis "WIE GESEHEN" ("AS IS") und "WIE VERFÜGBAR" ("AS AVAILABLE") ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt.</span>
+        </p>
+        <p>
+            <span lang="en"><b>Limitation of Financial Liability & €100 Cap:</b> To the maximum extent permitted by applicable law, MARDIX APPS shall not be liable for any indirect, incidental, consequential, special, or punitive damages (including loss of data, loss of business, or service interruption). The total aggregate financial liability of MARDIX APPS for all claims arising out of or related to the service shall be strictly capped at the total amount paid by you for the service in the 12 months preceding the claim, or €100 (One Hundred Euros), whichever is greater.</span>
+            <span lang="de"><b>Beschränkung der finanziellen Haftung:</b> Soweit nach geltendem Recht zulässig, haftet MARDIX APPS nicht für mittelbare, zufällige, Folgeschäden, besondere oder Entschädigungsschäden. Die Gesamthaftung von MARDIX APPS für alle Ansprüche aus oder im Zusammenhang mit dem Dienst ist strikt auf den Betrag beschränkt, den Sie in den 12 Monaten vor dem Anspruch gezahlt haben, oder auf 100 € (Einhundert Euro), je nachdem, welcher Betrag höher ist.</span>
         </p>
 
         <h2>11. <span lang="en">Intellectual Property</span><span lang="de">Geistiges Eigentum</span></h2>
